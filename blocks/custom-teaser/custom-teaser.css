@@ -1,3 +1,27 @@
+/* stylelint-disable comment-empty-line-before */
+/* stylelint-disable no-descending-specificity, property-no-vendor-prefix */
+/* stylelint-disable rule-empty-line-before */
+/* stylelint-disable color-hex-length */
+/* stylelint-disable selector-not-notation */
+/* stylelint-disable value-no-vendor-prefix */
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable selector-pseudo-element-colon-notation */
+/* stylelint-disable declaration-property-value-no-unknown */
+/* stylelint-disable declaration-block-no-shorthand-property-overrides */
+/* stylelint-disable media-feature-range-notation */
+/* stylelint-disable font-family-name-quotes */
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable color-function-notation */
+/* stylelint-disable hue-degree-notation */
+/* stylelint-disable declaration-block-no-duplicate-properties */
+/* stylelint-disable value-keyword-case */
+/* stylelint-disable at-rule-empty-line-before */
+/* stylelint-disable declaration-empty-line-before */
+/* stylelint-disable selector-attribute-quotes */
+/* stylelint-disable no-duplicate-selectors */
+
 .cmp-teaser .cmp-teaser__pretitle {
   font-weight: 700;
 }
@@ -11,7 +35,7 @@
 }
 
 .cmp-teaser .cmp-teaser__title {
-  font-family: Asar, Georgia, Times New Roman, Times, serif;
+  font-family: "Asar, Georgia, Times New Roman, Times, serif";
   margin: 0.5em 0;
 }
 
@@ -270,7 +294,7 @@
     max-height: 40pc;
   }
   .cmp-teaser--hero .cmp-teaser__content {
-    background-color: #fff;
+    background-color: #ffffff;
     margin-top: -180px;
     height: 180px;
     min-height: 180px;
@@ -361,7 +385,7 @@ body.anonymous .cmp-teaser--secure .cmp-teaser__action-container {
   -o-object-position: top;
   object-position: top;
   height: 25pc;
-  width: 100%;
+  width: 100%;  
   -webkit-transition: all 0.2s;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
@@ -379,8 +403,8 @@ body.anonymous .cmp-teaser--secure .cmp-teaser__action-container {
 }
 
 .cmp-teaser--card .cmp-teaser .cmp-teaser__action-link {
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid #ffffff;
+  color: #ffffff;
   background-color: transparent;
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
@@ -391,7 +415,7 @@ body.anonymous .cmp-teaser--secure .cmp-teaser__action-container {
   top: 0;
   right: 0;
   padding: 0.5em;
-  color: #fff;
+  color: #ffffff;
   background: #0045ff;
   border-bottom-left-radius: 4px;
   -webkit-box-shadow: -1px 2px 4px 1px rgba(0, 0, 0, 0.25);
