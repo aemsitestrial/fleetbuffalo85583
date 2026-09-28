@@ -19,4 +19,3 @@ See also [Developer Tutorial](https://experienceleague.adobe.com/en/docs/experie
 3. Update the mountpoint in `fstab.yaml`
 4. Update the path mappings in `paths.json`
 
-test
