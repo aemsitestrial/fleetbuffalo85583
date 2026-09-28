@@ -1,10 +1,13 @@
 # Frescopa Site Project
+
 Based on the boilerplate for AEM Authoring with Edge Delivery Services projects that integrate with Adobe Commerce.
 
 ## Environments
+
 - Live: https://frescopa.coffee/
 
 ## Content Setup
+
 See <https://github.com/markszulc/frescopa-with-edge-delivery-services>
 
 ## Code Setup
@@ -13,5 +16,7 @@ See also [Developer Tutorial](https://experienceleague.adobe.com/en/docs/experie
 
 1. Fork this repository
 2. Add the [AEM Code Sync GitHub App](https://github.com/apps/aem-code-sync) to the repository, so your code changes get synced with EDS.
-4. Update the mountpoint in `fstab.yaml`
-5. Update the path mappings in `paths.json`
+3. Update the mountpoint in `fstab.yaml`
+4. Update the path mappings in `paths.json`
+
+test
