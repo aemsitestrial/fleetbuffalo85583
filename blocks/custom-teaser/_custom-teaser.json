@@ -17,14 +17,14 @@
     },
     {
       "title": "Custom Teaser",
-      "id": "custom-teasers",
+      "id": "custom-teaser",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
               "name": "Custom Teaser",
-              "model": "custom-teasers"
+              "model": "custom-teaser"
             }
           }
         }
@@ -33,7 +33,7 @@
   ],
   "models": [
     {
-      "id": "custom-teasers",
+      "id": "custom-teaser",
       "fields": [
         {
           "component": "reference",

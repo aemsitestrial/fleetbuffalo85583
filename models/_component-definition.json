@@ -59,6 +59,9 @@
           "...": "../blocks/teaser/_*.json#/definitions"
         },
         {
+          "...": "../blocks/custom-teaser/_*.json#/definitions"
+        },
+        {
           "...": "../blocks/form/_*.json#/definitions"
         },
         {
