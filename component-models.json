@@ -354,7 +354,7 @@
     ]
   },
   {
-    "id": "custom-teaser",
+    "id": "custom-teaser-item",
     "fields": [
       {
         "component": "reference",

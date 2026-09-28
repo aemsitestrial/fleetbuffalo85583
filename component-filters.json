@@ -59,6 +59,12 @@
     ]
   },
   {
+    "id": "custom-teaser",
+    "components": [
+      "custom-teaser-item"
+    ]
+  },
+  {
     "id": "form",
     "components": [
       "captcha",
