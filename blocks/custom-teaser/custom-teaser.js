@@ -133,6 +133,15 @@ function isLinkShaped(div) {
   return !!div.querySelector('a');
 }
 
+// A field row can be present but authored empty (e.g. the "Image" reference
+// field left unset) rather than omitted from the DOM entirely. Such a div
+// carries no real data and must be dropped before classification — leaving
+// it in would consume a slot in `classifyContentFields`'s queue and push
+// pretitle/title/description out of place (or off the end entirely).
+function isEmptyField(div) {
+  return !div.textContent.trim() && !div.querySelector('a, picture, img');
+}
+
 // Detects the image field robustly: either already-decorated <picture>/<img>
 // markup, or a raw AEM Assets/DAM delivery link (see decorateImage below).
 function looksLikeImageAsset(div) {
@@ -219,6 +228,15 @@ function classifyContentFields(divs) {
 // are exported as a plain `<a href="https://.../adobe/assets/...">` link to
 // the asset delivery URL, not as <picture>/<img> markup — fall back through
 // <picture>, then a bare <img>, then that raw asset link.
+//
+// `link.href` (the DOM property, not `getAttribute('href')`) is read here on
+// purpose: the browser always resolves it to a full absolute URL against the
+// current document, even if the asset was authored/exported as a host-
+// relative path (e.g. while rendering inside the Universal Editor canvas,
+// which is served from the author host rather than the aem.page/aem.live
+// delivery host). That native resolution is more reliable than guessing at a
+// specific "delivery-pXXXXX-eXXXXX" domain, since a project's Assets/DAM
+// program id does not always match its Sites program id.
 function decorateImage(imageDiv) {
   if (!imageDiv) return null;
 
@@ -266,8 +284,10 @@ function decorateTeaserItem(item) {
     TITLE_TYPES,
   );
 
+  // Drop rows authored empty (e.g. no image picked) before classifying —
+  // see `isEmptyField` above.
   let imageDiv = null;
-  let contentDivs = withoutTitleType;
+  let contentDivs = withoutTitleType.filter((div) => !isEmptyField(div));
   if (contentDivs.length && looksLikeImageAsset(contentDivs[0])) {
     [imageDiv, ...contentDivs] = contentDivs;
   }
