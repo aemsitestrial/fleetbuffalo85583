@@ -34,7 +34,7 @@
       "reward-sticky",
       "sticky-cta",
       "quiz",
-      "custom-teasers"
+      "custom-teaser"
     ]
   },
   {
@@ -56,12 +56,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  {
-    "id": "custom-teasers",
-    "components": [
-      "custom-teaser"
     ]
   },
   {

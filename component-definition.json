@@ -225,27 +225,12 @@
           }
         },
         {
-          "title": "Custom Teasers",
-          "id": "custom-teasers",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Custom Teasers",
-                  "filter": "custom-teasers"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Custom Teaser",
           "id": "custom-teaser",
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
+                "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Custom Teaser",
                   "model": "custom-teaser"
