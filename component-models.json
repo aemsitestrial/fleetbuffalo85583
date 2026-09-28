@@ -354,6 +354,164 @@
     ]
   },
   {
+    "id": "custom-teasers",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Link text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Link URL"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "teaserStyle",
+        "label": "Teaser style",
+        "options": [
+          {
+            "name": "Style primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Style secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Style tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Style quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "teaserModifier",
+        "label": "Teaser modifier",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Content center",
+            "value": "modifier-content-center"
+          },
+          {
+            "name": "Content right",
+            "value": "modifier-content-right"
+          },
+          {
+            "name": "Pretitle primary",
+            "value": "modifier-pretitle-primary"
+          },
+          {
+            "name": "Pretitle secondary",
+            "value": "modifier-pretitle-secondary"
+          },
+          {
+            "name": "Pretitle tertiary",
+            "value": "modifier-pretitle-tertiary"
+          },
+          {
+            "name": "Transparent",
+            "value": "modifier-bg-transparent"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "headlineClamp",
+        "label": "Headline clamp",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "1 line",
+            "value": "teaser-headline-line-clamp-1"
+          },
+          {
+            "name": "2 lines",
+            "value": "teaser-headline-line-clamp-2"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "descriptionClamp",
+        "label": "Description clamp",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "2 lines",
+            "value": "teaser-description-line-clamp-2"
+          },
+          {
+            "name": "4 lines",
+            "value": "teaser-description-line-clamp-4"
+          },
+          {
+            "name": "6 lines",
+            "value": "teaser-description-line-clamp-6"
+          },
+          {
+            "name": "8 lines",
+            "value": "teaser-description-line-clamp-8"
+          },
+          {
+            "name": "10 lines",
+            "value": "teaser-description-line-clamp-10"
+          },
+          {
+            "name": "12 lines",
+            "value": "teaser-description-line-clamp-12"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "embed-adaptive-form",
     "fields": [
       {
