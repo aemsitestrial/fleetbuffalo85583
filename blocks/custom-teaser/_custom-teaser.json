@@ -61,16 +61,35 @@
           "label": "Description"
         },
         {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "linkURL",
+          "label": "Teaser link",
+          "description": "Makes the whole teaser clickable. Only used when no action links below are set."
+        },
+        {
           "component": "text",
           "valueType": "string",
           "name": "actionText",
-          "label": "Link text"
+          "label": "Action 1 text"
         },
         {
           "component": "aem-content",
           "valueType": "string",
           "name": "actionUrl",
-          "label": "Link URL"
+          "label": "Action 1 link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "action2Text",
+          "label": "Action 2 text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "action2Url",
+          "label": "Action 2 link"
         },
         {
           "component": "select",
