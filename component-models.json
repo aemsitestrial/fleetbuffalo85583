@@ -165,6 +165,254 @@
     ]
   },
   {
+    "id": "ac-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Link text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Link URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "styleVariant",
+        "label": "Style variant",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "multiselect",
+        "valueType": "string",
+        "name": "cardModifier",
+        "label": "Card modifier",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Media filled",
+            "value": "modifier-media-filled"
+          },
+          {
+            "name": "Media filled (animated)",
+            "value": "modifier-media-filled-animation"
+          },
+          {
+            "name": "Content center",
+            "value": "modifier-content-center"
+          },
+          {
+            "name": "Banner",
+            "value": "modifier-banner"
+          },
+          {
+            "name": "Content right",
+            "value": "modifier-content-right"
+          },
+          {
+            "name": "Overlap image",
+            "value": "modifier-overlap-image"
+          },
+          {
+            "name": "Linked video",
+            "value": "modifier-linked-video"
+          },
+          {
+            "name": "Check",
+            "value": "modifier-check"
+          },
+          {
+            "name": "Circle check",
+            "value": "modifier-circle-check"
+          },
+          {
+            "name": "Solid",
+            "value": "modifier-solid"
+          },
+          {
+            "name": "Outline",
+            "value": "modifier-outline"
+          },
+          {
+            "name": "Transparent",
+            "value": "modifier-transparent"
+          },
+          {
+            "name": "Transparent filled",
+            "value": "modifier-transparent-filled"
+          },
+          {
+            "name": "Vertical",
+            "value": "modifier-vertical"
+          },
+          {
+            "name": "Horizontal",
+            "value": "modifier-horizontal"
+          },
+          {
+            "name": "Centered",
+            "value": "modifier-centered"
+          },
+          {
+            "name": "Ghost",
+            "value": "modifier-ghost"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "cardType",
+        "label": "Card type",
+        "options": [
+          {
+            "name": "Card content",
+            "value": "ac-core-card-content"
+          },
+          {
+            "name": "Card AEM",
+            "value": "ac-core-card-aem"
+          },
+          {
+            "name": "Card feature",
+            "value": "ac-core-card-feature"
+          },
+          {
+            "name": "Card icon",
+            "value": "ac-core-card-icon"
+          },
+          {
+            "name": "Card product",
+            "value": "ac-core-card-product"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "headlineClamp",
+        "label": "Headline clamp",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "1 line",
+            "value": "teaser-headline-line-clamp-1"
+          },
+          {
+            "name": "2 lines",
+            "value": "teaser-headline-line-clamp-2"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "descriptionClamp",
+        "label": "Description clamp",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "2 lines",
+            "value": "teaser-description-line-clamp-2"
+          },
+          {
+            "name": "4 lines",
+            "value": "teaser-description-line-clamp-4"
+          },
+          {
+            "name": "6 lines",
+            "value": "teaser-description-line-clamp-6"
+          },
+          {
+            "name": "8 lines",
+            "value": "teaser-description-line-clamp-8"
+          },
+          {
+            "name": "10 lines",
+            "value": "teaser-description-line-clamp-10"
+          },
+          {
+            "name": "12 lines",
+            "value": "teaser-description-line-clamp-12"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Second link text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Second link URL"
+      }
+    ]
+  },
+  {
     "id": "article",
     "fields": [
       {

@@ -1,0 +1,8 @@
+{
+  "ac-core-lib": {
+    "bodyClasses": [
+      "ac-core",
+      "ds-atlascopco"
+    ]
+  }
+}

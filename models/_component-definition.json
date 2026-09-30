@@ -32,6 +32,9 @@
       "id": "blocks",
       "components": [
         {
+          "...": "../blocks/ac-card/_*.json#/definitions"
+        },
+        {
           "...": "../blocks/cards/_*.json#/definitions"
         },
         {
