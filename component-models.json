@@ -824,6 +824,83 @@
     ]
   },
   {
+    "id": "dekker-title",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Title",
+        "required": true
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "type",
+        "label": "Heading level",
+        "value": "h2",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Link"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "highlight",
+        "label": "Highlight",
+        "value": "",
+        "description": "Choices from ds-eds-assets/js/options/title.js (titleHighlight); keep the two in sync.",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Highlight 1",
+            "value": "title--highlight-1"
+          },
+          {
+            "name": "Highlight 2",
+            "value": "title--highlight-2"
+          },
+          {
+            "name": "Highlight 3",
+            "value": "title--highlight-3"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "embed-adaptive-form",
     "fields": [
       {

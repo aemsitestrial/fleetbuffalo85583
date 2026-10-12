@@ -1,8 +1,7 @@
 {
-  "ac-core-lib": {
+  "dekker-lib": {
     "bodyClasses": [
-      "ac-core",
-      "ds-atlascopco"
+      "ds-dekker"
     ]
   }
 }

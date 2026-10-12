@@ -1,0 +1,27 @@
+{
+  "name": "@ac-brandsframework/eds-assets-dekker",
+  "version": "0.1.0",
+  "description": "DS-sourced EDS assets for the Dekker (dekker-lib) brand -- compiled DOM-build render JS and cascade-safe CSS for Dekker's single-component blocks (one per @edsBlock tag, listed in the published README.md), option lists (options/) for style props, runtime glue (js/vendor/), and Dekker's own globals+grid CSS (css/foundational/dekker-lib.css, css/brands.json). Sibling package to @ac-brandsframework/eds-assets and @ac-brandsframework/eds-assets-acg. See README.md in the published package for the dist layout.",
+  "publishConfig": {
+    "registry": "https://www-test-aem-cicd.atlascopco.com/nexus/repository/npm-private/"
+  },
+  "type": "module",
+  "sideEffects": [
+    "*.css",
+    "css/**"
+  ],
+  "files": [
+    "js",
+    "css",
+    "options",
+    "storybook-map.json",
+    "README.md"
+  ],
+  "exports": {
+    "./js/*.js": "./js/*.js",
+    "./js/vendor/*": "./js/vendor/*",
+    "./css/*": "./css/*",
+    "./options/*.js": "./options/*.js",
+    "./package.json": "./package.json"
+  }
+}

@@ -73,6 +73,7 @@
       "id": "section",
       "components": [
         "ac-card",
+        "dekker-title",
         "text",
         "image",
         "button",

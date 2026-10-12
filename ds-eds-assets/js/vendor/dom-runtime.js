@@ -7,8 +7,7 @@ export const Fragment = Symbol.for('ds.fragment');
 // pass the SAME node reference into multiple sibling slots -- a pattern
 // React handles fine (one JSX descriptor, re-rendered per slot) but a real
 // DOM node cannot: moving it repeatedly leaves only the last slot holding
-// it, silently dropping the other slots' content (confirmed via
-// .eds-poc/stage-2a/run-stage-2a.js Case B). A WeakSet keyed on node
+// it, silently dropping the other slots' content. A WeakSet keyed on node
 // identity distinguishes "first time dom-runtime places this node" (move,
 // keeping b5d0ce265's listener fix) from "this exact node again" (clone,
 // restoring pre-b5d0ce265's multi-placement behavior) without reintroducing

@@ -35,6 +35,9 @@
           "...": "../blocks/ac-card/_*.json#/definitions"
         },
         {
+          "...": "../blocks/dekker-title/_*.json#/definitions"
+        },
+        {
           "...": "../blocks/cards/_*.json#/definitions"
         },
         {
