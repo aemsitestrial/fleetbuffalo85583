@@ -1,0 +1,6 @@
+/*
+ * dekker-product-teaser-carousel has no styles of its own. Its look is the design system's:
+ * ds-eds-assets/css/foundational/dekker-lib.css (brand globals) and
+ * ds-eds-assets/css/bundles/dekker-product-teaser-carousel.css, both loaded by dekker-product-teaser-carousel.js.
+ * Change them in the design system (libs/dekker-lib) and rebuild the package, not here.
+ */

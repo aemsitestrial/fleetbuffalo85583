@@ -1,0 +1,6 @@
+/*
+ * dekker-teaser-news has no styles of its own. Its look is the design system's:
+ * ds-eds-assets/css/foundational/dekker-lib.css (brand globals) and
+ * ds-eds-assets/css/bundles/dekker-teaser-news.css, both loaded by dekker-teaser-news.js.
+ * Change them in the design system (libs/dekker-lib) and rebuild the package, not here.
+ */

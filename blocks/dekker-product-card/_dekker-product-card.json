@@ -1,0 +1,113 @@
+{
+  "definitions": [
+    {
+      "title": "Dekker Product Card",
+      "id": "dekker-product-card",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Dekker Product Card",
+              "model": "dekker-product-card",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "dekker-product-card",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image alt text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "pretitle",
+          "label": "Pretitle"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "date",
+          "label": "Date"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText",
+          "label": "Action text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl",
+          "label": "Action link"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "cardType",
+          "label": "Card type",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Extended",
+              "value": "ds-brand-product-card--extended"
+            }
+          ],
+          "description": "Choices from ds-eds-assets/js/options/product-card.js (productCardType)."
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "shadow",
+          "label": "Shadow",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Shadow",
+              "value": "ds-brand-product-card--shadow"
+            }
+          ],
+          "description": "Choices from ds-eds-assets/js/options/product-card.js (productCardShadow)."
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -1,0 +1,106 @@
+{
+  "definitions": [
+    {
+      "title": "Dekker Hero",
+      "id": "dekker-hero",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Dekker Hero",
+              "model": "dekker-hero",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "dekker-hero",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "backgroundImage",
+          "label": "Background image",
+          "multi": false
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image alt text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "pretitle",
+          "label": "Pretitle"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "date",
+          "label": "Date"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText",
+          "label": "Action text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl",
+          "label": "Action link"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "heroVariant",
+          "label": "Graphic",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Circular",
+              "value": "ds-brand-hero--circular"
+            },
+            {
+              "name": "Graphic",
+              "value": "ds-brand-hero--gfx"
+            }
+          ],
+          "description": "Choices from ds-eds-assets/js/options/hero.js (heroVariant)."
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

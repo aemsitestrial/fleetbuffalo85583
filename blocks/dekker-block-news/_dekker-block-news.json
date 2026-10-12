@@ -1,0 +1,169 @@
+{
+  "definitions": [
+    {
+      "title": "Dekker News Block",
+      "id": "dekker-block-news",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Dekker News Block",
+              "filter": "dekker-block-news",
+              "model": "dekker-block-news",
+              "key-value": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Dekker News Item",
+      "id": "dekker-block-news-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Dekker News Item",
+              "model": "dekker-block-news-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "dekker-block-news",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "heading",
+          "label": "Heading"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkText",
+          "label": "Link button text"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "background",
+          "label": "Background",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Dark grey",
+              "value": "ds-block-news--dark-grey"
+            },
+            {
+              "name": "Very light grey",
+              "value": "ds-block-news--very-light-grey"
+            },
+            {
+              "name": "Warm grey",
+              "value": "ds-block-news--worm-grey"
+            }
+          ],
+          "description": "Choices from ds-eds-assets/js/options/block-news.js (blockNewsBackground)."
+        }
+      ]
+    },
+    {
+      "id": "dekker-block-news-item",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image alt text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "pretitle",
+          "label": "Pretitle"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "date",
+          "label": "Date"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText",
+          "label": "Action text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl",
+          "label": "Action link"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "highlight",
+          "label": "Highlight",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Gold",
+              "value": "ds-brand-news-card--highlight-gold"
+            },
+            {
+              "name": "Grey",
+              "value": "ds-brand-news-card--highlight-grey"
+            },
+            {
+              "name": "Yellow",
+              "value": "ds-brand-news-card--highlight-yellow"
+            }
+          ],
+          "description": "Choices from ds-eds-assets/js/options/news-card.js (newsCardHighlight)."
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "dekker-block-news",
+      "components": [
+        "dekker-block-news-item"
+      ]
+    }
+  ]
+}

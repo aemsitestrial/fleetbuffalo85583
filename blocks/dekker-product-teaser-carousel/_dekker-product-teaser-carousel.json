@@ -1,0 +1,140 @@
+{
+  "definitions": [
+    {
+      "title": "Dekker Product Teaser Carousel",
+      "id": "dekker-product-teaser-carousel",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Dekker Product Teaser Carousel",
+              "filter": "dekker-product-teaser-carousel",
+              "model": "dekker-product-teaser-carousel",
+              "key-value": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Dekker Product Teaser Slide",
+      "id": "dekker-product-teaser-carousel-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Dekker Product Teaser Slide",
+              "model": "dekker-product-teaser-carousel-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "dekker-product-teaser-carousel",
+      "fields": [
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "autoplay",
+          "label": "Autoplay",
+          "value": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "delay",
+          "label": "Autoplay delay (ms)"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "highlight",
+          "label": "Slide highlight",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Highlight 1",
+              "value": "ds-brand-product-teaser--hightlight-1"
+            },
+            {
+              "name": "Highlight 2",
+              "value": "ds-brand-product-teaser--hightlight-2"
+            }
+          ],
+          "description": "Choices from ds-eds-assets/js/options/product-teaser.js (productTeaserHighlight)."
+        }
+      ]
+    },
+    {
+      "id": "dekker-product-teaser-carousel-item",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image alt text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "pretitle",
+          "label": "Pretitle"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "date",
+          "label": "Date"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText",
+          "label": "Action text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl",
+          "label": "Action link"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "dekker-product-teaser-carousel",
+      "components": [
+        "dekker-product-teaser-carousel-item"
+      ]
+    }
+  ]
+}

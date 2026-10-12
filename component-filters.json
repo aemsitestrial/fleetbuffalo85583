@@ -10,6 +10,28 @@
     "components": [
       "ac-card",
       "dekker-title",
+      "dekker-block-news",
+      "dekker-block-products",
+      "dekker-block-teaser-news",
+      "dekker-button",
+      "dekker-download",
+      "dekker-header",
+      "dekker-hero",
+      "dekker-hero-carousel",
+      "dekker-key-specs",
+      "dekker-navigation",
+      "dekker-news-card",
+      "dekker-product-card",
+      "dekker-product-teaser",
+      "dekker-product-teaser-carousel",
+      "dekker-search",
+      "dekker-table",
+      "dekker-tabs",
+      "dekker-teaser-card",
+      "dekker-teaser-link",
+      "dekker-teaser-news",
+      "dekker-text",
+      "dekker-top-bar",
       "text",
       "image",
       "button",
@@ -64,6 +86,42 @@
     "id": "custom-teaser",
     "components": [
       "custom-teaser-item"
+    ]
+  },
+  {
+    "id": "dekker-block-news",
+    "components": [
+      "dekker-block-news-item"
+    ]
+  },
+  {
+    "id": "dekker-block-products",
+    "components": [
+      "dekker-block-products-item"
+    ]
+  },
+  {
+    "id": "dekker-block-teaser-news",
+    "components": [
+      "dekker-block-teaser-news-item"
+    ]
+  },
+  {
+    "id": "dekker-hero-carousel",
+    "components": [
+      "dekker-hero-carousel-item"
+    ]
+  },
+  {
+    "id": "dekker-product-teaser-carousel",
+    "components": [
+      "dekker-product-teaser-carousel-item"
+    ]
+  },
+  {
+    "id": "dekker-tabs",
+    "components": [
+      "dekker-tabs-item"
     ]
   },
   {
