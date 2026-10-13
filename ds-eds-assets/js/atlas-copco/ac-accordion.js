@@ -504,7 +504,7 @@ function decorate(block) {
   runControllers(block, [{ Controller: AccordionController, key: "AccordionController", scope: "block", options: void 0 }]);
 }
 export {
-  decorate as default
+  decorate
 };
 /*! Bundled license information:
 
