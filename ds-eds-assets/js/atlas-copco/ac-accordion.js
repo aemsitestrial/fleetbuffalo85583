@@ -71,6 +71,48 @@ function h(type, props, ...children) {
   append(el, children);
   return el;
 }
+function cellValue(cell, field) {
+  const a = cell.querySelector("a");
+  if (field.component === "richtext")
+    return cell.innerHTML.trim();
+  if (field.component === "reference") {
+    const img = cell.querySelector("img");
+    return (img ? img.getAttribute("src") : a?.getAttribute("href")) ?? cell.textContent.trim();
+  }
+  return a ? a.getAttribute("href") : cell.textContent.trim();
+}
+function fill(node, vars) {
+  if (typeof node === "string") {
+    const whole = node.match(/^\{(\w+)\}$/);
+    if (whole && whole[1] in vars)
+      return vars[whole[1]];
+    return node.replace(/\{(\w+)\}/g, (m, k) => k in vars ? vars[k] : m);
+  }
+  if (Array.isArray(node))
+    return node.map((n) => fill(n, vars));
+  if (node && typeof node === "object")
+    return Object.fromEntries(Object.entries(node).map(([k, v]) => [k, fill(v, vars)]));
+  return node;
+}
+function readDefaults(defaults2 = {}) {
+  return fill(defaults2, { uid: Math.random().toString(36).slice(2, 8) });
+}
+function readItems(block, items2) {
+  const rows = [...block.children];
+  const into = {};
+  const order = [];
+  rows.forEach((row, index) => {
+    const cells = [...row.children];
+    const vars = { index };
+    items2.fields.forEach((field, i) => {
+      vars[field.name] = cells[i] ? cellValue(cells[i], field) : "";
+    });
+    const key = fill(items2.key, vars);
+    into[key] = fill(items2.template, vars);
+    order.push(key);
+  });
+  return { [items2.into]: into, [items2.order]: order };
+}
 function readFields(block, fields2) {
   const cells = {};
   for (const row of block.children) {
@@ -83,17 +125,7 @@ function readFields(block, fields2) {
   const classes = [];
   for (const field of fields2) {
     const cell = cells[field.name];
-    const a = cell?.querySelector("a");
-    const img = cell?.querySelector("img");
-    let value = field.value;
-    if (cell) {
-      if (field.component === "richtext")
-        value = cell.innerHTML.trim();
-      else if (field.component === "reference")
-        value = (img ? img.getAttribute("src") : a?.getAttribute("href")) ?? cell.textContent.trim();
-      else
-        value = a ? a.getAttribute("href") : cell.textContent.trim();
-    }
+    let value = cell ? cellValue(cell, field) : field.value;
     if (value === void 0 || value === "")
       continue;
     if (field.valueType === "boolean")
@@ -283,16 +315,16 @@ function SimpleAccordionBody({
   ) : /* @__PURE__ */ h("div", { "data-cmp-data-layer": "", id: `text-${id.split("-")[1]}`, className: "cmp-text" }, /* @__PURE__ */ h("p", null, text)));
 }
 function GridAccordionBody({
-  ":items": items,
+  ":items": items2,
   ":itemsOrder": itemsOrder,
   gridClassNames,
   columnClassNames
 }) {
-  return /* @__PURE__ */ h("div", { className: "responsivegrid" }, /* @__PURE__ */ h("div", { className: (0, import_classnames.default)(gridClassNames) }, items && itemsOrder?.length && itemsOrder.map((itemOrder, index) => /* @__PURE__ */ h(runtime_default.Fragment, { key: index }, itemOrder === "image" ? /* @__PURE__ */ h("div", { className: (0, import_classnames.default)("image", columnClassNames?.image) }, /* @__PURE__ */ h(
+  return /* @__PURE__ */ h("div", { className: "responsivegrid" }, /* @__PURE__ */ h("div", { className: (0, import_classnames.default)(gridClassNames) }, items2 && itemsOrder?.length && itemsOrder.map((itemOrder, index) => /* @__PURE__ */ h(runtime_default.Fragment, { key: index }, itemOrder === "image" ? /* @__PURE__ */ h("div", { className: (0, import_classnames.default)("image", columnClassNames?.image) }, /* @__PURE__ */ h(
     "div",
     {
-      "data-asset-id": items.image.uuid,
-      id: items.image.id,
+      "data-asset-id": items2.image.uuid,
+      id: items2.image.id,
       "data-cmp-data-layer": "",
       className: "cmp-image",
       itemScope: true,
@@ -301,23 +333,23 @@ function GridAccordionBody({
     /* @__PURE__ */ h(
       "img",
       {
-        srcSet: items.image.srcset,
+        srcSet: items2.image.srcset,
         loading: "lazy",
         className: "cmp-image__image",
         itemProp: "contentUrl",
         width: "850",
         height: "509",
-        alt: items.image.title,
-        title: items.image.title
+        alt: items2.image.title,
+        title: items2.image.title
       }
     ),
-    /* @__PURE__ */ h("meta", { itemProp: "caption", content: items.image.title })
+    /* @__PURE__ */ h("meta", { itemProp: "caption", content: items2.image.title })
   )) : null, itemOrder === "text" ? /* @__PURE__ */ h(
     SimpleAccordionBody,
     {
-      id: items.text.id,
-      richText: items.text.richText,
-      text: items.text.text,
+      id: items2.text.id,
+      richText: items2.text.richText,
+      text: items2.text.text,
       className: columnClassNames?.text
     }
   ) : null))));
@@ -326,7 +358,7 @@ function Accordion({
   id,
   className,
   ":itemsOrder": itemsOrder,
-  ":items": items,
+  ":items": items2,
   expandedItems,
   typeAccordion = "default",
   onClick
@@ -354,7 +386,7 @@ function Accordion({
           onClick && onClick(e, itemOrder);
         }
       },
-      /* @__PURE__ */ h("span", { className: "cmp-accordion__title" }, items[itemOrder]["cq:panelTitle"]),
+      /* @__PURE__ */ h("span", { className: "cmp-accordion__title" }, items2[itemOrder]["cq:panelTitle"]),
       /* @__PURE__ */ h("span", { className: "cmp-accordion__icon" })
     )),
     /* @__PURE__ */ h(
@@ -371,7 +403,7 @@ function Accordion({
         "aria-labelledby": `${id}-item-${index}-button`,
         "aria-hidden": "false"
       },
-      typeAccordion === "default" ? /* @__PURE__ */ h(SimpleAccordionBody, { ...items[itemOrder] }) : /* @__PURE__ */ h(GridAccordionBody, { ...items[itemOrder] })
+      typeAccordion === "default" ? /* @__PURE__ */ h(SimpleAccordionBody, { ...items2[itemOrder] }) : /* @__PURE__ */ h(GridAccordionBody, { ...items2[itemOrder] })
     )
   ))));
 }
@@ -492,9 +524,12 @@ function ACAccordion(props) {
 
 // ac-accordion.decorate.tsx
 init_runtime();
-var fields = [{ "name": "typeAccordion", "value": "default", "valueType": "string", "component": "select" }, { "name": "singleExpansion", "valueType": "boolean", "component": "boolean" }];
+var fields = [];
+var defaults = { "id": "accordion-{uid}", "typeAccordion": "default", "singleExpansion": false, "expandedItems": [] };
+var items = { "id": "ac-accordion-item", "title": "Accordion Item", "fields": [{ "name": "title", "component": "text" }, { "name": "content", "component": "richtext" }], "into": ":items", "order": ":itemsOrder", "key": "item_{index}", "template": { "id": "text-{index}", "cq:panelTitle": "{title}", "text": "{content}", "richText": true } };
 function decorate(block) {
-  const { props, classes } = readFields(block, fields);
+  const { props: fieldProps, classes } = readFields(block, fields);
+  const props = { ...readDefaults(defaults), ...fieldProps, ...items ? readItems(block, items) : {} };
   const node = h(ACAccordion, props);
   const root = node.nodeType === 11 ? node.firstElementChild : node;
   if (root && classes.length)
