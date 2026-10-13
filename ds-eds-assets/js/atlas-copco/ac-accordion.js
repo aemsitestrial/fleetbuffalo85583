@@ -113,6 +113,29 @@ function readItems(block, items2) {
   });
   return { [items2.into]: into, [items2.order]: order };
 }
+function snapshotInstrumentation(block) {
+  return [...block.children].map((row) => ({
+    row: instrumentation(row),
+    cells: [...row.children].map(instrumentation)
+  }));
+}
+function applyInstrumentation(root, snapshot, instrument, fields2 = []) {
+  if (!instrument)
+    return;
+  const targets = root.querySelectorAll(instrument.item);
+  const set = (el, attrs) => el && attrs.forEach(({ name, value }) => el.setAttribute(name, value));
+  snapshot.forEach(({ row, cells }, i) => {
+    const item = targets[i];
+    if (!item)
+      return;
+    set(item, row);
+    for (const [fieldName, selector] of Object.entries(instrument.fields ?? {})) {
+      const cellIndex = fields2.findIndex((f) => f.name === fieldName);
+      if (cellIndex >= 0)
+        set(selector === ":scope" ? item : item.querySelector(selector), cells[cellIndex] ?? []);
+    }
+  });
+}
 function readFields(block, fields2) {
   const cells = {};
   for (const row of block.children) {
@@ -161,7 +184,7 @@ function runControllers(block, controllers) {
     }
   }
 }
-var Fragment, createElement, forwardRef, useState, useReducer, useRef, useMemo, useCallback, useEffect, useLayoutEffect, useId, useContext, createContext, memo, Children, isValidElement, runtime_default;
+var Fragment, createElement, forwardRef, useState, useReducer, useRef, useMemo, useCallback, useEffect, useLayoutEffect, useId, useContext, createContext, memo, Children, isValidElement, runtime_default, instrumentation;
 var init_runtime = __esm({
   "tools/eds/runtime.js"() {
     Fragment = Symbol("Fragment");
@@ -212,6 +235,7 @@ var init_runtime = __esm({
       Children,
       isValidElement
     };
+    instrumentation = (el) => [...el.attributes].filter((a) => /^data-(aue|richtext)-/.test(a.name));
   }
 });
 
@@ -526,16 +550,19 @@ function ACAccordion(props) {
 init_runtime();
 var fields = [];
 var defaults = { "id": "accordion-{uid}", "typeAccordion": "default", "singleExpansion": false, "expandedItems": [] };
-var items = { "id": "ac-accordion-item", "title": "Accordion Item", "fields": [{ "name": "title", "component": "text" }, { "name": "content", "component": "richtext" }], "into": ":items", "order": ":itemsOrder", "key": "item_{index}", "template": { "id": "text-{index}", "cq:panelTitle": "{title}", "text": "{content}", "richText": true } };
+var items = { "id": "ac-accordion-item", "title": "Accordion Item", "fields": [{ "name": "title", "component": "text" }, { "name": "content", "component": "richtext" }], "into": ":items", "order": ":itemsOrder", "key": "item_{index}", "instrument": { "item": ".cmp-accordion__item", "fields": { "title": ".cmp-accordion__title", "content": ".cmp-text" } }, "template": { "id": "text-{index}", "cq:panelTitle": "{title}", "text": "{content}", "richText": true } };
 function decorate(block) {
   const { props: fieldProps, classes } = readFields(block, fields);
   const props = { ...readDefaults(defaults), ...fieldProps, ...items ? readItems(block, items) : {} };
+  const instrumentation2 = items ? snapshotInstrumentation(block) : null;
   const node = h(ACAccordion, props);
   const root = node.nodeType === 11 ? node.firstElementChild : node;
   if (root && classes.length)
     root.classList.add(...classes);
   block.classList.add(...["ac-core"]);
   block.replaceChildren(node);
+  if (items)
+    applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
   runControllers(block, [{ Controller: AccordionController, key: "AccordionController", scope: "block", options: void 0 }]);
 }
 export {
