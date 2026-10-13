@@ -165,30 +165,20 @@
     ]
   },
   {
-    "id": "ac-accordion",
+    "id": "ac-accordion-item",
     "fields": [
       {
-        "component": "select",
+        "component": "text",
         "valueType": "string",
-        "name": "typeAccordion",
-        "label": "Type accordion",
-        "value": "default",
-        "options": [
-          {
-            "name": "Default",
-            "value": "default"
-          },
-          {
-            "name": "Sample",
-            "value": "sample"
-          }
-        ]
+        "name": "title",
+        "label": "Heading",
+        "required": true
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "singleExpansion",
-        "label": "Single expansion"
+        "component": "richtext",
+        "valueType": "string",
+        "name": "content",
+        "label": "Content"
       }
     ]
   },
