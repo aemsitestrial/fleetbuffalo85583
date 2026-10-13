@@ -1563,7 +1563,7 @@
     ]
   },
   {
-    "id": "button",
+    "id": "ac-button",
     "fields": [
       {
         "component": "text",
