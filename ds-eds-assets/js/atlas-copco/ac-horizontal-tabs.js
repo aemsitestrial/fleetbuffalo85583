@@ -5,9 +5,6 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __esm = (fn, res) => function __init() {
-  return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
-};
 var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
@@ -28,7 +25,74 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 
+// node_modules/classnames/index.js
+var require_classnames = __commonJS({
+  "node_modules/classnames/index.js"(exports, module) {
+    (function() {
+      "use strict";
+      var hasOwn = {}.hasOwnProperty;
+      function classNames() {
+        var classes = "";
+        for (var i = 0; i < arguments.length; i++) {
+          var arg = arguments[i];
+          if (arg) {
+            classes = appendClass(classes, parseValue(arg));
+          }
+        }
+        return classes;
+      }
+      function parseValue(arg) {
+        if (typeof arg === "string" || typeof arg === "number") {
+          return arg;
+        }
+        if (typeof arg !== "object") {
+          return "";
+        }
+        if (Array.isArray(arg)) {
+          return classNames.apply(null, arg);
+        }
+        if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes("[native code]")) {
+          return arg.toString();
+        }
+        var classes = "";
+        for (var key in arg) {
+          if (hasOwn.call(arg, key) && arg[key]) {
+            classes = appendClass(classes, key);
+          }
+        }
+        return classes;
+      }
+      function appendClass(value, newClass) {
+        if (!newClass) {
+          return value;
+        }
+        if (value) {
+          return value + " " + newClass;
+        }
+        return value + newClass;
+      }
+      if (typeof module !== "undefined" && module.exports) {
+        classNames.default = classNames;
+        module.exports = classNames;
+      } else if (typeof define === "function" && typeof define.amd === "object" && define.amd) {
+        define("classnames", [], function() {
+          return classNames;
+        });
+      } else {
+        window.classNames = classNames;
+      }
+    })();
+  }
+});
+
+// libs/ac-core-lib/src/lib/tabs/ac-horizontal-tabs.tsx
+var import_classnames9 = __toESM(require_classnames());
+
+// libs/ac-core-lib/src/lib/tabs/tabs.tsx
+var import_classnames8 = __toESM(require_classnames());
+
 // tools/eds/runtime.js
+var Fragment = /* @__PURE__ */ Symbol("Fragment");
 function append(parent, child) {
   if (child == null || child === false || child === true)
     return;
@@ -66,6 +130,8 @@ function h(type, props, ...children) {
   append(el, children);
   return el;
 }
+var jsx = (type, { children, ...props }) => h(type, props, children);
+var jsxs = jsx;
 function cellValue(cell, field) {
   const a = cell.querySelector("a");
   if (field.component === "richtext")
@@ -91,9 +157,16 @@ function fill(node, vars) {
 }
 function readClasses(block, fromClasses2 = {}) {
   const props = {};
-  for (const [cls, values] of Object.entries(fromClasses2)) {
-    if (block.classList.contains(cls))
-      Object.assign(props, values);
+  const apply = (cls) => cls in fromClasses2 && Object.assign(props, fromClasses2[cls]);
+  Object.keys(fromClasses2).filter((cls) => block.classList.contains(cls)).forEach(apply);
+  for (const row of [...block.children]) {
+    if (row.children.length !== 1)
+      continue;
+    const tokens = row.children[0].textContent.split(/[\s,]+/).filter(Boolean);
+    if (tokens.length && tokens.every((t) => t in fromClasses2)) {
+      tokens.forEach(apply);
+      row.remove();
+    }
   }
   return props;
 }
@@ -123,6 +196,7 @@ function readItems(block, items2) {
   });
   return { [items2.into]: into, [items2.order]: order, ...collected };
 }
+var instrumentation = (el) => [...el.attributes].filter((a) => /^data-(aue|richtext)-/.test(a.name));
 function snapshotInstrumentation(block) {
   return [...block.children].map((row) => ({
     row: instrumentation(row),
@@ -141,8 +215,10 @@ function applyInstrumentation(root, snapshot, instrument, fields2 = []) {
     set(item, row);
     for (const [fieldName, selector] of Object.entries(instrument.fields ?? {})) {
       const cellIndex = fields2.findIndex((f) => f.name === fieldName);
-      if (cellIndex >= 0)
-        set(selector === ":scope" ? item : item.querySelector(selector), cells[cellIndex] ?? []);
+      if (cellIndex < 0)
+        continue;
+      const target = typeof selector === "object" ? root.querySelectorAll(selector.all)[i] : item.querySelector(selector);
+      set(target, cells[cellIndex] ?? []);
     }
   });
 }
@@ -204,100 +280,17 @@ function runControllers(block, controllers, props = {}) {
     }
   }
 }
-var Fragment, instrumentation;
-var init_runtime = __esm({
-  "tools/eds/runtime.js"() {
-    Fragment = Symbol("Fragment");
-    instrumentation = (el) => [...el.attributes].filter((a) => /^data-(aue|richtext)-/.test(a.name));
-  }
-});
-
-// node_modules/classnames/index.js
-var require_classnames = __commonJS({
-  "node_modules/classnames/index.js"(exports, module) {
-    init_runtime();
-    (function() {
-      "use strict";
-      var hasOwn = {}.hasOwnProperty;
-      function classNames() {
-        var classes = "";
-        for (var i = 0; i < arguments.length; i++) {
-          var arg = arguments[i];
-          if (arg) {
-            classes = appendClass(classes, parseValue(arg));
-          }
-        }
-        return classes;
-      }
-      function parseValue(arg) {
-        if (typeof arg === "string" || typeof arg === "number") {
-          return arg;
-        }
-        if (typeof arg !== "object") {
-          return "";
-        }
-        if (Array.isArray(arg)) {
-          return classNames.apply(null, arg);
-        }
-        if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes("[native code]")) {
-          return arg.toString();
-        }
-        var classes = "";
-        for (var key in arg) {
-          if (hasOwn.call(arg, key) && arg[key]) {
-            classes = appendClass(classes, key);
-          }
-        }
-        return classes;
-      }
-      function appendClass(value, newClass) {
-        if (!newClass) {
-          return value;
-        }
-        if (value) {
-          return value + " " + newClass;
-        }
-        return value + newClass;
-      }
-      if (typeof module !== "undefined" && module.exports) {
-        classNames.default = classNames;
-        module.exports = classNames;
-      } else if (typeof define === "function" && typeof define.amd === "object" && define.amd) {
-        define("classnames", [], function() {
-          return classNames;
-        });
-      } else {
-        window.classNames = classNames;
-      }
-    })();
-  }
-});
-
-// ac-horizontal-tabs.decorate.tsx
-init_runtime();
-
-// libs/ac-core-lib/src/lib/tabs/ac-horizontal-tabs.tsx
-init_runtime();
-var import_classnames9 = __toESM(require_classnames());
-
-// libs/ac-core-lib/src/lib/tabs/tabs.tsx
-init_runtime();
-var import_classnames8 = __toESM(require_classnames());
-
-// libs/aem-core-lib/src/index.ts
-init_runtime();
-
-// libs/aem-core-lib/src/assets/styles/main.scss
-init_runtime();
+function adoptSections(block, node, { panel }) {
+  const id = block.getAttribute("data-eds-group");
+  if (!id)
+    return;
+  const sections = [...document.querySelectorAll(`[data-eds-group="${id}"]`)].filter((el) => el !== block);
+  const panels = node.querySelectorAll(panel);
+  sections.forEach((section, i) => panels[i] && panels[i].append(section));
+}
 
 // libs/aem-core-lib/src/lib/teaser/teaser.tsx
-init_runtime();
 var import_classnames = __toESM(require_classnames());
-
-// libs/aem-core-lib/src/lib/teaser/teaser.scss
-init_runtime();
-
-// libs/aem-core-lib/src/lib/teaser/teaser.tsx
 function Teaser({
   id,
   title,
@@ -336,67 +329,74 @@ function Teaser({
   });
   const loading = lazyEnabled ? "lazy" : void 0;
   const getTeaserBody = () => {
-    return /* @__PURE__ */ h(Fragment, null, /* @__PURE__ */ h("div", { className: "cmp-teaser__content" }, date && /* @__PURE__ */ h("p", { className: "cmp-teaser__date" }, date), pretitle && /* @__PURE__ */ h("p", { className: "cmp-teaser__pretitle" }, pretitle), title && /* @__PURE__ */ h(TitleTag, { className: "cmp-teaser__title" }, !titleLinkHidden && link ? /* @__PURE__ */ h("a", { href: "/", className: "cmp-teaser__title-link" }, title) : title), description && /* @__PURE__ */ h("div", { className: "cmp-teaser__description", dangerouslySetInnerHTML: { __html: description } }), actionsEnabled && actions && actions.length ? /* @__PURE__ */ h("div", { className: "cmp-teaser__action-container" }, actions.map((action) => /* @__PURE__ */ h(
-      "a",
-      {
-        key: action.id,
-        className: (0, import_classnames.default)({ "js-modal": useJsModal }, "cmp-teaser__action-link"),
-        id: action.id,
-        "data-cmp-data-layer": "",
-        "data-cmp-clickable": "",
-        href: action.link?.url,
-        target: action.target
-      },
-      action.title
-    ))) : null), imagePath && /* @__PURE__ */ h("div", { className: "cmp-teaser__image" }, /* @__PURE__ */ h("div", { id, "data-cmp-data-layer": "", className: "cmp-image" }, /* @__PURE__ */ h(
-      "img",
-      {
-        src: imagePath,
-        srcSet: imageSrcSet,
-        loading,
-        fetchpriority: imageFetchpriority,
-        decoding: imageDecoding,
-        className: "cmp-image__image",
-        itemProp: "contentUrl",
-        alt: title,
-        title
-      }
-    ), /* @__PURE__ */ h("meta", { itemProp: "caption", content: title }))), video && /* @__PURE__ */ h("div", { className: "cmp-teaser__video" }, /* @__PURE__ */ h("div", { id, className: "cmp-video" }, /* @__PURE__ */ h(
-      "video",
-      {
-        ...video.autoPlay && { autoPlay: true },
-        ...video.controls && { controls: true },
-        ...video.loop && { loop: true },
-        ...video.muted && { muted: true },
-        ...video.playsInline && { playsInline: true },
-        width: video.width,
-        height: video.height,
-        poster: video.poster,
-        className: "cmp-video__video"
-      },
-      video.source ? video.source.map((item) => /* @__PURE__ */ h("source", { key: item.id, src: item.url, type: item.type })) : null
-    ))));
+    return /* @__PURE__ */ jsxs(Fragment, { children: [
+      /* @__PURE__ */ jsxs("div", { className: "cmp-teaser__content", children: [
+        date && /* @__PURE__ */ jsx("p", { className: "cmp-teaser__date", children: date }),
+        pretitle && /* @__PURE__ */ jsx("p", { className: "cmp-teaser__pretitle", children: pretitle }),
+        title && /* @__PURE__ */ jsx(TitleTag, { className: "cmp-teaser__title", children: !titleLinkHidden && link ? /* @__PURE__ */ jsx("a", { href: "/", className: "cmp-teaser__title-link", children: title }) : title }),
+        description && /* @__PURE__ */ jsx("div", { className: "cmp-teaser__description", dangerouslySetInnerHTML: { __html: description } }),
+        actionsEnabled && actions && actions.length ? /* @__PURE__ */ jsx("div", { className: "cmp-teaser__action-container", children: actions.map((action) => /* @__PURE__ */ jsx(
+          "a",
+          {
+            className: (0, import_classnames.default)({ "js-modal": useJsModal }, "cmp-teaser__action-link"),
+            id: action.id,
+            "data-cmp-data-layer": "",
+            "data-cmp-clickable": "",
+            href: action.link?.url,
+            target: action.target,
+            children: action.title
+          },
+          action.id
+        )) }) : null
+      ] }),
+      imagePath && /* @__PURE__ */ jsx("div", { className: "cmp-teaser__image", children: /* @__PURE__ */ jsxs("div", { id, "data-cmp-data-layer": "", className: "cmp-image", children: [
+        /* @__PURE__ */ jsx(
+          "img",
+          {
+            src: imagePath,
+            srcSet: imageSrcSet,
+            loading,
+            fetchpriority: imageFetchpriority,
+            decoding: imageDecoding,
+            className: "cmp-image__image",
+            itemProp: "contentUrl",
+            alt: title,
+            title
+          }
+        ),
+        /* @__PURE__ */ jsx("meta", { itemProp: "caption", content: title })
+      ] }) }),
+      video && /* @__PURE__ */ jsx("div", { className: "cmp-teaser__video", children: /* @__PURE__ */ jsx("div", { id, className: "cmp-video", children: /* @__PURE__ */ jsx(
+        "video",
+        {
+          ...video.autoPlay && { autoPlay: true },
+          ...video.controls && { controls: true },
+          ...video.loop && { loop: true },
+          ...video.muted && { muted: true },
+          ...video.playsInline && { playsInline: true },
+          width: video.width,
+          height: video.height,
+          poster: video.poster,
+          className: "cmp-video__video",
+          children: video.source ? video.source.map((item) => /* @__PURE__ */ jsx("source", { src: item.url, type: item.type }, item.id)) : null
+        }
+      ) }) })
+    ] });
   };
-  return /* @__PURE__ */ h("div", { className: (0, import_classnames.default)("teaser", [teaserAlignedContent, teaserLineClamp], className), style: styles }, /* @__PURE__ */ h("div", { id, className: "cmp-teaser", "data-cmp-data-layer": "" }, !!isLinked ? /* @__PURE__ */ h(
+  return /* @__PURE__ */ jsx("div", { className: (0, import_classnames.default)("teaser", [teaserAlignedContent, teaserLineClamp], className), style: styles, children: /* @__PURE__ */ jsx("div", { id, className: "cmp-teaser", "data-cmp-data-layer": "", children: !!isLinked ? /* @__PURE__ */ jsx(
     "a",
     {
       className: (0, import_classnames.default)({ "cmp-teaser__link": !useJsModal, "js-modal cmp-teaser": useJsModal }),
       "data-cmp-clickable": "",
-      href: link.url
-    },
-    getTeaserBody()
-  ) : getTeaserBody()));
+      href: link.url,
+      children: getTeaserBody()
+    }
+  ) : getTeaserBody() }) });
 }
 var teaser_default = Teaser;
 
 // libs/aem-core-lib/src/lib/embed-video/embed-video.tsx
-init_runtime();
 var import_classnames2 = __toESM(require_classnames());
-
-// libs/aem-core-lib/src/lib/embed-video/embed-video.scss
-init_runtime();
-
-// libs/aem-core-lib/src/lib/embed-video/embed-video.tsx
 function EmbedVideo({
   id,
   className,
@@ -411,7 +411,7 @@ function EmbedVideo({
   poster,
   controls = true
 }) {
-  return /* @__PURE__ */ h("div", { className: (0, import_classnames2.default)("embed", className) }, /* @__PURE__ */ h("div", { id, className: "cmp-embed" }, /* @__PURE__ */ h("div", null, /* @__PURE__ */ h(
+  return /* @__PURE__ */ jsx("div", { className: (0, import_classnames2.default)("embed", className), children: /* @__PURE__ */ jsx("div", { id, className: "cmp-embed", children: /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx(
     "video",
     {
       ...autoPlay && { autoPlay: true },
@@ -421,31 +421,29 @@ function EmbedVideo({
       ...playsInline && { playsInline: true },
       width,
       height,
-      poster
-    },
-    source && source.length ? /* @__PURE__ */ h(Fragment, null, source.map((item) => /* @__PURE__ */ h("source", { key: item.id, src: item.url, type: item.type }))) : /* @__PURE__ */ h("picture", null, /* @__PURE__ */ h(
-      "img",
-      {
-        id,
-        src: videoImageFallback,
-        className: "lazyload cq-dd-videoThumbnail",
-        "data-sizes": "auto",
-        "data-height": "auto"
-      }
-    ))
-  ))));
+      poster,
+      children: source && source.length ? /* @__PURE__ */ jsx(Fragment, { children: source.map((item) => /* @__PURE__ */ jsx("source", { src: item.url, type: item.type }, item.id)) }) : /* @__PURE__ */ jsx("picture", { children: /* @__PURE__ */ jsx(
+        "img",
+        {
+          id,
+          src: videoImageFallback,
+          className: "lazyload cq-dd-videoThumbnail",
+          "data-sizes": "auto",
+          "data-height": "auto"
+        }
+      ) })
+    }
+  ) }) }) });
 }
 var embed_video_default = EmbedVideo;
 
 // libs/aem-core-lib/src/lib/tabs/tabs.tsx
-init_runtime();
 var import_classnames6 = __toESM(require_classnames());
 
 // libs/aem-core-lib/src/lib/tabs/components/tab-toggler.tsx
-init_runtime();
 var import_classnames3 = __toESM(require_classnames());
 function TabToggler({ id, isActive, ariaControl, text }) {
-  return /* @__PURE__ */ h(
+  return /* @__PURE__ */ jsx(
     "li",
     {
       role: "tab",
@@ -454,18 +452,17 @@ function TabToggler({ id, isActive, ariaControl, text }) {
       "aria-controls": ariaControl,
       tabIndex: isActive ? 0 : -1,
       "data-cmp-hook-tabs": "tab",
-      "aria-selected": isActive
-    },
-    text
+      "aria-selected": isActive,
+      children: text
+    }
   );
 }
 var tab_toggler_default = TabToggler;
 
 // libs/aem-core-lib/src/lib/tabs/components/tab-item.tsx
-init_runtime();
 var import_classnames4 = __toESM(require_classnames());
 function TabItem({ id, ariaLabelledBy, tabIndex, isActive, children }) {
-  return /* @__PURE__ */ h(
+  return /* @__PURE__ */ jsx(
     "div",
     {
       id,
@@ -475,15 +472,14 @@ function TabItem({ id, ariaLabelledBy, tabIndex, isActive, children }) {
       className: (0, import_classnames4.default)("cmp-tabs__tabpanel", { "cmp-tabs__tabpanel--active": isActive }),
       "data-cmp-hook-tabs": "tabpanel",
       "data-cmp-data-layer": "",
-      "aria-hidden": isActive ? "false" : "true"
-    },
-    /* @__PURE__ */ h("div", { className: "responsivegrid" }, /* @__PURE__ */ h("div", { className: "aem-Grid aem-Grid--12 aem-Grid--default--12" }, children))
+      "aria-hidden": isActive ? "false" : "true",
+      children: /* @__PURE__ */ jsx("div", { className: "responsivegrid", children: /* @__PURE__ */ jsx("div", { className: "aem-Grid aem-Grid--12 aem-Grid--default--12", children }) })
+    }
   );
 }
 var tab_item_default = TabItem;
 
 // libs/aem-core-lib/src/lib/table/table.tsx
-init_runtime();
 var import_classnames5 = __toESM(require_classnames());
 function Table({
   id,
@@ -493,15 +489,14 @@ function Table({
   className,
   useRootClassName = true
 }) {
-  return /* @__PURE__ */ h("div", { id, className: (0, import_classnames5.default)(useRootClassName ? "text" : "", className) }, /* @__PURE__ */ h("div", { className: "cmp-text" }, /* @__PURE__ */ h("table", null, /* @__PURE__ */ h("tbody", null, itemsCol && /* @__PURE__ */ h("tr", null, orderCol.map((col) => /* @__PURE__ */ h("th", { key: itemsCol[col].id }, itemsCol[col].title))), itemsRow.map((row, rowIndex) => /* @__PURE__ */ h("tr", { key: rowIndex }, orderCol.map((col, colIndex) => /* @__PURE__ */ h("td", { key: `${col}-${colIndex}`, dangerouslySetInnerHTML: { __html: row[col] } }))))))));
+  return /* @__PURE__ */ jsx("div", { id, className: (0, import_classnames5.default)(useRootClassName ? "text" : "", className), children: /* @__PURE__ */ jsx("div", { className: "cmp-text", children: /* @__PURE__ */ jsx("table", { children: /* @__PURE__ */ jsxs("tbody", { children: [
+    itemsCol && /* @__PURE__ */ jsx("tr", { children: orderCol.map((col) => /* @__PURE__ */ jsx("th", { children: itemsCol[col].title }, itemsCol[col].id)) }),
+    itemsRow.map((row, rowIndex) => /* @__PURE__ */ jsx("tr", { children: orderCol.map((col, colIndex) => /* @__PURE__ */ jsx("td", { dangerouslySetInnerHTML: { __html: row[col] } }, `${col}-${colIndex}`)) }, rowIndex))
+  ] }) }) }) });
 }
 var table_default = Table;
 
-// libs/aem-core-lib/src/lib/tabs/tabs.scss
-init_runtime();
-
 // libs/aem-core-lib/src/lib/tabs/tabs.tsx
-init_runtime();
 function Tabs({
   id,
   className,
@@ -513,122 +508,123 @@ function Tabs({
   useResponsiveType = "window",
   children
 }) {
-  return /* @__PURE__ */ h(
+  return /* @__PURE__ */ jsx(
     "div",
     {
       className: (0, import_classnames6.default)("tabs panelcontainer", className, {
         "ds-brand-responsive-select-run-js": useResponsiveSelect,
         "ds-window-resize-type": useWindowResizeType && useResponsiveSelect,
         "ds-container-query": useResponsiveType === "container"
-      })
-    },
-    /* @__PURE__ */ h("div", { id, className: "cmp-tabs", "data-cmp-data-layer": "", "data-placeholder-text": "false" }, /* @__PURE__ */ h("ol", { role: "tablist", className: "cmp-tabs__tablist", "aria-multiselectable": "false" }, itemsOrder.map((itemOrder, index) => /* @__PURE__ */ h(
-      tab_toggler_default,
-      {
-        key: `${id}-item-${index}-tab`,
-        id: `${id}-item-${index}-tab`,
-        isActive: activeItem === itemOrder,
-        text: items2[itemOrder]["cq:panelTitle"],
-        ariaControl: `${id}-item-${index}-tabpanel`
-      }
-    ))), itemsOrder.map((itemOrder, index) => /* @__PURE__ */ h(
-      tab_item_default,
-      {
-        key: index,
-        id: `${id}-item-${index}-tabpanel`,
-        ariaLabelledBy: `${id}-item-${index}-tab`,
-        tabIndex: activeItem === itemOrder ? 1 : 0,
-        isActive: activeItem === itemOrder
-      },
-      children ? children : /* @__PURE__ */ h(Fragment, null, items2[itemOrder][":itemsOrder"].map((componentName, index2) => {
-        const props = items2[itemOrder][":items"][componentName];
-        const componentClassName = items2[itemOrder].columnClassNames[componentName];
-        if (componentName === "image") {
-          const componentProps = props;
-          return /* @__PURE__ */ h("div", { key: index2, className: (0, import_classnames6.default)("image", componentClassName) }, /* @__PURE__ */ h(
-            "div",
-            {
-              "data-asset-id": componentProps?.uuid,
-              id: componentProps?.id,
-              "data-cmp-data-layer": "",
-              className: "cmp-image",
-              itemScope: true,
-              itemType: "http://schema.org/ImageObject"
-            },
-            /* @__PURE__ */ h(
-              "img",
-              {
-                srcSet: componentProps?.srcset,
-                loading: "lazy",
-                className: "cmp-image__image",
-                itemProp: "contentUrl",
-                width: "850",
-                height: "509",
-                alt: componentProps?.title,
-                title: componentProps?.title
+      }),
+      children: /* @__PURE__ */ jsxs("div", { id, className: "cmp-tabs", "data-cmp-data-layer": "", "data-placeholder-text": "false", children: [
+        /* @__PURE__ */ jsx("ol", { role: "tablist", className: "cmp-tabs__tablist", "aria-multiselectable": "false", children: itemsOrder.map((itemOrder, index) => /* @__PURE__ */ jsx(
+          tab_toggler_default,
+          {
+            id: `${id}-item-${index}-tab`,
+            isActive: activeItem === itemOrder,
+            text: items2[itemOrder]["cq:panelTitle"],
+            ariaControl: `${id}-item-${index}-tabpanel`
+          },
+          `${id}-item-${index}-tab`
+        )) }),
+        itemsOrder.map((itemOrder, index) => /* @__PURE__ */ jsx(
+          tab_item_default,
+          {
+            id: `${id}-item-${index}-tabpanel`,
+            ariaLabelledBy: `${id}-item-${index}-tab`,
+            tabIndex: activeItem === itemOrder ? 1 : 0,
+            isActive: activeItem === itemOrder,
+            children: children ? children : /* @__PURE__ */ jsx(Fragment, { children: items2[itemOrder][":itemsOrder"].map((componentName, index2) => {
+              const props = items2[itemOrder][":items"][componentName];
+              const componentClassName = items2[itemOrder].columnClassNames[componentName];
+              if (componentName === "image") {
+                const componentProps = props;
+                return /* @__PURE__ */ jsx("div", { className: (0, import_classnames6.default)("image", componentClassName), children: /* @__PURE__ */ jsxs(
+                  "div",
+                  {
+                    "data-asset-id": componentProps?.uuid,
+                    id: componentProps?.id,
+                    "data-cmp-data-layer": "",
+                    className: "cmp-image",
+                    itemScope: true,
+                    itemType: "http://schema.org/ImageObject",
+                    children: [
+                      /* @__PURE__ */ jsx(
+                        "img",
+                        {
+                          srcSet: componentProps?.srcset,
+                          loading: "lazy",
+                          className: "cmp-image__image",
+                          itemProp: "contentUrl",
+                          width: "850",
+                          height: "509",
+                          alt: componentProps?.title,
+                          title: componentProps?.title
+                        }
+                      ),
+                      /* @__PURE__ */ jsx("meta", { itemProp: "caption", content: componentProps?.title })
+                    ]
+                  }
+                ) }, index2);
               }
-            ),
-            /* @__PURE__ */ h("meta", { itemProp: "caption", content: componentProps?.title })
-          ));
-        }
-        if (componentName === "text") {
-          const componentProps = props;
-          return /* @__PURE__ */ h("div", { key: index2, className: (0, import_classnames6.default)("text", componentClassName) }, componentProps?.richText ? /* @__PURE__ */ h(
-            "div",
-            {
-              "data-cmp-data-layer": "",
-              id: componentProps?.id,
-              className: "cmp-text",
-              dangerouslySetInnerHTML: { __html: componentProps?.text || "" }
-            }
-          ) : /* @__PURE__ */ h("div", { "data-cmp-data-layer": "", id: componentProps?.id, className: "cmp-text" }, /* @__PURE__ */ h("p", null, componentProps?.text)));
-        }
-        if (componentName === "teaser") {
-          const componentProps = props;
-          return /* @__PURE__ */ h(
-            teaser_default,
-            {
-              key: index2,
-              ...componentProps,
-              className: (0, import_classnames6.default)(componentProps.className, componentClassName)
-            }
-          );
-        }
-        if (componentName === "table") {
-          const componentProps = props;
-          return /* @__PURE__ */ h(
-            table_default,
-            {
-              key: index2,
-              ...componentProps,
-              className: (0, import_classnames6.default)(componentProps.className, componentClassName)
-            }
-          );
-        }
-        if (componentName === "embed-video") {
-          const componentProps = props;
-          return /* @__PURE__ */ h(
-            embed_video_default,
-            {
-              key: index2,
-              ...componentProps,
-              className: (0, import_classnames6.default)(componentProps.className, componentClassName)
-            }
-          );
-        }
-        if (componentName === "custom-component") {
-          return /* @__PURE__ */ h(Fragment, { key: index2 }, props);
-        }
-      }))
-    )))
+              if (componentName === "text") {
+                const componentProps = props;
+                return /* @__PURE__ */ jsx("div", { className: (0, import_classnames6.default)("text", componentClassName), children: componentProps?.richText ? /* @__PURE__ */ jsx(
+                  "div",
+                  {
+                    "data-cmp-data-layer": "",
+                    id: componentProps?.id,
+                    className: "cmp-text",
+                    dangerouslySetInnerHTML: { __html: componentProps?.text || "" }
+                  }
+                ) : /* @__PURE__ */ jsx("div", { "data-cmp-data-layer": "", id: componentProps?.id, className: "cmp-text", children: /* @__PURE__ */ jsx("p", { children: componentProps?.text }) }) }, index2);
+              }
+              if (componentName === "teaser") {
+                const componentProps = props;
+                return /* @__PURE__ */ jsx(
+                  teaser_default,
+                  {
+                    ...componentProps,
+                    className: (0, import_classnames6.default)(componentProps.className, componentClassName)
+                  },
+                  index2
+                );
+              }
+              if (componentName === "table") {
+                const componentProps = props;
+                return /* @__PURE__ */ jsx(
+                  table_default,
+                  {
+                    ...componentProps,
+                    className: (0, import_classnames6.default)(componentProps.className, componentClassName)
+                  },
+                  index2
+                );
+              }
+              if (componentName === "embed-video") {
+                const componentProps = props;
+                return /* @__PURE__ */ jsx(
+                  embed_video_default,
+                  {
+                    ...componentProps,
+                    className: (0, import_classnames6.default)(componentProps.className, componentClassName)
+                  },
+                  index2
+                );
+              }
+              if (componentName === "custom-component") {
+                return /* @__PURE__ */ jsx(Fragment, { children: props }, index2);
+              }
+            }) })
+          },
+          index
+        ))
+      ] })
+    }
   );
 }
 
-// libs/aem-core-lib/src/lib/tabs/tabs.controller.js
-init_runtime();
-
 // libs/aem-core-lib/src/lib/tabs/tabs.class.js
-init_runtime();
 var Tab = class {
   constructor(options) {
     this.storybookRoot = document.querySelector("#storybook-root");
@@ -1005,7 +1001,6 @@ var TabsController = class {
 };
 
 // libs/ac-core-lib/src/assets/utils/class-modificators.ts
-init_runtime();
 var import_classnames7 = __toESM(require_classnames());
 var classNamesThemeColor = (themeColor) => {
   if (!themeColor)
@@ -1018,12 +1013,9 @@ var classNamesThemeColor = (themeColor) => {
   });
 };
 
-// libs/ac-core-lib/src/lib/tabs/tabs.scss
-init_runtime();
-
 // libs/ac-core-lib/src/lib/tabs/tabs.tsx
 function Tabs2({ className, themeColor, useSegmentedButtons, ...rest }) {
-  return /* @__PURE__ */ h(
+  return /* @__PURE__ */ jsx(
     Tabs,
     {
       ...rest,
@@ -1036,23 +1028,19 @@ function Tabs2({ className, themeColor, useSegmentedButtons, ...rest }) {
 var tabs_default = Tabs2;
 
 // libs/ac-core-lib/src/assets/shared/const-data.ts
-init_runtime();
 var acBrandName = "ac-core";
-
-// libs/ac-core-lib/src/lib/tabs/ac-horizontal-tabs.scss
-init_runtime();
 
 // libs/ac-core-lib/src/lib/tabs/ac-horizontal-tabs.tsx
 function ACTabsHorizontal({ className, ...rest }) {
-  return /* @__PURE__ */ h(tabs_default, { ...rest, className: (0, import_classnames9.default)(`${acBrandName}-horizontal-tabs tabs panelcontainer`, className) });
+  return /* @__PURE__ */ jsx(tabs_default, { ...rest, className: (0, import_classnames9.default)(`${acBrandName}-horizontal-tabs tabs panelcontainer`, className) });
 }
 
 // ac-horizontal-tabs.decorate.tsx
-init_runtime();
-var fields = [{ "name": "useResponsiveSelect", "valueType": "boolean", "component": "boolean" }, { "name": "useResponsiveType", "value": "window", "valueType": "string", "component": "select" }, { "name": "singleExpansion", "valueType": "boolean", "component": "boolean" }, { "name": "useSegmentedButtons", "valueType": "boolean", "component": "boolean" }];
-var defaults = {};
-var fromClasses = {};
-var items = null;
+var fields = [{ "name": "classes", "value": "", "valueType": "string", "component": "select" }];
+var defaults = { "id": "tabs-{uid}", "activeItem": "item_0", "useResponsiveSelect": false, "useResponsiveType": "window" };
+var fromClasses = { "responsive-select": { "useResponsiveSelect": true }, "container-query": { "useResponsiveType": "container" }, "segmented-buttons": { "useSegmentedButtons": true } };
+var items = { "id": "ac-horizontal-tabs-item", "title": "Tab", "fields": [{ "name": "title", "component": "text", "valueType": "string" }, { "name": "content", "component": "richtext", "valueType": "string" }], "into": ":items", "order": ":itemsOrder", "key": "item_{index}", "instrument": { "item": ".cmp-tabs__tabpanel", "fields": { "title": { "all": ".cmp-tabs__tab" }, "content": ".cmp-text" } }, "template": { "cq:panelTitle": "{title}", ":itemsOrder": ["text"], ":items": { "text": { "id": "text-{index}", "text": "{content}", "richText": true } }, "columnClassNames": { "text": "" } } };
+var adopt = null;
 function decorate(block) {
   const { props: fieldProps, classes } = readFields(block, fields);
   const props = { ...readDefaults(defaults), ...readClasses(block, fromClasses), ...fieldProps, ...items ? readItems(block, items) : {} };
@@ -1065,6 +1053,8 @@ function decorate(block) {
   block.replaceChildren(node);
   if (items)
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
+  if (adopt)
+    adoptSections(block, node, adopt);
   runControllers(block, [{ Controller: TabsController, key: "TabsController", scope: "block", storybookMode: true, optionsFromProps: [], options: void 0 }], props);
 }
 export {

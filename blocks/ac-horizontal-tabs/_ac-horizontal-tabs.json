@@ -10,7 +10,22 @@
             "template": {
               "name": "AC Horizontal Tabs",
               "model": "ac-horizontal-tabs",
-              "key-value": true
+              "filter": "ac-horizontal-tabs"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Tab",
+      "id": "ac-horizontal-tabs-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Tab",
+              "model": "ac-horizontal-tabs-item"
             }
           }
         }
@@ -22,42 +37,53 @@
       "id": "ac-horizontal-tabs",
       "fields": [
         {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "useResponsiveSelect",
-          "label": "Use responsive select"
-        },
-        {
           "component": "select",
           "valueType": "string",
-          "name": "useResponsiveType",
-          "label": "Use responsive type",
-          "value": "window",
+          "name": "classes",
+          "label": "Options",
+          "value": "",
           "options": [
             {
-              "name": "Window",
-              "value": "window"
+              "name": "Responsive select on mobile",
+              "value": "responsive-select"
             },
             {
-              "name": "Container",
-              "value": "container"
+              "name": "Container query (responsive by block width)",
+              "value": "container-query"
+            },
+            {
+              "name": "Segmented buttons",
+              "value": "segmented-buttons"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "ac-horizontal-tabs-item",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Tab title",
+          "required": true
         },
         {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "singleExpansion",
-          "label": "Single expansion"
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "useSegmentedButtons",
-          "label": "Use segmented buttons"
+          "component": "richtext",
+          "valueType": "string",
+          "name": "content",
+          "label": "Content"
         }
       ]
     }
   ],
-  "filters": []
+  "filters": [
+    {
+      "id": "ac-horizontal-tabs",
+      "components": [
+        "ac-horizontal-tabs-item"
+      ]
+    }
+  ]
 }

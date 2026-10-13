@@ -171,7 +171,22 @@
                 "template": {
                   "name": "AC Horizontal Tabs",
                   "model": "ac-horizontal-tabs",
-                  "key-value": true
+                  "filter": "ac-horizontal-tabs"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Tab",
+          "id": "ac-horizontal-tabs-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Tab",
+                  "model": "ac-horizontal-tabs-item"
                 }
               }
             }

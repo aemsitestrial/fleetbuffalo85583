@@ -48,6 +48,12 @@
     ]
   },
   {
+    "id": "ac-horizontal-tabs",
+    "components": [
+      "ac-horizontal-tabs-item"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
