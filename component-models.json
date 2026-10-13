@@ -168,7 +168,7 @@
     "id": "ac-accordion",
     "fields": [
       {
-        "component": "multiselect",
+        "component": "select",
         "valueType": "string",
         "name": "classes",
         "label": "Options",
