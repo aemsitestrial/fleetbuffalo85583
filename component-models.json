@@ -1563,7 +1563,7 @@
     ]
   },
   {
-    "id": "dekker-button",
+    "id": "button",
     "fields": [
       {
         "component": "text",
@@ -1615,7 +1615,7 @@
             "value": "tetriary"
           }
         ],
-        "description": "Choices from ds-eds-assets/js/options/button.js (buttonType)."
+        "description": "some description"
       },
       {
         "component": "select",
@@ -1637,7 +1637,7 @@
             "value": "cmp-button--lg"
           }
         ],
-        "description": "Choices from ds-eds-assets/js/options/button.js (buttonSize)."
+        "description": "some description"
       },
       {
         "component": "select",
@@ -1663,7 +1663,7 @@
             "value": "cmp-button--bold"
           }
         ],
-        "description": "Choices from ds-eds-assets/js/options/button.js (buttonFontWeight)."
+        "description": "some description"
       }
     ]
   },

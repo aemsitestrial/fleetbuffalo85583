@@ -274,15 +274,15 @@
           }
         },
         {
-          "title": "Dekker Button",
-          "id": "dekker-button",
+          "title": "Button",
+          "id": "button",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Dekker Button",
-                  "model": "dekker-button",
+                  "name": "Button",
+                  "model": "button",
                   "key-value": true
                 }
               }
