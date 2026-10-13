@@ -94,6 +94,14 @@ function fill(node, vars) {
     return Object.fromEntries(Object.entries(node).map(([k, v]) => [k, fill(v, vars)]));
   return node;
 }
+function readClasses(block, fromClasses2 = {}) {
+  const props = {};
+  for (const [cls, values] of Object.entries(fromClasses2)) {
+    if (block.classList.contains(cls))
+      Object.assign(props, values);
+  }
+  return props;
+}
 function readDefaults(defaults2 = {}) {
   return fill(defaults2, { uid: Math.random().toString(36).slice(2, 8) });
 }
@@ -101,17 +109,24 @@ function readItems(block, items2) {
   const rows = [...block.children];
   const into = {};
   const order = [];
+  const collected = Object.fromEntries(Object.values(items2.collect ?? {}).map((prop) => [prop, []]));
   rows.forEach((row, index) => {
     const cells = [...row.children];
     const vars = { index };
     items2.fields.forEach((field, i) => {
-      vars[field.name] = cells[i] ? cellValue(cells[i], field) : "";
+      const value = cells[i] ? cellValue(cells[i], field) : "";
+      vars[field.name] = field.valueType === "boolean" ? value === "true" || value === true : value;
     });
     const key = fill(items2.key, vars);
     into[key] = fill(items2.template, vars);
     order.push(key);
+    for (const [fieldName, prop] of Object.entries(items2.collect ?? {})) {
+      collected[prop] || (collected[prop] = []);
+      if (vars[fieldName])
+        collected[prop].push(key);
+    }
   });
-  return { [items2.into]: into, [items2.order]: order };
+  return { [items2.into]: into, [items2.order]: order, ...collected };
 }
 function snapshotInstrumentation(block) {
   return [...block.children].map((row) => ({
@@ -163,24 +178,34 @@ function readFields(block, fields2) {
   }
   return { props, classes };
 }
-function runControllers(block, controllers) {
+function runControllers(block, controllers, props = {}) {
   const started = window.__edsControllers = window.__edsControllers || /* @__PURE__ */ new Set();
-  for (const { Controller, key, scope = "block", options } of controllers) {
+  const init = ({ Controller, options, storybookMode }, scopeEl) => {
+    const { querySelector, querySelectorAll } = document;
+    document.querySelector = (selector) => storybookMode && selector === "#storybook-root" ? scopeEl : scopeEl.querySelector(selector);
+    document.querySelectorAll = (selector) => scopeEl.querySelectorAll(selector);
+    try {
+      new Controller(options).init();
+    } finally {
+      document.querySelector = querySelector;
+      document.querySelectorAll = querySelectorAll;
+    }
+  };
+  for (const item of controllers) {
+    const fromProps = Object.fromEntries((item.optionsFromProps ?? []).filter((k) => k in props).map((k) => [k, props[k]]));
+    const controller = { ...item, options: { ...item.options, ...fromProps } };
+    const { Controller, key, scope = "block", options, storybookMode } = controller;
     if (scope === "page") {
       if (started.has(key))
         continue;
       started.add(key);
-      setTimeout(() => new Controller(options).init(), 0);
+      setTimeout(() => {
+        if (!storybookMode)
+          return new Controller(options).init();
+        init(controller, document.documentElement);
+      }, 0);
     } else {
-      const { querySelector, querySelectorAll } = document;
-      document.querySelector = (selector) => block.querySelector(selector);
-      document.querySelectorAll = (selector) => block.querySelectorAll(selector);
-      try {
-        new Controller(options).init();
-      } finally {
-        document.querySelector = querySelector;
-        document.querySelectorAll = querySelectorAll;
-      }
+      init(controller, block);
     }
   }
 }
@@ -499,15 +524,13 @@ var Accordion2 = class {
     this.$accordionItems?.forEach((el, index) => {
       const toggler = el.querySelector(`.${this.accordionTogglerSelector}`);
       toggler?.addEventListener("click", (e) => {
-        if (this.isStorybookPreview()) {
-          if (this.singleExpansion) {
-            this.closeAllPanels();
-          }
-          if (!el.hasAttribute(this.expandedItemAttribute)) {
-            this.openAccordionItem(el);
-          } else {
-            this.closeAccordionItem(el);
-          }
+        if (this.singleExpansion) {
+          this.closeAllPanels();
+        }
+        if (!el.hasAttribute(this.expandedItemAttribute)) {
+          this.openAccordionItem(el);
+        } else {
+          this.closeAccordionItem(el);
         }
         if (this.callback) {
           this.callback(e, index);
@@ -548,12 +571,13 @@ function ACAccordion(props) {
 
 // ac-accordion.decorate.tsx
 init_runtime();
-var fields = [];
+var fields = [{ "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }];
 var defaults = { "id": "accordion-{uid}", "typeAccordion": "default", "singleExpansion": false, "expandedItems": [] };
-var items = { "id": "ac-accordion-item", "title": "Accordion Item", "fields": [{ "name": "title", "component": "text" }, { "name": "content", "component": "richtext" }], "into": ":items", "order": ":itemsOrder", "key": "item_{index}", "instrument": { "item": ".cmp-accordion__item", "fields": { "title": ".cmp-accordion__title", "content": ".cmp-text" } }, "template": { "id": "text-{index}", "cq:panelTitle": "{title}", "text": "{content}", "richText": true } };
+var fromClasses = { "type-sample": { "typeAccordion": "sample" }, "single-expansion": { "singleExpansion": true } };
+var items = { "id": "ac-accordion-item", "title": "Accordion Item", "fields": [{ "name": "title", "component": "text", "valueType": "string" }, { "name": "content", "component": "richtext", "valueType": "string" }, { "name": "expanded", "component": "boolean", "valueType": "boolean" }], "into": ":items", "order": ":itemsOrder", "key": "item_{index}", "collect": { "expanded": "expandedItems" }, "instrument": { "item": ".cmp-accordion__item", "fields": { "title": ".cmp-accordion__title", "content": ".cmp-text" } }, "template": { "id": "text-{index}", "cq:panelTitle": "{title}", "text": "{content}", "richText": true, ":itemsOrder": ["text"], ":items": { "text": { "id": "text-{index}", "text": "{content}", "richText": true } }, "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12", "columnClassNames": { "text": "aem-GridColumn aem-GridColumn--default--12" } } };
 function decorate(block) {
   const { props: fieldProps, classes } = readFields(block, fields);
-  const props = { ...readDefaults(defaults), ...fieldProps, ...items ? readItems(block, items) : {} };
+  const props = { ...readDefaults(defaults), ...readClasses(block, fromClasses), ...fieldProps, ...items ? readItems(block, items) : {} };
   const instrumentation2 = items ? snapshotInstrumentation(block) : null;
   const node = h(ACAccordion, props);
   const root = node.nodeType === 11 ? node.firstElementChild : node;
@@ -563,7 +587,7 @@ function decorate(block) {
   block.replaceChildren(node);
   if (items)
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
-  runControllers(block, [{ Controller: AccordionController, key: "AccordionController", scope: "block", options: void 0 }]);
+  runControllers(block, [{ Controller: AccordionController, key: "AccordionController", scope: "block", storybookMode: true, optionsFromProps: ["singleExpansion"], options: void 0 }], props);
 }
 export {
   decorate

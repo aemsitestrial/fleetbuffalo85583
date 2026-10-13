@@ -165,6 +165,28 @@
     ]
   },
   {
+    "id": "ac-accordion",
+    "fields": [
+      {
+        "component": "multiselect",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Options",
+        "value": "",
+        "options": [
+          {
+            "name": "Sample layout (typeAccordion: sample)",
+            "value": "type-sample"
+          },
+          {
+            "name": "Single expansion (one panel open at a time)",
+            "value": "single-expansion"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "ac-accordion-item",
     "fields": [
       {
@@ -179,6 +201,13 @@
         "valueType": "string",
         "name": "content",
         "label": "Content"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "expanded",
+        "label": "Open by default",
+        "value": false
       }
     ]
   },
