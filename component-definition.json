@@ -131,15 +131,48 @@
           }
         },
         {
-          "title": "Dekker News Item",
-          "id": "dekker-block-news-item",
+          "title": "Dekker News Block: Title",
+          "id": "dekker-block-news-title",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "Dekker News Item",
-                  "model": "dekker-block-news-item"
+                  "name": "Title",
+                  "model": "dekker-block-news-title",
+                  "itemType": "title"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Dekker News Block: Button",
+          "id": "dekker-block-news-button",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Button",
+                  "model": "dekker-block-news-button",
+                  "itemType": "button"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Dekker News Block: News Card",
+          "id": "dekker-block-news-news-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "News Card",
+                  "model": "dekker-block-news-news-card",
+                  "itemType": "news-card"
                 }
               }
             }
@@ -162,15 +195,48 @@
           }
         },
         {
-          "title": "Dekker Product Item",
-          "id": "dekker-block-products-item",
+          "title": "Dekker Products Block: Title",
+          "id": "dekker-block-products-title",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "Dekker Product Item",
-                  "model": "dekker-block-products-item"
+                  "name": "Title",
+                  "model": "dekker-block-products-title",
+                  "itemType": "title"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Dekker Products Block: Text",
+          "id": "dekker-block-products-text",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Text",
+                  "model": "dekker-block-products-text",
+                  "itemType": "text"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Dekker Products Block: Product Card",
+          "id": "dekker-block-products-product-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Product Card",
+                  "model": "dekker-block-products-product-card",
+                  "itemType": "product-card"
                 }
               }
             }
@@ -192,15 +258,16 @@
           }
         },
         {
-          "title": "Dekker News Teaser Item",
-          "id": "dekker-block-teaser-news-item",
+          "title": "Dekker News Teaser Block: News Teaser",
+          "id": "dekker-block-teaser-news-teaser-news",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "Dekker News Teaser Item",
-                  "model": "dekker-block-teaser-news-item"
+                  "name": "News Teaser",
+                  "model": "dekker-block-teaser-news-teaser-news",
+                  "itemType": "teaser-news"
                 }
               }
             }

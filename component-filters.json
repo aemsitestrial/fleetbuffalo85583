@@ -92,19 +92,23 @@
   {
     "id": "dekker-block-news",
     "components": [
-      "dekker-block-news-item"
+      "dekker-block-news-title",
+      "dekker-block-news-button",
+      "dekker-block-news-news-card"
     ]
   },
   {
     "id": "dekker-block-products",
     "components": [
-      "dekker-block-products-item"
+      "dekker-block-products-title",
+      "dekker-block-products-text",
+      "dekker-block-products-product-card"
     ]
   },
   {
     "id": "dekker-block-teaser-news",
     "components": [
-      "dekker-block-teaser-news-item"
+      "dekker-block-teaser-news-teaser-news"
     ]
   },
   {

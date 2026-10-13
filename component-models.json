@@ -827,18 +827,6 @@
     "id": "dekker-block-news",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "heading",
-        "label": "Heading"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "linkText",
-        "label": "Link button text"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "background",
@@ -867,8 +855,226 @@
     ]
   },
   {
-    "id": "dekker-block-news-item",
+    "id": "dekker-block-news-title",
     "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "title",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "Title",
+            "value": "title"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Title",
+        "required": true
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "type",
+        "label": "Heading level",
+        "value": "h2",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "highlight",
+        "label": "Highlight",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Highlight 1",
+            "value": "title--highlight-1"
+          },
+          {
+            "name": "Highlight 2",
+            "value": "title--highlight-2"
+          },
+          {
+            "name": "Highlight 3",
+            "value": "title--highlight-3"
+          }
+        ],
+        "description": "Choices from ds-eds-assets/js/options/title.js (titleHighlight)."
+      }
+    ]
+  },
+  {
+    "id": "dekker-block-news-button",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "button",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "Button",
+            "value": "button"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "required": true
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Link"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "target",
+        "label": "Open in",
+        "value": "_self",
+        "options": [
+          {
+            "name": "Same tab",
+            "value": "_self"
+          },
+          {
+            "name": "New tab",
+            "value": "_blank"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "type",
+        "label": "Type",
+        "value": "primary",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tetriary"
+          }
+        ],
+        "description": "Choices from ds-eds-assets/js/options/button.js (buttonType)."
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "size",
+        "label": "Size",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Medium",
+            "value": "cmp-button--md"
+          },
+          {
+            "name": "Large",
+            "value": "cmp-button--lg"
+          }
+        ],
+        "description": "Choices from ds-eds-assets/js/options/button.js (buttonSize)."
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "fontWeight",
+        "label": "Font weight",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Medium",
+            "value": "cmp-button--medium"
+          },
+          {
+            "name": "Semibold",
+            "value": "cmp-button--semibold"
+          },
+          {
+            "name": "Bold",
+            "value": "cmp-button--bold"
+          }
+        ],
+        "description": "Choices from ds-eds-assets/js/options/button.js (buttonFontWeight)."
+      }
+    ]
+  },
+  {
+    "id": "dekker-block-news-news-card",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "news-card",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "News Card",
+            "value": "news-card"
+          }
+        ]
+      },
       {
         "component": "reference",
         "valueType": "string",
@@ -950,18 +1156,6 @@
     "id": "dekker-block-products",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "heading",
-        "label": "Heading"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "text",
-        "label": "Text"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "background",
@@ -990,8 +1184,170 @@
     ]
   },
   {
-    "id": "dekker-block-products-item",
+    "id": "dekker-block-products-title",
     "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "title",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "Title",
+            "value": "title"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Title",
+        "required": true
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "type",
+        "label": "Heading level",
+        "value": "h2",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "highlight",
+        "label": "Highlight",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Highlight 1",
+            "value": "title--highlight-1"
+          },
+          {
+            "name": "Highlight 2",
+            "value": "title--highlight-2"
+          },
+          {
+            "name": "Highlight 3",
+            "value": "title--highlight-3"
+          }
+        ],
+        "description": "Choices from ds-eds-assets/js/options/title.js (titleHighlight)."
+      }
+    ]
+  },
+  {
+    "id": "dekker-block-products-text",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "text",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "Text",
+            "value": "text"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "variant",
+        "label": "Text style",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Pretitle",
+            "value": "ds-brand-pretitle"
+          },
+          {
+            "name": "Preamble",
+            "value": "ds-brand-preamble"
+          },
+          {
+            "name": "Paragraph",
+            "value": "ds-brand-paragraph"
+          },
+          {
+            "name": "Paragraph large",
+            "value": "ds-brand-paragraph--large"
+          },
+          {
+            "name": "Paragraph small",
+            "value": "ds-brand-paragraph--small"
+          },
+          {
+            "name": "Quote",
+            "value": "ds-brand-quote"
+          }
+        ],
+        "description": "Choices from ds-eds-assets/js/options/text.js (textVariant)."
+      }
+    ]
+  },
+  {
+    "id": "dekker-block-products-product-card",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "product-card",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "Product Card",
+            "value": "product-card"
+          }
+        ]
+      },
       {
         "component": "reference",
         "valueType": "string",
@@ -1062,8 +1418,22 @@
     ]
   },
   {
-    "id": "dekker-block-teaser-news-item",
+    "id": "dekker-block-teaser-news-teaser-news",
     "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "teaser-news",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "News Teaser",
+            "value": "teaser-news"
+          }
+        ]
+      },
       {
         "component": "reference",
         "valueType": "string",
