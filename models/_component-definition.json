@@ -34,74 +34,11 @@
         {
           "...": "../blocks/ac-card/_*.json#/definitions"
         },
-        {
-          "...": "../blocks/dekker-title/_*.json#/definitions"
+        { 
+          "...": "../blocks/ac-button/_*.json#/definitions"
         },
-        {
-          "...": "../blocks/dekker-block-news/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-block-products/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-block-teaser-news/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-button/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-download/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-header/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-hero/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-hero-carousel/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-key-specs/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-navigation/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-news-card/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-product-card/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-product-teaser/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-product-teaser-carousel/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-search/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-table/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-tabs/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-teaser-card/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-teaser-link/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-teaser-news/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-text/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/dekker-top-bar/_*.json#/definitions"
+        { 
+          "...": "../blocks/ac-download/_*.json#/definitions"
         },
         {
           "...": "../blocks/cards/_*.json#/definitions"
