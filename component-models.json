@@ -690,6 +690,46 @@
     ]
   },
   {
+    "id": "ac-horizontal-tabs",
+    "fields": [
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useResponsiveSelect",
+        "label": "Use responsive select"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "useResponsiveType",
+        "label": "Use responsive type",
+        "value": "window",
+        "options": [
+          {
+            "name": "Window",
+            "value": "window"
+          },
+          {
+            "name": "Container",
+            "value": "container"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "singleExpansion",
+        "label": "Single expansion"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useSegmentedButtons",
+        "label": "Use segmented buttons"
+      }
+    ]
+  },
+  {
     "id": "article",
     "fields": [
       {
