@@ -10,8 +10,7 @@
             "template": {
               "name": "Dekker Products Block",
               "filter": "dekker-block-products",
-              "model": "dekker-block-products",
-              "key-value": true
+              "model": "dekker-block-products"
             }
           }
         }

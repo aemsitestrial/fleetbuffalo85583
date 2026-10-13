@@ -3,7 +3,7 @@ import {
   SplideCarouselController, responsiveSlidesThree,
 } from '../../ds-eds-assets/js/vendor/splide-carousel-controller.js';
 import {
-  blockRows, readBlockFields, readItemFields, text, teaserProps, finishTeaser, TEASER_FIELDS,
+  blockRows, readContainerFields, readItemFields, text, teaserProps, finishTeaser, TEASER_FIELDS,
   moveInstrumentation, loadDekkerCss, render, replaceContent,
 } from '../../ds-eds-tools/dekker-block.js';
 
@@ -26,7 +26,7 @@ const HIGHLIGHT_PREFIX = 'ds-brand-news-card--highlight-';
 
 export default function decorate(block) {
   loadDekkerCss('dekker-block-news');
-  const { cells, rest } = readBlockFields(blockRows(block, { container: true }), ['heading', 'linkText', 'background']);
+  const { cells, rest } = readContainerFields(blockRows(block, { container: true }), ['heading', 'linkText', 'background']);
   const cards = rest.map((item) => {
     const itemCells = readItemFields(item, [...TEASER_FIELDS, 'highlight']);
     // BlockNews sets each card's className itself, so the highlight goes in as the card's prop.

@@ -10,8 +10,7 @@
             "template": {
               "name": "Dekker Hero Carousel",
               "filter": "dekker-hero-carousel",
-              "model": "dekker-hero-carousel",
-              "key-value": true
+              "model": "dekker-hero-carousel"
             }
           }
         }

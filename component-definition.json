@@ -124,8 +124,7 @@
                 "template": {
                   "name": "Dekker News Block",
                   "filter": "dekker-block-news",
-                  "model": "dekker-block-news",
-                  "key-value": true
+                  "model": "dekker-block-news"
                 }
               }
             }
@@ -156,8 +155,7 @@
                 "template": {
                   "name": "Dekker Products Block",
                   "filter": "dekker-block-products",
-                  "model": "dekker-block-products",
-                  "key-value": true
+                  "model": "dekker-block-products"
                 }
               }
             }
@@ -282,8 +280,7 @@
                 "template": {
                   "name": "Dekker Hero Carousel",
                   "filter": "dekker-hero-carousel",
-                  "model": "dekker-hero-carousel",
-                  "key-value": true
+                  "model": "dekker-hero-carousel"
                 }
               }
             }
@@ -394,8 +391,7 @@
                 "template": {
                   "name": "Dekker Product Teaser Carousel",
                   "filter": "dekker-product-teaser-carousel",
-                  "model": "dekker-product-teaser-carousel",
-                  "key-value": true
+                  "model": "dekker-product-teaser-carousel"
                 }
               }
             }

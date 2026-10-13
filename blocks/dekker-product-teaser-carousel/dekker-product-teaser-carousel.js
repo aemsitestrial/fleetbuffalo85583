@@ -3,7 +3,7 @@ import {
   Carousel as CarouselController,
 } from '../../ds-eds-assets/js/vendor/carousel-controller.js';
 import {
-  blockRows, readBlockFields, readItemFields, text, classes, teaserProps, finishTeaser,
+  blockRows, readContainerFields, readItemFields, text, classes, teaserProps, finishTeaser,
   TEASER_FIELDS,
   moveInstrumentation, loadDekkerCss, render, replaceContent, uniqueId,
 } from '../../ds-eds-tools/dekker-block.js';
@@ -26,7 +26,7 @@ const controllers = new WeakMap();
 
 export default function decorate(block) {
   loadDekkerCss('dekker-product-teaser-carousel');
-  const { cells, rest } = readBlockFields(blockRows(block, { container: true }), ['autoplay', 'delay', 'highlight']);
+  const { cells, rest } = readContainerFields(blockRows(block, { container: true }), ['autoplay', 'delay', 'highlight']);
   const slides = rest.map((item) => {
     const itemCells = readItemFields(item, TEASER_FIELDS);
     return { item, cells: itemCells, props: teaserProps(itemCells, 'slide') };

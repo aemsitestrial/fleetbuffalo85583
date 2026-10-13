@@ -10,8 +10,7 @@
             "template": {
               "name": "Dekker Product Teaser Carousel",
               "filter": "dekker-product-teaser-carousel",
-              "model": "dekker-product-teaser-carousel",
-              "key-value": true
+              "model": "dekker-product-teaser-carousel"
             }
           }
         }

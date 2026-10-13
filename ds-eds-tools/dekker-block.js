@@ -11,10 +11,11 @@ import uniqueId from './unique-id.js';
  * Editor instrumentation onto the rendered markup, and swap the block's content.
  *
  * Authored content:
- * - A block's own fields use "key-value": true, so each row is
+ * - A block without items uses "key-value": true, so each row is
  *   <div><div>fieldName</div><div>value</div></div>, and an empty field has no row.
- * - Items of a container block (tabs, carousels, news and product blocks) are one row each, with
- *   one child per field in the order of the item model's fields.
+ * - A container block (tabs, carousels, news and product blocks) is not key-value: its own fields
+ *   come first, one row per field in model order, then its items, one row each with one child per
+ *   field in the order of the item model's fields (see readContainerFields).
  */
 
 export { uniqueId, moveInstrumentation, patchPicture };
@@ -67,6 +68,27 @@ export function readBlockFields(rows, names) {
     else rest.push(row);
   });
   return { cells, rest };
+}
+
+const isItemRow = (row) => row.hasAttribute('data-aue-resource') || row.children.length > 1;
+
+/**
+ * A container block's own fields and its items: { cells: { name: valueCell }, rest: [items] }.
+ *
+ * A container (a template with a "filter") cannot be "key-value": Universal Editor then offers no
+ * way to add items. Its own fields come first instead, one row per field in model order, each row
+ * holding one cell; every item after them is a row with one child per item field (and, in the
+ * editor, its own data-aue-resource). Key-value rows are still read, for content authored before.
+ */
+export function readContainerFields(rows, names) {
+  if (rows.some((row) => namedRow(row, names))) return readBlockFields(rows, names);
+  const cells = {};
+  let index = 0;
+  while (index < rows.length && index < names.length && !isItemRow(rows[index])) {
+    cells[names[index]] = rows[index].firstElementChild || rows[index];
+    index += 1;
+  }
+  return { cells, rest: rows.slice(index) };
 }
 
 /** An item's fields, one child per field in model order: { name: cell }. */

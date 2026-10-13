@@ -10,8 +10,7 @@
             "template": {
               "name": "Dekker News Block",
               "filter": "dekker-block-news",
-              "model": "dekker-block-news",
-              "key-value": true
+              "model": "dekker-block-news"
             }
           }
         }

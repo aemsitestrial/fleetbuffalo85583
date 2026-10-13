@@ -3,7 +3,8 @@ import {
   SplideCarouselController, responsiveSlidesThree,
 } from '../../ds-eds-assets/js/vendor/splide-carousel-controller.js';
 import {
-  blockRows, readBlockFields, readItemFields, text, html, teaserProps, finishTeaser, TEASER_FIELDS,
+  blockRows, readContainerFields, readItemFields, text, html, teaserProps, finishTeaser,
+  TEASER_FIELDS,
   moveInstrumentation, loadDekkerCss, render, replaceContent,
 } from '../../ds-eds-tools/dekker-block.js';
 
@@ -23,7 +24,7 @@ import {
 
 export default function decorate(block) {
   loadDekkerCss('dekker-block-products');
-  const { cells, rest } = readBlockFields(blockRows(block, { container: true }), ['heading', 'text', 'background']);
+  const { cells, rest } = readContainerFields(blockRows(block, { container: true }), ['heading', 'text', 'background']);
   const cards = rest.map((item) => {
     const itemCells = readItemFields(item, [...TEASER_FIELDS, 'shadow']);
     // BlockProducts sets each card's className itself, so the shadow goes in as the card's prop.
