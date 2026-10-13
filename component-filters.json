@@ -2,7 +2,8 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section",
+      "ac-tab"
     ]
   },
   {
@@ -52,6 +53,13 @@
     "id": "ac-horizontal-tabs",
     "components": [
       "ac-horizontal-tabs-item"
+    ]
+  },
+  {
+    "id": "main",
+    "components": [
+      "section",
+      "ac-tab"
     ]
   },
   {

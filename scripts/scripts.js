@@ -179,6 +179,62 @@ function notifyUI(event) {
 }
 
 /**
+ * Groups consecutive "Tab" sections (data-tab-title) into a single ac-tabs block.
+ * The block reads its tab titles from the rows and adopts the sections
+ * (matched by data-eds-group) as tab panels.
+ * Must run after decorateSections and before decorateBlocks.
+ * @param {Element} main The main element
+ */
+function buildTabsBlocks(main) {
+  const sections = [...main.querySelectorAll(':scope > div.section[data-tab-title]')];
+  let group = [];
+  let groupIndex = 0;
+
+  const flush = () => {
+    if (!group.length) return;
+    const id = `tabs-group-${groupIndex}`;
+    groupIndex += 1;
+
+    const block = document.createElement('div');
+    block.className = 'ac-tabs';
+    block.dataset.edsGroup = id;
+    // tab options are taken from the first tab
+    (group[0].dataset.tabsOptions || '')
+      .split(',')
+      .map((option) => option.trim())
+      .filter(Boolean)
+      .forEach((option) => block.classList.add(option));
+
+    group.forEach((section) => {
+      const row = document.createElement('div');
+      const cell = document.createElement('div');
+      cell.textContent = section.dataset.tabTitle;
+      row.append(cell);
+      block.append(row);
+      section.dataset.edsGroup = id;
+    });
+
+    const wrapper = document.createElement('div');
+    wrapper.append(block);
+    const host = document.createElement('div');
+    host.className = 'section';
+    host.dataset.sectionStatus = 'initialized';
+    host.style.display = 'none';
+    host.append(wrapper);
+    group[0].before(host);
+    group = [];
+  };
+
+  sections.forEach((section) => {
+    const prev = group[group.length - 1];
+    // consecutive = no other section between the tabs
+    if (prev && prev.nextElementSibling !== section) flush();
+    group.push(section);
+  });
+  flush();
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -189,6 +245,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  buildTabsBlocks(main);
   decorateBlocks(main);
 }
 

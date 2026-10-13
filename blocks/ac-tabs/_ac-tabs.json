@@ -1,0 +1,68 @@
+{
+  "definitions": [
+    {
+      "title": "Tab",
+      "id": "ac-tab",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "name": "Tab",
+              "model": "ac-tab",
+              "filter": "section"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-tab",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "tab-title",
+          "label": "Tab title",
+          "required": true
+        },
+        {
+          "component": "multiselect",
+          "valueType": "string",
+          "name": "tabs-options",
+          "label": "Tabs options (applied from the first tab)",
+          "value": "",
+          "options": [
+            {
+              "name": "Theme: secondary",
+              "value": "theme-secondary"
+            },
+            {
+              "name": "Responsive select on mobile",
+              "value": "responsive-select"
+            },
+            {
+              "name": "Container query (responsive by block width)",
+              "value": "container-query"
+            },
+            {
+              "name": "Segmented buttons",
+              "value": "segmented-buttons"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "main",
+      "components": [
+        "section",
+        "ac-tab"
+      ]
+    }
+  ]
+}

@@ -734,6 +734,43 @@
     ]
   },
   {
+    "id": "ac-tab",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tab-title",
+        "label": "Tab title",
+        "required": true
+      },
+      {
+        "component": "multiselect",
+        "valueType": "string",
+        "name": "tabs-options",
+        "label": "Tabs options (applied from the first tab)",
+        "value": "",
+        "options": [
+          {
+            "name": "Theme: secondary",
+            "value": "theme-secondary"
+          },
+          {
+            "name": "Responsive select on mobile",
+            "value": "responsive-select"
+          },
+          {
+            "name": "Container query (responsive by block width)",
+            "value": "container-query"
+          },
+          {
+            "name": "Segmented buttons",
+            "value": "segmented-buttons"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "article",
     "fields": [
       {
