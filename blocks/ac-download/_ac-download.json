@@ -1,0 +1,143 @@
+{
+  "definitions": [
+    {
+      "title": "AC Download",
+      "id": "ac-download",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "AC Download",
+              "model": "ac-download",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-download",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText",
+          "label": "Action text",
+          "required": true
+        },
+        {
+          "valueType": "string",
+          "name": "url",
+          "label": "File",
+          "component": "aem-content"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "filename",
+          "label": "Filename",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "format",
+          "label": "Format",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "size",
+          "label": "Size",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "extension",
+          "label": "Extension",
+          "required": true
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "layoutAlignContent",
+          "label": "Layout align content",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "name": "Right",
+              "value": "right"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "themeColor",
+          "label": "Theme color",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            },
+            {
+              "name": "Tertiary",
+              "value": "tertiary"
+            },
+            {
+              "name": "Quaternary",
+              "value": "quaternary"
+            }
+          ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "modifierBgTransparent",
+          "label": "Modifier bg transparent"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "isCompact",
+          "label": "Is compact"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

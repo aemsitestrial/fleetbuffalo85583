@@ -1,0 +1,133 @@
+{
+  "definitions": [
+    {
+      "title": "AC Button",
+      "id": "ac-button",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "AC Button",
+              "model": "ac-button",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-button",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "text",
+          "label": "Text",
+          "required": true
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "linkUrl",
+          "label": "Link"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "target",
+          "label": "Open in",
+          "value": "_self",
+          "options": [
+            {
+              "name": "New tab",
+              "value": "_blank"
+            },
+            {
+              "name": "Same tab",
+              "value": "_self"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "themeColor",
+          "label": "Theme color",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Primary positive",
+              "value": "primary-positive"
+            },
+            {
+              "name": "Primary negative",
+              "value": "primary-negative"
+            },
+            {
+              "name": "Secondary positive",
+              "value": "secondary-positive"
+            },
+            {
+              "name": "Secondary negative",
+              "value": "secondary-negative"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "modifierVariant",
+          "label": "Modifier variant",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Solid",
+              "value": "solid"
+            },
+            {
+              "name": "Outline",
+              "value": "outline"
+            },
+            {
+              "name": "Ghost",
+              "value": "ghost"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "modifierIconPosition",
+          "label": "Modifier icon position",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Leading",
+              "value": "leading"
+            },
+            {
+              "name": "Trailing",
+              "value": "trailing"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

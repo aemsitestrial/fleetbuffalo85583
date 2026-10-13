@@ -165,6 +165,116 @@
     ]
   },
   {
+    "id": "ac-button",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "required": true
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Link"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "target",
+        "label": "Open in",
+        "value": "_self",
+        "options": [
+          {
+            "name": "New tab",
+            "value": "_blank"
+          },
+          {
+            "name": "Same tab",
+            "value": "_self"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary positive",
+            "value": "primary-positive"
+          },
+          {
+            "name": "Primary negative",
+            "value": "primary-negative"
+          },
+          {
+            "name": "Secondary positive",
+            "value": "secondary-positive"
+          },
+          {
+            "name": "Secondary negative",
+            "value": "secondary-negative"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierVariant",
+        "label": "Modifier variant",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Solid",
+            "value": "solid"
+          },
+          {
+            "name": "Outline",
+            "value": "outline"
+          },
+          {
+            "name": "Ghost",
+            "value": "ghost"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierIconPosition",
+        "label": "Modifier icon position",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Leading",
+            "value": "leading"
+          },
+          {
+            "name": "Trailing",
+            "value": "trailing"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "ac-card",
     "fields": [
       {
@@ -413,6 +523,126 @@
     ]
   },
   {
+    "id": "ac-download",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text",
+        "required": true
+      },
+      {
+        "valueType": "string",
+        "name": "url",
+        "label": "File",
+        "component": "aem-content"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "filename",
+        "label": "Filename",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "format",
+        "label": "Format",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "size",
+        "label": "Size",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "extension",
+        "label": "Extension",
+        "required": true
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "layoutAlignContent",
+        "label": "Layout align content",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Modifier bg transparent"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "isCompact",
+        "label": "Is compact"
+      }
+    ]
+  },
+  {
     "id": "article",
     "fields": [
       {
@@ -489,115 +719,6 @@
         "name": "title",
         "label": "Account Header",
         "value": "My Account"
-      }
-    ]
-  },
-  {
-    "id": "commerce-addresses",
-    "fields": [
-      {
-        "component": "boolean",
-        "name": "minified-view",
-        "label": "Minified View",
-        "value": false
-      }
-    ]
-  },
-  {
-    "id": "commerce-cart",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "start-shopping-url",
-        "label": "Start Shopping URL",
-        "description": "Link to the start shopping page"
-      },
-      {
-        "component": "aem-content",
-        "name": "checkout-url",
-        "label": "Checkout URL",
-        "description": "Link to Checkout page"
-      },
-      {
-        "component": "boolean",
-        "name": "hide-heading",
-        "label": "Hide Heading",
-        "description": "Hide the heading of the cart"
-      },
-      {
-        "component": "boolean",
-        "name": "hide-attributes",
-        "label": "Hide Attributes",
-        "description": "Hide the attributes of the cart"
-      },
-      {
-        "component": "boolean",
-        "name": "enable-item-quantity-update",
-        "label": "Enable Item Quantity Update",
-        "description": "Enable the ability to update the quantity of items in the cart"
-      },
-      {
-        "component": "boolean",
-        "name": "enable-item-remove",
-        "label": "Enable Item Remove",
-        "description": "Enable the ability to remove items from the cart"
-      },
-      {
-        "component": "boolean",
-        "name": "enable-estimate-shipping",
-        "label": "Enable Estimate Shipping",
-        "description": "Enable the ability to estimate shipping costs"
-      },
-      {
-        "component": "number",
-        "name": "max-items",
-        "label": "Max Items",
-        "description": "Maximum number of items to display in the cart"
-      }
-    ]
-  },
-  {
-    "id": "commerce-mini-cart",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "start-shopping-url",
-        "label": "Start Shopping URL",
-        "description": "Link to the start shopping page"
-      },
-      {
-        "component": "aem-content",
-        "name": "cart-url",
-        "label": "Cart URL",
-        "description": "Link to full shopping Cart"
-      },
-      {
-        "component": "aem-content",
-        "name": "checkout-url",
-        "label": "Checkout URL",
-        "description": "Link to Checkout page"
-      }
-    ]
-  },
-  {
-    "id": "commerce-orders-list",
-    "fields": [
-      {
-        "component": "boolean",
-        "name": "minified-view",
-        "label": "Minified View",
-        "value": false
-      }
-    ]
-  },
-  {
-    "id": "commerce-returns-list",
-    "fields": [
-      {
-        "component": "boolean",
-        "name": "minified-view",
-        "label": "Minified View",
-        "value": false
       }
     ]
   },
@@ -820,2047 +941,6 @@
             "value": "teaser-description-line-clamp-12"
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "dekker-block-news",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "background",
-        "label": "Background",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Dark grey",
-            "value": "ds-block-news--dark-grey"
-          },
-          {
-            "name": "Very light grey",
-            "value": "ds-block-news--very-light-grey"
-          },
-          {
-            "name": "Warm grey",
-            "value": "ds-block-news--worm-grey"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/block-news.js (blockNewsBackground)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-block-news-title",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "title",
-        "description": "Set when the item is added; tells the block which component this item is.",
-        "options": [
-          {
-            "name": "Title",
-            "value": "title"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "text",
-        "label": "Title",
-        "required": true
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "type",
-        "label": "Heading level",
-        "value": "h2",
-        "options": [
-          {
-            "name": "H1",
-            "value": "h1"
-          },
-          {
-            "name": "H2",
-            "value": "h2"
-          },
-          {
-            "name": "H3",
-            "value": "h3"
-          },
-          {
-            "name": "H4",
-            "value": "h4"
-          },
-          {
-            "name": "H5",
-            "value": "h5"
-          },
-          {
-            "name": "H6",
-            "value": "h6"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "highlight",
-        "label": "Highlight",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Highlight 1",
-            "value": "title--highlight-1"
-          },
-          {
-            "name": "Highlight 2",
-            "value": "title--highlight-2"
-          },
-          {
-            "name": "Highlight 3",
-            "value": "title--highlight-3"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/title.js (titleHighlight)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-block-news-button",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "button",
-        "description": "Set when the item is added; tells the block which component this item is.",
-        "options": [
-          {
-            "name": "Button",
-            "value": "button"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "text",
-        "label": "Text",
-        "required": true
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "target",
-        "label": "Open in",
-        "value": "_self",
-        "options": [
-          {
-            "name": "Same tab",
-            "value": "_self"
-          },
-          {
-            "name": "New tab",
-            "value": "_blank"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "type",
-        "label": "Type",
-        "value": "primary",
-        "options": [
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "Tertiary",
-            "value": "tetriary"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/button.js (buttonType)."
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "size",
-        "label": "Size",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Medium",
-            "value": "cmp-button--md"
-          },
-          {
-            "name": "Large",
-            "value": "cmp-button--lg"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/button.js (buttonSize)."
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "fontWeight",
-        "label": "Font weight",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Medium",
-            "value": "cmp-button--medium"
-          },
-          {
-            "name": "Semibold",
-            "value": "cmp-button--semibold"
-          },
-          {
-            "name": "Bold",
-            "value": "cmp-button--bold"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/button.js (buttonFontWeight)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-block-news-news-card",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "news-card",
-        "description": "Set when the item is added; tells the block which component this item is.",
-        "options": [
-          {
-            "name": "News Card",
-            "value": "news-card"
-          }
-        ]
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "highlight",
-        "label": "Highlight",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Gold",
-            "value": "ds-brand-news-card--highlight-gold"
-          },
-          {
-            "name": "Grey",
-            "value": "ds-brand-news-card--highlight-grey"
-          },
-          {
-            "name": "Yellow",
-            "value": "ds-brand-news-card--highlight-yellow"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/news-card.js (newsCardHighlight)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-block-products",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "background",
-        "label": "Background",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Dark grey",
-            "value": "ds-block-products--dark-grey"
-          },
-          {
-            "name": "Very light grey",
-            "value": "ds-block-products--very-light-grey"
-          },
-          {
-            "name": "Warm grey",
-            "value": "ds-block-products--worm-grey"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/block-products.js (blockProductsBackground)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-block-products-title",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "title",
-        "description": "Set when the item is added; tells the block which component this item is.",
-        "options": [
-          {
-            "name": "Title",
-            "value": "title"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "text",
-        "label": "Title",
-        "required": true
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "type",
-        "label": "Heading level",
-        "value": "h2",
-        "options": [
-          {
-            "name": "H1",
-            "value": "h1"
-          },
-          {
-            "name": "H2",
-            "value": "h2"
-          },
-          {
-            "name": "H3",
-            "value": "h3"
-          },
-          {
-            "name": "H4",
-            "value": "h4"
-          },
-          {
-            "name": "H5",
-            "value": "h5"
-          },
-          {
-            "name": "H6",
-            "value": "h6"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "highlight",
-        "label": "Highlight",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Highlight 1",
-            "value": "title--highlight-1"
-          },
-          {
-            "name": "Highlight 2",
-            "value": "title--highlight-2"
-          },
-          {
-            "name": "Highlight 3",
-            "value": "title--highlight-3"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/title.js (titleHighlight)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-block-products-text",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "text",
-        "description": "Set when the item is added; tells the block which component this item is.",
-        "options": [
-          {
-            "name": "Text",
-            "value": "text"
-          }
-        ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "text",
-        "label": "Text"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "variant",
-        "label": "Text style",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Pretitle",
-            "value": "ds-brand-pretitle"
-          },
-          {
-            "name": "Preamble",
-            "value": "ds-brand-preamble"
-          },
-          {
-            "name": "Paragraph",
-            "value": "ds-brand-paragraph"
-          },
-          {
-            "name": "Paragraph large",
-            "value": "ds-brand-paragraph--large"
-          },
-          {
-            "name": "Paragraph small",
-            "value": "ds-brand-paragraph--small"
-          },
-          {
-            "name": "Quote",
-            "value": "ds-brand-quote"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/text.js (textVariant)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-block-products-product-card",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "product-card",
-        "description": "Set when the item is added; tells the block which component this item is.",
-        "options": [
-          {
-            "name": "Product Card",
-            "value": "product-card"
-          }
-        ]
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "shadow",
-        "label": "Shadow",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Shadow",
-            "value": "ds-brand-product-card--shadow"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/product-card.js (productCardShadow)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-block-teaser-news-teaser-news",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "teaser-news",
-        "description": "Set when the item is added; tells the block which component this item is.",
-        "options": [
-          {
-            "name": "News Teaser",
-            "value": "teaser-news"
-          }
-        ]
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "column",
-        "label": "Width",
-        "value": "aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--small-screen--12 aem-GridColumn--extra-small-screen--12",
-        "options": [
-          {
-            "name": "12/12",
-            "value": "aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--small-screen--12 aem-GridColumn--extra-small-screen--12"
-          },
-          {
-            "name": "6/12",
-            "value": "aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--small-screen--12 aem-GridColumn--extra-small-screen--12"
-          },
-          {
-            "name": "4/12",
-            "value": "aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--small-screen--12 aem-GridColumn--extra-small-screen--12"
-          },
-          {
-            "name": "3/12",
-            "value": "aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--small-screen--12 aem-GridColumn--extra-small-screen--12"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "themeColor",
-        "label": "Colour",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Gold",
-            "value": "ds-brand-teaser-news---gold"
-          },
-          {
-            "name": "Dark gray",
-            "value": "ds-brand-teaser-news---dark-gray"
-          },
-          {
-            "name": "Warm gray",
-            "value": "ds-brand-teaser-news--warm-gray"
-          },
-          {
-            "name": "Yellow",
-            "value": "ds-brand-teaser-news--yellow"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/teaser-news.js (teaserNewsColor)."
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "contentAlignment",
-        "label": "Content alignment",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Center",
-            "value": "content-center"
-          },
-          {
-            "name": "Right",
-            "value": "content-right"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/teaser-news.js (teaserNewsAlignment)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-button",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "text",
-        "label": "Text",
-        "required": true
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "target",
-        "label": "Open in",
-        "value": "_self",
-        "options": [
-          {
-            "name": "Same tab",
-            "value": "_self"
-          },
-          {
-            "name": "New tab",
-            "value": "_blank"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "type",
-        "label": "Type",
-        "value": "primary",
-        "options": [
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "Tertiary",
-            "value": "tetriary"
-          }
-        ],
-        "description": "some description"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "size",
-        "label": "Size",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Medium",
-            "value": "cmp-button--md"
-          },
-          {
-            "name": "Large",
-            "value": "cmp-button--lg"
-          }
-        ],
-        "description": "some description"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "fontWeight",
-        "label": "Font weight",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Medium",
-            "value": "cmp-button--medium"
-          },
-          {
-            "name": "Semibold",
-            "value": "cmp-button--semibold"
-          },
-          {
-            "name": "Bold",
-            "value": "cmp-button--bold"
-          }
-        ],
-        "description": "some description"
-      }
-    ]
-  },
-  {
-    "id": "dekker-download",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text",
-        "required": true
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "file",
-        "label": "File"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "filename",
-        "label": "File name"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "format",
-        "label": "Format (e.g. PDF)"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "size",
-        "label": "Size (e.g. 2 MB)"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      }
-    ]
-  },
-  {
-    "id": "dekker-header",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "logo",
-        "label": "Logo",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "logoAlt",
-        "label": "Logo alt text"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "logo2",
-        "label": "Second logo",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "logo2Alt",
-        "label": "Second logo alt text"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "topText",
-        "label": "Top bar text"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "mainNavigation",
-        "label": "Main navigation (a list)"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "menuNavigation",
-        "label": "Menu navigation (a list, nested lists for sub-items)"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "themeColor",
-        "label": "Colour",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Black",
-            "value": "ds-brand-header--black"
-          },
-          {
-            "name": "Gold",
-            "value": "ds-brand-header--gold"
-          },
-          {
-            "name": "Gray",
-            "value": "ds-brand-header--gray"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/header.js (headerTheme)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-hero-carousel",
-    "fields": [
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "autoplay",
-        "label": "Autoplay",
-        "value": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "delay",
-        "label": "Autoplay delay (ms)"
-      }
-    ]
-  },
-  {
-    "id": "dekker-hero-carousel-item",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action link"
-      }
-    ]
-  },
-  {
-    "id": "dekker-hero",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "backgroundImage",
-        "label": "Background image",
-        "multi": false
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "heroVariant",
-        "label": "Graphic",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Circular",
-            "value": "ds-brand-hero--circular"
-          },
-          {
-            "name": "Graphic",
-            "value": "ds-brand-hero--gfx"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/hero.js (heroVariant)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-key-specs",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title",
-        "required": true
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "text",
-        "label": "Text"
-      }
-    ]
-  },
-  {
-    "id": "dekker-navigation",
-    "fields": [
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "items",
-        "label": "Links (a list, nested lists for sub-items)"
-      }
-    ]
-  },
-  {
-    "id": "dekker-news-card",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "highlight",
-        "label": "Highlight",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Gold",
-            "value": "ds-brand-news-card--highlight-gold"
-          },
-          {
-            "name": "Grey",
-            "value": "ds-brand-news-card--highlight-grey"
-          },
-          {
-            "name": "Yellow",
-            "value": "ds-brand-news-card--highlight-yellow"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/news-card.js (newsCardHighlight)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-product-card",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "cardType",
-        "label": "Card type",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Extended",
-            "value": "ds-brand-product-card--extended"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/product-card.js (productCardType)."
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "shadow",
-        "label": "Shadow",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Shadow",
-            "value": "ds-brand-product-card--shadow"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/product-card.js (productCardShadow)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-product-teaser-carousel",
-    "fields": [
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "autoplay",
-        "label": "Autoplay",
-        "value": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "delay",
-        "label": "Autoplay delay (ms)"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "highlight",
-        "label": "Slide highlight",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Highlight 1",
-            "value": "ds-brand-product-teaser--hightlight-1"
-          },
-          {
-            "name": "Highlight 2",
-            "value": "ds-brand-product-teaser--hightlight-2"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/product-teaser.js (productTeaserHighlight)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-product-teaser-carousel-item",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action link"
-      }
-    ]
-  },
-  {
-    "id": "dekker-product-teaser",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "highlight",
-        "label": "Highlight",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Highlight 1",
-            "value": "ds-brand-product-teaser--hightlight-1"
-          },
-          {
-            "name": "Highlight 2",
-            "value": "ds-brand-product-teaser--hightlight-2"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/product-teaser.js (productTeaserHighlight)."
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "circular",
-        "label": "Circular image",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Circular",
-            "value": "ds-brand-product-teaser--circular"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/product-teaser.js (productTeaserCircular)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-search",
-    "fields": [
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "action",
-        "label": "Search page"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "placeholder",
-        "label": "Placeholder"
-      }
-    ]
-  },
-  {
-    "id": "dekker-table",
-    "fields": [
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "table",
-        "label": "Table"
-      }
-    ]
-  },
-  {
-    "id": "dekker-tabs-item",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Tab title",
-        "required": true
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "content",
-        "label": "Content"
-      }
-    ]
-  },
-  {
-    "id": "dekker-teaser-card",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "highlight",
-        "label": "Highlight",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Gold",
-            "value": "ds-brand-teaser-card--highlight-gold"
-          },
-          {
-            "name": "Grey",
-            "value": "ds-brand-teaser-card--highlight-grey"
-          },
-          {
-            "name": "Yellow",
-            "value": "ds-brand-teaser-card--highlight-yellow"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/teaser-card.js (teaserCardHighlight)."
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "layout",
-        "label": "Layout",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Compact",
-            "value": "ds-brand-teaser-card--compact"
-          },
-          {
-            "name": "Extended row",
-            "value": "ds-brand-teaser-card--extended-row"
-          },
-          {
-            "name": "Extended column",
-            "value": "ds-brand-teaser-card--extended-column"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/teaser-card.js (teaserCardLayout)."
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "shadow",
-        "label": "Shadow",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Shadow",
-            "value": "ds-brand-teaser-card--shadow"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/teaser-card.js (teaserCardShadow)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-teaser-link",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "highlight",
-        "label": "Highlight",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Gold",
-            "value": "ds-brand-teaser-link--highlight-gold"
-          },
-          {
-            "name": "Grey",
-            "value": "ds-brand-teaser-link--highlight-grey"
-          },
-          {
-            "name": "Yellow",
-            "value": "ds-brand-teaser-link--highlight-yellow"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/teaser-link.js (teaserLinkHighlight)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-teaser-news",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "themeColor",
-        "label": "Colour",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Gold",
-            "value": "ds-brand-teaser-news---gold"
-          },
-          {
-            "name": "Dark gray",
-            "value": "ds-brand-teaser-news---dark-gray"
-          },
-          {
-            "name": "Warm gray",
-            "value": "ds-brand-teaser-news--warm-gray"
-          },
-          {
-            "name": "Yellow",
-            "value": "ds-brand-teaser-news--yellow"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/teaser-news.js (teaserNewsColor)."
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "contentAlignment",
-        "label": "Content alignment",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Center",
-            "value": "content-center"
-          },
-          {
-            "name": "Right",
-            "value": "content-right"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/teaser-news.js (teaserNewsAlignment)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-text",
-    "fields": [
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "text",
-        "label": "Text"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "variant",
-        "label": "Text style",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Pretitle",
-            "value": "ds-brand-pretitle"
-          },
-          {
-            "name": "Preamble",
-            "value": "ds-brand-preamble"
-          },
-          {
-            "name": "Paragraph",
-            "value": "ds-brand-paragraph"
-          },
-          {
-            "name": "Paragraph large",
-            "value": "ds-brand-paragraph--large"
-          },
-          {
-            "name": "Paragraph small",
-            "value": "ds-brand-paragraph--small"
-          },
-          {
-            "name": "Quote",
-            "value": "ds-brand-quote"
-          }
-        ],
-        "description": "Choices from ds-eds-assets/js/options/text.js (textVariant)."
-      }
-    ]
-  },
-  {
-    "id": "dekker-title",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "text",
-        "label": "Title",
-        "required": true
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "type",
-        "label": "Heading level",
-        "value": "h2",
-        "options": [
-          {
-            "name": "H1",
-            "value": "h1"
-          },
-          {
-            "name": "H2",
-            "value": "h2"
-          },
-          {
-            "name": "H3",
-            "value": "h3"
-          },
-          {
-            "name": "H4",
-            "value": "h4"
-          },
-          {
-            "name": "H5",
-            "value": "h5"
-          },
-          {
-            "name": "H6",
-            "value": "h6"
-          }
-        ]
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "highlight",
-        "label": "Highlight",
-        "value": "",
-        "description": "Choices from ds-eds-assets/js/options/title.js (titleHighlight); keep the two in sync.",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Highlight 1",
-            "value": "title--highlight-1"
-          },
-          {
-            "name": "Highlight 2",
-            "value": "title--highlight-2"
-          },
-          {
-            "name": "Highlight 3",
-            "value": "title--highlight-3"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "dekker-top-bar",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "logo",
-        "label": "Logo",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "logoAlt",
-        "label": "Logo alt text"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "logo2",
-        "label": "Second logo",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "logo2Alt",
-        "label": "Second logo alt text"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "text",
-        "label": "Text"
       }
     ]
   },
