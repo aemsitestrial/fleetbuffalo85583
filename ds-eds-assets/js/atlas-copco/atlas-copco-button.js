@@ -66,32 +66,33 @@ function h(type, props, ...children) {
   append(el, children);
   return el;
 }
-function readBlockProps(block) {
-  const toCamel = (s) => s.trim().replace(/[\s_-]+(.)?/g, (_, c) => c ? c.toUpperCase() : "");
-  const parse = (cell) => {
-    const a = cell.querySelector("a");
-    if (a)
-      return { url: a.getAttribute("href"), valid: true, text: a.textContent.trim() };
-    const text = cell.textContent.trim();
-    return text === "true" ? true : text === "false" ? false : text;
-  };
-  const props = {};
+function readFields(block, fields2) {
+  const cells = {};
   for (const row of block.children) {
-    const cells = [...row.children];
-    const key = cells.length > 1 ? cells[0].textContent.trim() : "";
-    if (key)
-      props[key.charAt(0).toLowerCase() + toCamel(key).slice(1)] = parse(cells[1]);
+    const [keyCell, valueCell] = [...row.children];
+    const key = keyCell?.textContent.trim();
+    if (key && valueCell)
+      cells[key] = valueCell;
   }
-  if (!Object.keys(props).length) {
-    const a = block.querySelector("a");
-    if (a) {
-      props.text = a.textContent.trim();
-      props.buttonLink = { url: a.getAttribute("href"), valid: true };
-    } else {
-      props.text = block.textContent.trim();
-    }
+  const props = {};
+  const classes = [];
+  for (const field of fields2) {
+    const cell = cells[field.name];
+    const a = cell?.querySelector("a");
+    let value = cell ? a ? a.getAttribute("href") : cell.textContent.trim() : field.value;
+    if (value === void 0 || value === "")
+      continue;
+    if (field.valueType === "boolean")
+      value = value === true || value === "true";
+    else if (field.valueType === "number")
+      value = Number(value);
+    if (field.asClass) {
+      const template = typeof field.asClass === "string" ? field.asClass : "{value}";
+      classes.push(...template.replace("{value}", value).split(/\s+/));
+    } else
+      props[field.prop || field.name] = field.as === "link" ? { url: value, valid: true } : value;
   }
-  return props;
+  return { props, classes };
 }
 var Fragment, forwardRef;
 var init_runtime = __esm({
@@ -291,8 +292,15 @@ function Button2({
 
 // button.decorate.tsx
 init_runtime();
+var fields = [{ "name": "text", "valueType": "string" }, { "name": "linkUrl", "prop": "buttonLink", "as": "link", "valueType": "string" }, { "name": "target", "value": "_self", "valueType": "string" }, { "name": "type", "value": "primary", "valueType": "string" }, { "name": "size", "value": "", "valueType": "string" }, { "name": "fontWeight", "value": "", "valueType": "string" }];
 function decorate(block) {
-  block.replaceChildren(h(Button2, readBlockProps(block)));
+  const { props, classes } = readFields(block, fields);
+  const node = h(Button2, props);
+  const root = node.nodeType === 11 ? node.firstElementChild : node;
+  if (root && classes.length)
+    root.classList.add(...classes);
+  block.classList.add(...["ds-atlascopco"]);
+  block.replaceChildren(node);
 }
 export {
   decorate
