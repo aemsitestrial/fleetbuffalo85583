@@ -40,6 +40,9 @@
         { 
           "...": "../blocks/ac-download/_*.json#/definitions"
         },
+        { 
+          "...": "../blocks/ac-accordion/_*.json#/definitions"
+        },
         {
           "...": "../blocks/cards/_*.json#/definitions"
         },

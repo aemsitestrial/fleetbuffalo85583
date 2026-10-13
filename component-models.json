@@ -165,6 +165,34 @@
     ]
   },
   {
+    "id": "ac-accordion",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "typeAccordion",
+        "label": "Type accordion",
+        "value": "default",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Sample",
+            "value": "sample"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "singleExpansion",
+        "label": "Single expansion"
+      }
+    ]
+  },
+  {
     "id": "ac-button",
     "fields": [
       {
