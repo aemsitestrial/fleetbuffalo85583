@@ -178,10 +178,20 @@ function notifyUI(event) {
   handleEmit();
 }
 
+// "Tabs options" value of a Tab section that starts a new tabs block (see buildTabsBlocks).
+const NEW_TABS_GROUP = 'new-group';
+
+const tabsOptionsOf = (section) => (section.dataset.tabsOptions || '')
+  .split(',')
+  .map((option) => option.trim())
+  .filter(Boolean);
+
 /**
  * Groups consecutive "Tab" sections (data-tab-title) into a single ac-tabs block.
  * The block reads its tab titles from the rows and adopts the sections
  * (matched by data-eds-group) as tab panels.
+ * A new block starts at a Tab that does not directly follow another Tab, or at a Tab
+ * whose "Tabs options" include "new-group" -- so several tabs blocks can follow each other.
  * Must run after decorateSections and before decorateBlocks.
  * @param {Element} main The main element
  */
@@ -198,11 +208,9 @@ function buildTabsBlocks(main) {
     const block = document.createElement('div');
     block.className = 'ac-tabs';
     block.dataset.edsGroup = id;
-    // tab options are taken from the first tab
-    (group[0].dataset.tabsOptions || '')
-      .split(',')
-      .map((option) => option.trim())
-      .filter(Boolean)
+    // tab options are taken from the first tab ("new-group" only marks where a block starts)
+    tabsOptionsOf(group[0])
+      .filter((option) => option !== NEW_TABS_GROUP)
       .forEach((option) => block.classList.add(option));
 
     group.forEach((section) => {
@@ -227,8 +235,9 @@ function buildTabsBlocks(main) {
 
   sections.forEach((section) => {
     const prev = group[group.length - 1];
-    // consecutive = no other section between the tabs
-    if (prev && prev.nextElementSibling !== section) flush();
+    // consecutive = no other section between the tabs, unless this tab starts a new block
+    const startsNewBlock = tabsOptionsOf(section).includes(NEW_TABS_GROUP);
+    if (prev && (prev.nextElementSibling !== section || startsNewBlock)) flush();
     group.push(section);
   });
   flush();

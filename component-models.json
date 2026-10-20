@@ -734,20 +734,13 @@
     ]
   },
   {
-    "id": "ac-tab",
+    "id": "ac-content-tabs",
     "fields": [
       {
-        "component": "text",
+        "component": "select",
         "valueType": "string",
-        "name": "tab-title",
-        "label": "Tab title",
-        "required": true
-      },
-      {
-        "component": "multiselect",
-        "valueType": "string",
-        "name": "tabs-options",
-        "label": "Tabs options (applied from the first tab)",
+        "name": "classes",
+        "label": "Options",
         "value": "",
         "options": [
           {
@@ -767,6 +760,559 @@
             "value": "segmented-buttons"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "ac-content-tabs-tab",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "tab",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "Tab",
+            "value": "tab"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Tab title",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "ac-content-tabs-title",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "ac-title",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "Title",
+            "value": "ac-title"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "required": true
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "type",
+        "label": "Heading level",
+        "value": "h1",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "linkDisabled",
+        "label": "Link disabled"
+      },
+      {
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Link",
+        "component": "aem-content"
+      }
+    ]
+  },
+  {
+    "id": "ac-content-tabs-text",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "ac-text",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "Text",
+            "value": "ac-text"
+          }
+        ]
+      },
+      {
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "component": "richtext"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modificationLargeSize",
+        "label": "Modification large size"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierContentAlignment",
+        "label": "Modifier content alignment",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ac-content-tabs-button",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "ac-button",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "Button",
+            "value": "ac-button"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "required": true
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Link"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "target",
+        "label": "Open in",
+        "value": "_self",
+        "options": [
+          {
+            "name": "New tab",
+            "value": "_blank"
+          },
+          {
+            "name": "Same tab",
+            "value": "_self"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary positive",
+            "value": "primary-positive"
+          },
+          {
+            "name": "Primary negative",
+            "value": "primary-negative"
+          },
+          {
+            "name": "Secondary positive",
+            "value": "secondary-positive"
+          },
+          {
+            "name": "Secondary negative",
+            "value": "secondary-negative"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierVariant",
+        "label": "Modifier variant",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Solid",
+            "value": "solid"
+          },
+          {
+            "name": "Outline",
+            "value": "outline"
+          },
+          {
+            "name": "Ghost",
+            "value": "ghost"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierIconPosition",
+        "label": "Modifier icon position",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Leading",
+            "value": "leading"
+          },
+          {
+            "name": "Trailing",
+            "value": "trailing"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ac-content-tabs-card-content",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "ac-card-content",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "Card",
+            "value": "ac-card-content"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image path"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Link"
+      }
+    ]
+  },
+  {
+    "id": "ac-content-tabs-download",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "itemType",
+        "label": "Component",
+        "value": "ac-download",
+        "description": "Set when the item is added; tells the block which component this item is.",
+        "options": [
+          {
+            "name": "Download",
+            "value": "ac-download"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text",
+        "required": true
+      },
+      {
+        "valueType": "string",
+        "name": "url",
+        "label": "File",
+        "component": "aem-content"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "filename",
+        "label": "Filename",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "format",
+        "label": "Format",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "size",
+        "label": "Size",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "extension",
+        "label": "Extension",
+        "required": true
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "layoutAlignContent",
+        "label": "Layout align content",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Modifier bg transparent"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "isCompact",
+        "label": "Is compact"
       }
     ]
   },

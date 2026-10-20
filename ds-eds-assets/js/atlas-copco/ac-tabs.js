@@ -86,7 +86,7 @@ var require_classnames = __commonJS({
 });
 
 // libs/ac-core-lib/src/lib/tabs/tabs.tsx
-var import_classnames8 = __toESM(require_classnames());
+var import_classnames12 = __toESM(require_classnames());
 
 // tools/eds/runtime.js
 var Fragment = /* @__PURE__ */ Symbol("Fragment");
@@ -97,15 +97,15 @@ function append(parent, child) {
     return child.forEach((c) => append(parent, c));
   parent.append(child instanceof Node ? child : document.createTextNode(String(child)));
 }
-function h(type, props, ...children) {
+function h(type, props, ...children2) {
   props = props || {};
   if (type === Fragment) {
     const frag = document.createDocumentFragment();
-    append(frag, children);
+    append(frag, children2);
     return frag;
   }
   if (typeof type === "function") {
-    return type({ ...props, children: children.length > 1 ? children : children[0] });
+    return type({ ...props, children: children2.length > 1 ? children2 : children2[0] });
   }
   const el = document.createElement(type);
   for (const [key, value] of Object.entries(props)) {
@@ -124,11 +124,12 @@ function h(type, props, ...children) {
     else
       el.setAttribute(key, value === true ? "" : value);
   }
-  append(el, children);
+  append(el, children2);
   return el;
 }
-var jsx = (type, { children, ...props }) => h(type, props, children);
+var jsx = (type, { children: children2, ...props }) => h(type, props, children2);
 var jsxs = jsx;
+var forwardRef = (fn) => (props) => fn(props, null);
 function cellValue(cell, field) {
   const a = cell.querySelector("a");
   if (field.component === "richtext")
@@ -170,7 +171,9 @@ function readClasses(block, fromClasses2 = {}) {
 function readDefaults(defaults2 = {}) {
   return fill(defaults2, { uid: Math.random().toString(36).slice(2, 8) });
 }
-function readItems(block, items2) {
+function readItems(block, items2, children2) {
+  if (children2)
+    return readGroupedItems(block, items2, children2);
   const rows = [...block.children];
   const into = {};
   const order = [];
@@ -194,8 +197,98 @@ function readItems(block, items2) {
   return { [items2.into]: into, [items2.order]: order, ...collected };
 }
 var instrumentation = (el) => [...el.attributes].filter((a) => /^data-(aue|richtext)-/.test(a.name));
-function snapshotInstrumentation(block) {
-  return [...block.children].map((row) => ({
+function itemTypeOf(row, items2, children2) {
+  const model = row.getAttribute("data-aue-model");
+  if (model) {
+    if (model === items2.model)
+      return items2.itemType;
+    const found = Object.entries(children2).find(([, child]) => child.model === model);
+    if (found)
+      return found[0];
+  }
+  return row.children[0]?.textContent.trim();
+}
+function renderChild(row, child) {
+  const cells = [...row.children];
+  const props = readDefaults(child.defaults);
+  const classes = [];
+  child.fields.forEach((field, i) => {
+    if (i === 0)
+      return;
+    let value = cells[i] ? cellValue(cells[i], field) : field.value;
+    if (value === void 0 || value === "")
+      return;
+    if (field.valueType === "boolean")
+      value = value === true || value === "true";
+    else if (field.valueType === "number")
+      value = Number(value);
+    if (field.asClass) {
+      const template = typeof field.asClass === "string" ? field.asClass : "{value}";
+      classes.push(...template.replace("{value}", value).split(/\s+/));
+    } else
+      props[field.prop || field.name] = field.as === "link" ? { url: value, valid: true } : value;
+  });
+  const node = h(child.Component, props);
+  const root = node.nodeType === 11 ? node.firstElementChild : node;
+  if (root) {
+    if (classes.length)
+      root.classList.add(...classes);
+    instrumentation(row).forEach(({ name, value }) => root.setAttribute(name, value));
+  }
+  return node;
+}
+function loadChildCss(type, template) {
+  if (!template)
+    return;
+  const href = `${window.hlx?.codeBasePath ?? ""}${template.replace(/\{type\}/g, type)}`;
+  if (document.head.querySelector(`link[rel="stylesheet"][href="${href}"]`))
+    return;
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = href;
+  document.head.append(link);
+}
+function readGroupedItems(block, items2, children2) {
+  const groups = [];
+  let current = null;
+  [...block.children].forEach((row) => {
+    const type = itemTypeOf(row, items2, children2);
+    if (type === items2.itemType) {
+      current = { row, nodes: [] };
+      groups.push(current);
+      return;
+    }
+    const child = children2[type];
+    if (!child)
+      return;
+    loadChildCss(type, items2.childCss);
+    if (!current) {
+      current = { row: null, nodes: [] };
+      groups.push(current);
+    }
+    current.nodes.push(renderChild(row, child));
+  });
+  const into = {};
+  const order = [];
+  groups.forEach(({ row, nodes }, index) => {
+    const cells = row ? [...row.children] : [];
+    const vars = { index };
+    items2.fields.forEach((field, i) => {
+      const value = cells[i] ? cellValue(cells[i], field) : "";
+      vars[field.name] = field.valueType === "boolean" ? value === "true" || value === true : value;
+    });
+    const fragment = document.createDocumentFragment();
+    nodes.forEach((node) => fragment.append(node));
+    vars.children = fragment;
+    const key = fill(items2.key, vars);
+    into[key] = fill(items2.template, vars);
+    order.push(key);
+  });
+  return { [items2.into]: into, [items2.order]: order };
+}
+function snapshotInstrumentation(block, items2) {
+  const rows = [...block.children].filter((row) => !items2?.itemType || row.getAttribute("data-aue-model") === items2.model || !row.hasAttribute("data-aue-model") && row.children[0]?.textContent.trim() === items2.itemType);
+  return rows.map((row) => ({
     row: instrumentation(row),
     cells: [...row.children].map(instrumentation)
   }));
@@ -277,17 +370,100 @@ function runControllers(block, controllers, props = {}) {
     }
   }
 }
-function adoptSections(block, node, { panel }) {
-  const id = block.getAttribute("data-eds-group");
-  if (!id)
-    return;
-  const sections = [...document.querySelectorAll(`[data-eds-group="${id}"]`)].filter((el) => el !== block);
-  const panels = node.querySelectorAll(panel);
-  sections.forEach((section, i) => panels[i] && panels[i].append(section));
-}
+
+// libs/aem-core-lib/src/lib/button/button.tsx
+var import_classnames = __toESM(require_classnames());
+var Button = forwardRef(
+  ({
+    id,
+    text,
+    buttonLink,
+    target = "_parent",
+    className,
+    typeTransform,
+    type,
+    icon,
+    colorType,
+    disabled,
+    dataLayer,
+    AEMclassNameSlot1,
+    AEMclassNameSlot2,
+    AEMclassNameSlot3,
+    useRootClassName = true,
+    ...props
+  }, ref) => {
+    const typeTextTransform = (0, import_classnames.default)({
+      "text-lowercase": typeTransform === "lowercase",
+      "text-uppercase": typeTransform === "uppercase",
+      "text-capitalize": typeTransform === "capitalize"
+    });
+    const extraClasses = (0, import_classnames.default)({
+      AEMclassNameSlot1,
+      AEMclassNameSlot2,
+      AEMclassNameSlot3
+    });
+    const buttonType = (0, import_classnames.default)({
+      "cmp-button--primary": type === "primary",
+      "cmp-button--secondary": type === "secondary",
+      "cmp-button--tetriary": type === "tetriary"
+    });
+    const buttonColorType = (0, import_classnames.default)({
+      "cmp-button--color-primary": colorType === "primary",
+      "cmp-button--color-secondary": colorType === "secondary"
+    });
+    const getButtonStructure = () => /* @__PURE__ */ jsxs(
+      "button",
+      {
+        ...props,
+        ref,
+        id,
+        type: "button",
+        className: (0, import_classnames.default)("cmp-button"),
+        "data-cmp-clickable": "",
+        "data-cmp-data-layer": "",
+        disabled,
+        children: [
+          icon && /* @__PURE__ */ jsx("span", { className: (0, import_classnames.default)(`cmp-button__icon cmp-button__icon--${icon}`), "aria-hidden": "true" }),
+          /* @__PURE__ */ jsx("span", { className: "cmp-button__text", children: text })
+        ]
+      }
+    );
+    const getLinkStructure = () => /* @__PURE__ */ jsxs(
+      "a",
+      {
+        ...props,
+        ref,
+        id,
+        href: buttonLink?.url,
+        target,
+        className: "cmp-button",
+        "data-cmp-clickable": "",
+        "data-cmp-data-layer": "",
+        children: [
+          icon && /* @__PURE__ */ jsx("span", { className: (0, import_classnames.default)(`cmp-button__icon cmp-button__icon--${icon}`), "aria-hidden": "true" }),
+          /* @__PURE__ */ jsx("span", { className: "cmp-button__text", children: text })
+        ]
+      }
+    );
+    return /* @__PURE__ */ jsx(
+      "div",
+      {
+        className: (0, import_classnames.default)(
+          useRootClassName ? "button" : "",
+          className,
+          typeTextTransform,
+          buttonType,
+          buttonColorType,
+          extraClasses
+        ),
+        children: buttonLink && buttonLink.url ? getLinkStructure() : getButtonStructure()
+      }
+    );
+  }
+);
 
 // libs/aem-core-lib/src/lib/teaser/teaser.tsx
-var import_classnames = __toESM(require_classnames());
+var import_classnames2 = __toESM(require_classnames());
 function Teaser({
   id,
   title,
@@ -313,11 +489,11 @@ function Teaser({
 }) {
   const TitleTag = titleTag;
   const isLinked = titleLinkHidden === true && actionsEnabled === false && link && link.url;
-  const teaserAlignedContent = (0, import_classnames.default)({
+  const teaserAlignedContent = (0, import_classnames2.default)({
     "content-center": alignContent === "center",
     "content-right": alignContent === "right"
   });
-  const teaserLineClamp = (0, import_classnames.default)({
+  const teaserLineClamp = (0, import_classnames2.default)({
     "teaser-line-clamp-1": lineClamp === "1",
     "teaser-line-clamp-2": lineClamp === "2",
     "teaser-line-clamp-3": lineClamp === "3",
@@ -335,7 +511,7 @@ function Teaser({
         actionsEnabled && actions && actions.length ? /* @__PURE__ */ jsx("div", { className: "cmp-teaser__action-container", children: actions.map((action) => /* @__PURE__ */ jsx(
           "a",
           {
-            className: (0, import_classnames.default)({ "js-modal": useJsModal }, "cmp-teaser__action-link"),
+            className: (0, import_classnames2.default)({ "js-modal": useJsModal }, "cmp-teaser__action-link"),
             id: action.id,
             "data-cmp-data-layer": "",
             "data-cmp-clickable": "",
@@ -380,10 +556,10 @@ function Teaser({
       ) }) })
     ] });
   };
-  return /* @__PURE__ */ jsx("div", { className: (0, import_classnames.default)("teaser", [teaserAlignedContent, teaserLineClamp], className), style: styles, children: /* @__PURE__ */ jsx("div", { id, className: "cmp-teaser", "data-cmp-data-layer": "", children: !!isLinked ? /* @__PURE__ */ jsx(
+  return /* @__PURE__ */ jsx("div", { className: (0, import_classnames2.default)("teaser", [teaserAlignedContent, teaserLineClamp], className), style: styles, children: /* @__PURE__ */ jsx("div", { id, className: "cmp-teaser", "data-cmp-data-layer": "", children: !!isLinked ? /* @__PURE__ */ jsx(
     "a",
     {
-      className: (0, import_classnames.default)({ "cmp-teaser__link": !useJsModal, "js-modal cmp-teaser": useJsModal }),
+      className: (0, import_classnames2.default)({ "cmp-teaser__link": !useJsModal, "js-modal cmp-teaser": useJsModal }),
       "data-cmp-clickable": "",
       href: link.url,
       children: getTeaserBody()
@@ -392,8 +568,63 @@ function Teaser({
 }
 var teaser_default = Teaser;
 
+// libs/aem-core-lib/src/lib/download/download.tsx
+var import_classnames3 = __toESM(require_classnames());
+function Download({
+  id,
+  url,
+  title,
+  description,
+  filename,
+  size,
+  format,
+  actionText,
+  image,
+  className,
+  layoutAlignContent
+}) {
+  const iconAligned = (0, import_classnames3.default)({
+    "download--icon-left": layoutAlignContent === "left",
+    "download--icon-right": layoutAlignContent === "right"
+  });
+  return /* @__PURE__ */ jsx("div", { className: (0, import_classnames3.default)("download", { "download--with-image": image }, iconAligned, className), children: /* @__PURE__ */ jsxs("div", { id, className: "cmp-download", children: [
+    image && /* @__PURE__ */ jsxs("div", { id: `image-${image.id}`, "data-asset-id": image.uuid, className: "cmp-image", children: [
+      /* @__PURE__ */ jsx(
+        "img",
+        {
+          loading: "lazy",
+          className: "cmp-image__image",
+          itemProp: "contentUrl",
+          src: image.src,
+          alt: image.alt,
+          srcSet: image.srcset,
+          title
+        }
+      ),
+      /* @__PURE__ */ jsx("meta", { itemProp: "caption", content: image.alt })
+    ] }),
+    /* @__PURE__ */ jsx("h3", { className: "cmp-download__title", children: /* @__PURE__ */ jsx("a", { className: "cmp-download__title-link", href: url, download: true, children: title }) }),
+    description && /* @__PURE__ */ jsx("div", { className: "cmp-download__description", dangerouslySetInnerHTML: { __html: description } }),
+    filename && size && format && /* @__PURE__ */ jsxs("dl", { className: "cmp-download__properties", children: [
+      /* @__PURE__ */ jsxs("div", { className: "cmp-download__property cmp-download__property--filename", children: [
+        /* @__PURE__ */ jsx("dt", { className: "cmp-download__property-label", children: "Filename" }),
+        /* @__PURE__ */ jsx("dd", { className: "cmp-download__property-content", children: filename })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "cmp-download__property cmp-download__property--size", children: [
+        /* @__PURE__ */ jsx("dt", { className: "cmp-download__property-label", children: "Size" }),
+        /* @__PURE__ */ jsx("dd", { className: "cmp-download__property-content", children: size })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "cmp-download__property cmp-download__property--format", children: [
+        /* @__PURE__ */ jsx("dt", { className: "cmp-download__property-label", children: "Format" }),
+        /* @__PURE__ */ jsx("dd", { className: "cmp-download__property-content", children: format })
+      ] })
+    ] }),
+    actionText && /* @__PURE__ */ jsx("a", { className: "cmp-download__action", href: url, download: true, children: /* @__PURE__ */ jsx("span", { className: "cmp-download__action-text", children: actionText }) })
+  ] }) });
+}
+
 // libs/aem-core-lib/src/lib/embed-video/embed-video.tsx
-var import_classnames2 = __toESM(require_classnames());
+var import_classnames4 = __toESM(require_classnames());
 function EmbedVideo({
   id,
   className,
@@ -408,7 +639,7 @@ function EmbedVideo({
   poster,
   controls = true
 }) {
-  return /* @__PURE__ */ jsx("div", { className: (0, import_classnames2.default)("embed", className), children: /* @__PURE__ */ jsx("div", { id, className: "cmp-embed", children: /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx(
+  return /* @__PURE__ */ jsx("div", { className: (0, import_classnames4.default)("embed", className), children: /* @__PURE__ */ jsx("div", { id, className: "cmp-embed", children: /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx(
     "video",
     {
       ...autoPlay && { autoPlay: true },
@@ -434,18 +665,37 @@ function EmbedVideo({
 }
 var embed_video_default = EmbedVideo;
 
+// libs/aem-core-lib/src/lib/text/text.tsx
+var import_classnames5 = __toESM(require_classnames());
+function Text({ id, text, icon, className }) {
+  const iconCn = (0, import_classnames5.default)({
+    "ds-brand-text--icon-call": icon === "call",
+    "ds-brand-text--icon-contact-mail": icon === "contact_mail",
+    "ds-brand-text--icon-email": icon === "email",
+    "ds-brand-text--icon-account": icon === "account",
+    "ds-brand-text--icon-language": icon === "language",
+    "ds-brand-text--icon-arrow-left": icon === "arrow-left",
+    "ds-brand-text--icon-arrow-right": icon === "arrow-right",
+    "ds-brand-text--icon-pin-drop": icon === "pin-drop",
+    "ds-brand-text--icon-3d-rotation": icon === "3d-rotation",
+    "ds-brand-text--icon-alarm": icon === "alarm"
+  });
+  const withIconCn = icon && iconCn;
+  return /* @__PURE__ */ jsx("div", { className: (0, import_classnames5.default)("text", className, withIconCn), children: /* @__PURE__ */ jsx("div", { id, className: "cmp-text", dangerouslySetInnerHTML: { __html: text } }) });
+}
+
 // libs/aem-core-lib/src/lib/tabs/tabs.tsx
-var import_classnames6 = __toESM(require_classnames());
+var import_classnames9 = __toESM(require_classnames());
 
 // libs/aem-core-lib/src/lib/tabs/components/tab-toggler.tsx
-var import_classnames3 = __toESM(require_classnames());
+var import_classnames6 = __toESM(require_classnames());
 function TabToggler({ id, isActive, ariaControl, text }) {
   return /* @__PURE__ */ jsx(
     "li",
     {
       role: "tab",
       id,
-      className: (0, import_classnames3.default)("cmp-tabs__tab", { "cmp-tabs__tab--active": isActive }),
+      className: (0, import_classnames6.default)("cmp-tabs__tab", { "cmp-tabs__tab--active": isActive }),
       "aria-controls": ariaControl,
       tabIndex: isActive ? 0 : -1,
       "data-cmp-hook-tabs": "tab",
@@ -457,8 +707,8 @@ function TabToggler({ id, isActive, ariaControl, text }) {
 var tab_toggler_default = TabToggler;
 
 // libs/aem-core-lib/src/lib/tabs/components/tab-item.tsx
-var import_classnames4 = __toESM(require_classnames());
-function TabItem({ id, ariaLabelledBy, tabIndex, isActive, children }) {
+var import_classnames7 = __toESM(require_classnames());
+function TabItem({ id, ariaLabelledBy, tabIndex, isActive, children: children2 }) {
   return /* @__PURE__ */ jsx(
     "div",
     {
@@ -466,18 +716,18 @@ function TabItem({ id, ariaLabelledBy, tabIndex, isActive, children }) {
       role: "tabpanel",
       "aria-labelledby": ariaLabelledBy,
       tabIndex,
-      className: (0, import_classnames4.default)("cmp-tabs__tabpanel", { "cmp-tabs__tabpanel--active": isActive }),
+      className: (0, import_classnames7.default)("cmp-tabs__tabpanel", { "cmp-tabs__tabpanel--active": isActive }),
       "data-cmp-hook-tabs": "tabpanel",
       "data-cmp-data-layer": "",
       "aria-hidden": isActive ? "false" : "true",
-      children: /* @__PURE__ */ jsx("div", { className: "responsivegrid", children: /* @__PURE__ */ jsx("div", { className: "aem-Grid aem-Grid--12 aem-Grid--default--12", children }) })
+      children: /* @__PURE__ */ jsx("div", { className: "responsivegrid", children: /* @__PURE__ */ jsx("div", { className: "aem-Grid aem-Grid--12 aem-Grid--default--12", children: children2 }) })
     }
   );
 }
 var tab_item_default = TabItem;
 
 // libs/aem-core-lib/src/lib/table/table.tsx
-var import_classnames5 = __toESM(require_classnames());
+var import_classnames8 = __toESM(require_classnames());
 function Table({
   id,
   ":orderCol": orderCol,
@@ -486,7 +736,7 @@ function Table({
   className,
   useRootClassName = true
 }) {
-  return /* @__PURE__ */ jsx("div", { id, className: (0, import_classnames5.default)(useRootClassName ? "text" : "", className), children: /* @__PURE__ */ jsx("div", { className: "cmp-text", children: /* @__PURE__ */ jsx("table", { children: /* @__PURE__ */ jsxs("tbody", { children: [
+  return /* @__PURE__ */ jsx("div", { id, className: (0, import_classnames8.default)(useRootClassName ? "text" : "", className), children: /* @__PURE__ */ jsx("div", { className: "cmp-text", children: /* @__PURE__ */ jsx("table", { children: /* @__PURE__ */ jsxs("tbody", { children: [
     itemsCol && /* @__PURE__ */ jsx("tr", { children: orderCol.map((col) => /* @__PURE__ */ jsx("th", { children: itemsCol[col].title }, itemsCol[col].id)) }),
     itemsRow.map((row, rowIndex) => /* @__PURE__ */ jsx("tr", { children: orderCol.map((col, colIndex) => /* @__PURE__ */ jsx("td", { dangerouslySetInnerHTML: { __html: row[col] } }, `${col}-${colIndex}`)) }, rowIndex))
   ] }) }) }) });
@@ -503,12 +753,12 @@ function Tabs({
   useResponsiveSelect,
   useWindowResizeType = true,
   useResponsiveType = "window",
-  children
+  children: children2
 }) {
   return /* @__PURE__ */ jsx(
     "div",
     {
-      className: (0, import_classnames6.default)("tabs panelcontainer", className, {
+      className: (0, import_classnames9.default)("tabs panelcontainer", className, {
         "ds-brand-responsive-select-run-js": useResponsiveSelect,
         "ds-window-resize-type": useWindowResizeType && useResponsiveSelect,
         "ds-container-query": useResponsiveType === "container"
@@ -531,12 +781,12 @@ function Tabs({
             ariaLabelledBy: `${id}-item-${index}-tab`,
             tabIndex: activeItem === itemOrder ? 1 : 0,
             isActive: activeItem === itemOrder,
-            children: children ? children : /* @__PURE__ */ jsx(Fragment, { children: items2[itemOrder][":itemsOrder"].map((componentName, index2) => {
+            children: children2 ? children2 : /* @__PURE__ */ jsx(Fragment, { children: items2[itemOrder][":itemsOrder"].map((componentName, index2) => {
               const props = items2[itemOrder][":items"][componentName];
               const componentClassName = items2[itemOrder].columnClassNames[componentName];
               if (componentName === "image") {
                 const componentProps = props;
-                return /* @__PURE__ */ jsx("div", { className: (0, import_classnames6.default)("image", componentClassName), children: /* @__PURE__ */ jsxs(
+                return /* @__PURE__ */ jsx("div", { className: (0, import_classnames9.default)("image", componentClassName), children: /* @__PURE__ */ jsxs(
                   "div",
                   {
                     "data-asset-id": componentProps?.uuid,
@@ -566,7 +816,7 @@ function Tabs({
               }
               if (componentName === "text") {
                 const componentProps = props;
-                return /* @__PURE__ */ jsx("div", { className: (0, import_classnames6.default)("text", componentClassName), children: componentProps?.richText ? /* @__PURE__ */ jsx(
+                return /* @__PURE__ */ jsx("div", { className: (0, import_classnames9.default)("text", componentClassName), children: componentProps?.richText ? /* @__PURE__ */ jsx(
                   "div",
                   {
                     "data-cmp-data-layer": "",
@@ -582,7 +832,7 @@ function Tabs({
                   teaser_default,
                   {
                     ...componentProps,
-                    className: (0, import_classnames6.default)(componentProps.className, componentClassName)
+                    className: (0, import_classnames9.default)(componentProps.className, componentClassName)
                   },
                   index2
                 );
@@ -593,7 +843,7 @@ function Tabs({
                   table_default,
                   {
                     ...componentProps,
-                    className: (0, import_classnames6.default)(componentProps.className, componentClassName)
+                    className: (0, import_classnames9.default)(componentProps.className, componentClassName)
                   },
                   index2
                 );
@@ -604,7 +854,7 @@ function Tabs({
                   embed_video_default,
                   {
                     ...componentProps,
-                    className: (0, import_classnames6.default)(componentProps.className, componentClassName)
+                    className: (0, import_classnames9.default)(componentProps.className, componentClassName)
                   },
                   index2
                 );
@@ -619,6 +869,13 @@ function Tabs({
       ] })
     }
   );
+}
+
+// libs/aem-core-lib/src/lib/title/title.tsx
+var import_classnames10 = __toESM(require_classnames());
+function Title({ id, className, link, text, type }) {
+  const Component = type;
+  return /* @__PURE__ */ jsx("div", { className: (0, import_classnames10.default)("title", className), children: /* @__PURE__ */ jsx("div", { "data-cmp-data-layer": "", id, className: "cmp-title", children: /* @__PURE__ */ jsx(Component, { className: "cmp-title__text", children: link && link?.valid ? /* @__PURE__ */ jsx("a", { className: "cmp-title__link", "data-cmp-clickable": "", href: link.url, ...link.attributes, children: text }) : text }) }) });
 }
 
 // libs/aem-core-lib/src/lib/tabs/tabs.class.js
@@ -998,15 +1255,79 @@ var TabsController = class {
 };
 
 // libs/ac-core-lib/src/assets/utils/class-modificators.ts
-var import_classnames7 = __toESM(require_classnames());
+var import_classnames11 = __toESM(require_classnames());
+var classNamesButtonThemeColor = (themeColor) => {
+  if (!themeColor)
+    return "";
+  return (0, import_classnames11.default)({
+    "style-primary-negative": themeColor === "primary-negative",
+    "style-primary-positive": themeColor === "primary-positive",
+    "style-secondary-positive": themeColor === "secondary-positive",
+    "style-secondary-negative": themeColor === "secondary-negative"
+  });
+};
+var classNamesModifierVariant = (variant) => {
+  if (!variant)
+    return "";
+  return (0, import_classnames11.default)({
+    "modifier-solid": variant === "solid",
+    "modifier-outline": variant === "outline",
+    "modifier-ghost": variant === "ghost"
+  });
+};
+var classNamesButtonModifierIconPosition = (position) => {
+  if (!position)
+    return "";
+  return (0, import_classnames11.default)({
+    "modifier-leading": position === "leading",
+    "modifier-trailing": position === "trailing"
+  });
+};
 var classNamesThemeColor = (themeColor) => {
   if (!themeColor)
     return "";
-  return (0, import_classnames7.default)({
+  return (0, import_classnames11.default)({
     "style-primary": themeColor === "primary",
     "style-secondary": themeColor === "secondary",
     "style-tertiary": themeColor === "tertiary",
     "style-quaternary": themeColor === "quaternary"
+  });
+};
+var classNamesTeaserLineClamp = ({
+  headlineLineClamp,
+  descriptionLineClamp
+}) => {
+  const headlineVariant = (0, import_classnames11.default)({
+    "teaser-headline-line-clamp-1": headlineLineClamp === "1",
+    "teaser-headline-line-clamp-2": headlineLineClamp === "2"
+  });
+  const descriptionVariant = (0, import_classnames11.default)({
+    "teaser-description-line-clamp-2": descriptionLineClamp === "2",
+    "teaser-description-line-clamp-4": descriptionLineClamp === "4",
+    "teaser-description-line-clamp-6": descriptionLineClamp === "6",
+    "teaser-description-line-clamp-8": descriptionLineClamp === "8",
+    "teaser-description-line-clamp-10": descriptionLineClamp === "10",
+    "teaser-description-line-clamp-12": descriptionLineClamp === "12"
+  });
+  return (0, import_classnames11.default)(headlineVariant, descriptionVariant);
+};
+var classNamesAlignment = (contentAlignment) => {
+  return (0, import_classnames11.default)({
+    "modifier-content-center": contentAlignment === "center",
+    "modifier-content-right": contentAlignment === "right"
+  });
+};
+var classNameImageCroppingModifier = (type) => {
+  if (!type)
+    return;
+  return (0, import_classnames11.default)({
+    "modifier-image-fit-contain": type === "fit-contain",
+    "modifier-image-aspect-ratio": type === "aspect-ratio",
+    "modifier-image-intrinsic": type === "intrinsic",
+    "modifier-image-flex-content": type === "flex-content",
+    "modifier-image-minimal-crop": type === "minimal-crop",
+    "modifier-image-contain-capped": type === "contain-capped",
+    "modifier-no-image-crop": type === "no-crop"
   });
 };
 
@@ -1016,23 +1337,167 @@ function Tabs2({ className, themeColor, useSegmentedButtons, ...rest }) {
     Tabs,
     {
       ...rest,
-      className: (0, import_classnames8.default)(classNamesThemeColor(themeColor), className, {
+      className: (0, import_classnames12.default)(classNamesThemeColor(themeColor), className, {
         "modifier-segmented-buttons": useSegmentedButtons
       })
     }
   );
 }
 
-// ac-tabs.decorate.tsx
-var fields = [];
-var defaults = { "id": "tabs-{uid}", "activeItem": "item_0", "themeColor": "primary", "useResponsiveSelect": false, "useResponsiveType": "window" };
+// libs/ac-core-lib/src/lib/title/ac-title.tsx
+var import_classnames13 = __toESM(require_classnames());
+
+// libs/ac-core-lib/src/assets/shared/const-data.ts
+var acBrandName = "ac-core";
+
+// libs/ac-core-lib/src/lib/title/ac-title.tsx
+function ACTitle({ className, themeColor, ...rest }) {
+  const classnames = (0, import_classnames13.default)(`${acBrandName}-title`, classNamesThemeColor(themeColor), className);
+  return /* @__PURE__ */ jsx(Title, { ...rest, className: classnames });
+}
+
+// libs/ac-core-lib/src/lib/text/ac-text.tsx
+var import_classnames14 = __toESM(require_classnames());
+function ACText({
+  className,
+  themeColor,
+  modificationLargeSize,
+  modifierContentAlignment = "left",
+  ...rest
+}) {
+  const classnames = (0, import_classnames14.default)(
+    `${acBrandName}-text`,
+    classNamesThemeColor(themeColor),
+    classNamesAlignment(modifierContentAlignment),
+    {
+      "modification-text-large": modificationLargeSize
+    },
+    className
+  );
+  return /* @__PURE__ */ jsx(Text, { ...rest, className: classnames });
+}
+
+// libs/ac-core-lib/src/lib/button/ac-button.tsx
+var import_classnames15 = __toESM(require_classnames());
+function ACButton({ className, themeColor, modifierVariant, modifierIconPosition, ...rest }) {
+  const updateClassname = (0, import_classnames15.default)(
+    `${acBrandName}-button`,
+    classNamesButtonThemeColor(themeColor),
+    classNamesModifierVariant(modifierVariant),
+    classNamesButtonModifierIconPosition(modifierIconPosition),
+    className
+  );
+  return /* @__PURE__ */ jsx(Button, { ...rest, className: updateClassname });
+}
+
+// libs/ac-core-lib/src/lib/cards/card-content/card-content.tsx
+var import_classnames18 = __toESM(require_classnames());
+
+// libs/ac-core-lib/src/lib/teaser/teaser.tsx
+var import_classnames17 = __toESM(require_classnames());
+
+// libs/ac-core-lib/src/lib/teaser/teaser.utils.ts
+var import_classnames16 = __toESM(require_classnames());
+var classNamesPretitleModifier = (themeColor) => {
+  if (!themeColor)
+    return "";
+  return (0, import_classnames16.default)({
+    "modifier-pretitle-primary": themeColor === "primary",
+    "modifier-pretitle-secondary": themeColor === "secondary",
+    "modifier-pretitle-tertiary": themeColor === "tertiary"
+  });
+};
+
+// libs/ac-core-lib/src/lib/teaser/teaser.tsx
+function Teaser2({
+  className,
+  headlineLineClamp,
+  descriptionLineClamp,
+  modifierContentAlignment = "left",
+  modifierPretitle,
+  modifierBgTransparent,
+  themeColor,
+  useAcCoreClass = true,
+  useIconPhoneOnLinks,
+  useIconEmailOnLinks,
+  useIconsOrderPhoneEmailOnLinks,
+  ...rest
+}) {
+  const classNames = (0, import_classnames17.default)(
+    { [`${acBrandName}-teaser`]: useAcCoreClass },
+    classNamesThemeColor(themeColor),
+    classNamesTeaserLineClamp({
+      headlineLineClamp,
+      descriptionLineClamp
+    }),
+    classNamesPretitleModifier(modifierPretitle),
+    classNamesAlignment(modifierContentAlignment),
+    {
+      "modifier-transparent": modifierBgTransparent,
+      "modifier-icon-phone-on-links": useIconPhoneOnLinks,
+      "modifier-icon-email-on-links": useIconEmailOnLinks,
+      "modifier-icon-phone-email-order-icon-links": useIconsOrderPhoneEmailOnLinks
+    },
+    className
+  );
+  return /* @__PURE__ */ jsx(Teaser, { ...rest, className: classNames });
+}
+var teaser_default2 = Teaser2;
+
+// libs/ac-core-lib/src/lib/cards/card-content/card-content.tsx
+function CardContent({
+  className,
+  themeColor,
+  modifierBanner,
+  modifierMediaFilled,
+  modifierOverlapImage,
+  modifierMediaFilledAnimation,
+  useButtons,
+  imageCroppingType,
+  ...rest
+}) {
+  const classNames = (0, import_classnames18.default)(
+    `${acBrandName}-card-content`,
+    classNamesThemeColor(themeColor),
+    classNameImageCroppingModifier(imageCroppingType),
+    {
+      "modifier-banner": modifierBanner,
+      "modifier-media-filled": modifierMediaFilled,
+      "modifier-overlap-image": modifierOverlapImage,
+      "modifier-media-filled-animation": modifierMediaFilledAnimation,
+      "ds-brand-use-buttons": useButtons
+    },
+    className
+  );
+  return /* @__PURE__ */ jsx(teaser_default2, { ...rest, className: classNames });
+}
+
+// libs/ac-core-lib/src/lib/download/ac-download.tsx
+var import_classnames19 = __toESM(require_classnames());
+function ACDownload({ themeColor, className, isCompact, modifierBgTransparent, ...rest }) {
+  return /* @__PURE__ */ jsx(
+    Download,
+    {
+      ...rest,
+      className: (0, import_classnames19.default)(`${acBrandName}-download`, classNamesThemeColor(themeColor), className, {
+        "modifier-transparent": modifierBgTransparent,
+        "modifier-compact": isCompact
+      })
+    }
+  );
+}
+
+// ac-content-tabs.decorate.tsx
+var fields = [{ "name": "classes", "value": "", "valueType": "string", "component": "select" }];
+var defaults = { "id": "tabs-{uid}", "activeItem": "item_0", "useResponsiveSelect": false, "useResponsiveType": "window" };
 var fromClasses = { "theme-secondary": { "themeColor": "secondary" }, "responsive-select": { "useResponsiveSelect": true }, "container-query": { "useResponsiveType": "container" }, "segmented-buttons": { "useSegmentedButtons": true } };
-var items = { "fields": [{ "name": "title", "component": "text" }], "into": ":items", "order": ":itemsOrder", "key": "item_{index}", "template": { "cq:panelTitle": "{title}", ":itemsOrder": [], ":items": {}, "columnClassNames": {} } };
-var adopt = { "panel": ".cmp-tabs__tabpanel" };
+var items = { "id": "ac-content-tabs-tab", "title": "Tab", "itemType": "tab", "fields": [{ "name": "itemType", "component": "select", "valueType": "string" }, { "name": "title", "component": "text", "valueType": "string" }], "into": ":items", "order": ":itemsOrder", "key": "item_{index}", "instrument": { "item": ".cmp-tabs__tabpanel", "fields": { "title": { "all": ".cmp-tabs__tab" } } }, "template": { "cq:panelTitle": "{title}", ":itemsOrder": ["custom-component"], ":items": { "custom-component": "{children}" }, "columnClassNames": {} }, "childCss": "/blocks/{type}/{type}.css", "model": "ac-content-tabs-tab" };
+var children = { "ac-title": { Component: ACTitle, fields: [{ "name": "itemType", "value": "ac-title", "valueType": "string", "component": "select" }, { "name": "text", "valueType": "string", "component": "text" }, { "name": "type", "value": "h1", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "linkDisabled", "valueType": "boolean", "component": "boolean" }, { "name": "linkUrl", "prop": "link", "as": "link", "valueType": "string", "component": "aem-content" }], defaults: {}, model: "ac-content-tabs-title" }, "ac-text": { Component: ACText, fields: [{ "name": "itemType", "value": "ac-text", "valueType": "string", "component": "select" }, { "name": "text", "valueType": "string", "component": "richtext" }, { "name": "icon", "valueType": "string", "component": "text" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modificationLargeSize", "valueType": "boolean", "component": "boolean" }, { "name": "modifierContentAlignment", "value": "", "valueType": "string", "component": "select" }], defaults: {}, model: "ac-content-tabs-text" }, "ac-button": { Component: ACButton, fields: [{ "name": "itemType", "value": "ac-button", "valueType": "string", "component": "select" }, { "name": "text", "valueType": "string", "component": "text" }, { "name": "linkUrl", "prop": "buttonLink", "as": "link", "valueType": "string", "component": "aem-content" }, { "name": "target", "value": "_self", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierVariant", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierIconPosition", "value": "", "valueType": "string", "component": "select" }], defaults: {}, model: "ac-content-tabs-button" }, "ac-card-content": { Component: CardContent, fields: [{ "name": "itemType", "value": "ac-card-content", "valueType": "string", "component": "select" }, { "name": "pretitle", "valueType": "string", "component": "text" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "description", "valueType": "string", "component": "richtext" }, { "name": "imagePath", "valueType": "string", "component": "reference" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "linkUrl", "prop": "link", "as": "link", "valueType": "string", "component": "aem-content" }], defaults: { "id": "card-{uid}", "actionsEnabled": false, "imageLinkHidden": true, "titleLinkHidden": true }, model: "ac-content-tabs-card-content" }, "ac-download": { Component: ACDownload, fields: [{ "name": "itemType", "value": "ac-download", "valueType": "string", "component": "select" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "description", "valueType": "string", "component": "richtext" }, { "name": "actionText", "valueType": "string", "component": "text" }, { "name": "url", "valueType": "string", "component": "aem-content" }, { "name": "filename", "valueType": "string", "component": "text" }, { "name": "format", "valueType": "string", "component": "text" }, { "name": "size", "valueType": "string", "component": "text" }, { "name": "extension", "valueType": "string", "component": "text" }, { "name": "layoutAlignContent", "value": "", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierBgTransparent", "valueType": "boolean", "component": "boolean" }, { "name": "isCompact", "valueType": "boolean", "component": "boolean" }], defaults: {}, model: "ac-content-tabs-download" } };
 function decorate(block) {
   const { props: fieldProps, classes } = readFields(block, fields);
-  const props = { ...readDefaults(defaults), ...readClasses(block, fromClasses), ...fieldProps, ...items ? readItems(block, items) : {} };
-  const instrumentation2 = items ? snapshotInstrumentation(block) : null;
+  const classProps = readClasses(block, fromClasses);
+  const instrumentation2 = items ? snapshotInstrumentation(block, items) : null;
+  const props = { ...readDefaults(defaults), ...classProps, ...fieldProps, ...items ? readItems(block, items, children) : {} };
   const node = h(Tabs2, props);
   const root = node.nodeType === 11 ? node.firstElementChild : node;
   if (root && classes.length)
@@ -1041,8 +1506,6 @@ function decorate(block) {
   block.replaceChildren(node);
   if (items)
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
-  if (adopt)
-    adoptSections(block, node, adopt);
   runControllers(block, [{ Controller: TabsController, key: "TabsController", scope: "block", storybookMode: true, optionsFromProps: [], options: void 0 }], props);
 }
 export {

@@ -56,10 +56,14 @@
     ]
   },
   {
-    "id": "main",
+    "id": "ac-content-tabs",
     "components": [
-      "section",
-      "ac-tab"
+      "ac-content-tabs-tab",
+      "ac-content-tabs-title",
+      "ac-content-tabs-text",
+      "ac-content-tabs-button",
+      "ac-content-tabs-card-content",
+      "ac-content-tabs-download"
     ]
   },
   {
