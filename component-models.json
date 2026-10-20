@@ -277,7 +277,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierVariant",
-        "label": "Modifier variant",
+        "label": "Variant",
         "value": "",
         "options": [
           {
@@ -302,7 +302,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierIconPosition",
-        "label": "Modifier icon position",
+        "label": "Icon position",
         "value": "",
         "options": [
           {
@@ -401,7 +401,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -430,7 +430,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -455,7 +455,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -484,13 +484,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -498,11 +498,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -511,7 +511,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -519,27 +519,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -548,25 +548,25 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierLinkedVideo",
-        "label": "Modifier linked video"
+        "label": "Linked video"
       },
       {
         "component": "text",
@@ -686,7 +686,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -715,7 +715,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -740,7 +740,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -769,13 +769,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -783,11 +783,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -796,7 +796,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -804,27 +804,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -833,43 +833,43 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBanner",
-        "label": "Modifier banner"
+        "label": "Banner"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierMediaFilled",
-        "label": "Modifier media filled"
+        "label": "Media filled"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierOverlapImage",
-        "label": "Modifier overlap image"
+        "label": "Overlap image"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierMediaFilledAnimation",
-        "label": "Modifier media filled animation"
+        "label": "Media filled animation"
       },
       {
         "component": "boolean",
@@ -1036,7 +1036,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -1065,7 +1065,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -1090,7 +1090,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -1119,13 +1119,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -1133,11 +1133,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -1146,7 +1146,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -1154,27 +1154,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -1183,25 +1183,25 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "modifierDescription",
-        "label": "Modifier description",
+        "label": "Description",
         "value": "",
         "options": [
           {
@@ -1336,7 +1336,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -1357,7 +1357,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -1382,7 +1382,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -1411,13 +1411,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -1425,11 +1425,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -1438,7 +1438,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -1446,27 +1446,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -1475,25 +1475,25 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "modifierVariant",
-        "label": "Modifier variant",
+        "label": "Variant",
         "value": "solid",
         "options": [
           {
@@ -1518,7 +1518,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierType",
-        "label": "Modifier type",
+        "label": "Type",
         "value": "vertical",
         "options": [
           {
@@ -1653,7 +1653,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -1674,7 +1674,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -1699,7 +1699,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -1728,13 +1728,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -1742,11 +1742,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -1755,7 +1755,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -1763,27 +1763,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -1792,25 +1792,25 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "modifierVariant",
-        "label": "Modifier variant",
+        "label": "Variant",
         "value": "",
         "options": [
           {
@@ -2038,7 +2038,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -2067,7 +2067,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -2092,7 +2092,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -2121,13 +2121,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -2135,11 +2135,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -2148,7 +2148,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -2156,27 +2156,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -2185,19 +2185,19 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "text",
@@ -2347,7 +2347,7 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Bg transparent"
       },
       {
         "component": "boolean",
@@ -2437,7 +2437,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -2458,7 +2458,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -2483,7 +2483,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -2512,13 +2512,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -2526,11 +2526,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -2539,7 +2539,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -2547,27 +2547,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -2576,19 +2576,19 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "text",
@@ -2752,7 +2752,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -2773,7 +2773,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -2798,7 +2798,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -2827,13 +2827,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -2841,11 +2841,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -2854,7 +2854,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -2862,27 +2862,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -2891,25 +2891,25 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierReverseContent",
-        "label": "Modifier reverse content"
+        "label": "Reverse content"
       },
       {
         "component": "text",
@@ -3029,7 +3029,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -3050,7 +3050,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -3075,7 +3075,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -3104,13 +3104,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -3118,11 +3118,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -3131,7 +3131,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -3139,27 +3139,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -3168,25 +3168,25 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierReverseContent",
-        "label": "Modifier reverse content"
+        "label": "Reverse content"
       },
       {
         "component": "text",
@@ -3327,7 +3327,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierVariant",
-        "label": "Modifier variant",
+        "label": "Variant",
         "value": "solid",
         "options": [
           {
@@ -3352,7 +3352,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierType",
-        "label": "Modifier type",
+        "label": "Type",
         "value": "vertical",
         "options": [
           {
@@ -3616,7 +3616,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -3645,7 +3645,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -3670,7 +3670,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -3699,13 +3699,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -3713,11 +3713,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -3726,7 +3726,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -3734,27 +3734,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -3763,25 +3763,25 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierReverseContent",
-        "label": "Modifier reverse content"
+        "label": "Reverse content"
       },
       {
         "component": "text",
@@ -3901,7 +3901,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -3922,7 +3922,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -3947,7 +3947,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -3976,13 +3976,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -3990,11 +3990,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -4003,7 +4003,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -4011,27 +4011,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -4040,25 +4040,25 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "modifierStyle",
-        "label": "Modifier style",
+        "label": "Style",
         "value": "",
         "options": [
           {
@@ -4328,7 +4328,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -4357,7 +4357,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -4382,7 +4382,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -4411,13 +4411,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -4425,11 +4425,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -4438,7 +4438,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -4446,27 +4446,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -4475,19 +4475,19 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "text",
@@ -4607,7 +4607,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -4636,7 +4636,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -4661,7 +4661,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -4690,13 +4690,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -4704,11 +4704,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -4717,7 +4717,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -4725,27 +4725,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -4754,25 +4754,25 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "modifierImage",
-        "label": "Modifier image",
+        "label": "Image",
         "value": "",
         "options": [
           {
@@ -4915,7 +4915,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -4936,7 +4936,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -4961,7 +4961,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -4990,13 +4990,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -5004,11 +5004,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -5017,7 +5017,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -5025,27 +5025,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -5054,31 +5054,31 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierReverseContent",
-        "label": "Modifier reverse content"
+        "label": "Reverse content"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierNoIcons",
-        "label": "Modifier no icons"
+        "label": "No icons"
       },
       {
         "component": "text",
@@ -5198,7 +5198,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -5223,7 +5223,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -5248,7 +5248,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -5277,13 +5277,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -5291,11 +5291,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -5304,7 +5304,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -5312,27 +5312,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -5341,25 +5341,25 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "modifierContentType",
-        "label": "Modifier content type",
+        "label": "Content type",
         "value": "",
         "options": [
           {
@@ -5573,7 +5573,7 @@
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
-        "label": "Theme color",
+        "label": "Theme",
         "value": "",
         "options": [
           {
@@ -5594,7 +5594,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {
@@ -5619,7 +5619,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierPretitle",
-        "label": "Modifier pretitle",
+        "label": "Pretitle colour",
         "value": "",
         "options": [
           {
@@ -5644,13 +5644,13 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
+        "label": "Transparent background"
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
-        "label": "Headline line clamp",
+        "label": "Title: max lines",
         "value": "",
         "options": [
           {
@@ -5658,11 +5658,11 @@
             "value": ""
           },
           {
-            "name": "1",
+            "name": "1 line",
             "value": "1"
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           }
         ]
@@ -5671,7 +5671,7 @@
         "component": "select",
         "valueType": "string",
         "name": "descriptionLineClamp",
-        "label": "Description line clamp",
+        "label": "Description: max lines",
         "value": "",
         "options": [
           {
@@ -5679,27 +5679,27 @@
             "value": ""
           },
           {
-            "name": "2",
+            "name": "2 lines",
             "value": "2"
           },
           {
-            "name": "4",
+            "name": "4 lines",
             "value": "4"
           },
           {
-            "name": "6",
+            "name": "6 lines",
             "value": "6"
           },
           {
-            "name": "8",
+            "name": "8 lines",
             "value": "8"
           },
           {
-            "name": "10",
+            "name": "10 lines",
             "value": "10"
           },
           {
-            "name": "12",
+            "name": "12 lines",
             "value": "12"
           }
         ]
@@ -5708,19 +5708,19 @@
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
-        "label": "Use icon phone on links"
+        "label": "Phone icon on phone links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconEmailOnLinks",
-        "label": "Use icon email on links"
+        "label": "Email icon on email links"
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Use icons order phone email on links"
+        "label": "Phone and email links: icons first"
       },
       {
         "component": "text",
@@ -5814,7 +5814,7 @@
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
+        "label": "Content alignment",
         "value": "",
         "options": [
           {

@@ -8,7 +8,7 @@
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "AC Download",
+              "name": "ac-download",
               "model": "ac-download",
               "key-value": true
             }
@@ -128,7 +128,7 @@
           "component": "boolean",
           "valueType": "boolean",
           "name": "modifierBgTransparent",
-          "label": "Modifier bg transparent"
+          "label": "Bg transparent"
         },
         {
           "component": "boolean",

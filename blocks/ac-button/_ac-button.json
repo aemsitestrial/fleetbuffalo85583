@@ -8,7 +8,7 @@
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "AC Button",
+              "name": "ac-button",
               "model": "ac-button",
               "key-value": true
             }
@@ -84,7 +84,7 @@
           "component": "select",
           "valueType": "string",
           "name": "modifierVariant",
-          "label": "Modifier variant",
+          "label": "Variant",
           "value": "",
           "options": [
             {
@@ -109,7 +109,7 @@
           "component": "select",
           "valueType": "string",
           "name": "modifierIconPosition",
-          "label": "Modifier icon position",
+          "label": "Icon position",
           "value": "",
           "options": [
             {

@@ -487,18 +487,19 @@ var aemTeaserFields = {
   // first, and turning the second off would end linked mode and render a title link to "/".
   link: { name: "linkUrl", label: "Teaser link (whole teaser, when no action is set)" }
 };
+var lines = (values) => Object.fromEntries(values.map((v) => [v, v === "1" ? "1 line" : `${v} lines`]));
 var acTeaserFields = {
   ...aemTeaserFields,
-  themeColor: true,
-  modifierContentAlignment: true,
-  modifierPretitle: true,
-  modifierBgTransparent: true,
+  themeColor: { label: "Theme" },
+  modifierContentAlignment: { label: "Content alignment" },
+  modifierPretitle: { label: "Pretitle colour" },
+  modifierBgTransparent: { label: "Transparent background" },
   // the stories' "none" (no clamp) is the empty value here
-  headlineLineClamp: { exclude: ["none"] },
-  descriptionLineClamp: { exclude: ["none"] },
-  useIconPhoneOnLinks: true,
-  useIconEmailOnLinks: true,
-  useIconsOrderPhoneEmailOnLinks: true
+  headlineLineClamp: { label: "Title: max lines", exclude: ["none"], labels: lines(["1", "2"]) },
+  descriptionLineClamp: { label: "Description: max lines", exclude: ["none"], labels: lines(["2", "4", "6", "8", "10", "12"]) },
+  useIconPhoneOnLinks: { label: "Phone icon on phone links" },
+  useIconEmailOnLinks: { label: "Email icon on email links" },
+  useIconsOrderPhoneEmailOnLinks: { label: "Phone and email links: icons first" }
 };
 var CTA_COUNT = 3;
 var ctaName = (i, part) => i === 1 ? `action${part}` : `action${part}${i}`;

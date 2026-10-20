@@ -98,7 +98,7 @@
           "component": "select",
           "valueType": "string",
           "name": "themeColor",
-          "label": "Theme color",
+          "label": "Theme",
           "value": "",
           "options": [
             {
@@ -127,7 +127,7 @@
           "component": "select",
           "valueType": "string",
           "name": "modifierContentAlignment",
-          "label": "Modifier content alignment",
+          "label": "Content alignment",
           "value": "",
           "options": [
             {
@@ -152,7 +152,7 @@
           "component": "select",
           "valueType": "string",
           "name": "modifierPretitle",
-          "label": "Modifier pretitle",
+          "label": "Pretitle colour",
           "value": "",
           "options": [
             {
@@ -181,13 +181,13 @@
           "component": "boolean",
           "valueType": "boolean",
           "name": "modifierBgTransparent",
-          "label": "Modifier bg transparent"
+          "label": "Transparent background"
         },
         {
           "component": "select",
           "valueType": "string",
           "name": "headlineLineClamp",
-          "label": "Headline line clamp",
+          "label": "Title: max lines",
           "value": "",
           "options": [
             {
@@ -195,11 +195,11 @@
               "value": ""
             },
             {
-              "name": "1",
+              "name": "1 line",
               "value": "1"
             },
             {
-              "name": "2",
+              "name": "2 lines",
               "value": "2"
             }
           ]
@@ -208,7 +208,7 @@
           "component": "select",
           "valueType": "string",
           "name": "descriptionLineClamp",
-          "label": "Description line clamp",
+          "label": "Description: max lines",
           "value": "",
           "options": [
             {
@@ -216,27 +216,27 @@
               "value": ""
             },
             {
-              "name": "2",
+              "name": "2 lines",
               "value": "2"
             },
             {
-              "name": "4",
+              "name": "4 lines",
               "value": "4"
             },
             {
-              "name": "6",
+              "name": "6 lines",
               "value": "6"
             },
             {
-              "name": "8",
+              "name": "8 lines",
               "value": "8"
             },
             {
-              "name": "10",
+              "name": "10 lines",
               "value": "10"
             },
             {
-              "name": "12",
+              "name": "12 lines",
               "value": "12"
             }
           ]
@@ -245,43 +245,43 @@
           "component": "boolean",
           "valueType": "boolean",
           "name": "useIconPhoneOnLinks",
-          "label": "Use icon phone on links"
+          "label": "Phone icon on phone links"
         },
         {
           "component": "boolean",
           "valueType": "boolean",
           "name": "useIconEmailOnLinks",
-          "label": "Use icon email on links"
+          "label": "Email icon on email links"
         },
         {
           "component": "boolean",
           "valueType": "boolean",
           "name": "useIconsOrderPhoneEmailOnLinks",
-          "label": "Use icons order phone email on links"
+          "label": "Phone and email links: icons first"
         },
         {
           "component": "boolean",
           "valueType": "boolean",
           "name": "modifierBanner",
-          "label": "Modifier banner"
+          "label": "Banner"
         },
         {
           "component": "boolean",
           "valueType": "boolean",
           "name": "modifierMediaFilled",
-          "label": "Modifier media filled"
+          "label": "Media filled"
         },
         {
           "component": "boolean",
           "valueType": "boolean",
           "name": "modifierOverlapImage",
-          "label": "Modifier overlap image"
+          "label": "Overlap image"
         },
         {
           "component": "boolean",
           "valueType": "boolean",
           "name": "modifierMediaFilledAnimation",
-          "label": "Modifier media filled animation"
+          "label": "Media filled animation"
         },
         {
           "component": "boolean",
