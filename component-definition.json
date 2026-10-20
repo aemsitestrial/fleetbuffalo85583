@@ -308,7 +308,7 @@
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "AC Card (AEM)",
+                  "name": "ac-card-aem",
                   "model": "ac-card-aem",
                   "key-value": true
                 }
@@ -324,7 +324,7 @@
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "AC Card (Content)",
+                  "name": "ac-card-content",
                   "model": "ac-card-content",
                   "key-value": true
                 }
@@ -340,7 +340,7 @@
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "AC Card (Feature)",
+                  "name": "ac-card-feature",
                   "model": "ac-card-feature",
                   "key-value": true
                 }
@@ -356,7 +356,7 @@
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "AC Card (Icon)",
+                  "name": "ac-card-icon",
                   "model": "ac-card-icon",
                   "key-value": true
                 }
@@ -372,7 +372,7 @@
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "AC Card (Product)",
+                  "name": "ac-card-product",
                   "model": "ac-card-product",
                   "key-value": true
                 }
