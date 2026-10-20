@@ -56,7 +56,7 @@ body #main {
 html #main::selection,
 body #main::selection {
   background-color: #b4d5e5;
-  color: hsl(195.2795031056, 100%, 22%);
+  color: hsl(195, 100%, 22%);
   text-shadow: none;
 }
 
@@ -264,17 +264,17 @@ body #main::selection {
 }
 
 .border-0 {
-  border-width: 0px !important;
+  border-width: 0 !important;
 }
 .border-0 > div {
-  border-width: 0px !important;
+  border-width: 0 !important;
 }
 /* libs/aem-core-lib/src/lib/accordion/accordion.scss */
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
@@ -840,7 +840,7 @@ body.anonymous .cmp-teaser--secure .cmp-teaser__action-container {
   0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
