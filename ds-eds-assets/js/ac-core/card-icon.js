@@ -202,9 +202,18 @@ function applyInstrumentation(root, snapshot, instrument, fields2 = []) {
     }
   });
 }
-function readFields(block2, fields2) {
+function keyValueRows(block2) {
+  const children = [...block2.children];
+  const [wrapper] = children;
+  const isWrapper = children.length === 1 && wrapper.hasAttribute("data-aue-resource") && wrapper.children.length > 0 && [...wrapper.children].every((row) => row.children.length === 2);
+  if (!isWrapper)
+    return children;
+  instrumentation(wrapper).filter(({ name }) => !block2.hasAttribute(name)).forEach(({ name, value }) => block2.setAttribute(name, value));
+  return [...wrapper.children];
+}
+function readFields(block2, fields2, { keyValue = true } = {}) {
   const cells = {};
-  for (const row of block2.children) {
+  for (const row of keyValue ? keyValueRows(block2) : [...block2.children]) {
     const [keyCell, valueCell] = [...row.children];
     const key = keyCell?.textContent.trim();
     if (key && valueCell)
@@ -475,19 +484,50 @@ var block = (def) => ({ kind: "block", ...def });
 var uniqueId = (prefix) => `${prefix}-${Math.random().toString(36).slice(2, 8)}`;
 
 // libs/ac-core-lib/eds.presets.ts
-var teaserContent = {
+var aemTeaserFields = {
   pretitle: true,
   title: true,
+  titleTag: { label: "Title heading level" },
   description: true,
   // rich text (by prop name)
-  imagePath: { label: "Image" }
+  imagePath: { label: "Image" },
   // image (by prop name)
+  date: true,
+  // Linked teaser: with a link and no call to action the whole teaser is one link (base Teaser `isLinked`).
+  // `imageLinkHidden` / `titleLinkHidden` stay fixed by teaserDefaults: the base Teaser does not use the
+  // first, and turning the second off would end linked mode and render a title link to "/".
+  link: { name: "linkUrl", label: "Teaser link (whole teaser, when no action is set)" }
 };
-var cta = {
-  actionText: field.text("Action text"),
-  actionUrl: field.link("Action link")
+var acTeaserFields = {
+  ...aemTeaserFields,
+  themeColor: true,
+  modifierContentAlignment: true,
+  modifierPretitle: true,
+  modifierBgTransparent: true,
+  // the stories' "none" (no clamp) is the empty value here
+  headlineLineClamp: { exclude: ["none"] },
+  descriptionLineClamp: { exclude: ["none"] },
+  useIconPhoneOnLinks: true,
+  useIconEmailOnLinks: true,
+  useIconsOrderPhoneEmailOnLinks: true
 };
-var ctaProps = ({ actionText, actionUrl }) => actionText ? { actionsEnabled: true, actions: [{ id: uniqueId("action"), title: actionText, link: { url: actionUrl || "#", valid: true } }] } : { actionsEnabled: false, actions: [] };
+var CTA_COUNT = 3;
+var ctaName = (i, part) => i === 1 ? `action${part}` : `action${part}${i}`;
+var ctas = (count = CTA_COUNT) => Object.fromEntries(
+  Array.from({ length: count }, (_, k) => k + 1).flatMap((i) => [
+    [ctaName(i, "Text"), field.text(count === 1 ? "Action text" : `Action ${i} text`)],
+    [ctaName(i, "Url"), field.link(count === 1 ? "Action link" : `Action ${i} link`)]
+  ])
+);
+var cta = ctas();
+var ctaProps = (values) => {
+  const actions = Array.from({ length: CTA_COUNT }, (_, k) => k + 1).filter((i) => values[ctaName(i, "Text")]).map((i) => ({
+    id: uniqueId("action"),
+    title: values[ctaName(i, "Text")],
+    link: { url: values[ctaName(i, "Url")] || "#", valid: true }
+  }));
+  return { actionsEnabled: actions.length > 0, actions };
+};
 var teaserDefaults = () => ({
   id: uniqueId("teaser"),
   imageLinkHidden: true,
@@ -499,8 +539,7 @@ var teaserDefaults = () => ({
 var card_icon_eds_default = block({
   title: "AC Card (Icon)",
   fields: {
-    ...teaserContent,
-    themeColor: true,
+    ...acTeaserFields,
     modifierVariant: true,
     modifierType: true
   },
@@ -510,13 +549,13 @@ var card_icon_eds_default = block({
 });
 
 // ac-card-icon.decorate.tsx
-var fields = [{ "name": "pretitle", "valueType": "string", "component": "text" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "description", "valueType": "string", "component": "richtext" }, { "name": "imagePath", "valueType": "string", "component": "reference" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierVariant", "value": "solid", "valueType": "string", "component": "select" }, { "name": "modifierType", "value": "vertical", "valueType": "string", "component": "select" }, { "name": "actionText", "valueType": "string", "component": "text" }, { "name": "actionUrl", "valueType": "string", "component": "aem-content" }];
+var fields = [{ "name": "pretitle", "valueType": "string", "component": "text" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "titleTag", "value": "", "valueType": "string", "component": "select" }, { "name": "description", "valueType": "string", "component": "richtext" }, { "name": "imagePath", "valueType": "string", "component": "reference" }, { "name": "date", "valueType": "string", "component": "text" }, { "name": "linkUrl", "prop": "link", "as": "link", "valueType": "string", "component": "aem-content" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierContentAlignment", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierPretitle", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierBgTransparent", "valueType": "boolean", "component": "boolean" }, { "name": "headlineLineClamp", "value": "", "valueType": "string", "component": "select" }, { "name": "descriptionLineClamp", "value": "", "valueType": "string", "component": "select" }, { "name": "useIconPhoneOnLinks", "valueType": "boolean", "component": "boolean" }, { "name": "useIconEmailOnLinks", "valueType": "boolean", "component": "boolean" }, { "name": "useIconsOrderPhoneEmailOnLinks", "valueType": "boolean", "component": "boolean" }, { "name": "modifierVariant", "value": "solid", "valueType": "string", "component": "select" }, { "name": "modifierType", "value": "vertical", "valueType": "string", "component": "select" }, { "name": "actionText", "valueType": "string", "component": "text" }, { "name": "actionUrl", "valueType": "string", "component": "aem-content" }, { "name": "actionText2", "valueType": "string", "component": "text" }, { "name": "actionUrl2", "valueType": "string", "component": "aem-content" }, { "name": "actionText3", "valueType": "string", "component": "text" }, { "name": "actionUrl3", "valueType": "string", "component": "aem-content" }];
 var fromClasses = {};
 var items = null;
 var adopt = null;
-var extraNames = ["actionText", "actionUrl"];
+var extraNames = ["actionText", "actionUrl", "actionText2", "actionUrl2", "actionText3", "actionUrl3"];
 function decorate(block2) {
-  const { props: authored, classes } = readFields(block2, fields);
+  const { props: authored, classes } = readFields(block2, fields, { keyValue: !items });
   const extra = {};
   extraNames.forEach((name) => {
     extra[name] = authored[name];

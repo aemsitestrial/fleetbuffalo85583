@@ -34,6 +34,43 @@
           "label": "Title"
         },
         {
+          "component": "select",
+          "valueType": "string",
+          "name": "titleTag",
+          "label": "Title heading level",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "H1",
+              "value": "h1"
+            },
+            {
+              "name": "H2",
+              "value": "h2"
+            },
+            {
+              "name": "H3",
+              "value": "h3"
+            },
+            {
+              "name": "H4",
+              "value": "h4"
+            },
+            {
+              "name": "H5",
+              "value": "h5"
+            },
+            {
+              "name": "H6",
+              "value": "h6"
+            }
+          ]
+        },
+        {
           "component": "richtext",
           "valueType": "string",
           "name": "description",
@@ -44,6 +81,18 @@
           "valueType": "string",
           "name": "imagePath",
           "label": "Image"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "date",
+          "label": "Date"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "linkUrl",
+          "label": "Teaser link (whole teaser, when no action is set)"
         },
         {
           "component": "select",
@@ -77,6 +126,142 @@
         {
           "component": "select",
           "valueType": "string",
+          "name": "modifierContentAlignment",
+          "label": "Modifier content alignment",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "name": "Center",
+              "value": "center"
+            },
+            {
+              "name": "Right",
+              "value": "right"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "modifierPretitle",
+          "label": "Modifier pretitle",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            },
+            {
+              "name": "Tertiary",
+              "value": "tertiary"
+            },
+            {
+              "name": "Quaternary",
+              "value": "quaternary"
+            }
+          ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "modifierBgTransparent",
+          "label": "Modifier bg transparent"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "headlineLineClamp",
+          "label": "Headline line clamp",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "name": "2",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "descriptionLineClamp",
+          "label": "Description line clamp",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "2",
+              "value": "2"
+            },
+            {
+              "name": "4",
+              "value": "4"
+            },
+            {
+              "name": "6",
+              "value": "6"
+            },
+            {
+              "name": "8",
+              "value": "8"
+            },
+            {
+              "name": "10",
+              "value": "10"
+            },
+            {
+              "name": "12",
+              "value": "12"
+            }
+          ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "useIconPhoneOnLinks",
+          "label": "Use icon phone on links"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "useIconEmailOnLinks",
+          "label": "Use icon email on links"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "useIconsOrderPhoneEmailOnLinks",
+          "label": "Use icons order phone email on links"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
           "name": "modifierDescription",
           "label": "Modifier description",
           "value": "",
@@ -99,13 +284,37 @@
           "component": "text",
           "valueType": "string",
           "name": "actionText",
-          "label": "Action text"
+          "label": "Action 1 text"
         },
         {
           "component": "aem-content",
           "valueType": "string",
           "name": "actionUrl",
-          "label": "Action link"
+          "label": "Action 1 link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText2",
+          "label": "Action 2 text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl2",
+          "label": "Action 2 link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText3",
+          "label": "Action 3 text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl3",
+          "label": "Action 3 link"
         }
       ]
     }

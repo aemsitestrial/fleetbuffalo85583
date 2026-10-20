@@ -34,6 +34,43 @@
           "label": "Title"
         },
         {
+          "component": "select",
+          "valueType": "string",
+          "name": "titleTag",
+          "label": "Title heading level",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "H1",
+              "value": "h1"
+            },
+            {
+              "name": "H2",
+              "value": "h2"
+            },
+            {
+              "name": "H3",
+              "value": "h3"
+            },
+            {
+              "name": "H4",
+              "value": "h4"
+            },
+            {
+              "name": "H5",
+              "value": "h5"
+            },
+            {
+              "name": "H6",
+              "value": "h6"
+            }
+          ]
+        },
+        {
           "component": "richtext",
           "valueType": "string",
           "name": "description",
@@ -44,6 +81,18 @@
           "valueType": "string",
           "name": "imagePath",
           "label": "Image"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "date",
+          "label": "Date"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "linkUrl",
+          "label": "Teaser link (whole teaser, when no action is set)"
         },
         {
           "component": "select",
@@ -116,13 +165,37 @@
           "component": "text",
           "valueType": "string",
           "name": "actionText",
-          "label": "Action text"
+          "label": "Action 1 text"
         },
         {
           "component": "aem-content",
           "valueType": "string",
           "name": "actionUrl",
-          "label": "Action link"
+          "label": "Action 1 link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText2",
+          "label": "Action 2 text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl2",
+          "label": "Action 2 link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText3",
+          "label": "Action 3 text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl3",
+          "label": "Action 3 link"
         }
       ]
     }

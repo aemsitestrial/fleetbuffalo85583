@@ -251,9 +251,18 @@ function applyInstrumentation(root, snapshot, instrument, fields2 = []) {
     }
   });
 }
-function readFields(block, fields2) {
+function keyValueRows(block) {
+  const children = [...block.children];
+  const [wrapper] = children;
+  const isWrapper = children.length === 1 && wrapper.hasAttribute("data-aue-resource") && wrapper.children.length > 0 && [...wrapper.children].every((row) => row.children.length === 2);
+  if (!isWrapper)
+    return children;
+  instrumentation(wrapper).filter(({ name }) => !block.hasAttribute(name)).forEach(({ name, value }) => block.setAttribute(name, value));
+  return [...wrapper.children];
+}
+function readFields(block, fields2, { keyValue = true } = {}) {
   const cells = {};
-  for (const row of block.children) {
+  for (const row of keyValue ? keyValueRows(block) : [...block.children]) {
     const [keyCell, valueCell] = [...row.children];
     const key = keyCell?.textContent.trim();
     if (key && valueCell)
@@ -612,7 +621,7 @@ var items = { "fields": [{ "name": "title", "valueType": "string", "component": 
 var adopt = null;
 var extraNames = [];
 function decorate(block) {
-  const { props: authored, classes } = readFields(block, fields);
+  const { props: authored, classes } = readFields(block, fields, { keyValue: !items });
   const extra = {};
   extraNames.forEach((name) => {
     extra[name] = authored[name];
