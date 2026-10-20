@@ -41,10 +41,10 @@
           "required": true
         },
         {
+          "component": "aem-content",
           "valueType": "string",
           "name": "url",
-          "label": "File",
-          "component": "aem-content"
+          "label": "File"
         },
         {
           "component": "text",

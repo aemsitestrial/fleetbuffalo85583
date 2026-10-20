@@ -1,0 +1,21 @@
+/* libs/ac-core-lib/src/lib/title/ac-title.scss */
+/* Grays */
+:root {
+  --ds-container-width: 1478px;
+  --ds-container-padding: 20px;
+}
+
+.ac-core .ac-core-title.style-secondary .cmp-title {
+  color: #ffffff;
+}
+.ac-core .ac-core-title .cmp-title {
+  color: #0d0d0d;
+  font-style: normal;
+  font-weight: 700;
+}
+.ac-core.modifiator-theme-dark .ac-core-title {
+  color: #f8f9f9;
+}
+.ac-core.modifiator-theme-dark .ac-core-title .cmp-title {
+  color: inherit;
+}

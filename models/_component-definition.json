@@ -15,6 +15,99 @@
         },
         {
           "...": "./_button.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-accordion/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-button/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-carousel/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-download/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-highlight/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-horizontal-tabs/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-key-figure/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-list/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-quote/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-table/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-teaser/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-text/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-title/_*.json#/definitions"
+        }
+      ]
+    },
+    {
+      "title": "Cards",
+      "id": "cards",
+      "components": [
+        {
+          "...": "../blocks/ac-card-aem/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-card-content/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-card-feature/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-card-icon/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-card-product/_*.json#/definitions"
+        }
+      ]
+    },
+    {
+      "title": "Banners",
+      "id": "banners",
+      "components": [
+        {
+          "...": "../blocks/ac-content-banner/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-innovation-banner/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-innovation-hero-banner/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-product-banner/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-promo-banner/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-section-banner/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-section-teaser/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-startpage-banner/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-sticky-banner/_*.json#/definitions"
         }
       ]
     },
@@ -34,21 +127,6 @@
       "title": "Blocks",
       "id": "blocks",
       "components": [
-        {
-          "...": "../blocks/ac-card/_*.json#/definitions"
-        },
-        { 
-          "...": "../blocks/ac-button/_*.json#/definitions"
-        },
-        { 
-          "...": "../blocks/ac-download/_*.json#/definitions"
-        },
-        { 
-          "...": "../blocks/ac-accordion/_*.json#/definitions"
-        },
-        { 
-          "...": "../blocks/ac-horizontal-tabs/_*.json#/definitions"
-        },
         {
           "...": "../blocks/cards/_*.json#/definitions"
         },

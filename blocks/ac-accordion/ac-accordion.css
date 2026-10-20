@@ -1,97 +1,3 @@
-/* stylelint-disable comment-empty-line-before */
-/* stylelint-disable no-descending-specificity, property-no-vendor-prefix */
-/* stylelint-disable rule-empty-line-before */
-/* stylelint-disable color-hex-length */
-/* stylelint-disable selector-not-notation */
-/* stylelint-disable value-no-vendor-prefix */
-/* stylelint-disable declaration-block-no-redundant-longhand-properties */
-/* stylelint-disable alpha-value-notation */
-/* stylelint-disable font-family-no-missing-generic-family-keyword */
-/* stylelint-disable selector-pseudo-element-colon-notation */
-/* stylelint-disable declaration-property-value-no-unknown */
-/* stylelint-disable declaration-block-no-shorthand-property-overrides */
-/* stylelint-disable media-feature-range-notation */
-/* stylelint-disable font-family-name-quotes */
-/* stylelint-disable selector-class-pattern */
-/* stylelint-disable color-function-notation */
-/* stylelint-disable hue-degree-notation */
-/* stylelint-disable declaration-block-no-duplicate-properties */
-/* stylelint-disable value-keyword-case */
-/* stylelint-disable at-rule-empty-line-before */
-/* stylelint-disable declaration-empty-line-before */
-/* stylelint-disable selector-attribute-quotes */
-/* stylelint-disable no-duplicate-selectors */
-
-/* libs/aem-core-lib/src/lib/accordion/accordion.scss */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.cmp-accordion .cmp-accordion__button {
-  border: none;
-  border-bottom: 2px solid #ebebeb;
-  background: none;
-  display: block;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-}
-.cmp-accordion .cmp-accordion__button:focus-visible {
-  outline: 1px solid currentColor;
-}
-
-.cmp-accordion .cmp-accordion__icon {
-  float: right;
-}
-
-.cmp-accordion .cmp-accordion__button--expanded {
-  border: none;
-}
-
-.cmp-accordion .cmp-accordion__title {
-  font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 1pc;
-  text-transform: uppercase;
-  font-weight: 600;
-  padding-left: 0.5em;
-}
-
-.cmp-accordion .cmp-accordion__panel {
-  font-size: 14px;
-  padding-left: 0.5em;
-  padding-top: 0.5em;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-}
-
-.cmp-accordion .cmp-accordion__panel p {
-  font-size: 14px;
-  line-height: 1.75;
-}
-
-.cmp-accordion .cmp-accordion__panel--expanded {
-  display: block;
-}
-
-.cmp-accordion .cmp-accordion__panel--hidden {
-  display: none;
-}
-
-.cmp-accordion__header {
-  margin: 0;
-}
-
-.cmp-accordion__header {
-  margin: 0;
-}
 /* libs/ac-core-lib/src/lib/accordion/ac-accordion.scss */
 /* Grays */
 :root {
@@ -142,7 +48,7 @@
 }
 .ac-core .ac-core-accordion .cmp-accordion__item {
   margin-block-end: 0;
-  box-shadow: 0 0 12px 0 rgba(47, 54, 58, 0.12);
+  box-shadow: 0 0 12px 0 rgba(47, 54, 58, 0.1215686275);
   box-shadow: 0 0 12px 0 var(--accordion-tab-shadow-color);
   font-size: 16px;
 }

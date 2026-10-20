@@ -1,0 +1,106 @@
+{
+  "definitions": [
+    {
+      "title": "AC Promo Banner",
+      "id": "ac-promo-banner",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "AC Promo Banner",
+              "model": "ac-promo-banner",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-promo-banner",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "pretitle",
+          "label": "Pretitle"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "imagePath",
+          "label": "Image"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "themeColor",
+          "label": "Theme color",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "modifierStyle",
+          "label": "Modifier style",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Card",
+              "value": "card"
+            },
+            {
+              "name": "Boxed",
+              "value": "boxed"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText",
+          "label": "Action text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl",
+          "label": "Action link"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -9,12 +9,33 @@
   {
     "id": "section",
     "components": [
-      "ac-card",
-      "ac-button",
-      "ac-download",
       "ac-accordion",
+      "ac-button",
+      "ac-card-aem",
+      "ac-card-content",
+      "ac-card-feature",
+      "ac-card-icon",
+      "ac-card-product",
+      "ac-carousel",
+      "ac-content-banner",
+      "ac-download",
+      "ac-highlight",
       "ac-horizontal-tabs",
-      "ac-content-tabs",
+      "ac-innovation-banner",
+      "ac-innovation-hero-banner",
+      "ac-key-figure",
+      "ac-list",
+      "ac-product-banner",
+      "ac-promo-banner",
+      "ac-quote",
+      "ac-section-banner",
+      "ac-section-teaser",
+      "ac-startpage-banner",
+      "ac-sticky-banner",
+      "ac-table",
+      "ac-teaser",
+      "ac-text",
+      "ac-title",
       "text",
       "image",
       "button",
@@ -57,14 +78,10 @@
     ]
   },
   {
-    "id": "ac-content-tabs",
+    "id": "main",
     "components": [
-      "ac-content-tabs-tab",
-      "ac-content-tabs-title",
-      "ac-content-tabs-text",
-      "ac-content-tabs-button",
-      "ac-content-tabs-card-content",
-      "ac-content-tabs-download"
+      "section",
+      "ac-tab"
     ]
   },
   {

@@ -1,132 +1,3 @@
-/* stylelint-disable comment-empty-line-before */
-/* stylelint-disable no-descending-specificity, property-no-vendor-prefix */
-/* stylelint-disable rule-empty-line-before */
-/* stylelint-disable color-hex-length */
-/* stylelint-disable selector-not-notation */
-/* stylelint-disable value-no-vendor-prefix */
-/* stylelint-disable declaration-block-no-redundant-longhand-properties */
-/* stylelint-disable alpha-value-notation */
-/* stylelint-disable font-family-no-missing-generic-family-keyword */
-/* stylelint-disable selector-pseudo-element-colon-notation */
-/* stylelint-disable declaration-property-value-no-unknown */
-/* stylelint-disable declaration-block-no-shorthand-property-overrides */
-/* stylelint-disable media-feature-range-notation */
-/* stylelint-disable font-family-name-quotes */
-/* stylelint-disable selector-class-pattern */
-/* stylelint-disable color-function-notation */
-/* stylelint-disable hue-degree-notation */
-/* stylelint-disable declaration-block-no-duplicate-properties */
-/* stylelint-disable value-keyword-case */
-/* stylelint-disable at-rule-empty-line-before */
-/* stylelint-disable declaration-empty-line-before */
-/* stylelint-disable selector-attribute-quotes */
-/* stylelint-disable no-duplicate-selectors */
-
-/* libs/aem-core-lib/src/lib/download/download.scss */
-.download {
-  float: left;
-}
-.download.download--icon-right .cmp-download__action-text:before {
-  float: right;
-  padding-left: 0.5em;
-  padding-right: 0;
-}
-.download.download--with-image .cmp-download .cmp-image {
-  display: block;
-}
-
-.cmp-download {
-  float: left;
-  line-height: 1;
-}
-.cmp-download .cmp-image {
-  display: none;
-}
-.cmp-download .cmp-image .cmp-image__title {
-  display: none;
-}
-
-.cmp-download .cmp-download__title {
-  font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-size: 14px;
-  margin-top: 0.5em;
-  margin-bottom: 0;
-  font-weight: 600;
-}
-
-.cmp-download .cmp-download__title-link:after {
-  content: none;
-}
-
-.cmp-download .cmp-download__description {
-  font-weight: 600;
-  font-size: 1pc;
-}
-
-.cmp-download .cmp-download__description p {
-  font-weight: 600;
-  font-size: 1pc;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.cmp-download .cmp-download__properties {
-  float: left;
-  width: 100%;
-  margin-top: 0.25em;
-}
-
-.cmp-download .cmp-download__property {
-  text-transform: uppercase;
-  font-size: 9pt;
-  color: #696969;
-  float: left;
-}
-
-.cmp-download .cmp-download__property-label {
-  display: none;
-}
-
-.cmp-download .cmp-download__property-content {
-  -webkit-margin-start: 0;
-  margin-inline-start: 0;
-  margin-right: 1em;
-}
-
-.cmp-download .cmp-download__action {
-  background-color: #202020;
-  color: #fff;
-  float: left;
-  height: 3pc;
-}
-
-.cmp-download .cmp-download__action-text {
-  padding-top: 1pc;
-  padding-left: 2.25em;
-  padding-right: 2.5em;
-  float: left;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-.cmp-download .cmp-download__action-text:before {
-  font-family: wknd-icon-font !important;
-  speak: none;
-  font-style: normal;
-  font-weight: 400;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  font-size: 1.25rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\e907";
-  padding-right: 0.5em;
-  margin-top: -0.1em;
-  font-size: 1.1rem;
-  float: left;
-}
 /* libs/ac-core-lib/src/lib/download/ac-download.scss */
 /* Grays */
 :root {
@@ -149,17 +20,17 @@
   initial-value: #006f8f;
   inherits: false;
 }
-@property --download-gradient-color-1 {
+@property --downloadGradientColor1 {
   syntax: "<color>";
   initial-value: #1f9fc4;
   inherits: false;
 }
-@property --download-gradient-color-2 {
+@property --downloadGradientColor2 {
   syntax: "<color>";
   initial-value: #0092bc;
   inherits: false;
 }
-@property --download-gradient-color-3 {
+@property --downloadGradientColor3 {
   syntax: "<color>";
   initial-value: #006f8f;
   inherits: false;
@@ -349,18 +220,18 @@
   inset-inline-end: 10px;
   inset-block-end: 10px;
   color: var(--download-action-color);
-  background: linear-gradient(94deg, var(--download-gradient-color-1) 4%, var(--download-gradient-color-2) 48%, var(--download-gradient-color-3) 96%);
+  background: linear-gradient(94deg, var(--downloadGradientColor1) 4%, var(--downloadGradientColor2) 48%, var(--downloadGradientColor3) 96%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: --download-gradient-color-1 0.3s ease-in-out, --download-gradient-color-2 0.3s ease-in-out, --download-gradient-color-3 0.3s ease-in-out;
+  transition: --downloadGradientColor1 0.3s ease-in-out, --downloadGradientColor2 0.3s ease-in-out, --downloadGradientColor3 0.3s ease-in-out;
 }
 .ac-core .ac-core-download .cmp-download__action:hover {
-  --download-gradient-color-1: #006f8f;
-  --download-gradient-color-2: #006f8f;
-  --download-gradient-color-3: #006f8f;
+  --downloadGradientColor1: #006f8f;
+  --downloadGradientColor2: #006f8f;
+  --downloadGradientColor3: #006f8f;
 }
 .ac-core .ac-core-download .cmp-download__action::before {
   content: "";

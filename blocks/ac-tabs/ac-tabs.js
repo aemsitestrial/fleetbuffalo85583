@@ -1,5 +1,5 @@
-import { decorate as ACDecorate } from '../../ds-eds-assets/js/atlas-copco/ac-tabs.js';
+import AtlasCopcoDecorate from '../../ds-eds-assets/js/ac-core/tabs.js';
 
 export default function decorate(block) {
-  ACDecorate(block);
+  AtlasCopcoDecorate(block);
 }

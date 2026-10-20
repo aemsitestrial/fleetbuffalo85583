@@ -322,15 +322,8 @@
     ]
   },
   {
-    "id": "ac-card",
+    "id": "ac-card-aem",
     "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
       {
         "component": "text",
         "valueType": "string",
@@ -350,222 +343,643 @@
         "label": "Description"
       },
       {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierLinkedVideo",
+        "label": "Modifier linked video"
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "actionText",
-        "label": "Link text"
+        "label": "Action text"
       },
       {
         "component": "aem-content",
         "valueType": "string",
         "name": "actionUrl",
-        "label": "Link URL"
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-card-content",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "date",
-        "label": "Date"
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
       },
       {
         "component": "select",
         "valueType": "string",
-        "name": "styleVariant",
-        "label": "Style variant",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
         "options": [
           {
+            "name": "None",
+            "value": ""
+          },
+          {
             "name": "Primary",
-            "value": "style-primary"
+            "value": "primary"
           },
           {
             "name": "Secondary",
-            "value": "style-secondary"
+            "value": "secondary"
           },
           {
             "name": "Tertiary",
-            "value": "style-tertiary"
+            "value": "tertiary"
           },
           {
             "name": "Quaternary",
-            "value": "style-quaternary"
+            "value": "quaternary"
           }
         ]
       },
       {
-        "component": "multiselect",
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBanner",
+        "label": "Modifier banner"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierMediaFilled",
+        "label": "Modifier media filled"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierOverlapImage",
+        "label": "Modifier overlap image"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierMediaFilledAnimation",
+        "label": "Modifier media filled animation"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useButtons",
+        "label": "Use buttons"
+      },
+      {
+        "component": "select",
         "valueType": "string",
-        "name": "cardModifier",
-        "label": "Card modifier",
+        "name": "imageCroppingType",
+        "label": "Image cropping type",
+        "value": "",
         "options": [
           {
             "name": "None",
             "value": ""
           },
           {
-            "name": "Media filled",
-            "value": "modifier-media-filled"
+            "name": "Fit contain",
+            "value": "fit-contain"
           },
           {
-            "name": "Media filled (animated)",
-            "value": "modifier-media-filled-animation"
+            "name": "Aspect ratio",
+            "value": "aspect-ratio"
           },
           {
-            "name": "Content center",
-            "value": "modifier-content-center"
+            "name": "Intrinsic",
+            "value": "intrinsic"
           },
           {
-            "name": "Banner",
-            "value": "modifier-banner"
+            "name": "Flex content",
+            "value": "flex-content"
           },
           {
-            "name": "Content right",
-            "value": "modifier-content-right"
+            "name": "Minimal crop",
+            "value": "minimal-crop"
           },
           {
-            "name": "Overlap image",
-            "value": "modifier-overlap-image"
+            "name": "Contain capped",
+            "value": "contain-capped"
           },
           {
-            "name": "Linked video",
-            "value": "modifier-linked-video"
-          },
-          {
-            "name": "Check",
-            "value": "modifier-check"
-          },
-          {
-            "name": "Circle check",
-            "value": "modifier-circle-check"
-          },
-          {
-            "name": "Solid",
-            "value": "modifier-solid"
-          },
-          {
-            "name": "Outline",
-            "value": "modifier-outline"
-          },
-          {
-            "name": "Transparent",
-            "value": "modifier-transparent"
-          },
-          {
-            "name": "Transparent filled",
-            "value": "modifier-transparent-filled"
-          },
-          {
-            "name": "Vertical",
-            "value": "modifier-vertical"
-          },
-          {
-            "name": "Horizontal",
-            "value": "modifier-horizontal"
-          },
-          {
-            "name": "Centered",
-            "value": "modifier-centered"
-          },
-          {
-            "name": "Ghost",
-            "value": "modifier-ghost"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "cardType",
-        "label": "Card type",
-        "options": [
-          {
-            "name": "Card content",
-            "value": "ac-core-card-content"
-          },
-          {
-            "name": "Card AEM",
-            "value": "ac-core-card-aem"
-          },
-          {
-            "name": "Card feature",
-            "value": "ac-core-card-feature"
-          },
-          {
-            "name": "Card icon",
-            "value": "ac-core-card-icon"
-          },
-          {
-            "name": "Card product",
-            "value": "ac-core-card-product"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "headlineClamp",
-        "label": "Headline clamp",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "1 line",
-            "value": "teaser-headline-line-clamp-1"
-          },
-          {
-            "name": "2 lines",
-            "value": "teaser-headline-line-clamp-2"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "descriptionClamp",
-        "label": "Description clamp",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "2 lines",
-            "value": "teaser-description-line-clamp-2"
-          },
-          {
-            "name": "4 lines",
-            "value": "teaser-description-line-clamp-4"
-          },
-          {
-            "name": "6 lines",
-            "value": "teaser-description-line-clamp-6"
-          },
-          {
-            "name": "8 lines",
-            "value": "teaser-description-line-clamp-8"
-          },
-          {
-            "name": "10 lines",
-            "value": "teaser-description-line-clamp-10"
-          },
-          {
-            "name": "12 lines",
-            "value": "teaser-description-line-clamp-12"
+            "name": "No crop",
+            "value": "no-crop"
           }
         ]
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "actionText2",
-        "label": "Second link text"
+        "name": "actionText",
+        "label": "Action text"
       },
       {
         "component": "aem-content",
         "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Second link URL"
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-card-feature",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierDescription",
+        "label": "Modifier description",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Circle check",
+            "value": "circle-check"
+          },
+          {
+            "name": "Check",
+            "value": "check"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-card-icon",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierVariant",
+        "label": "Modifier variant",
+        "value": "solid",
+        "options": [
+          {
+            "name": "Solid",
+            "value": "solid"
+          },
+          {
+            "name": "Outline",
+            "value": "outline"
+          },
+          {
+            "name": "Transparent",
+            "value": "transparent"
+          },
+          {
+            "name": "Transparent filled",
+            "value": "transparent-filled"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierType",
+        "label": "Modifier type",
+        "value": "vertical",
+        "options": [
+          {
+            "name": "Vertical",
+            "value": "vertical"
+          },
+          {
+            "name": "Horizontal",
+            "value": "horizontal"
+          },
+          {
+            "name": "Centered",
+            "value": "centered"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-card-product",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierVariant",
+        "label": "Modifier variant",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Solid",
+            "value": "solid"
+          },
+          {
+            "name": "Outline",
+            "value": "outline"
+          },
+          {
+            "name": "Ghost",
+            "value": "ghost"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-carousel",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "typeCarousel",
+        "label": "Type carousel",
+        "value": "teaser",
+        "options": [
+          {
+            "name": "Teaser",
+            "value": "teaser"
+          },
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Hero",
+            "value": "hero"
+          },
+          {
+            "name": "Hero teaser",
+            "value": "hero-teaser"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "autoplay",
+        "label": "Autoplay"
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "delay",
+        "label": "Delay"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "autopauseDisabled",
+        "label": "Autopause disabled"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "controlsPrepended",
+        "label": "Controls prepended"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useExpand",
+        "label": "Use expand"
+      }
+    ]
+  },
+  {
+    "id": "ac-content-banner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
       }
     ]
   },
@@ -592,10 +1006,10 @@
         "required": true
       },
       {
+        "component": "aem-content",
         "valueType": "string",
         "name": "url",
-        "label": "File",
-        "component": "aem-content"
+        "label": "File"
       },
       {
         "component": "text",
@@ -690,6 +1104,68 @@
     ]
   },
   {
+    "id": "ac-highlight",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
     "id": "ac-horizontal-tabs",
     "fields": [
       {
@@ -734,13 +1210,982 @@
     ]
   },
   {
-    "id": "ac-content-tabs",
+    "id": "ac-innovation-banner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierReverseContent",
+        "label": "Modifier reverse content"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-innovation-hero-banner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierReverseContent",
+        "label": "Modifier reverse content"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-key-figure",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierVariant",
+        "label": "Modifier variant",
+        "value": "solid",
+        "options": [
+          {
+            "name": "Solid",
+            "value": "solid"
+          },
+          {
+            "name": "Outline",
+            "value": "outline"
+          },
+          {
+            "name": "Transparent",
+            "value": "transparent"
+          },
+          {
+            "name": "Transparent filled",
+            "value": "transparent-filled"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierType",
+        "label": "Modifier type",
+        "value": "vertical",
+        "options": [
+          {
+            "name": "Vertical",
+            "value": "vertical"
+          },
+          {
+            "name": "Horizontal",
+            "value": "horizontal"
+          },
+          {
+            "name": "Centered",
+            "value": "centered"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-list",
     "fields": [
       {
         "component": "select",
         "valueType": "string",
-        "name": "classes",
-        "label": "Options",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "headlineLineClamp",
+        "label": "Headline line clamp",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "name": "2",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "descriptionLineClamp",
+        "label": "Description line clamp",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "2",
+            "value": "2"
+          },
+          {
+            "name": "4",
+            "value": "4"
+          },
+          {
+            "name": "6",
+            "value": "6"
+          },
+          {
+            "name": "8",
+            "value": "8"
+          },
+          {
+            "name": "10",
+            "value": "10"
+          },
+          {
+            "name": "12",
+            "value": "12"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "showDescription",
+        "label": "Show description"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "showModificationDate",
+        "label": "Show modification date"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "linkItems",
+        "label": "Link items"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "displayItemAsTeaser",
+        "label": "Display item as teaser"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "dateFormatString",
+        "label": "Date format string",
+        "required": true
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "grid",
+        "label": "Grid"
+      }
+    ]
+  },
+  {
+    "id": "ac-product-banner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierReverseContent",
+        "label": "Modifier reverse content"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-promo-banner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierStyle",
+        "label": "Modifier style",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Card",
+            "value": "card"
+          },
+          {
+            "name": "Boxed",
+            "value": "boxed"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-quote",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-section-banner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-section-teaser",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierImage",
+        "label": "Modifier image",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-startpage-banner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierReverseContent",
+        "label": "Modifier reverse content"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierNoIcons",
+        "label": "Modifier no icons"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-sticky-banner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierContentType",
+        "label": "Modifier content type",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Contact",
+            "value": "contact"
+          },
+          {
+            "name": "E learning",
+            "value": "e-learning"
+          },
+          {
+            "name": "Download",
+            "value": "download"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
+      }
+    ]
+  },
+  {
+    "id": "ac-table",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ac-tab",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tab-title",
+        "label": "Tab title",
+        "required": true
+      },
+      {
+        "component": "multiselect",
+        "valueType": "string",
+        "name": "tabs-options",
+        "label": "Tabs options (block options are taken from the first tab)",
         "value": "",
         "options": [
           {
@@ -758,54 +2203,271 @@
           {
             "name": "Segmented buttons",
             "value": "segmented-buttons"
+          },
+          {
+            "name": "Start a new tabs block (this tab is the first of a new block)",
+            "value": "new-group"
           }
         ]
       }
     ]
   },
   {
-    "id": "ac-content-tabs-tab",
+    "id": "ac-teaser",
     "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
       {
         "component": "select",
         "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "tab",
-        "description": "Set when the item is added; tells the block which component this item is.",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
         "options": [
           {
-            "name": "Tab",
-            "value": "tab"
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierContentAlignment",
+        "label": "Modifier content alignment",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierPretitle",
+        "label": "Modifier pretitle",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Modifier bg transparent"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "headlineLineClamp",
+        "label": "Headline line clamp",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "name": "2",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "descriptionLineClamp",
+        "label": "Description line clamp",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "2",
+            "value": "2"
+          },
+          {
+            "name": "4",
+            "value": "4"
+          },
+          {
+            "name": "6",
+            "value": "6"
+          },
+          {
+            "name": "8",
+            "value": "8"
+          },
+          {
+            "name": "10",
+            "value": "10"
+          },
+          {
+            "name": "12",
+            "value": "12"
           }
         ]
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "title",
-        "label": "Tab title",
-        "required": true
+        "name": "actionText",
+        "label": "Action text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action link"
       }
     ]
   },
   {
-    "id": "ac-content-tabs-title",
+    "id": "ac-text",
     "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon"
+      },
       {
         "component": "select",
         "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "ac-title",
-        "description": "Set when the item is added; tells the block which component this item is.",
+        "name": "themeColor",
+        "label": "Theme color",
+        "value": "",
         "options": [
           {
-            "name": "Title",
-            "value": "ac-title"
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
           }
         ]
       },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modificationLargeSize",
+        "label": "Modification large size"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierContentAlignment",
+        "label": "Modifier content alignment",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ac-title",
+    "fields": [
       {
         "component": "text",
         "valueType": "string",
@@ -882,437 +2544,10 @@
         "label": "Link disabled"
       },
       {
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Link",
-        "component": "aem-content"
-      }
-    ]
-  },
-  {
-    "id": "ac-content-tabs-text",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "ac-text",
-        "description": "Set when the item is added; tells the block which component this item is.",
-        "options": [
-          {
-            "name": "Text",
-            "value": "ac-text"
-          }
-        ]
-      },
-      {
-        "valueType": "string",
-        "name": "text",
-        "label": "Text",
-        "component": "richtext"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "icon",
-        "label": "Icon"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "themeColor",
-        "label": "Theme color",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "Tertiary",
-            "value": "tertiary"
-          },
-          {
-            "name": "Quaternary",
-            "value": "quaternary"
-          }
-        ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modificationLargeSize",
-        "label": "Modification large size"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "modifierContentAlignment",
-        "label": "Modifier content alignment",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Left",
-            "value": "left"
-          },
-          {
-            "name": "Center",
-            "value": "center"
-          },
-          {
-            "name": "Right",
-            "value": "right"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "ac-content-tabs-button",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "ac-button",
-        "description": "Set when the item is added; tells the block which component this item is.",
-        "options": [
-          {
-            "name": "Button",
-            "value": "ac-button"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "text",
-        "label": "Text",
-        "required": true
-      },
-      {
         "component": "aem-content",
         "valueType": "string",
         "name": "linkUrl",
         "label": "Link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "target",
-        "label": "Open in",
-        "value": "_self",
-        "options": [
-          {
-            "name": "New tab",
-            "value": "_blank"
-          },
-          {
-            "name": "Same tab",
-            "value": "_self"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "themeColor",
-        "label": "Theme color",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Primary positive",
-            "value": "primary-positive"
-          },
-          {
-            "name": "Primary negative",
-            "value": "primary-negative"
-          },
-          {
-            "name": "Secondary positive",
-            "value": "secondary-positive"
-          },
-          {
-            "name": "Secondary negative",
-            "value": "secondary-negative"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "modifierVariant",
-        "label": "Modifier variant",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Solid",
-            "value": "solid"
-          },
-          {
-            "name": "Outline",
-            "value": "outline"
-          },
-          {
-            "name": "Ghost",
-            "value": "ghost"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "modifierIconPosition",
-        "label": "Modifier icon position",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Leading",
-            "value": "leading"
-          },
-          {
-            "name": "Trailing",
-            "value": "trailing"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "ac-content-tabs-card-content",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "ac-card-content",
-        "description": "Set when the item is added; tells the block which component this item is.",
-        "options": [
-          {
-            "name": "Card",
-            "value": "ac-card-content"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image path"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "themeColor",
-        "label": "Theme color",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "Tertiary",
-            "value": "tertiary"
-          },
-          {
-            "name": "Quaternary",
-            "value": "quaternary"
-          }
-        ]
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Link"
-      }
-    ]
-  },
-  {
-    "id": "ac-content-tabs-download",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "itemType",
-        "label": "Component",
-        "value": "ac-download",
-        "description": "Set when the item is added; tells the block which component this item is.",
-        "options": [
-          {
-            "name": "Download",
-            "value": "ac-download"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action text",
-        "required": true
-      },
-      {
-        "valueType": "string",
-        "name": "url",
-        "label": "File",
-        "component": "aem-content"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "filename",
-        "label": "Filename",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "format",
-        "label": "Format",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "size",
-        "label": "Size",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "extension",
-        "label": "Extension",
-        "required": true
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "layoutAlignContent",
-        "label": "Layout align content",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Left",
-            "value": "left"
-          },
-          {
-            "name": "Right",
-            "value": "right"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "themeColor",
-        "label": "Theme color",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "Tertiary",
-            "value": "tertiary"
-          },
-          {
-            "name": "Quaternary",
-            "value": "quaternary"
-          }
-        ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Modifier bg transparent"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "isCompact",
-        "label": "Is compact"
       }
     ]
   },

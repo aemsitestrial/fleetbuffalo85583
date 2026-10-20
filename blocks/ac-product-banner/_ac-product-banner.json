@@ -1,0 +1,99 @@
+{
+  "definitions": [
+    {
+      "title": "AC Product Banner",
+      "id": "ac-product-banner",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "AC Product Banner",
+              "model": "ac-product-banner",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-product-banner",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "pretitle",
+          "label": "Pretitle"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "imagePath",
+          "label": "Image"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "themeColor",
+          "label": "Theme color",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            },
+            {
+              "name": "Tertiary",
+              "value": "tertiary"
+            },
+            {
+              "name": "Quaternary",
+              "value": "quaternary"
+            }
+          ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "modifierReverseContent",
+          "label": "Modifier reverse content"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText",
+          "label": "Action text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl",
+          "label": "Action link"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

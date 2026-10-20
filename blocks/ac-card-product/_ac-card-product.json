@@ -1,0 +1,110 @@
+{
+  "definitions": [
+    {
+      "title": "AC Card (Product)",
+      "id": "ac-card-product",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "AC Card (Product)",
+              "model": "ac-card-product",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-card-product",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "pretitle",
+          "label": "Pretitle"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "imagePath",
+          "label": "Image"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "themeColor",
+          "label": "Theme color",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "modifierVariant",
+          "label": "Modifier variant",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Solid",
+              "value": "solid"
+            },
+            {
+              "name": "Outline",
+              "value": "outline"
+            },
+            {
+              "name": "Ghost",
+              "value": "ghost"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText",
+          "label": "Action text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl",
+          "label": "Action link"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
