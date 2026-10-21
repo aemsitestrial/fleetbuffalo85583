@@ -56,6 +56,27 @@
           "value": "1"
         },
         {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_layout",
+          "label": "Column widths",
+          "value": "",
+          "options": [
+            {
+              "name": "Equal",
+              "value": ""
+            },
+            {
+              "name": "1:2 (2 columns)",
+              "value": "grid-1-2"
+            },
+            {
+              "name": "2:1 (2 columns)",
+              "value": "grid-2-1"
+            }
+          ]
+        },
+        {
           "component": "multiselect",
           "valueType": "string",
           "name": "classes",
@@ -77,14 +98,6 @@
             {
               "name": "Background: quaternary",
               "value": "theme-quaternary"
-            },
-            {
-              "name": "Column widths 1:2 (2 columns)",
-              "value": "grid-1-2"
-            },
-            {
-              "name": "Column widths 2:1 (2 columns)",
-              "value": "grid-2-1"
             },
             {
               "name": "Centered",

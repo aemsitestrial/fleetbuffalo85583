@@ -354,17 +354,20 @@ var ratios = grids.filter((grid) => !/^\d+$/.test(grid));
 var container_eds_default = columns({
   title: "AC Container",
   columnCounts: counts.map((count) => [`${count} columns`, count]),
+  // own select next to "Columns": equal widths, or a ratio for two columns
+  layoutsLabel: "Column widths",
+  layouts: [
+    option("", "Equal"),
+    ...ratios.map(
+      (ratio) => option(`grid-${ratio}`, `${ratio.replace("-", ":")} (2 columns)`, { grid: ratio })
+    )
+  ],
   multipleOptions: true,
   options: [
     option("theme-primary", "Background: primary", { useBrandTheme: true, themeColor: "primary" }),
     option("theme-secondary", "Background: secondary", { useBrandTheme: true, themeColor: "secondary" }),
     option("theme-tertiary", "Background: tertiary", { useBrandTheme: true, themeColor: "tertiary" }),
     option("theme-quaternary", "Background: quaternary", { useBrandTheme: true, themeColor: "quaternary" }),
-    ...ratios.map(
-      (ratio) => option(`grid-${ratio}`, `Column widths ${ratio.replace("-", ":")} (2 columns)`, {
-        grid: ratio
-      })
-    ),
     option("centered", "Centered", { centered: true }),
     option("full-width", "Full width", { fullWidth: true })
   ],
@@ -382,8 +385,8 @@ var container_eds_default = columns({
 });
 
 // ac-container.decorate.tsx
-var fields = [{ "name": "columns", "value": "2", "valueType": "string", "component": "select" }, { "name": "rows", "value": "1", "valueType": "number", "component": "text" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }];
-var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "grid-1-2": { "grid": "1-2" }, "grid-2-1": { "grid": "2-1" }, "centered": { "centered": true }, "full-width": { "fullWidth": true } };
+var fields = [{ "name": "columns", "value": "2", "valueType": "string", "component": "select" }, { "name": "rows", "value": "1", "valueType": "number", "component": "text" }, { "name": "classes_layout", "value": "", "valueType": "string", "component": "select" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }];
+var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true }, "grid-1-2": { "grid": "1-2" }, "grid-2-1": { "grid": "2-1" } };
 var items = null;
 var adopt = null;
 var extraNames = [];
