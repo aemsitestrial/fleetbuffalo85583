@@ -1,0 +1,56 @@
+{
+  "definitions": [
+    {
+      "title": "AC Section banner with cards",
+      "id": "ac-section-banner-with-cards",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "name": "AC Section banner with cards",
+              "model": "ac-section-banner-with-cards",
+              "filter": "ac-section-banner-with-cards",
+              "section-block": "ac-section-banner-with-cards"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-section-banner-with-cards",
+      "fields": [
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "section-block",
+          "label": "Section type",
+          "value": "ac-section-banner-with-cards",
+          "options": [
+            {
+              "name": "AC Section banner with cards",
+              "value": "ac-section-banner-with-cards"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "ac-section-banner-with-cards",
+      "components": [
+        "ac-section-banner",
+        "ac-teaser",
+        "ac-card-aem",
+        "ac-card-content",
+        "ac-card-feature",
+        "ac-card-icon",
+        "ac-card-product",
+        "ac-download"
+      ]
+    }
+  ]
+}

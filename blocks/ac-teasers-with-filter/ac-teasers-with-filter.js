@@ -1,9 +1,10 @@
 import AtlasCopcoDecorate from '../../ds-eds-assets/js/ac-core/teasers-with-filter.js';
+import { loadNestedBlocks } from '../../scripts/nested-blocks.js';
 
 /**
- * Built by scripts.js (buildSectionBlocks) from an "AC Teasers with filter" section: renders the block and
- * moves the other blocks of the section into its filtered grid.
+ * Built by scripts.js (buildSectionBlocks) from a section of this type: renders the component, moves the
+ * blocks of the section into it and loads them before the component's controllers start.
  */
 export default function decorate(block) {
-  AtlasCopcoDecorate(block);
+  return AtlasCopcoDecorate(block, { loadBlocks: loadNestedBlocks });
 }

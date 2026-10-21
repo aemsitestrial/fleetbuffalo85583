@@ -4,7 +4,13 @@
     "components": [
       "section",
       "ac-tab",
-      "ac-teasers-with-filter"
+      "ac-teasers-with-filter",
+      "ac-splide-grid-carousel",
+      "ac-content-with-splide-grid-carousel",
+      "ac-content-with-splide-carousel-expand",
+      "ac-quote-section",
+      "ac-section-banner-with-cards",
+      "ac-segments-buttons"
     ]
   },
   {
@@ -81,9 +87,70 @@
     ]
   },
   {
+    "id": "ac-content-with-splide-carousel-expand",
+    "components": [
+      "ac-teaser",
+      "ac-card-aem",
+      "ac-card-content",
+      "ac-card-feature",
+      "ac-card-icon",
+      "ac-card-product",
+      "ac-download"
+    ]
+  },
+  {
+    "id": "ac-content-with-splide-grid-carousel",
+    "components": [
+      "ac-teaser",
+      "ac-card-aem",
+      "ac-card-content",
+      "ac-card-feature",
+      "ac-card-icon",
+      "ac-card-product",
+      "ac-download"
+    ]
+  },
+  {
     "id": "ac-horizontal-tabs",
     "components": [
       "ac-horizontal-tabs-item"
+    ]
+  },
+  {
+    "id": "ac-quote-section",
+    "components": [
+      "ac-quote"
+    ]
+  },
+  {
+    "id": "ac-section-banner-with-cards",
+    "components": [
+      "ac-section-banner",
+      "ac-teaser",
+      "ac-card-aem",
+      "ac-card-content",
+      "ac-card-feature",
+      "ac-card-icon",
+      "ac-card-product",
+      "ac-download"
+    ]
+  },
+  {
+    "id": "ac-segments-buttons",
+    "components": [
+      "ac-button"
+    ]
+  },
+  {
+    "id": "ac-splide-grid-carousel",
+    "components": [
+      "ac-teaser",
+      "ac-card-aem",
+      "ac-card-content",
+      "ac-card-feature",
+      "ac-card-icon",
+      "ac-card-product",
+      "ac-download"
     ]
   },
   {

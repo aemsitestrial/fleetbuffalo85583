@@ -22,6 +22,124 @@
 /* stylelint-disable selector-attribute-quotes */
 /* stylelint-disable no-duplicate-selectors */
 
+/* libs/ac-core-lib/src/lib/title/ac-title.scss */
+/* Grays */
+:root {
+  --ds-container-width: 1478px;
+  --ds-container-padding: 20px;
+}
+
+.ac-core .ac-core-title.style-secondary .cmp-title {
+  color: #ffffff;
+}
+.ac-core .ac-core-title .cmp-title {
+  color: #0d0d0d;
+  font-style: normal;
+  font-weight: 700;
+}
+.ac-core.modifiator-theme-dark .ac-core-title {
+  color: #f8f9f9;
+}
+.ac-core.modifiator-theme-dark .ac-core-title .cmp-title {
+  color: inherit;
+}
+/* libs/ac-core-lib/src/lib/text/ac-text.scss */
+/* Grays */
+:root {
+  --ds-container-width: 1478px;
+  --ds-container-padding: 20px;
+}
+
+@property --button-bg-gradient-color-1 {
+  syntax: "<color>";
+  initial-value: #1f9fc4;
+  inherits: false;
+}
+@property --button-bg-gradient-color-2 {
+  syntax: "<color>";
+  initial-value: #0092bc;
+  inherits: false;
+}
+@property --button-bg-gradient-color-3 {
+  syntax: "<color>";
+  initial-value: #006f8f;
+  inherits: false;
+}
+.ac-core .ac-core-text.style-secondary .cmp-text {
+  color: #ffffff;
+}
+.ac-core .ac-core-text.modification-text-large .cmp-text {
+  line-height: 1.6;
+  font-size: 20px;
+}
+@media (min-width: 1024px) {
+  .ac-core .ac-core-text.modification-text-large .cmp-text {
+    font-size: 22px;
+  }
+}
+.ac-core .ac-core-text.modifier-content-right .cmp-text {
+  text-align: right;
+}
+html[dir=rtl] .ac-core .ac-core-text.modifier-content-right .cmp-text, body[dir=rtl] .ac-core .ac-core-text.modifier-content-right .cmp-text {
+  text-align: left;
+}
+.ac-core .ac-core-text.modifier-content-center .cmp-text {
+  text-align: center;
+}
+.ac-core .ac-core-text .cmp-text {
+  color: #2f363a;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  line-height: 1.5;
+}
+@media (min-width: 1024px) {
+  .ac-core .ac-core-text .cmp-text {
+    font-size: 18px;
+  }
+}
+.ac-core .ac-core-text .cmp-text *:not(h1, h2, h3, h4, h5, h6) {
+  font-size: inherit;
+}
+.ac-core .ac-core-text .cmp-text * {
+  text-align: inherit;
+}
+.ac-core .ac-core-text .cmp-text p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+.ac-core .ac-core-text .cmp-text ul {
+  list-style-type: disc;
+  padding-inline-start: 1.5em;
+}
+.ac-core .ac-core-text .cmp-text ul li {
+  padding-left: 0;
+}
+.ac-core .ac-core-text .cmp-text ul li::before {
+  display: none;
+}
+.ac-core .ac-core-text .cmp-text ol {
+  list-style-type: numeric;
+}
+.ac-core .ac-core-text .cmp-text a {
+  color: #0099cc;
+  text-decoration: underline;
+}
+.ac-core .ac-core-text .cmp-text a:hover, .ac-core .ac-core-text .cmp-text a:active {
+  text-decoration: none;
+}
+.ac-core.modifiator-theme-dark .ac-core-text .cmp-text {
+  color: #ffffff;
+}
+.ac-core.modifiator-theme-dark .ac-core-text .cmp-text h1,
+.ac-core.modifiator-theme-dark .ac-core-text .cmp-text h2,
+.ac-core.modifiator-theme-dark .ac-core-text .cmp-text h3,
+.ac-core.modifiator-theme-dark .ac-core-text .cmp-text h4,
+.ac-core.modifiator-theme-dark .ac-core-text .cmp-text h5,
+.ac-core.modifiator-theme-dark .ac-core-text .cmp-text h6 {
+  color: #f8f9f9;
+}
 /* libs/ac-core-lib/src/lib/blocks/block-teasers-with-filter/block-teasers-with-filter.scss */
 /* Grays */
 :root {

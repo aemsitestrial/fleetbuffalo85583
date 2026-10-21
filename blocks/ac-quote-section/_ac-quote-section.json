@@ -1,0 +1,80 @@
+{
+  "definitions": [
+    {
+      "title": "AC Quote section",
+      "id": "ac-quote-section",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "name": "AC Quote section",
+              "model": "ac-quote-section",
+              "filter": "ac-quote-section",
+              "section-block": "ac-quote-section"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-quote-section",
+      "fields": [
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "section-block",
+          "label": "Section type",
+          "value": "ac-quote-section",
+          "options": [
+            {
+              "name": "AC Quote section",
+              "value": "ac-quote-section"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "themeColor",
+          "label": "Theme",
+          "value": "primary",
+          "options": [
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            },
+            {
+              "name": "Tertiary",
+              "value": "tertiary"
+            },
+            {
+              "name": "Quaternary",
+              "value": "quaternary"
+            }
+          ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "modifierBgTransparent",
+          "label": "Transparent background"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "ac-quote-section",
+      "components": [
+        "ac-quote"
+      ]
+    }
+  ]
+}

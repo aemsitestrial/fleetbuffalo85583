@@ -2329,6 +2329,203 @@
     ]
   },
   {
+    "id": "ac-content-with-splide-carousel-expand",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "section-block",
+        "label": "Section type",
+        "value": "ac-content-with-splide-carousel-expand",
+        "options": [
+          {
+            "name": "AC Content with splide carousel (expand)",
+            "value": "ac-content-with-splide-carousel-expand"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image alt text"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme",
+        "value": "primary",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "carouselVariant",
+        "label": "Carousel variant",
+        "value": "ac-core-splide-grid-carousel",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "ac-core-splide-grid-carousel"
+          },
+          {
+            "name": "Secondary",
+            "value": "ac-core-splide-grid-carousel-secondary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierHorizontal",
+        "label": "Horizontal (text next to the carousel)"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierHorizontalImage",
+        "label": "Horizontal image"
+      }
+    ]
+  },
+  {
+    "id": "ac-content-with-splide-grid-carousel",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "section-block",
+        "label": "Section type",
+        "value": "ac-content-with-splide-grid-carousel",
+        "options": [
+          {
+            "name": "AC Content with splide grid carousel",
+            "value": "ac-content-with-splide-grid-carousel"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme",
+        "value": "secondary",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "carouselVariant",
+        "label": "Carousel variant",
+        "value": "ac-core-splide-grid-carousel",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "ac-core-splide-grid-carousel"
+          },
+          {
+            "name": "Secondary",
+            "value": "ac-core-splide-grid-carousel-secondary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "structureType",
+        "label": "Structure",
+        "value": "default",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "List",
+            "value": "list"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierHorizontal",
+        "label": "Horizontal (text next to the carousel)"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierHorizontalImage",
+        "label": "Horizontal image"
+      }
+    ]
+  },
+  {
     "id": "ac-download",
     "fields": [
       {
@@ -4205,6 +4402,55 @@
     ]
   },
   {
+    "id": "ac-quote-section",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "section-block",
+        "label": "Section type",
+        "value": "ac-quote-section",
+        "options": [
+          {
+            "name": "AC Quote section",
+            "value": "ac-quote-section"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme",
+        "value": "primary",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      }
+    ]
+  },
+  {
     "id": "ac-quote",
     "fields": [
       {
@@ -4336,6 +4582,24 @@
         "valueType": "string",
         "name": "actionUrl3",
         "label": "Action 3 link"
+      }
+    ]
+  },
+  {
+    "id": "ac-section-banner-with-cards",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "section-block",
+        "label": "Section type",
+        "value": "ac-section-banner-with-cards",
+        "options": [
+          {
+            "name": "AC Section banner with cards",
+            "value": "ac-section-banner-with-cards"
+          }
+        ]
       }
     ]
   },
@@ -4927,6 +5191,24 @@
     ]
   },
   {
+    "id": "ac-segments-buttons",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "section-block",
+        "label": "Section type",
+        "value": "ac-segments-buttons",
+        "options": [
+          {
+            "name": "AC Segments buttons",
+            "value": "ac-segments-buttons"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "ac-separator",
     "fields": [
       {
@@ -4951,6 +5233,90 @@
         "valueType": "boolean",
         "name": "isDecorative",
         "label": "Decorative (hidden from screen readers)",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": "ac-splide-grid-carousel",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "section-block",
+        "label": "Section type",
+        "value": "ac-splide-grid-carousel",
+        "options": [
+          {
+            "name": "AC Splide grid carousel",
+            "value": "ac-splide-grid-carousel"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme",
+        "value": "primary",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "carouselVariant",
+        "label": "Carousel variant",
+        "value": "ac-core-splide-grid-carousel",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "ac-core-splide-grid-carousel"
+          },
+          {
+            "name": "Secondary",
+            "value": "ac-core-splide-grid-carousel-secondary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "structureType",
+        "label": "Structure",
+        "value": "default",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "List",
+            "value": "list"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useGridToggler",
+        "label": "Show \"View as grid / carousel\" buttons",
         "value": true
       }
     ]

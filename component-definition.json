@@ -616,6 +616,108 @@
               }
             }
           }
+        },
+        {
+          "title": "AC Splide grid carousel",
+          "id": "ac-splide-grid-carousel",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "AC Splide grid carousel",
+                  "model": "ac-splide-grid-carousel",
+                  "filter": "ac-splide-grid-carousel",
+                  "section-block": "ac-splide-grid-carousel"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "AC Content with splide grid carousel",
+          "id": "ac-content-with-splide-grid-carousel",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "AC Content with splide grid carousel",
+                  "model": "ac-content-with-splide-grid-carousel",
+                  "filter": "ac-content-with-splide-grid-carousel",
+                  "section-block": "ac-content-with-splide-grid-carousel"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "AC Content with splide carousel (expand)",
+          "id": "ac-content-with-splide-carousel-expand",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "AC Content with splide carousel (expand)",
+                  "model": "ac-content-with-splide-carousel-expand",
+                  "filter": "ac-content-with-splide-carousel-expand",
+                  "section-block": "ac-content-with-splide-carousel-expand"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "AC Quote section",
+          "id": "ac-quote-section",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "AC Quote section",
+                  "model": "ac-quote-section",
+                  "filter": "ac-quote-section",
+                  "section-block": "ac-quote-section"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "AC Section banner with cards",
+          "id": "ac-section-banner-with-cards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "AC Section banner with cards",
+                  "model": "ac-section-banner-with-cards",
+                  "filter": "ac-section-banner-with-cards",
+                  "section-block": "ac-section-banner-with-cards"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "AC Segments buttons",
+          "id": "ac-segments-buttons",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "AC Segments buttons",
+                  "model": "ac-segments-buttons",
+                  "filter": "ac-segments-buttons",
+                  "section-block": "ac-segments-buttons"
+                }
+              }
+            }
+          }
         }
       ]
     },

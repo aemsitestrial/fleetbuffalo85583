@@ -129,6 +129,24 @@
         },
         {
           "...": "../blocks/ac-teasers-with-filter/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-splide-grid-carousel/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-content-with-splide-grid-carousel/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-content-with-splide-carousel-expand/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-quote-section/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-section-banner-with-cards/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-segments-buttons/_*.json#/definitions"
         }
       ]
     },

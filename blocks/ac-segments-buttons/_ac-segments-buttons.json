@@ -1,0 +1,49 @@
+{
+  "definitions": [
+    {
+      "title": "AC Segments buttons",
+      "id": "ac-segments-buttons",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "name": "AC Segments buttons",
+              "model": "ac-segments-buttons",
+              "filter": "ac-segments-buttons",
+              "section-block": "ac-segments-buttons"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-segments-buttons",
+      "fields": [
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "section-block",
+          "label": "Section type",
+          "value": "ac-segments-buttons",
+          "options": [
+            {
+              "name": "AC Segments buttons",
+              "value": "ac-segments-buttons"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "ac-segments-buttons",
+      "components": [
+        "ac-button"
+      ]
+    }
+  ]
+}

@@ -175,12 +175,28 @@ function adoptSections(block, node, { panel }) {
   const panels = node.querySelectorAll(panel);
   sections.forEach((section, i) => panels[i] && panels[i].append(section));
 }
-function adoptSectionBlocks(block, node, { slot }) {
+function adoptSectionBlocks(block, spec) {
   const section = block.closest(".section");
-  const target = block.querySelector(slot);
-  if (!section || !target)
-    return;
-  [...section.children].filter((el) => !el.contains(block)).forEach((el) => target.append(el));
+  if (!section)
+    return [];
+  const slots = (Array.isArray(spec) ? spec : [spec]).map((slot) => typeof slot === "string" ? { selector: slot } : slot).map((slot) => ({ ...slot, target: block.querySelector(slot.selector), nodes: [] }));
+  slots.forEach((slot) => slot.mode === "fill" && slot.target?.replaceChildren());
+  const nameOf = (el) => (el.matches("div.block") ? el : el.querySelector(":scope > div.block"))?.classList[0] ?? null;
+  const moved = [];
+  [...section.children].filter((el) => !el.contains(block)).forEach((el) => {
+    const name = nameOf(el);
+    const slot = slots.find((s) => s.target && (!s.components || s.components.includes(name)));
+    if (!slot)
+      return;
+    const node = slot.item ? slot.item(el) : el;
+    if (slot.mode === "replace")
+      slot.nodes.push(node);
+    else
+      slot.target.append(node);
+    moved.push(...el.matches("div.block") ? [el] : el.querySelectorAll("div.block"));
+  });
+  slots.forEach((slot) => slot.mode === "replace" && slot.target?.replaceWith(...slot.nodes));
+  return moved;
 }
 var instrumentation = (el) => [...el.attributes].filter((a) => /^data-(aue|richtext)-/.test(a.name));
 function snapshotInstrumentation(block) {
@@ -225,10 +241,12 @@ function readFields(block, fields2, { keyValue = true } = {}) {
     if (key && valueCell)
       cells[key] = valueCell;
   }
+  const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
   const props = {};
   const classes = [];
   for (const field2 of fields2) {
-    const cell = cells[field2.name];
+    const cell = cells[field2.name] ?? looseCells[loose(field2.name)];
     let value = cell ? cellValue(cell, field2) : field2.value;
     if (value === void 0 || value === "")
       continue;
@@ -919,8 +937,8 @@ var items = null;
 var adopt = null;
 var extraNames = ["title", "text", "grid"];
 var isColumns = false;
-var composite2 = { "slot": ".ac-core-block-teasers-with-filter-cards .aem-Grid" };
-function decorate(block) {
+var composite2 = true;
+async function decorate(block, options = {}) {
   const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items });
   if (composite2) {
     String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block.classList.add(o));
@@ -954,8 +972,9 @@ function decorate(block) {
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
   if (adopt)
     adoptSections(block, node, adopt);
-  if (composite2)
-    adoptSectionBlocks(block, node, composite2);
+  const moved = adoptSectionBlocks(block, block_teasers_with_filter_eds_default.slot);
+  if (options.loadBlocks)
+    await options.loadBlocks(moved);
   runControllers(block, [{ Controller: BlockTeasersWithFilterController, key: "BlockTeasersWithFilterController", scope: "block", storybookMode: false, optionsFromProps: [], options: void 0 }], props);
 }
 export {

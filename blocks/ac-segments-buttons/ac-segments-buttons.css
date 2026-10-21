@@ -1,0 +1,137 @@
+/* stylelint-disable comment-empty-line-before */
+/* stylelint-disable no-descending-specificity, property-no-vendor-prefix */
+/* stylelint-disable rule-empty-line-before */
+/* stylelint-disable color-hex-length */
+/* stylelint-disable selector-not-notation */
+/* stylelint-disable value-no-vendor-prefix */
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable selector-pseudo-element-colon-notation */
+/* stylelint-disable declaration-property-value-no-unknown */
+/* stylelint-disable declaration-block-no-shorthand-property-overrides */
+/* stylelint-disable media-feature-range-notation */
+/* stylelint-disable font-family-name-quotes */
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable color-function-notation */
+/* stylelint-disable hue-degree-notation */
+/* stylelint-disable declaration-block-no-duplicate-properties */
+/* stylelint-disable value-keyword-case */
+/* stylelint-disable at-rule-empty-line-before */
+/* stylelint-disable declaration-empty-line-before */
+/* stylelint-disable selector-attribute-quotes */
+/* stylelint-disable no-duplicate-selectors */
+
+/* libs/ac-core-lib/src/lib/blocks/block-segments-buttons/block-segments-buttons.scss */
+/* Grays */
+:root {
+  --ds-container-width: 1478px;
+  --ds-container-padding: 20px;
+}
+
+@property --button-bg-gradient-color-1 {
+  syntax: "<color>";
+  initial-value: #1f9fc4;
+  inherits: false;
+}
+@property --button-bg-gradient-color-2 {
+  syntax: "<color>";
+  initial-value: #0092bc;
+  inherits: false;
+}
+@property --button-bg-gradient-color-3 {
+  syntax: "<color>";
+  initial-value: #006f8f;
+  inherits: false;
+}
+.ac-core .ac-core-block-segments-buttons {
+  width: auto;
+}
+.ac-core .ac-core-block-segments-buttons .aem-Grid {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #aab0b5;
+  background-color: #ffffff;
+  width: auto;
+  margin: 0 auto;
+  max-width: fit-content;
+  border-radius: 72px;
+  padding: 4px;
+  gap: 4px;
+  margin-block-end: 48px;
+}
+.ac-core .ac-core-block-segments-buttons .aem-Grid > .aem-GridColumn {
+  border-radius: inherit;
+}
+.ac-core .ac-core-block-segments-buttons .aem-Grid::before, .ac-core .ac-core-block-segments-buttons .aem-Grid::after {
+  display: none;
+}
+.ac-core .ac-core-block-segments-buttons .ac-core-button {
+  border-radius: inherit;
+}
+.ac-core .ac-core-block-segments-buttons .ac-core-button.ac-core-button--active .cmp-button {
+  color: #ffffff;
+  background-color: #006f8f;
+  border-color: #005d78;
+}
+.ac-core .ac-core-block-segments-buttons .ac-core-button.ac-core-button--active .cmp-button:focus-visible, .ac-core .ac-core-block-segments-buttons .ac-core-button.ac-core-button--active .cmp-button:hover {
+  color: #ffffff;
+  background-color: #006f8f;
+  border-color: #005d78;
+}
+.ac-core .ac-core-block-segments-buttons .ac-core-button .cmp-button {
+  padding: 0;
+  border: 1px solid transparent;
+  color: #5b6770;
+  padding: 8px 16px;
+  border-radius: inherit;
+  font-size: 18px;
+  letter-spacing: 0;
+  margin-bottom: 0;
+  background-color: #ffffff;
+  outline: 1px solid transparent;
+  outline-offset: 1px;
+  font-weight: 400;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out, outline-color 0.3s ease-in-out;
+}
+.ac-core .ac-core-block-segments-buttons .ac-core-button .cmp-button::after {
+  display: none;
+}
+.ac-core .ac-core-block-segments-buttons .ac-core-button .cmp-button:focus-visible, .ac-core .ac-core-block-segments-buttons .ac-core-button .cmp-button:hover {
+  color: #5b6770;
+  border-color: #aab0b5;
+  background-color: #f5f2ef;
+}
+.ac-core .ac-core-block-segments-buttons .ac-core-button .cmp-button:focus-visible {
+  outline-color: #0092bc;
+}
+.ac-core .ac-core-block-segments-buttons .ac-core-button .cmp-button:active {
+  color: #ffffff;
+  background-color: #006f8f;
+  border-color: #005d78;
+}
+.ac-core.modifiator-theme-dark .ac-core-block-segments-buttons .aem-Grid {
+  background-color: rgba(25, 29, 31, 0.64);
+  border-color: #5b6770;
+}
+.ac-core.modifiator-theme-dark .ac-core-block-segments-buttons .ac-core-button.ac-core-button--active .cmp-button {
+  background: linear-gradient(96.64deg, #1f9fc4 4%, #0092bc 48%, #006f8f 96%);
+  border-color: #7ac6dc;
+}
+.ac-core.modifiator-theme-dark .ac-core-block-segments-buttons .ac-core-button.ac-core-button--active .cmp-button:focus-visible, .ac-core.modifiator-theme-dark .ac-core-block-segments-buttons .ac-core-button.ac-core-button--active .cmp-button:hover {
+  border-color: #7ac6dc;
+}
+.ac-core.modifiator-theme-dark .ac-core-block-segments-buttons .ac-core-button .cmp-button {
+  background-color: transparent;
+}
+.ac-core.modifiator-theme-dark .ac-core-block-segments-buttons .ac-core-button .cmp-button:focus-visible, .ac-core.modifiator-theme-dark .ac-core-block-segments-buttons .ac-core-button .cmp-button:hover {
+  background-color: #2f363a;
+  border-color: #d1d4d7;
+}
+.ac-core.modifiator-theme-dark .ac-core-block-segments-buttons .ac-core-button .cmp-button:active {
+  background: linear-gradient(96.64deg, #1f9fc4 4%, #0092bc 48%, #006f8f 96%);
+  border-color: #7ac6dc;
+}
+.ac-core.modifiator-theme-dark .ac-core-block-segments-buttons .ac-core-button .cmp-button__text {
+  color: #ffffff;
+}
