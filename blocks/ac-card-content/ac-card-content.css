@@ -34,7 +34,10 @@
 
 .ac-core .list.ac-core-card-content .cmp-teaser__link::before,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link::before,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__link::before {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__link::before,
+.ac-core.list.ac-core-card-content .cmp-teaser__link::before,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__link::before,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__link::before {
   content: "";
   display: inline-block;
   width: 24px;
@@ -49,12 +52,18 @@
 
 .ac-core .list.ac-core-card-content .cmp-teaser__link,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__link {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__link,
+.ac-core.list.ac-core-card-content .cmp-teaser__link,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__link,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__link {
   position: relative;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__link::after,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link::after,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__link::after {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__link::after,
+.ac-core.list.ac-core-card-content .cmp-teaser__link::after,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__link::after,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__link::after {
   content: "";
   position: absolute;
   inset-block-end: 22px;
@@ -68,7 +77,10 @@
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__link::before,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link::before,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__link::before {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__link::before,
+.ac-core.list.ac-core-card-content .cmp-teaser__link::before,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__link::before,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__link::before {
   content: "";
   position: absolute;
   inset-block-end: 25px;
@@ -81,15 +93,7 @@
   opacity: var(--link-circle-icon-opacity);
   transition: opacity 0.3s linear;
 }
-html[dir=rtl] .ac-core .list.ac-core-card-content .cmp-teaser__link::before, .ac-core .list.ac-core-card-content html[dir=rtl] .cmp-teaser__link::before,
-html[dir=rtl] .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link::before,
-.ac-core .ac-core-list.ac-core-card-content html[dir=rtl] .cmp-teaser__link::before,
-html[dir=rtl] .ac-core .teaser.ac-core-card-content .cmp-teaser__link::before,
-.ac-core .teaser.ac-core-card-content html[dir=rtl] .cmp-teaser__link::before, body[dir=rtl] .ac-core .list.ac-core-card-content .cmp-teaser__link::before, .ac-core .list.ac-core-card-content body[dir=rtl] .cmp-teaser__link::before,
-body[dir=rtl] .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link::before,
-.ac-core .ac-core-list.ac-core-card-content body[dir=rtl] .cmp-teaser__link::before,
-body[dir=rtl] .ac-core .teaser.ac-core-card-content .cmp-teaser__link::before,
-.ac-core .teaser.ac-core-card-content body[dir=rtl] .cmp-teaser__link::before {
+html[dir=rtl] .ac-core .list.ac-core-card-content .cmp-teaser__link::before, .ac-core .list.ac-core-card-content html[dir=rtl] .cmp-teaser__link::before, html[dir=rtl] .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link::before, .ac-core .ac-core-list.ac-core-card-content html[dir=rtl] .cmp-teaser__link::before, html[dir=rtl] .ac-core .teaser.ac-core-card-content .cmp-teaser__link::before, .ac-core .teaser.ac-core-card-content html[dir=rtl] .cmp-teaser__link::before, body[dir=rtl] .ac-core .list.ac-core-card-content .cmp-teaser__link::before, .ac-core .list.ac-core-card-content body[dir=rtl] .cmp-teaser__link::before, body[dir=rtl] .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link::before, .ac-core .ac-core-list.ac-core-card-content body[dir=rtl] .cmp-teaser__link::before, body[dir=rtl] .ac-core .teaser.ac-core-card-content .cmp-teaser__link::before, .ac-core .teaser.ac-core-card-content body[dir=rtl] .cmp-teaser__link::before, .ac-core.list.ac-core-card-content html[dir=rtl] .cmp-teaser__link::before, .ac-core.ac-core-list.ac-core-card-content html[dir=rtl] .cmp-teaser__link::before, .ac-core.teaser.ac-core-card-content html[dir=rtl] .cmp-teaser__link::before, .ac-core.list.ac-core-card-content body[dir=rtl] .cmp-teaser__link::before, .ac-core.ac-core-list.ac-core-card-content body[dir=rtl] .cmp-teaser__link::before, .ac-core.teaser.ac-core-card-content body[dir=rtl] .cmp-teaser__link::before {
   transform: scaleX(-1);
 }
 
@@ -110,29 +114,67 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content .cmp-teaser__link::before,
 }
 .ac-core .list.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:hover:nth-child(2),
 .ac-core .ac-core-list.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:hover:nth-child(2),
-.ac-core .teaser.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:hover:nth-child(2), .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link:hover,
+.ac-core .teaser.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link:hover,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link:hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link:hover, .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link:hover,
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link:hover,
+.ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link:hover,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link:hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link:hover, .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link:hover,
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link:hover,
+.ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link:hover,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link:hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link:hover, .ac-core .list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link:hover,
+.ac-core .list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(2),
 .ac-core .ac-core-list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(2),
-.ac-core .teaser.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(2), .ac-core .list.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core .teaser.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core .list.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:hover:nth-child(2),
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:hover:nth-child(2),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:hover:nth-child(2), .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link:hover,
+.ac-core .teaser.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link:hover,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link:hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link:hover {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link:hover,
+.ac-core.list.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core.ac-core-list.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core.teaser.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link:hover,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link:hover,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link:hover,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link:hover,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link:hover,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link:hover,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link:hover,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link:hover,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link:hover,
+.ac-core.list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core.ac-core-list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core.teaser.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core.list.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core.teaser.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:hover:nth-child(2),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link:hover,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link:hover,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link:hover {
   background: var(--button-bg-color-hover);
 }
 
 .ac-core .list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:nth-child(2),
 .ac-core .ac-core-list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:nth-child(2),
-.ac-core .teaser.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:nth-child(2), .ac-core .list.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:nth-child(2),
+.ac-core .teaser.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:nth-child(2),
+.ac-core .list.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:nth-child(2),
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:nth-child(2),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:nth-child(2), .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link,
+.ac-core .teaser.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:nth-child(2),
+.ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link,
+.ac-core.list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:nth-child(2),
+.ac-core.ac-core-list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:nth-child(2),
+.ac-core.teaser.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser__action-link:nth-child(2),
+.ac-core.list.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:nth-child(2),
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:nth-child(2),
+.ac-core.teaser.ac-core-card-content.modifier-media-filled.modifier-banner .cmp-teaser__action-link:nth-child(2),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser__action-link {
   --button-bg-color: transparent;
   --button-bg-color-hover: #191d1f52;
   --button-bg-color-active: #191d1fa3;
@@ -147,9 +189,16 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content .cmp-teaser__link::before,
 
 .ac-core .list.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link,
 .ac-core .ac-core-list.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link,
+.ac-core .teaser.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link,
+.ac-core .list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link,
 .ac-core .ac-core-list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link {
+.ac-core .teaser.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link,
+.ac-core.list.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link,
+.ac-core.ac-core-list.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link,
+.ac-core.teaser.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link,
+.ac-core.list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link,
+.ac-core.ac-core-list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link,
+.ac-core.teaser.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link {
   --button-bg-gradient-color-1: #f8f9f9;
   --button-bg-gradient-color-2: #e5e7e8;
   --button-bg-gradient-color-3: #d1d4d7;
@@ -168,18 +217,32 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content .cmp-teaser__link::before,
 }
 .ac-core .list.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:hover,
 .ac-core .ac-core-list.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:hover,
-.ac-core .teaser.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:hover, .ac-core .list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:hover,
+.ac-core .teaser.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:hover,
+.ac-core .list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:hover,
 .ac-core .ac-core-list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:hover,
-.ac-core .teaser.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:hover {
+.ac-core .teaser.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:hover,
+.ac-core.list.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:hover,
+.ac-core.ac-core-list.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:hover,
+.ac-core.teaser.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:hover,
+.ac-core.list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:hover,
+.ac-core.ac-core-list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:hover,
+.ac-core.teaser.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:hover {
   --button-bg-gradient-color-1: var(--button-bg-color-hover);
   --button-bg-gradient-color-2: var(--button-bg-color-hover);
   --button-bg-gradient-color-3: var(--button-bg-color-hover);
 }
 .ac-core .list.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:active,
 .ac-core .ac-core-list.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:active,
-.ac-core .teaser.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:active, .ac-core .list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:active,
+.ac-core .teaser.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:active,
+.ac-core .list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:active,
 .ac-core .ac-core-list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:active,
-.ac-core .teaser.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:active {
+.ac-core .teaser.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:active,
+.ac-core.list.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:active,
+.ac-core.ac-core-list.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:active,
+.ac-core.teaser.ac-core-card-content.ds-brand-use-buttons.style-primary .cmp-teaser__action-link:active,
+.ac-core.list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:active,
+.ac-core.ac-core-list.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:active,
+.ac-core.teaser.ac-core-card-content.ds-brand-use-buttons.style-secondary .cmp-teaser__action-link:active {
   --button-bg-gradient-color-1: var(--button-bg-color-active);
   --button-bg-gradient-color-2: var(--button-bg-color-active);
   --button-bg-gradient-color-3: var(--button-bg-color-active);
@@ -187,9 +250,16 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content .cmp-teaser__link::before,
 
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link,
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link,
+.ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser__action-link,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser__action-link {
   --button-bg-color: transparent;
   --button-bg-color-hover: #d1d4d752;
   --button-bg-color-active: #d1d4d7a3;
@@ -204,9 +274,16 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content .cmp-teaser__link::before,
 
 .ac-core .list.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:nth-child(2),
 .ac-core .ac-core-list.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:nth-child(2),
-.ac-core .teaser.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:nth-child(2), .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link,
+.ac-core .teaser.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:nth-child(2),
+.ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link,
+.ac-core.list.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:nth-child(2),
+.ac-core.ac-core-list.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:nth-child(2),
+.ac-core.teaser.ac-core-card-content.modifier-banner.style-primary .cmp-teaser__action-link:nth-child(2),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser__action-link {
   --button-bg-color: transparent;
   --button-bg-color-hover: #191d1f3d;
   --button-bg-color-active: #191d1f7a;
@@ -221,11 +298,22 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content .cmp-teaser__link::before,
 
 .ac-core .list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
 .ac-core .ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
 .ac-core .ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link,
+.ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link,
+.ac-core.list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core.ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core.teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core.list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core.ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core.teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core.list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link {
   --button-bg-color: transparent;
   --button-bg-color-hover: transparent;
   --button-bg-color-active: transparent;
@@ -241,41 +329,28 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content .cmp-teaser__link::before,
   text-align: left;
   border-radius: 0;
 }
-html[dir=rtl] .ac-core .list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link,
-html[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link,
-html[dir=rtl] .ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link,
-html[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link,
-html[dir=rtl] .ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) html[dir=rtl] .cmp-teaser__action-link,
-html[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link,
-.ac-core .ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) html[dir=rtl] .cmp-teaser__action-link,
-html[dir=rtl] .ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) html[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link,
-body[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link,
-body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link,
-body[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link,
-body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) body[dir=rtl] .cmp-teaser__action-link,
-body[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link,
-.ac-core .ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) body[dir=rtl] .cmp-teaser__action-link,
-body[dir=rtl] .ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) body[dir=rtl] .cmp-teaser__action-link {
+html[dir=rtl] .ac-core .list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link, .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link, .ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) html[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link, .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link, .ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) body[dir=rtl] .cmp-teaser__action-link, .ac-core.list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, .ac-core.ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, .ac-core.teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, .ac-core.list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, .ac-core.ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, .ac-core.teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, .ac-core.list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) html[dir=rtl] .cmp-teaser__action-link, .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) html[dir=rtl] .cmp-teaser__action-link, .ac-core.teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) html[dir=rtl] .cmp-teaser__action-link, .ac-core.list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, .ac-core.ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, .ac-core.teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, .ac-core.list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, .ac-core.ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, .ac-core.teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, .ac-core.list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) body[dir=rtl] .cmp-teaser__action-link, .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) body[dir=rtl] .cmp-teaser__action-link, .ac-core.teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) body[dir=rtl] .cmp-teaser__action-link {
   flex-direction: row-reverse;
   text-align: right;
 }
 .ac-core .list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
 .ac-core .ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
-.ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before, .ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
 .ac-core .ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
-.ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before, .ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link::before,
+.ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link::before,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link::before,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link::before {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link::before,
+.ac-core.list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core.ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core.teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core.list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core.ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core.teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core.list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link::before,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link::before,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link::before {
   content: "";
   content: "";
   display: inline-block;
@@ -290,19 +365,37 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.m
 }
 .ac-core .list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
 .ac-core .ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
-.ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover, .ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core .teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core .list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
 .ac-core .ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
-.ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover, .ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link:hover,
+.ac-core .teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link:hover,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link:hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link:hover {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link:hover,
+.ac-core.list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.ac-core-list.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.teaser.ac-core-card-content.style-primary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.ac-core-list.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.teaser.ac-core-card-content.style-secondary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link:hover,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link:hover,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__action-link:hover {
   opacity: 0.6;
 }
 
 .ac-core .list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
 .ac-core .ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
 .ac-core .ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link {
+.ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core.list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core.ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core.teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core.list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core.ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
+.ac-core.teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link {
   --button-bg-color: transparent;
   --button-bg-color-hover: transparent;
   --button-bg-color-active: transparent;
@@ -317,31 +410,22 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.m
   padding-inline: 0;
   text-align: left;
 }
-html[dir=rtl] .ac-core .list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link,
-html[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link,
-html[dir=rtl] .ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link,
-html[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link,
-html[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link,
-body[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link,
-body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link,
-body[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link,
-body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link,
-.ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link {
+html[dir=rtl] .ac-core .list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, html[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link, .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, .ac-core.list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, .ac-core.ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, .ac-core.teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, .ac-core.list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, .ac-core.ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, .ac-core.teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) html[dir=rtl] .cmp-teaser__action-link, .ac-core.list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, .ac-core.ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, .ac-core.teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, .ac-core.list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, .ac-core.ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link, .ac-core.teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) body[dir=rtl] .cmp-teaser__action-link {
   flex-direction: row-reverse;
   text-align: right;
 }
 .ac-core .list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
 .ac-core .ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
-.ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before, .ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
 .ac-core .ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
-.ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before {
+.ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core.list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core.ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core.teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core.list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core.ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before,
+.ac-core.teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link::before {
   content: "";
   content: "";
   display: inline-block;
@@ -356,33 +440,48 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
 .ac-core .ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
-.ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover, .ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core .teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core .list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
 .ac-core .ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
-.ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover {
+.ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.ac-core-list.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.teaser.ac-core-card-content.style-tertiary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.ac-core-list.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.teaser.ac-core-card-content.style-quaternary:not(.modifier-banner):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover {
   opacity: 0.6;
 }
 
-.ac-core [class*=grid-col-] .ac-core-card-content {
+.ac-core [class*=grid-col-] .ac-core-card-content, .ac-core[class*=grid-col-] .ac-core-card-content {
   display: flex;
 }
-.ac-core [class*=grid-col-] .ac-core-card-content .cmp-teaser__link {
+.ac-core [class*=grid-col-] .ac-core-card-content .cmp-teaser__link, .ac-core[class*=grid-col-] .ac-core-card-content .cmp-teaser__link {
   height: 100%;
 }
-.ac-core [class*=grid-col-] .ac-core-card-content .cmp-teaser__content {
+.ac-core [class*=grid-col-] .ac-core-card-content .cmp-teaser__content, .ac-core[class*=grid-col-] .ac-core-card-content .cmp-teaser__content {
   height: 100%;
 }
 .ac-core .list.ac-core-card-content .cmp-list__item,
-.ac-core .ac-core-list.ac-core-card-content .cmp-list__item {
+.ac-core .ac-core-list.ac-core-card-content .cmp-list__item,
+.ac-core.list.ac-core-card-content .cmp-list__item,
+.ac-core.ac-core-list.ac-core-card-content .cmp-list__item {
   container: card-content/inline-size;
 }
 .ac-core .list.ac-core-card-content,
 .ac-core .ac-core-list.ac-core-card-content,
-.ac-core .teaser.ac-core-card-content {
+.ac-core .teaser.ac-core-card-content,
+.ac-core.list.ac-core-card-content,
+.ac-core.ac-core-list.ac-core-card-content,
+.ac-core.teaser.ac-core-card-content {
   container: card-content/inline-size;
 }
 .ac-core .list.ac-core-card-content.style-primary .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.style-primary .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.style-primary .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.style-primary .cmp-teaser,
+.ac-core.list.ac-core-card-content.style-primary .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.style-primary .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.style-primary .cmp-teaser {
   --card-content-bg-color: linear-gradient(180deg, #1f9fc4 4%, #0092bc 48%, #006f8f 96%);
   --link-circle-icon-color: #0092bc;
   --link-circle-icon-bg-color: #ffffff;
@@ -392,7 +491,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.style-secondary .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.style-secondary .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.style-secondary .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.style-secondary .cmp-teaser,
+.ac-core.list.ac-core-card-content.style-secondary .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.style-secondary .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.style-secondary .cmp-teaser {
   --card-content-bg-color: linear-gradient(180deg, #454e55 4%, #2f363a 48%, #191d1f 96%);
   --link-circle-icon-color: #0d0d0d;
   --link-circle-icon-bg-color: #ffffff;
@@ -402,7 +504,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.style-tertiary .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.style-tertiary .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.style-tertiary .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.style-tertiary .cmp-teaser,
+.ac-core.list.ac-core-card-content.style-tertiary .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.style-tertiary .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.style-tertiary .cmp-teaser {
   --card-content-bg-color: #f5f2ef;
   --teaser-content-color: #5b6770;
   --teaser-title-color: #2f363a;
@@ -410,7 +515,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.style-quaternary .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.style-quaternary .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.style-quaternary .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.style-quaternary .cmp-teaser,
+.ac-core.list.ac-core-card-content.style-quaternary .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.style-quaternary .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.style-quaternary .cmp-teaser {
   --card-content-bg-color: #ffffff;
   --teaser-content-color: #5b6770;
   --teaser-title-color: #2f363a;
@@ -418,7 +526,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-banner.style-primary .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.modifier-banner.style-primary .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.modifier-banner.style-primary .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.modifier-banner.style-primary .cmp-teaser,
+.ac-core.list.ac-core-card-content.modifier-banner.style-primary .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.modifier-banner.style-primary .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.modifier-banner.style-primary .cmp-teaser {
   --teaser-pretitle-bg-color: transparent;
   --teaser-pretitle-border-color: #ffffff;
   --teaser-pretitle-padding-inline: 8px;
@@ -426,22 +537,24 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser,
+.ac-core.list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.modifier-banner.style-secondary .cmp-teaser {
   --teaser-pretitle-color: #ffffff;
   --teaser-pretitle-bg-color: transparent;
   --teaser-pretitle-border-color: #ffffff;
   --teaser-pretitle-padding-inline: 8px;
 }
-.ac-core .list.ac-core-card-content.modifier-banner.style-tertiary, .ac-core .list.ac-core-card-content.modifier-banner.style-quaternary,
-.ac-core .ac-core-list.ac-core-card-content.modifier-banner.style-tertiary,
-.ac-core .ac-core-list.ac-core-card-content.modifier-banner.style-quaternary,
-.ac-core .teaser.ac-core-card-content.modifier-banner.style-tertiary,
-.ac-core .teaser.ac-core-card-content.modifier-banner.style-quaternary {
+.ac-core .list.ac-core-card-content.modifier-banner.style-tertiary, .ac-core .list.ac-core-card-content.modifier-banner.style-quaternary, .ac-core .ac-core-list.ac-core-card-content.modifier-banner.style-tertiary, .ac-core .ac-core-list.ac-core-card-content.modifier-banner.style-quaternary, .ac-core .teaser.ac-core-card-content.modifier-banner.style-tertiary, .ac-core .teaser.ac-core-card-content.modifier-banner.style-quaternary, .ac-core.list.ac-core-card-content.modifier-banner.style-tertiary, .ac-core.list.ac-core-card-content.modifier-banner.style-quaternary, .ac-core.ac-core-list.ac-core-card-content.modifier-banner.style-tertiary, .ac-core.ac-core-list.ac-core-card-content.modifier-banner.style-quaternary, .ac-core.teaser.ac-core-card-content.modifier-banner.style-tertiary, .ac-core.teaser.ac-core-card-content.modifier-banner.style-quaternary {
   --teaser-pretitle-color: #5b6770;
 }
 .ac-core .list.ac-core-card-content.modifier-banner .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.modifier-banner .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.modifier-banner .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.modifier-banner .cmp-teaser,
+.ac-core.list.ac-core-card-content.modifier-banner .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.modifier-banner .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.modifier-banner .cmp-teaser {
   --card-content-title-size: 36px;
   --card-content-border-radius: 32px;
   --card-content-padding: 58px 48px;
@@ -449,17 +562,26 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-banner .cmp-teaser:not(:has(.cmp-teaser__image)),
 .ac-core .ac-core-list.ac-core-card-content.modifier-banner .cmp-teaser:not(:has(.cmp-teaser__image)),
-.ac-core .teaser.ac-core-card-content.modifier-banner .cmp-teaser:not(:has(.cmp-teaser__image)) {
+.ac-core .teaser.ac-core-card-content.modifier-banner .cmp-teaser:not(:has(.cmp-teaser__image)),
+.ac-core.list.ac-core-card-content.modifier-banner .cmp-teaser:not(:has(.cmp-teaser__image)),
+.ac-core.ac-core-list.ac-core-card-content.modifier-banner .cmp-teaser:not(:has(.cmp-teaser__image)),
+.ac-core.teaser.ac-core-card-content.modifier-banner .cmp-teaser:not(:has(.cmp-teaser__image)) {
   --card-content-border-radius: 32px;
 }
 .ac-core .list.ac-core-card-content.modifier-banner .cmp-teaser__content,
 .ac-core .ac-core-list.ac-core-card-content.modifier-banner .cmp-teaser__content,
-.ac-core .teaser.ac-core-card-content.modifier-banner .cmp-teaser__content {
+.ac-core .teaser.ac-core-card-content.modifier-banner .cmp-teaser__content,
+.ac-core.list.ac-core-card-content.modifier-banner .cmp-teaser__content,
+.ac-core.ac-core-list.ac-core-card-content.modifier-banner .cmp-teaser__content,
+.ac-core.teaser.ac-core-card-content.modifier-banner .cmp-teaser__content {
   width: 100%;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser,
+.ac-core.list.ac-core-card-content.modifier-media-filled .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled .cmp-teaser {
   --card-content-bg-color: transparent;
   --card-content-border-color: transparent;
   --card-content-image-height: 100%;
@@ -472,28 +594,33 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-media-filled .cmp-teaser,
   .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser,
-  .ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser {
+  .ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser,
+  .ac-core.list.ac-core-card-content.modifier-media-filled .cmp-teaser,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser,
+  .ac-core.teaser.ac-core-card-content.modifier-media-filled .cmp-teaser {
     --card-content-padding: 48px 24px;
   }
 }
 @container card-content (width > 708px) {
-  .ac-core .list.ac-core-card-content.modifier-media-filled .cmp-teaser__image, .ac-core .list.ac-core-card-content.modifier-media-filled .cmp-teaser__content,
-  .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser__image,
-  .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser__content,
-  .ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__image,
-  .ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__content {
+  .ac-core .list.ac-core-card-content.modifier-media-filled .cmp-teaser__image, .ac-core .list.ac-core-card-content.modifier-media-filled .cmp-teaser__content, .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser__image, .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser__content, .ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__image, .ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__content, .ac-core.list.ac-core-card-content.modifier-media-filled .cmp-teaser__image, .ac-core.list.ac-core-card-content.modifier-media-filled .cmp-teaser__content, .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser__image, .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser__content, .ac-core.teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__image, .ac-core.teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__content {
     width: 100%;
   }
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled .cmp-teaser__image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser__image,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__image {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__image,
+.ac-core.list.ac-core-card-content.modifier-media-filled .cmp-teaser__image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser__image,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__image {
   position: absolute;
   inset: 0;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled .cmp-teaser__image::before,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser__image::before,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__image::before {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__image::before,
+.ac-core.list.ac-core-card-content.modifier-media-filled .cmp-teaser__image::before,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser__image::before,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__image::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -502,39 +629,57 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled .cmp-teaser__content:not(:only-child),
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser__content:not(:only-child),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__content:not(:only-child) {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__content:not(:only-child),
+.ac-core.list.ac-core-card-content.modifier-media-filled .cmp-teaser__content:not(:only-child),
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled .cmp-teaser__content:not(:only-child),
+.ac-core.teaser.ac-core-card-content.modifier-media-filled .cmp-teaser__content:not(:only-child) {
   width: 100%;
 }
 @container card-content (width < 708px) {
   .ac-core .list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__content,
   .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__content,
-  .ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__content {
+  .ac-core .teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__content,
+  .ac-core.list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__content,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__content,
+  .ac-core.teaser.ac-core-card-content.modifier-media-filled:not(.modifier-banner) .cmp-teaser__content {
     padding-top: 250px;
   }
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-primary .cmp-teaser {
   --scrollbar-track-bg-color: #000000;
   --scrollbar-thumb-bg-color: #ffffff;
   --card-content-gradient-bg-color: #0092bc;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-secondary .cmp-teaser {
   --scrollbar-thumb-bg-color: #0092bc;
   --card-content-gradient-bg-color: linear-gradient(180deg, #454e55 4%, #2f363a 48%, #191d1f 96%);
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser {
   --scrollbar-track-bg-color: #aab0b5;
   --scrollbar-thumb-bg-color: #000000;
   --card-content-gradient-bg-color: #f5f2ef;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser:hover,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser:hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser:hover {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser:hover,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser:hover,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser:hover,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-tertiary .cmp-teaser:hover {
   --teaser-pretitle-color: #5b6770;
   --teaser-title-color: #2f363a;
   --teaser-content-color: #5b6770;
@@ -543,13 +688,19 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser {
   --scrollbar-track-bg-color: #aab0b5;
   --card-content-gradient-bg-color: #ffffff;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser:hover,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser:hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser:hover {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser:hover,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser:hover,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser:hover,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation.style-quaternary .cmp-teaser:hover {
   --teaser-pretitle-color: #5b6770;
   --teaser-title-color: #2f363a;
   --teaser-content-color: #5b6770;
@@ -558,7 +709,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser {
   --scrollbar-track-bg-color: #ffffff;
   --scrollbar-thumb-bg-color: #000000;
   --card-content-bg-color: transparent;
@@ -577,87 +731,123 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
   --card-content-gradient-opacity: 0;
   overflow: hidden;
 }
-.ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover,
-.ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible),
-.ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible),
-.ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover {
+.ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover, .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover, .ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover, .ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover, .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover, .ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover {
   --teaser-title-line-clamp: 3;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)),
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)) {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)),
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)),
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)) {
   --card-content-padding: 32px 20px;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)),
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)) {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)),
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)),
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)) {
   min-height: 600px;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)) .cmp-teaser__content,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)) .cmp-teaser__content,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)) .cmp-teaser__content {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)) .cmp-teaser__content,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)) .cmp-teaser__content,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)) .cmp-teaser__content,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__link)) .cmp-teaser__content {
   height: 600px;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link),
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link),
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link),
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) {
   --card-content-padding: 32px 20px;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)),
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)) {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)),
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)),
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)) {
   --card-content-transform: 72%;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)):hover,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)):hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)):hover {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)):hover,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)):hover,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)):hover,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(:not(.cmp-teaser__pretitle)):hover {
   --card-content-transform: 0%;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle),
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle) {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle),
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle),
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle) {
   --card-content-transform: 66%;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle):hover,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle):hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle):hover {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle):hover,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle):hover,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle):hover,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__pretitle):hover {
   --card-content-transform: 0%;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):hover,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):hover {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):hover,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):hover,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):hover,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link):hover {
   --card-content-border-color: transparent;
   --card-content-box-shadow: none;
   --card-content-image-transition-delay: 0.2s;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link {
   min-height: 600px;
   overflow: hidden;
   border-radius: var(--card-content-border-radius);
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link .cmp-teaser__content,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link .cmp-teaser__content,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link .cmp-teaser__content {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link .cmp-teaser__content,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link .cmp-teaser__content,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link .cmp-teaser__content,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__link) .cmp-teaser__link .cmp-teaser__content {
   height: 600px;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__pretitle)),
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__pretitle)),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__pretitle)) {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__pretitle)),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__pretitle)),
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__pretitle)),
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(:not(.cmp-teaser__pretitle)) {
   --card-content-transform: 75%;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__pretitle),
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__pretitle),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__pretitle) {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__pretitle),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__pretitle),
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__pretitle),
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__pretitle) {
   --card-content-transform: 72%;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser::before,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser::before,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser::before {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser::before,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser::before,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser::before,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -666,13 +856,7 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
   opacity: var(--card-content-gradient-opacity);
   transition: opacity 0.3s ease-in-out;
 }
-.ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover,
-.ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible),
-.ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible),
-.ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover {
+.ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover, .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover, .ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover, .ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover, .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover, .ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(a:focus-visible), .ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:has(.cmp-teaser__action-link:focus-visible), .ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser:hover {
   --card-content-transform: 0;
   --card-content-opacity: 1;
   --card-content-image-gradient-opacity: 0;
@@ -682,21 +866,23 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__link:hover .cmp-teaser__title,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__link:hover .cmp-teaser__title,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__link:hover .cmp-teaser__title {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__link:hover .cmp-teaser__title,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__link:hover .cmp-teaser__title,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__link:hover .cmp-teaser__title,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__link:hover .cmp-teaser__title {
   text-decoration: none !important;
 }
 @container card-content (width > 708px) {
-  .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image, .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content,
-  .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image,
-  .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content,
-  .ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image,
-  .ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content {
+  .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image, .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content, .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image, .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content, .ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image, .ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content, .ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image, .ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content, .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image, .ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content, .ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image, .ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content {
     width: 100%;
   }
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image {
   position: absolute;
   inset: 0;
   opacity: var(--card-content-image-opacity);
@@ -705,7 +891,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image::before,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image::before,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image::before {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image::before,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image::before,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image::before,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__image::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -716,12 +905,18 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content:not(:only-child),
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content:not(:only-child),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content:not(:only-child) {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content:not(:only-child),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content:not(:only-child),
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content:not(:only-child),
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content:not(:only-child) {
   width: 100%;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__content {
   overflow: hidden;
   position: relative;
   transform: translateY(var(--card-content-transform));
@@ -729,12 +924,18 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__pretitle,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__pretitle,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__pretitle {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__pretitle,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__pretitle,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__pretitle,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__pretitle {
   transition: color 0.3s ease-in-out;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__title,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__title,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__title {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__title,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__title,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__title,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__title {
   display: -webkit-box;
   -webkit-line-clamp: var(--teaser-title-line-clamp);
   -webkit-box-orient: vertical;
@@ -744,7 +945,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description {
   margin-block-start: 10px;
   padding-inline-end: 12px;
   margin-block-end: 24px;
@@ -755,25 +959,37 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar {
   width: 2px;
   height: 10px;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-track,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-track,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-track {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-track,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-track,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-track,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-track {
   background: var(--scrollbar-track-bg-color);
   border-radius: 0;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-thumb,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-thumb,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-thumb {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-thumb,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-thumb,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-thumb,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb-bg-color);
   border-radius: 0;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description p,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description p,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description p {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description p,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description p,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description p,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description p {
   display: -webkit-box;
   -webkit-line-clamp: 11;
   -webkit-box-orient: vertical;
@@ -782,12 +998,18 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul {
   margin-left: 0;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li {
   list-style-type: none;
   display: grid;
   align-items: baseline;
@@ -796,12 +1018,18 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li:not(:last-child),
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li:not(:last-child),
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li:not(:last-child) {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li:not(:last-child),
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li:not(:last-child),
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li:not(:last-child),
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li:not(:last-child) {
   margin-bottom: 0;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li::before,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li::before,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li::before {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li::before,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li::before,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li::before,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description ul li::before {
   content: "";
   display: inline-block;
   width: 16px;
@@ -815,36 +1043,54 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a {
   transition: opacity 0.3s ease-in-out;
   outline-color: currentColor !important;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible {
   color: currentColor !important;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:focus-visible {
   outline-color: transparent !important;
   outline: none !important;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:hover,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:hover,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:hover {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:hover,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:hover,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:hover,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__description a:hover {
   color: currentColor;
 }
 .ac-core .list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__action-container,
 .ac-core .ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__action-container,
-.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__action-container {
+.ac-core .teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__action-container,
+.ac-core.list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__action-container,
+.ac-core.ac-core-list.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__action-container,
+.ac-core.teaser.ac-core-card-content.modifier-media-filled-animation .cmp-teaser__action-container {
   opacity: var(--card-content-opacity);
   transition: opacity 0.3s ease-in-out;
 }
 @container card-content (width > 952px) {
   .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser,
   .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser,
-  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser {
+  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser,
+  .ac-core.list.ac-core-card-content.modifier-overlap-image .cmp-teaser,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser,
+  .ac-core.teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser {
     --teaser-title-space-bottom: 24px;
     border: none;
     overflow: visible;
@@ -855,7 +1101,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 952px) {
   .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser__image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__image,
-  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__image {
+  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__image,
+  .ac-core.list.ac-core-card-content.modifier-overlap-image .cmp-teaser__image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__image,
+  .ac-core.teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__image {
     position: relative;
     flex: 0 1 462px;
     min-height: 590px;
@@ -865,14 +1114,20 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 1280px) {
   .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser__image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__image,
-  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__image {
+  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__image,
+  .ac-core.list.ac-core-card-content.modifier-overlap-image .cmp-teaser__image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__image,
+  .ac-core.teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__image {
     flex: 0 1 590px;
   }
 }
 @container card-content (width > 952px) {
   .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser .cmp-image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser .cmp-image,
-  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser .cmp-image {
+  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser .cmp-image,
+  .ac-core.list.ac-core-card-content.modifier-overlap-image .cmp-teaser .cmp-image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser .cmp-image,
+  .ac-core.teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser .cmp-image {
     display: flex;
     height: auto;
   }
@@ -880,16 +1135,15 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 952px) {
   .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser__title,
   .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__title,
-  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__title {
+  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__title,
+  .ac-core.list.ac-core-card-content.modifier-overlap-image .cmp-teaser__title,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__title,
+  .ac-core.teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__title {
     font-size: 36px;
   }
 }
 @container card-content (width > 952px) {
-  .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child),
-  .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content,
-  .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child),
-  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__content,
-  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child) {
+  .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child), .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child), .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child), .ac-core.list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core.list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child), .ac-core.ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core.ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child), .ac-core.teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core.teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child) {
     border: 1px solid #aab0b5;
     box-shadow: 0 40px 64px -56px rgba(47, 54, 58, 0.6392156863), 0 0 12px 0 rgba(47, 54, 58, 0.1215686275);
     background-color: #ffffff;
@@ -902,70 +1156,96 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
   }
 }
 @container card-content (width > 1280px) {
-  .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child),
-  .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content,
-  .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child),
-  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__content,
-  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child) {
+  .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child), .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child), .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child), .ac-core.list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core.list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child), .ac-core.ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core.ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child), .ac-core.teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__content, .ac-core.teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__content:not(:only-child) {
     padding: 58px;
   }
 }
 @container card-content (width > 952px) {
   .ac-core .list.ac-core-card-content.modifier-overlap-image .cmp-teaser__description,
   .ac-core .ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__description,
-  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__description {
+  .ac-core .teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__description,
+  .ac-core.list.ac-core-card-content.modifier-overlap-image .cmp-teaser__description,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-overlap-image .cmp-teaser__description,
+  .ac-core.teaser.ac-core-card-content.modifier-overlap-image .cmp-teaser__description {
     margin-block-end: 14px;
   }
 }
 .ac-core .list.ac-core-card-content.modifier-transparent .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content.modifier-transparent .cmp-teaser,
-.ac-core .teaser.ac-core-card-content.modifier-transparent .cmp-teaser {
+.ac-core .teaser.ac-core-card-content.modifier-transparent .cmp-teaser,
+.ac-core.list.ac-core-card-content.modifier-transparent .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content.modifier-transparent .cmp-teaser,
+.ac-core.teaser.ac-core-card-content.modifier-transparent .cmp-teaser {
   --card-content-bg-color: transparent;
 }
 .ac-core .list.ac-core-card-content:not(.modifier-banner):not(.modifier-overlap-image):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
 .ac-core .ac-core-list.ac-core-card-content:not(.modifier-banner):not(.modifier-overlap-image):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
-.ac-core .teaser.ac-core-card-content:not(.modifier-banner):not(.modifier-overlap-image):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover {
+.ac-core .teaser.ac-core-card-content:not(.modifier-banner):not(.modifier-overlap-image):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.list.ac-core-card-content:not(.modifier-banner):not(.modifier-overlap-image):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.ac-core-list.ac-core-card-content:not(.modifier-banner):not(.modifier-overlap-image):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover,
+.ac-core.teaser.ac-core-card-content:not(.modifier-banner):not(.modifier-overlap-image):not(.modifier-media-filled-animation):not(.ds-brand-use-buttons) .cmp-teaser__action-link:hover {
   opacity: 1 !important;
   text-decoration: underline !important;
 }
 .ac-core .list.ac-core-card-content.modifier-image-fit-contain .cmp-teaser .cmp-image__image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-image-fit-contain .cmp-teaser .cmp-image__image,
-.ac-core .teaser.ac-core-card-content.modifier-image-fit-contain .cmp-teaser .cmp-image__image {
+.ac-core .teaser.ac-core-card-content.modifier-image-fit-contain .cmp-teaser .cmp-image__image,
+.ac-core.list.ac-core-card-content.modifier-image-fit-contain .cmp-teaser .cmp-image__image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-image-fit-contain .cmp-teaser .cmp-image__image,
+.ac-core.teaser.ac-core-card-content.modifier-image-fit-contain .cmp-teaser .cmp-image__image {
   object-fit: contain;
 }
 .ac-core .list.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image,
-.ac-core .teaser.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image {
+.ac-core .teaser.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image,
+.ac-core.list.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image,
+.ac-core.teaser.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image {
   height: auto;
   aspect-ratio: 16/9;
 }
 .ac-core .list.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image__image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image__image,
-.ac-core .teaser.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image__image {
+.ac-core .teaser.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image__image,
+.ac-core.list.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image__image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image__image,
+.ac-core.teaser.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image__image {
   height: 100%;
 }
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image,
-  .ac-core .teaser.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image {
+  .ac-core .teaser.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image,
+  .ac-core.list.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image,
+  .ac-core.teaser.ac-core-card-content.modifier-image-aspect-ratio .cmp-teaser .cmp-image {
     height: 100%;
     aspect-ratio: unset;
   }
 }
 .ac-core .list.ac-core-card-content.modifier-image-intrinsic .cmp-teaser__image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-image-intrinsic .cmp-teaser__image,
-.ac-core .teaser.ac-core-card-content.modifier-image-intrinsic .cmp-teaser__image {
+.ac-core .teaser.ac-core-card-content.modifier-image-intrinsic .cmp-teaser__image,
+.ac-core.list.ac-core-card-content.modifier-image-intrinsic .cmp-teaser__image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-image-intrinsic .cmp-teaser__image,
+.ac-core.teaser.ac-core-card-content.modifier-image-intrinsic .cmp-teaser__image {
   display: grid;
   align-items: center;
 }
 .ac-core .list.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image,
-.ac-core .teaser.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image {
+.ac-core .teaser.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image,
+.ac-core.list.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image,
+.ac-core.teaser.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image {
   height: auto;
 }
 .ac-core .list.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image__image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image__image,
-.ac-core .teaser.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image__image {
+.ac-core .teaser.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image__image,
+.ac-core.list.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image__image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image__image,
+.ac-core.teaser.ac-core-card-content.modifier-image-intrinsic .cmp-teaser .cmp-image__image {
   height: auto;
   width: 100%;
   width: 100%;
@@ -974,7 +1254,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__image,
-  .ac-core .teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser__image {
+  .ac-core .teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser__image,
+  .ac-core.list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__image,
+  .ac-core.teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser__image {
     flex: 0 1 auto;
     width: auto;
     max-width: 55%;
@@ -983,7 +1266,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image,
-  .ac-core .teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image {
+  .ac-core .teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image,
+  .ac-core.list.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image,
+  .ac-core.teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image {
     height: 100%;
     width: auto;
     background: var(--card-content-bg-color);
@@ -994,7 +1280,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image__image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image__image,
-  .ac-core .teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image__image {
+  .ac-core .teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image__image,
+  .ac-core.list.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image__image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image__image,
+  .ac-core.teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser .cmp-image__image {
     height: auto;
     width: 100%;
     max-height: 380px;
@@ -1002,11 +1291,7 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
   }
 }
 @container card-content (width > 708px) {
-  .ac-core .list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content, .ac-core .list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content:not(:only-child),
-  .ac-core .ac-core-list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content,
-  .ac-core .ac-core-list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content:not(:only-child),
-  .ac-core .teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content,
-  .ac-core .teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content:not(:only-child) {
+  .ac-core .list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content, .ac-core .list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content:not(:only-child), .ac-core .ac-core-list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content, .ac-core .ac-core-list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content:not(:only-child), .ac-core .teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content, .ac-core .teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content:not(:only-child), .ac-core.list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content, .ac-core.list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content:not(:only-child), .ac-core.ac-core-list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content, .ac-core.ac-core-list.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content:not(:only-child), .ac-core.teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content, .ac-core.teaser.ac-core-card-content.modifier-image-flex-content .cmp-teaser__content:not(:only-child) {
     flex: 1 1 0;
     width: auto;
     min-width: 320px;
@@ -1015,20 +1300,29 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__content:not(:only-child),
   .ac-core .ac-core-list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__content:not(:only-child),
-  .ac-core .teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__content:not(:only-child) {
+  .ac-core .teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__content:not(:only-child),
+  .ac-core.list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__content:not(:only-child),
+  .ac-core.ac-core-list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__content:not(:only-child),
+  .ac-core.teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__content:not(:only-child) {
     width: 40%;
   }
 }
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__image,
-  .ac-core .teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__image {
+  .ac-core .teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__image,
+  .ac-core.list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__image,
+  .ac-core.teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser__image {
     width: 60%;
   }
 }
 .ac-core .list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image,
-.ac-core .teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image {
+.ac-core .teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image,
+.ac-core.list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image,
+.ac-core.teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image {
   min-height: 280px;
   max-height: 360px;
   overflow: hidden;
@@ -1039,7 +1333,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image,
-  .ac-core .teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image {
+  .ac-core .teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image,
+  .ac-core.list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image,
+  .ac-core.teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image {
     height: 100%;
     min-height: unset;
     max-height: unset;
@@ -1048,7 +1345,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image,
-.ac-core .teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image {
+.ac-core .teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image,
+.ac-core.list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image,
+.ac-core.teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image {
   width: 100%;
   min-height: 280px;
   height: auto;
@@ -1059,7 +1359,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image,
-  .ac-core .teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image {
+  .ac-core .teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image,
+  .ac-core.list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image,
+  .ac-core.teaser.ac-core-card-content.modifier-image-minimal-crop .cmp-teaser .cmp-image__image {
     height: 100%;
     min-height: unset;
     object-fit: cover;
@@ -1068,7 +1371,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image,
-.ac-core .teaser.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image {
+.ac-core .teaser.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image,
+.ac-core.list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image,
+.ac-core.teaser.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image {
   height: auto;
   max-height: 400px;
   background: var(--card-content-bg-color);
@@ -1078,7 +1384,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image,
-  .ac-core .teaser.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image {
+  .ac-core .teaser.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image,
+  .ac-core.list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image,
+  .ac-core.teaser.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image {
     height: 100%;
     max-height: unset;
     display: block;
@@ -1086,7 +1395,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image,
-.ac-core .teaser.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image {
+.ac-core .teaser.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image,
+.ac-core.list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image,
+.ac-core.teaser.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image {
   width: auto;
   height: auto;
   max-width: 100%;
@@ -1095,7 +1407,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image,
-  .ac-core .teaser.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image {
+  .ac-core .teaser.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image,
+  .ac-core.list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image,
+  .ac-core.teaser.ac-core-card-content.modifier-image-contain-capped .cmp-teaser .cmp-image__image {
     width: 100%;
     height: 100%;
     max-height: unset;
@@ -1106,14 +1421,20 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-no-image-crop .cmp-teaser__image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser__image,
-  .ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser__image {
+  .ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser__image,
+  .ac-core.list.ac-core-card-content.modifier-no-image-crop .cmp-teaser__image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser__image,
+  .ac-core.teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser__image {
     width: max-content;
   }
 }
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-no-image-crop .cmp-teaser__content,
   .ac-core .ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser__content,
-  .ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser__content {
+  .ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser__content,
+  .ac-core.list.ac-core-card-content.modifier-no-image-crop .cmp-teaser__content,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser__content,
+  .ac-core.teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser__content {
     flex: 1 1 0;
     width: auto;
     min-width: 300px;
@@ -1121,7 +1442,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
-.ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image {
+.ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
+.ac-core.list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
+.ac-core.teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image {
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1130,7 +1454,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width < 708px) {
   .ac-core .list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
-  .ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image {
+  .ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
+  .ac-core.list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
+  .ac-core.teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image {
     min-height: 280px;
     max-height: 360px;
   }
@@ -1138,7 +1465,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
-  .ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image {
+  .ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
+  .ac-core.list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image,
+  .ac-core.teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image {
     height: 100%;
     min-height: unset;
     max-height: unset;
@@ -1148,7 +1478,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image,
 .ac-core .ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image,
-.ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image {
+.ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image,
+.ac-core.list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image,
+.ac-core.ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image,
+.ac-core.teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image {
   width: 100%;
   min-height: 280px;
   height: auto;
@@ -1159,7 +1492,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image,
   .ac-core .ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image,
-  .ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image {
+  .ac-core .teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image,
+  .ac-core.list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image,
+  .ac-core.ac-core-list.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image,
+  .ac-core.teaser.ac-core-card-content.modifier-no-image-crop .cmp-teaser .cmp-image__image {
     height: 100%;
     width: auto;
     min-height: unset;
@@ -1170,7 +1506,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser,
-.ac-core .teaser.ac-core-card-content .cmp-teaser {
+.ac-core .teaser.ac-core-card-content .cmp-teaser,
+.ac-core.list.ac-core-card-content .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser,
+.ac-core.teaser.ac-core-card-content .cmp-teaser {
   --card-content-border-color: #aab0b5;
   --card-content-image-height: 228px;
   --card-content-title-size: 24px;
@@ -1191,7 +1530,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content .cmp-teaser,
   .ac-core .ac-core-list.ac-core-card-content .cmp-teaser,
-  .ac-core .teaser.ac-core-card-content .cmp-teaser {
+  .ac-core .teaser.ac-core-card-content .cmp-teaser,
+  .ac-core.list.ac-core-card-content .cmp-teaser,
+  .ac-core.ac-core-list.ac-core-card-content .cmp-teaser,
+  .ac-core.teaser.ac-core-card-content .cmp-teaser {
     --card-content-padding: 24px;
     --card-content-image-height: 100%;
     flex-direction: row-reverse;
@@ -1199,14 +1541,20 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link),
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link),
-.ac-core .teaser.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link) {
+.ac-core .teaser.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link),
+.ac-core.list.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link),
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link),
+.ac-core.teaser.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link) {
   --card-content-padding: 16px 24px 40px;
   box-shadow: var(--card-content-box-shadow);
   transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):hover,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):hover,
-.ac-core .teaser.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):hover {
+.ac-core .teaser.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):hover,
+.ac-core.list.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):hover,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):hover,
+.ac-core.teaser.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):hover {
   --card-content-border-color: #5b6770;
   --card-content-box-shadow: 0px 40px 64px -56px #2f363aa3, 0px 0px 12px 0px #2f363a1f;
   --link-circle-icon-bg-size: 24px;
@@ -1214,31 +1562,46 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__link:active),
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__link:active),
-.ac-core .teaser.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__link:active) {
+.ac-core .teaser.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__link:active),
+.ac-core.list.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__link:active),
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__link:active),
+.ac-core.teaser.ac-core-card-content .cmp-teaser:has(.cmp-teaser__link):has(.cmp-teaser__link:active) {
   --card-content-border-color: #aab0b5;
   --card-content-box-shadow: none;
   --card-content-image-transition-delay: 0.2s;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser:not(:has(.cmp-teaser__image)),
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser:not(:has(.cmp-teaser__image)),
-.ac-core .teaser.ac-core-card-content .cmp-teaser:not(:has(.cmp-teaser__image)) {
+.ac-core .teaser.ac-core-card-content .cmp-teaser:not(:has(.cmp-teaser__image)),
+.ac-core.list.ac-core-card-content .cmp-teaser:not(:has(.cmp-teaser__image)),
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser:not(:has(.cmp-teaser__image)),
+.ac-core.teaser.ac-core-card-content .cmp-teaser:not(:has(.cmp-teaser__image)) {
   --card-content-border-radius: 24px;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser .cmp-image,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser .cmp-image,
-.ac-core .teaser.ac-core-card-content .cmp-teaser .cmp-image {
+.ac-core .teaser.ac-core-card-content .cmp-teaser .cmp-image,
+.ac-core.list.ac-core-card-content .cmp-teaser .cmp-image,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser .cmp-image,
+.ac-core.teaser.ac-core-card-content .cmp-teaser .cmp-image {
   height: 100%;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser .cmp-image__image,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser .cmp-image__image,
-.ac-core .teaser.ac-core-card-content .cmp-teaser .cmp-image__image {
+.ac-core .teaser.ac-core-card-content .cmp-teaser .cmp-image__image,
+.ac-core.list.ac-core-card-content .cmp-teaser .cmp-image__image,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser .cmp-image__image,
+.ac-core.teaser.ac-core-card-content .cmp-teaser .cmp-image__image {
   margin: 0;
   height: var(--card-content-image-height);
   object-fit: cover;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__link,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__link {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__link,
+.ac-core.list.ac-core-card-content .cmp-teaser__link,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__link,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__link {
   position: relative;
   box-shadow: var(--card-content-box-shadow);
   width: 100%;
@@ -1246,18 +1609,27 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content .cmp-teaser__link,
   .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link,
-  .ac-core .teaser.ac-core-card-content .cmp-teaser__link {
+  .ac-core .teaser.ac-core-card-content .cmp-teaser__link,
+  .ac-core.list.ac-core-card-content .cmp-teaser__link,
+  .ac-core.ac-core-list.ac-core-card-content .cmp-teaser__link,
+  .ac-core.teaser.ac-core-card-content .cmp-teaser__link {
     flex-direction: inherit;
   }
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__link:focus-visible,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link:focus-visible,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__link:focus-visible {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__link:focus-visible,
+.ac-core.list.ac-core-card-content .cmp-teaser__link:focus-visible,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__link:focus-visible,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__link:focus-visible {
   outline: none !important;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__link:focus-visible .cmp-teaser__image::before,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link:focus-visible .cmp-teaser__image::before,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__link:focus-visible .cmp-teaser__image::before {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__link:focus-visible .cmp-teaser__image::before,
+.ac-core.list.ac-core-card-content .cmp-teaser__link:focus-visible .cmp-teaser__image::before,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__link:focus-visible .cmp-teaser__image::before,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__link:focus-visible .cmp-teaser__image::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1266,30 +1638,45 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__link:hover,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link:hover,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__link:hover {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__link:hover,
+.ac-core.list.ac-core-card-content .cmp-teaser__link:hover,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__link:hover,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__link:hover {
   color: inherit !important;
   text-decoration: none;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__link:hover .cmp-teaser__title,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link:hover .cmp-teaser__title,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__link:hover .cmp-teaser__title {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__link:hover .cmp-teaser__title,
+.ac-core.list.ac-core-card-content .cmp-teaser__link:hover .cmp-teaser__title,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__link:hover .cmp-teaser__title,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__link:hover .cmp-teaser__title {
   text-decoration: underline;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__link:active,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__link:active,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__link:active {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__link:active,
+.ac-core.list.ac-core-card-content .cmp-teaser__link:active,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__link:active,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__link:active {
   outline: none !important;
 }
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content .cmp-teaser__image,
   .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__image,
-  .ac-core .teaser.ac-core-card-content .cmp-teaser__image {
+  .ac-core .teaser.ac-core-card-content .cmp-teaser__image,
+  .ac-core.list.ac-core-card-content .cmp-teaser__image,
+  .ac-core.ac-core-list.ac-core-card-content .cmp-teaser__image,
+  .ac-core.teaser.ac-core-card-content .cmp-teaser__image {
     width: 50%;
   }
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__content,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__content,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__content {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__content,
+.ac-core.list.ac-core-card-content .cmp-teaser__content,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__content,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__content {
   position: relative;
   z-index: 2;
   padding: var(--card-content-padding);
@@ -1298,52 +1685,79 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-content.style-quaternary:not(.modifi
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content .cmp-teaser__content:not(:only-child),
   .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__content:not(:only-child),
-  .ac-core .teaser.ac-core-card-content .cmp-teaser__content:not(:only-child) {
+  .ac-core .teaser.ac-core-card-content .cmp-teaser__content:not(:only-child),
+  .ac-core.list.ac-core-card-content .cmp-teaser__content:not(:only-child),
+  .ac-core.ac-core-list.ac-core-card-content .cmp-teaser__content:not(:only-child),
+  .ac-core.teaser.ac-core-card-content .cmp-teaser__content:not(:only-child) {
     width: 50%;
   }
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__content:only-child .cmp-teaser__title,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__content:only-child .cmp-teaser__title,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__content:only-child .cmp-teaser__title {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__content:only-child .cmp-teaser__title,
+.ac-core.list.ac-core-card-content .cmp-teaser__content:only-child .cmp-teaser__title,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__content:only-child .cmp-teaser__title,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__content:only-child .cmp-teaser__title {
   padding-inline-end: 30px;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__pretitle,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__pretitle,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__pretitle {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__pretitle,
+.ac-core.list.ac-core-card-content .cmp-teaser__pretitle,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__pretitle,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__pretitle {
   font-size: 16px;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__title,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__title,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__title {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__title,
+.ac-core.list.ac-core-card-content .cmp-teaser__title,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__title,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__title {
   font-size: var(--card-content-title-size);
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__title-link,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__title-link,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__title-link {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__title-link,
+.ac-core.list.ac-core-card-content .cmp-teaser__title-link,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__title-link,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__title-link {
   text-decoration: none;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__action-container,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__action-container,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__action-container {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__action-container,
+.ac-core.list.ac-core-card-content .cmp-teaser__action-container,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__action-container,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__action-container {
   margin-top: 0;
 }
 @container card-content (width > 708px) {
   .ac-core .list.ac-core-card-content .cmp-teaser__action-container,
   .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__action-container,
-  .ac-core .teaser.ac-core-card-content .cmp-teaser__action-container {
+  .ac-core .teaser.ac-core-card-content .cmp-teaser__action-container,
+  .ac-core.list.ac-core-card-content .cmp-teaser__action-container,
+  .ac-core.ac-core-list.ac-core-card-content .cmp-teaser__action-container,
+  .ac-core.teaser.ac-core-card-content .cmp-teaser__action-container {
     margin-top: auto;
   }
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__description p,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__description p,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__description p {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__description p,
+.ac-core.list.ac-core-card-content .cmp-teaser__description p,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__description p,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__description p {
   line-height: 1.5;
 }
 .ac-core .list.ac-core-card-content .cmp-teaser__description:has(ul) p,
 .ac-core .ac-core-list.ac-core-card-content .cmp-teaser__description:has(ul) p,
-.ac-core .teaser.ac-core-card-content .cmp-teaser__description:has(ul) p {
+.ac-core .teaser.ac-core-card-content .cmp-teaser__description:has(ul) p,
+.ac-core.list.ac-core-card-content .cmp-teaser__description:has(ul) p,
+.ac-core.ac-core-list.ac-core-card-content .cmp-teaser__description:has(ul) p,
+.ac-core.teaser.ac-core-card-content .cmp-teaser__description:has(ul) p {
   margin-block-end: 10px;
 }
-.ac-core.modifiator-theme-dark .ac-core-card-content.style-tertiary .cmp-teaser__action-link:nth-child(2), .ac-core.modifiator-theme-dark .ac-core-card-content.style-quaternary .cmp-teaser__action-link:nth-child(2) {
+.ac-core.modifiator-theme-dark .ac-core-card-content.style-tertiary .cmp-teaser__action-link:nth-child(2), .ac-core.modifiator-theme-dark .ac-core-card-content.style-quaternary .cmp-teaser__action-link:nth-child(2), .ac-core.modifiator-theme-dark.ac-core-card-content.style-tertiary .cmp-teaser__action-link:nth-child(2), .ac-core.modifiator-theme-dark.ac-core-card-content.style-quaternary .cmp-teaser__action-link:nth-child(2) {
   color: #2f363a;
 }

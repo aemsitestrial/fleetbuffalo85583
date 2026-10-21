@@ -47,11 +47,11 @@
   initial-value: #006f8f;
   inherits: false;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:hover:nth-child(2), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(2), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:hover:nth-child(2), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:hover:nth-child(2) {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:hover:nth-child(2), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(2), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:hover:nth-child(2), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:hover:nth-child(2), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:hover:nth-child(2), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(2), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:hover:nth-child(2), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:hover:nth-child(2) {
   background: var(--button-bg-color-hover);
 }
 
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:nth-child(1) {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:nth-child(1) {
   --button-bg-color: linear-gradient(
     93.95deg,
     var(--button-bg-gradient-color-1) 4%,
@@ -68,23 +68,23 @@
   --button-border-color-active: transparent;
   --button-border-width: 0;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:hover:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:hover:nth-child(1) {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:hover:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:hover:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:hover:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:hover:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:hover:nth-child(1) {
   --button-bg-gradient-color-1: var(--button-bg-color-hover);
   --button-bg-gradient-color-2: var(--button-bg-color-hover);
   --button-bg-gradient-color-3: var(--button-bg-color-hover);
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:active:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:active:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:active:nth-child(1) {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:active:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:active:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:active:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:active:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:active:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:active:nth-child(1) {
   --button-bg-gradient-color-1: var(--button-bg-color-active);
   --button-bg-gradient-color-2: var(--button-bg-color-active);
   --button-bg-gradient-color-3: var(--button-bg-color-active);
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:focus-visible:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:focus-visible:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:focus-visible:nth-child(1) {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:focus-visible:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:focus-visible:nth-child(1), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:focus-visible:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:focus-visible:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:focus-visible:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:focus-visible:nth-child(1) {
   outline-color: #ffffff;
   outline-offset: -4px;
   outline-width: 2px;
 }
 
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:nth-child(2), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:nth-child(2) {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:nth-child(2), .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:nth-child(2), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser__action-link:nth-child(2), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser__action-link:nth-child(2) {
   --button-bg-color: transparent;
   --button-bg-color-hover: #b8e0ec52;
   --button-bg-color-active: #b8e0eca3;
@@ -97,7 +97,7 @@
   --button-border-width: 2px;
 }
 
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:nth-child(2) {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:nth-child(2), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser__action-link:nth-child(2) {
   --button-bg-color: transparent;
   --button-bg-color-hover: #191d1f52;
   --button-bg-color-active: #191d1fa3;
@@ -110,7 +110,7 @@
   --button-border-width: 2px;
 }
 
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:nth-child(1) {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:nth-child(1) {
   --button-bg-gradient-color-1: #f8f9f9;
   --button-bg-gradient-color-2: #e5e7e8;
   --button-bg-gradient-color-3: #d1d4d7;
@@ -127,18 +127,18 @@
   --button-color-active: #2f363a;
   --button-border-width: 0;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:hover:nth-child(1) {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:hover:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:hover:nth-child(1) {
   --button-bg-gradient-color-1: var(--button-bg-color-hover);
   --button-bg-gradient-color-2: var(--button-bg-color-hover);
   --button-bg-gradient-color-3: var(--button-bg-color-hover);
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:active:nth-child(1) {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:active:nth-child(1), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:active:nth-child(1) {
   --button-bg-gradient-color-1: var(--button-bg-color-active);
   --button-bg-gradient-color-2: var(--button-bg-color-active);
   --button-bg-gradient-color-3: var(--button-bg-color-active);
 }
 
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:nth-child(2) {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:nth-child(2), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser__action-link:nth-child(2) {
   --button-bg-color: transparent;
   --button-bg-color-hover: #191d1f3d;
   --button-bg-color-active: #191d1f7a;
@@ -151,11 +151,11 @@
   --button-border-width: 2px;
 }
 
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner {
   container: innovation-hero-banner/inline-size;
   position: relative;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-primary .cmp-teaser {
   --innovation-hero-banner-content-bg-color: linear-gradient(180deg, #1f9fc4 4%, #0092bc 48%, #006f8f 96%);
   --innovation-hero-banner-content-image-mobile-color: #1f9fc4;
   --teaser-pretitle-border-color: #ffffff;
@@ -164,7 +164,7 @@
   --teaser-title-color: #ffffff;
   --teaser-content-color: #ffffff;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-secondary .cmp-teaser {
   --innovation-hero-banner-content-bg-color: linear-gradient(180deg, #454e55 4%, #2f363a 48%, #191d1f 96%);
   --innovation-hero-banner-content-image-mobile-color: #454e55;
   --teaser-pretitle-border-color: #ffffff;
@@ -173,7 +173,7 @@
   --teaser-title-color: #ffffff;
   --teaser-content-color: #ffffff;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-tertiary .cmp-teaser {
   --innovation-hero-banner-content-bg-color: #ffffff;
   --innovation-hero-banner-content-image-mobile-color: #ffffff;
   --teaser-title-color: #2f363a;
@@ -182,7 +182,7 @@
   --teaser-pretitle-bg-color: transparent;
   --teaser-pretitle-border-color: #5b6770;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.style-quaternary .cmp-teaser {
   --innovation-hero-banner-content-bg-color: linear-gradient(180deg, #f5f2ef 4%, #efebe6 96%);
   --innovation-hero-banner-content-image-mobile-color: #f5f2ef;
   --teaser-title-color: #2f363a;
@@ -191,48 +191,48 @@
   --teaser-pretitle-bg-color: transparent;
   --teaser-pretitle-border-color: #5b6770;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.modifier-reverse-content .cmp-teaser__content {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.modifier-reverse-content .cmp-teaser__content, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.modifier-reverse-content .cmp-teaser__content {
   margin-left: auto;
 }
 html[dir=rtl] .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.modifier-reverse-content .cmp-teaser__content, body[dir=rtl] .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.modifier-reverse-content .cmp-teaser__content {
   margin-left: 0;
   margin-right: auto;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.modifier-reverse-content .cmp-teaser__image::before {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.modifier-reverse-content .cmp-teaser__image::before, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.modifier-reverse-content .cmp-teaser__image::before {
   inset-inline: auto 0;
   transform: scaleX(-1);
 }
 html[dir=rtl] .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.modifier-reverse-content .cmp-teaser__image::before, body[dir=rtl] .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.modifier-reverse-content .cmp-teaser__image::before {
   transform: scaleX(1);
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.modifier-transparent .cmp-teaser {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner.modifier-transparent .cmp-teaser, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner.modifier-transparent .cmp-teaser {
   --innovation-hero-banner-content-bg-color: transparent;
   --innovation-hero-banner-content-image-mobile-color: transparent;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser {
   width: 100%;
 }
 @container innovation-hero-banner (width > 768px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser:not(:has(.cmp-teaser__link)) {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser:not(:has(.cmp-teaser__link)), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser:not(:has(.cmp-teaser__link)) {
     padding-block: 80px;
     padding-inline: 16px;
   }
 }
 @container innovation-hero-banner (width > 1024px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser:not(:has(.cmp-teaser__link)) {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser:not(:has(.cmp-teaser__link)), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser:not(:has(.cmp-teaser__link)) {
     padding-block: 160px;
     min-height: 488px;
     padding-inline: 50px;
   }
 }
 @container innovation-hero-banner (width > 1680px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser:not(:has(.cmp-teaser__link)) {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser:not(:has(.cmp-teaser__link)), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser:not(:has(.cmp-teaser__link)) {
     min-height: 760px;
     padding: 240px;
   }
 }
 @container innovation-hero-banner (width > 768px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__link {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__link, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__link {
     padding-block: 80px;
     padding-inline: 16px;
     min-height: 430px;
@@ -240,24 +240,24 @@ html[dir=rtl] .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.modifier-r
   }
 }
 @container innovation-hero-banner (width > 1024px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__link {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__link, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__link {
     padding-block: 160px;
     min-height: 488px;
     padding-inline: 50px;
   }
 }
 @container innovation-hero-banner (width > 1680px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__link {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__link, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__link {
     min-height: 760px;
     padding: 240px;
   }
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__image {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__image, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__image {
   width: 100%;
   margin: 0;
 }
 @container innovation-hero-banner (width > 768px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__image {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__image, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__image {
     position: absolute;
     inset: 0;
     margin: 0;
@@ -265,7 +265,7 @@ html[dir=rtl] .ac-core .ac-core-teaser.ac-core-innovation-hero-banner.modifier-r
   }
 }
 @container innovation-hero-banner (width > 768px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__image::before {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__image::before, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__image::before {
     content: "";
     position: absolute;
     inset-block: 26px;
@@ -287,61 +287,61 @@ html[dir=rtl] .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-tease
   transform: scaleX(-1);
 }
 @container innovation-hero-banner (width > 768px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser .cmp-image {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser .cmp-image, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser .cmp-image {
     position: absolute;
     inset: 0;
   }
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser .cmp-image__image {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser .cmp-image__image, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser .cmp-image__image {
   object-fit: cover;
   margin: 0;
   width: 100%;
   height: 100%;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content {
   position: relative;
   z-index: 2;
   padding: 0 16px 66px;
   background: var(--innovation-hero-banner-content-bg-color);
 }
 @container innovation-hero-banner (width > 768px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content {
     max-width: 440px;
     padding: 0;
     background: transparent;
   }
 }
 @container innovation-hero-banner (width > 1024px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content {
     max-width: 550px;
   }
 }
 @container innovation-hero-banner (width > 1440px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content {
     max-width: 612px;
   }
 }
 @container innovation-hero-banner (width > 1680px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content {
     max-width: 588px;
   }
 }
 @container innovation-hero-banner (width > 724px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content:not(:has(.cmp-teaser__action-container)) {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content:not(:has(.cmp-teaser__action-container)), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content:not(:has(.cmp-teaser__action-container)) {
     padding-block: 40px;
   }
 }
 @container innovation-hero-banner (width > 1024px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content:not(:has(.cmp-teaser__action-container)) {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content:not(:has(.cmp-teaser__action-container)), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content:not(:has(.cmp-teaser__action-container)) {
     padding-block: 20px;
   }
 }
 @container innovation-hero-banner (width > 1440px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content:not(:has(.cmp-teaser__action-container)) {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content:not(:has(.cmp-teaser__action-container)), .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content:not(:has(.cmp-teaser__action-container)) {
     padding-block: 40px;
   }
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
   content: "";
   position: absolute;
   inset-inline: 0;
@@ -357,70 +357,70 @@ html[dir=rtl] .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-tease
   inset-block-start: -52px;
 }
 @container innovation-hero-banner (width > 426px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
     inset-block-start: -70px;
   }
 }
 @container innovation-hero-banner (width > 500px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
     inset-block-start: -83px;
     padding-top: 18%;
   }
 }
 @container innovation-hero-banner (width > 600px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
     inset-block-start: -96px;
   }
 }
 @container innovation-hero-banner (width > 724px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
     padding-top: 24%;
     inset-block-start: -118px;
   }
 }
 @container innovation-hero-banner (width > 768px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
     display: none;
   }
 }
 html[dir=rtl] .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before, body[dir=rtl] .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__content::before {
   transform: scaleX(-1);
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__pretitle {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__pretitle, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__pretitle {
   --teaser-pretitle-padding-inline: 4px;
   position: relative;
   z-index: 2;
   font-size: 14px;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__title {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__title, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__title {
   --teaser-title-space-bottom: 10px;
   font-size: 36px;
 }
 @container innovation-hero-banner (width > 1440px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__title {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__title, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__title {
     font-size: 44px;
   }
 }
 [lang^=th i] .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__title {
   line-height: 1.5;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__title-link {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__title-link, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__title-link {
   text-decoration: none;
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__description {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__description, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__description {
   font-size: 16px;
 }
 @container innovation-hero-banner (width > 1024px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__description {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__description, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__description {
     font-size: 18px;
   }
 }
 @container innovation-hero-banner (width > 1680px) {
-  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__description {
+  .ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__description, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__description {
     font-size: 22px;
   }
 }
-.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__description p {
+.ac-core .ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__description p, .ac-core.ac-core-teaser.ac-core-innovation-hero-banner .cmp-teaser__description p {
   line-height: 1.5;
   font-size: inherit;
 }

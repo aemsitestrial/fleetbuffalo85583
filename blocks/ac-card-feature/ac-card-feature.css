@@ -34,7 +34,10 @@
 
 .ac-core .list.ac-core-card-feature .cmp-teaser__link::before,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link::before,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before,
+.ac-core.list.ac-core-card-feature .cmp-teaser__link::before,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__link::before,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__link::before {
   content: "";
   display: inline-block;
   width: 24px;
@@ -49,12 +52,18 @@
 
 .ac-core .list.ac-core-card-feature .cmp-teaser__link,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__link {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__link,
+.ac-core.list.ac-core-card-feature .cmp-teaser__link,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__link,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__link {
   position: relative;
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser__link::after,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link::after,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__link::after {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__link::after,
+.ac-core.list.ac-core-card-feature .cmp-teaser__link::after,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__link::after,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__link::after {
   content: "";
   position: absolute;
   inset-block-end: 22px;
@@ -68,7 +77,10 @@
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser__link::before,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link::before,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before,
+.ac-core.list.ac-core-card-feature .cmp-teaser__link::before,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__link::before,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__link::before {
   content: "";
   position: absolute;
   inset-block-end: 25px;
@@ -81,21 +93,16 @@
   opacity: var(--link-circle-icon-opacity);
   transition: opacity 0.3s linear;
 }
-html[dir=rtl] .ac-core .list.ac-core-card-feature .cmp-teaser__link::before, .ac-core .list.ac-core-card-feature html[dir=rtl] .cmp-teaser__link::before,
-html[dir=rtl] .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link::before,
-.ac-core .ac-core-list.ac-core-card-feature html[dir=rtl] .cmp-teaser__link::before,
-html[dir=rtl] .ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before,
-.ac-core .teaser.ac-core-card-feature html[dir=rtl] .cmp-teaser__link::before, body[dir=rtl] .ac-core .list.ac-core-card-feature .cmp-teaser__link::before, .ac-core .list.ac-core-card-feature body[dir=rtl] .cmp-teaser__link::before,
-body[dir=rtl] .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link::before,
-.ac-core .ac-core-list.ac-core-card-feature body[dir=rtl] .cmp-teaser__link::before,
-body[dir=rtl] .ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before,
-.ac-core .teaser.ac-core-card-feature body[dir=rtl] .cmp-teaser__link::before {
+html[dir=rtl] .ac-core .list.ac-core-card-feature .cmp-teaser__link::before, .ac-core .list.ac-core-card-feature html[dir=rtl] .cmp-teaser__link::before, html[dir=rtl] .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link::before, .ac-core .ac-core-list.ac-core-card-feature html[dir=rtl] .cmp-teaser__link::before, html[dir=rtl] .ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before, .ac-core .teaser.ac-core-card-feature html[dir=rtl] .cmp-teaser__link::before, body[dir=rtl] .ac-core .list.ac-core-card-feature .cmp-teaser__link::before, .ac-core .list.ac-core-card-feature body[dir=rtl] .cmp-teaser__link::before, body[dir=rtl] .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link::before, .ac-core .ac-core-list.ac-core-card-feature body[dir=rtl] .cmp-teaser__link::before, body[dir=rtl] .ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before, .ac-core .teaser.ac-core-card-feature body[dir=rtl] .cmp-teaser__link::before, .ac-core.list.ac-core-card-feature html[dir=rtl] .cmp-teaser__link::before, .ac-core.ac-core-list.ac-core-card-feature html[dir=rtl] .cmp-teaser__link::before, .ac-core.teaser.ac-core-card-feature html[dir=rtl] .cmp-teaser__link::before, .ac-core.list.ac-core-card-feature body[dir=rtl] .cmp-teaser__link::before, .ac-core.ac-core-list.ac-core-card-feature body[dir=rtl] .cmp-teaser__link::before, .ac-core.teaser.ac-core-card-feature body[dir=rtl] .cmp-teaser__link::before {
   transform: scaleX(-1);
 }
 
 .ac-core .list.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before,
 .ac-core .ac-core-list.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before,
-.ac-core .teaser.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before {
+.ac-core .teaser.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before,
+.ac-core.list.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before,
+.ac-core.ac-core-list.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before,
+.ac-core.teaser.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before {
   content: "";
   display: inline-block;
   width: 22px;
@@ -110,7 +117,10 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before,
 
 .ac-core .list.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before,
 .ac-core .ac-core-list.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before,
-.ac-core .teaser.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before {
+.ac-core .teaser.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before,
+.ac-core.list.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before,
+.ac-core.ac-core-list.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before,
+.ac-core.teaser.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before {
   content: "";
   display: inline-block;
   width: 24px;
@@ -138,40 +148,55 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before,
   initial-value: #006f8f;
   inherits: false;
 }
-.ac-core [class*=grid-col-] .ac-core-card-feature {
+.ac-core [class*=grid-col-] .ac-core-card-feature, .ac-core[class*=grid-col-] .ac-core-card-feature {
   display: flex;
 }
-.ac-core [class*=grid-col-] .ac-core-card-feature .cmp-teaser__link {
+.ac-core [class*=grid-col-] .ac-core-card-feature .cmp-teaser__link, .ac-core[class*=grid-col-] .ac-core-card-feature .cmp-teaser__link {
   height: 100%;
 }
-.ac-core [class*=grid-col-] .ac-core-card-feature .cmp-teaser__content {
+.ac-core [class*=grid-col-] .ac-core-card-feature .cmp-teaser__content, .ac-core[class*=grid-col-] .ac-core-card-feature .cmp-teaser__content {
   height: 100%;
 }
 .ac-core .list.ac-core-card-feature.modifier-transparent .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-feature.modifier-transparent .cmp-teaser,
-.ac-core .teaser.ac-core-card-feature.modifier-transparent .cmp-teaser {
+.ac-core .teaser.ac-core-card-feature.modifier-transparent .cmp-teaser,
+.ac-core.list.ac-core-card-feature.modifier-transparent .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-feature.modifier-transparent .cmp-teaser,
+.ac-core.teaser.ac-core-card-feature.modifier-transparent .cmp-teaser {
   background-color: transparent;
 }
 .ac-core .list.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before,
 .ac-core .ac-core-list.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before,
-.ac-core .teaser.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before {
+.ac-core .teaser.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before,
+.ac-core.list.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before,
+.ac-core.ac-core-list.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before,
+.ac-core.teaser.ac-core-card-feature.modifier-check .cmp-teaser__description ul li::before {
   content: "";
   flex: 0 0 22px;
 }
 .ac-core .list.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li,
 .ac-core .ac-core-list.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li,
-.ac-core .teaser.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li {
+.ac-core .teaser.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li,
+.ac-core.list.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li,
+.ac-core.ac-core-list.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li,
+.ac-core.teaser.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li {
   column-gap: 10px;
 }
 .ac-core .list.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before,
 .ac-core .ac-core-list.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before,
-.ac-core .teaser.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before {
+.ac-core .teaser.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before,
+.ac-core.list.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before,
+.ac-core.ac-core-list.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before,
+.ac-core.teaser.ac-core-card-feature.modifier-circle-check .cmp-teaser__description ul li::before {
   content: "";
   flex: 0 0 24px;
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser,
+.ac-core.list.ac-core-card-feature .cmp-teaser,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser {
   --link-circle-icon-opacity: 0;
   --link-circle-icon-color: #ffffff;
   --link-circle-icon-bg-color: #0092bc;
@@ -184,13 +209,19 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before,
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser:not(:has(.cmp-teaser__link)),
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser:not(:has(.cmp-teaser__link)),
-.ac-core .teaser.ac-core-card-feature .cmp-teaser:not(:has(.cmp-teaser__link)) {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser:not(:has(.cmp-teaser__link)),
+.ac-core.list.ac-core-card-feature .cmp-teaser:not(:has(.cmp-teaser__link)),
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser:not(:has(.cmp-teaser__link)),
+.ac-core.teaser.ac-core-card-feature .cmp-teaser:not(:has(.cmp-teaser__link)) {
   padding: 24px 24px 18px;
   justify-content: flex-end;
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser:hover,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser:hover,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser:hover {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser:hover,
+.ac-core.list.ac-core-card-feature .cmp-teaser:hover,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser:hover,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser:hover {
   --link-circle-icon-bg-size: 24px;
   --link-circle-icon-opacity: 1;
   border-color: #5b6770;
@@ -198,31 +229,36 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before,
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser__link,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__link {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__link,
+.ac-core.list.ac-core-card-feature .cmp-teaser__link,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__link,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__link {
   position: relative;
   padding: 24px 24px 18px;
   row-gap: 16px;
   justify-content: flex-end;
 }
-.ac-core .list.ac-core-card-feature .cmp-teaser__link:focus-visible, .ac-core .list.ac-core-card-feature .cmp-teaser__link:active,
-.ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link:focus-visible,
-.ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link:active,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__link:focus-visible,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__link:active {
+.ac-core .list.ac-core-card-feature .cmp-teaser__link:focus-visible, .ac-core .list.ac-core-card-feature .cmp-teaser__link:active, .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link:focus-visible, .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link:active, .ac-core .teaser.ac-core-card-feature .cmp-teaser__link:focus-visible, .ac-core .teaser.ac-core-card-feature .cmp-teaser__link:active, .ac-core.list.ac-core-card-feature .cmp-teaser__link:focus-visible, .ac-core.list.ac-core-card-feature .cmp-teaser__link:active, .ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__link:focus-visible, .ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__link:active, .ac-core.teaser.ac-core-card-feature .cmp-teaser__link:focus-visible, .ac-core.teaser.ac-core-card-feature .cmp-teaser__link:active {
   outline: none !important;
   border-color: #5b6770;
   box-shadow: 0 40px 64px -56px rgba(47, 54, 58, 0.6392156863), 0 0 12px 0 rgba(47, 54, 58, 0.1215686275);
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser .cmp-image__image,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser .cmp-image__image,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser .cmp-image__image {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser .cmp-image__image,
+.ac-core.list.ac-core-card-feature .cmp-teaser .cmp-image__image,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser .cmp-image__image,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser .cmp-image__image {
   margin-bottom: 0;
   max-height: 165px;
   object-fit: cover;
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser__content,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__content,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__content {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__content,
+.ac-core.list.ac-core-card-feature .cmp-teaser__content,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__content,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__content {
   display: grid;
   row-gap: 8px;
   padding-bottom: 30px;
@@ -231,32 +267,47 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before,
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser__title,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__title,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__title {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__title,
+.ac-core.list.ac-core-card-feature .cmp-teaser__title,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__title,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__title {
   margin-bottom: 0;
   font-size: 24px;
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser__description,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__description,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__description {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__description,
+.ac-core.list.ac-core-card-feature .cmp-teaser__description,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__description,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__description {
   display: grid;
   row-gap: 15px;
   margin-bottom: 0;
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser__description p,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__description p,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__description p {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__description p,
+.ac-core.list.ac-core-card-feature .cmp-teaser__description p,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__description p,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__description p {
   line-height: 1.5;
   margin-bottom: 0;
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser__description ul,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__description ul,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__description ul {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__description ul,
+.ac-core.list.ac-core-card-feature .cmp-teaser__description ul,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__description ul,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__description ul {
   margin: 0;
   padding: 0;
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser__description ul li,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__description ul li,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__description ul li {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__description ul li,
+.ac-core.list.ac-core-card-feature .cmp-teaser__description ul li,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__description ul li,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__description ul li {
   font-size: 14px;
   line-height: 1.5;
   list-style-type: none;
@@ -270,14 +321,20 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before,
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser__description ul li:not(:last-child),
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__description ul li:not(:last-child),
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__description ul li:not(:last-child) {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__description ul li:not(:last-child),
+.ac-core.list.ac-core-card-feature .cmp-teaser__description ul li:not(:last-child),
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__description ul li:not(:last-child),
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__description ul li:not(:last-child) {
   border-bottom: 1px solid #d1d4d7;
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser__description:has(ul) p,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__description:has(ul) p,
-.ac-core .teaser.ac-core-card-feature .cmp-teaser__description:has(ul) p {
+.ac-core .teaser.ac-core-card-feature .cmp-teaser__description:has(ul) p,
+.ac-core.list.ac-core-card-feature .cmp-teaser__description:has(ul) p,
+.ac-core.ac-core-list.ac-core-card-feature .cmp-teaser__description:has(ul) p,
+.ac-core.teaser.ac-core-card-feature .cmp-teaser__description:has(ul) p {
   margin-block-end: 10px;
 }
-.ac-core.modifiator-theme-dark .ac-core-card-feature .cmp-teaser {
+.ac-core.modifiator-theme-dark .ac-core-card-feature .cmp-teaser, .ac-core.modifiator-theme-dark.ac-core-card-feature .cmp-teaser {
   background-color: #191d1f;
 }

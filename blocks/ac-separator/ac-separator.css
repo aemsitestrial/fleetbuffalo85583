@@ -33,17 +33,20 @@
 }
 
 .ac-core .separator.ds-brand-separator__primary .cmp-separator .cmp-separator__horizontal-rule,
-.ds-atlascopco .separator.ds-brand-separator__primary .cmp-separator .cmp-separator__horizontal-rule {
+.ds-atlascopco .separator.ds-brand-separator__primary .cmp-separator .cmp-separator__horizontal-rule,
+.ac-core.separator.ds-brand-separator__primary .cmp-separator .cmp-separator__horizontal-rule {
   height: 1px;
   background-color: #f5f2ef;
 }
 .ac-core .separator.ds-brand-separator__secondary .cmp-separator .cmp-separator__horizontal-rule,
-.ds-atlascopco .separator.ds-brand-separator__secondary .cmp-separator .cmp-separator__horizontal-rule {
+.ds-atlascopco .separator.ds-brand-separator__secondary .cmp-separator .cmp-separator__horizontal-rule,
+.ac-core.separator.ds-brand-separator__secondary .cmp-separator .cmp-separator__horizontal-rule {
   height: 1px;
   background-color: #0099cc;
 }
 .ac-core .separator.modifiator-theme-dark,
-.ds-atlascopco .separator.modifiator-theme-dark {
+.ds-atlascopco .separator.modifiator-theme-dark,
+.ac-core.separator.modifiator-theme-dark {
   background-color: #191d1f;
   color: #ffffff;
 }

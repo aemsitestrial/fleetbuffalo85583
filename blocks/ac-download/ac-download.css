@@ -62,47 +62,47 @@
   initial-value: #006f8f;
   inherits: false;
 }
-.ac-core [class*=grid-col-] .ac-core-download {
+.ac-core [class*=grid-col-] .ac-core-download, .ac-core[class*=grid-col-] .ac-core-download {
   display: flex;
 }
-.ac-core .ac-core-list.ac-core-download .cmp-list__item {
+.ac-core .ac-core-list.ac-core-download .cmp-list__item, .ac-core.ac-core-list.ac-core-download .cmp-list__item {
   container: download/inline-size;
 }
-.ac-core .ac-core-download {
+.ac-core .ac-core-download, .ac-core.ac-core-download {
   --download-action-color: #ffffff;
   container: download/inline-size;
   float: none;
 }
-.ac-core .ac-core-download.style-primary {
+.ac-core .ac-core-download.style-primary, .ac-core.ac-core-download.style-primary {
   --download-color: #5b6770;
   --download-bg-color: #ffffff;
   --download-border-color: #aab0b5;
   --download-title-color: #2f363a;
 }
-.ac-core .ac-core-download.style-secondary {
+.ac-core .ac-core-download.style-secondary, .ac-core.ac-core-download.style-secondary {
   --download-color: #ffffff;
   --download-bg-color: #5b6770;
   --download-border-color: #5b6770;
   --download-title-color: #f8f9f9;
 }
-.ac-core .ac-core-download.modifier-transparent .cmp-download {
+.ac-core .ac-core-download.modifier-transparent .cmp-download, .ac-core.ac-core-download.modifier-transparent .cmp-download {
   --download-bg-color: transparent;
 }
 @container download (width > 480px) {
-  .ac-core .ac-core-download.download--with-image .cmp-download {
+  .ac-core .ac-core-download.download--with-image .cmp-download, .ac-core.ac-core-download.download--with-image .cmp-download {
     padding-inline: 188px 40px;
   }
 }
 @container download (width > 660px) {
-  .ac-core .ac-core-download.download--with-image .cmp-download {
+  .ac-core .ac-core-download.download--with-image .cmp-download, .ac-core.ac-core-download.download--with-image .cmp-download {
     padding-inline-start: 146px;
   }
 }
-.ac-core .ac-core-download.modifier-compact {
+.ac-core .ac-core-download.modifier-compact, .ac-core.ac-core-download.modifier-compact {
   --download-title-color: #0092bc;
   --download-action-color: #0092bc;
 }
-.ac-core .ac-core-download.modifier-compact .cmp-download {
+.ac-core .ac-core-download.modifier-compact .cmp-download, .ac-core.ac-core-download.modifier-compact .cmp-download {
   padding: 0;
   border-radius: 0;
   grid-template-columns: 48px 1fr;
@@ -113,29 +113,29 @@
   display: grid;
   align-items: center;
 }
-.ac-core .ac-core-download.modifier-compact .cmp-download .cmp-image {
+.ac-core .ac-core-download.modifier-compact .cmp-download .cmp-image, .ac-core.ac-core-download.modifier-compact .cmp-download .cmp-image {
   display: none;
 }
-.ac-core .ac-core-download.modifier-compact .cmp-download__title {
+.ac-core .ac-core-download.modifier-compact .cmp-download__title, .ac-core.ac-core-download.modifier-compact .cmp-download__title {
   grid-area: content-title;
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
   margin: 0;
 }
-.ac-core .ac-core-download.modifier-compact .cmp-download__title-link {
+.ac-core .ac-core-download.modifier-compact .cmp-download__title-link, .ac-core.ac-core-download.modifier-compact .cmp-download__title-link {
   text-transform: capitalize;
   width: 100%;
   padding-block: 10px;
   display: block;
 }
-.ac-core .ac-core-download.modifier-compact .cmp-download__description {
+.ac-core .ac-core-download.modifier-compact .cmp-download__description, .ac-core.ac-core-download.modifier-compact .cmp-download__description {
   display: none;
 }
-.ac-core .ac-core-download.modifier-compact .cmp-download__properties {
+.ac-core .ac-core-download.modifier-compact .cmp-download__properties, .ac-core.ac-core-download.modifier-compact .cmp-download__properties {
   display: none;
 }
-.ac-core .ac-core-download.modifier-compact .cmp-download__action {
+.ac-core .ac-core-download.modifier-compact .cmp-download__action, .ac-core.ac-core-download.modifier-compact .cmp-download__action {
   grid-area: content-action;
   block-size: initial;
   inline-size: initial;
@@ -144,10 +144,10 @@
   inset: initial;
   border-radius: 0;
 }
-.ac-core .ac-core-download.modifier-compact .cmp-download__action:focus-visible {
+.ac-core .ac-core-download.modifier-compact .cmp-download__action:focus-visible, .ac-core.ac-core-download.modifier-compact .cmp-download__action:focus-visible {
   outline: 1px solid #0092bc !important;
 }
-.ac-core .ac-core-download .cmp-download {
+.ac-core .ac-core-download .cmp-download, .ac-core.ac-core-download .cmp-download {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--download-border-color);
@@ -160,12 +160,12 @@
   background-color: var(--download-bg-color);
 }
 @container download (width > 480px) {
-  .ac-core .ac-core-download .cmp-download {
+  .ac-core .ac-core-download .cmp-download, .ac-core.ac-core-download .cmp-download {
     padding-inline: 24px;
     display: grid;
   }
 }
-.ac-core .ac-core-download .cmp-download__title {
+.ac-core .ac-core-download .cmp-download__title, .ac-core.ac-core-download .cmp-download__title {
   margin: 0;
   color: var(--download-title-color);
   font-weight: 600;
@@ -175,16 +175,16 @@
   margin-block-end: 6px;
 }
 @container download (width > 480px) {
-  .ac-core .ac-core-download .cmp-download__title {
+  .ac-core .ac-core-download .cmp-download__title, .ac-core.ac-core-download .cmp-download__title {
     font-size: 24px;
     margin-block-end: 0;
   }
 }
-.ac-core .ac-core-download .cmp-download__title-link {
+.ac-core .ac-core-download .cmp-download__title-link, .ac-core.ac-core-download .cmp-download__title-link {
   text-decoration: none;
   text-transform: none;
 }
-.ac-core .ac-core-download .cmp-download__description {
+.ac-core .ac-core-download .cmp-download__description, .ac-core.ac-core-download .cmp-download__description {
   color: #5b6770;
   font-size: 14px;
   line-height: 1.6;
@@ -192,11 +192,11 @@
   color: var(--download-color);
 }
 @container download (width > 480px) {
-  .ac-core .ac-core-download .cmp-download__description {
+  .ac-core .ac-core-download .cmp-download__description, .ac-core.ac-core-download .cmp-download__description {
     font-size: 18px;
   }
 }
-.ac-core .ac-core-download .cmp-download__properties {
+.ac-core .ac-core-download .cmp-download__properties, .ac-core.ac-core-download .cmp-download__properties {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
@@ -205,12 +205,12 @@
   padding-inline-end: 68px;
 }
 @container download (width > 480px) {
-  .ac-core .ac-core-download .cmp-download__properties {
+  .ac-core .ac-core-download .cmp-download__properties, .ac-core.ac-core-download .cmp-download__properties {
     padding-inline-end: 76px;
     margin-block: 10px;
   }
 }
-.ac-core .ac-core-download .cmp-download__property {
+.ac-core .ac-core-download .cmp-download__property, .ac-core.ac-core-download .cmp-download__property {
   border: 1px solid #0092bc;
   border-radius: 32px;
   padding: 4px 16px;
@@ -219,11 +219,11 @@
   align-items: center;
 }
 @container download (width > 480px) {
-  .ac-core .ac-core-download .cmp-download__property {
+  .ac-core .ac-core-download .cmp-download__property, .ac-core.ac-core-download .cmp-download__property {
     height: 32px;
   }
 }
-.ac-core .ac-core-download .cmp-download__property-content {
+.ac-core .ac-core-download .cmp-download__property-content, .ac-core.ac-core-download .cmp-download__property-content {
   margin: 0;
   font-weight: 600;
   font-size: 13px;
@@ -236,11 +236,11 @@
   -webkit-line-clamp: 1;
 }
 @container download (width > 480px) {
-  .ac-core .ac-core-download .cmp-download__property-content {
+  .ac-core .ac-core-download .cmp-download__property-content, .ac-core.ac-core-download .cmp-download__property-content {
     font-size: 15px;
   }
 }
-.ac-core .ac-core-download .cmp-download__action {
+.ac-core .ac-core-download .cmp-download__action, .ac-core.ac-core-download .cmp-download__action {
   block-size: 48px;
   inline-size: 48px;
   position: absolute;
@@ -255,12 +255,12 @@
   cursor: pointer;
   transition: --downloadGradientColor1 0.3s ease-in-out, --downloadGradientColor2 0.3s ease-in-out, --downloadGradientColor3 0.3s ease-in-out;
 }
-.ac-core .ac-core-download .cmp-download__action:hover {
+.ac-core .ac-core-download .cmp-download__action:hover, .ac-core.ac-core-download .cmp-download__action:hover {
   --downloadGradientColor1: #006f8f;
   --downloadGradientColor2: #006f8f;
   --downloadGradientColor3: #006f8f;
 }
-.ac-core .ac-core-download .cmp-download__action::before {
+.ac-core .ac-core-download .cmp-download__action::before, .ac-core.ac-core-download .cmp-download__action::before {
   content: "";
   width: 24px;
   height: 24px;
@@ -273,17 +273,17 @@
   display: block;
 }
 @container download (width > 480px) {
-  .ac-core .ac-core-download .cmp-download__action {
+  .ac-core .ac-core-download .cmp-download__action, .ac-core.ac-core-download .cmp-download__action {
     block-size: 56px;
     inline-size: 56px;
     inset-inline-end: 22px;
     inset-block-end: 16px;
   }
 }
-.ac-core .ac-core-download .cmp-download__action-text {
+.ac-core .ac-core-download .cmp-download__action-text, .ac-core.ac-core-download .cmp-download__action-text {
   display: none;
 }
-.ac-core .ac-core-download .cmp-download .cmp-image {
+.ac-core .ac-core-download .cmp-download .cmp-image, .ac-core.ac-core-download .cmp-download .cmp-image {
   position: static;
   inset-block: 0;
   inset-inline-start: 0;
@@ -293,7 +293,7 @@
   margin-inline-end: 12px;
 }
 @container download (width > 480px) {
-  .ac-core .ac-core-download .cmp-download .cmp-image {
+  .ac-core .ac-core-download .cmp-download .cmp-image, .ac-core.ac-core-download .cmp-download .cmp-image {
     position: absolute;
     float: none;
     width: 160px;
@@ -302,7 +302,7 @@
   }
 }
 @container download (width > 660px) {
-  .ac-core .ac-core-download .cmp-download .cmp-image {
+  .ac-core .ac-core-download .cmp-download .cmp-image, .ac-core.ac-core-download .cmp-download .cmp-image {
     width: 120px;
   }
 }
@@ -314,13 +314,13 @@ html[dir=rtl] .ac-core .ac-core-download .cmp-download .cmp-image, body[dir=rtl]
     float: none;
   }
 }
-.ac-core .ac-core-download .cmp-download .cmp-image__image {
+.ac-core .ac-core-download .cmp-download .cmp-image__image, .ac-core.ac-core-download .cmp-download .cmp-image__image {
   object-fit: cover;
   margin: 0;
   block-size: 100%;
   inline-size: 100%;
 }
-.ac-core.modifiator-theme-dark .ac-core-download {
+.ac-core.modifiator-theme-dark .ac-core-download, .ac-core.modifiator-theme-dark.ac-core-download {
   --download-color: #ffffff;
   --download-bg-color: #2f363a;
   --download-border-color: #5b6770;

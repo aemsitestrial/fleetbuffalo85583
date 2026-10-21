@@ -46,7 +46,10 @@ async function applyChanges(event) {
       return true;
     }
 
-    const block = element.parentElement?.closest('.block[data-aue-resource]') || element?.closest('.block[data-aue-resource]');
+    // blocks are found by data-block-name: ac-* blocks drop the `block` class once decorated
+    // (it clashes with the Tailwind utility)
+    const blockSelector = '[data-block-name][data-aue-resource]';
+    const block = element.parentElement?.closest(blockSelector) || element?.closest(blockSelector);
     if (block) {
       const blockResource = block.getAttribute('data-aue-resource');
       const newBlock = parsedUpdate.querySelector(`[data-aue-resource="${blockResource}"]`);
@@ -54,7 +57,15 @@ async function applyChanges(event) {
         return true;
       } if (newBlock) {
         newBlock.style.display = 'none';
-        block.insertAdjacentElement('afterend', newBlock);
+        if (block.parentElement?.classList.contains('section')) {
+          // ac-* blocks replace their wrapper once decorated: give the new block a wrapper of its
+          // own, so decorateBlock marks that one (not the section) and the block takes its place
+          const wrapper = document.createElement('div');
+          block.insertAdjacentElement('afterend', wrapper);
+          wrapper.append(newBlock);
+        } else {
+          block.insertAdjacentElement('afterend', newBlock);
+        }
         decorateButtons(newBlock);
         decorateIcons(newBlock);
         decorateBlock(newBlock);

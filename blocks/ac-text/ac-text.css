@@ -47,28 +47,28 @@
   initial-value: #006f8f;
   inherits: false;
 }
-.ac-core .ac-core-text.style-secondary .cmp-text {
+.ac-core .ac-core-text.style-secondary .cmp-text, .ac-core.ac-core-text.style-secondary .cmp-text {
   color: #ffffff;
 }
-.ac-core .ac-core-text.modification-text-large .cmp-text {
+.ac-core .ac-core-text.modification-text-large .cmp-text, .ac-core.ac-core-text.modification-text-large .cmp-text {
   line-height: 1.6;
   font-size: 20px;
 }
 @media (min-width: 1024px) {
-  .ac-core .ac-core-text.modification-text-large .cmp-text {
+  .ac-core .ac-core-text.modification-text-large .cmp-text, .ac-core.ac-core-text.modification-text-large .cmp-text {
     font-size: 22px;
   }
 }
-.ac-core .ac-core-text.modifier-content-right .cmp-text {
+.ac-core .ac-core-text.modifier-content-right .cmp-text, .ac-core.ac-core-text.modifier-content-right .cmp-text {
   text-align: right;
 }
 html[dir=rtl] .ac-core .ac-core-text.modifier-content-right .cmp-text, body[dir=rtl] .ac-core .ac-core-text.modifier-content-right .cmp-text {
   text-align: left;
 }
-.ac-core .ac-core-text.modifier-content-center .cmp-text {
+.ac-core .ac-core-text.modifier-content-center .cmp-text, .ac-core.ac-core-text.modifier-content-center .cmp-text {
   text-align: center;
 }
-.ac-core .ac-core-text .cmp-text {
+.ac-core .ac-core-text .cmp-text, .ac-core.ac-core-text .cmp-text {
   color: #2f363a;
   font-size: 16px;
   font-style: normal;
@@ -77,41 +77,41 @@ html[dir=rtl] .ac-core .ac-core-text.modifier-content-right .cmp-text, body[dir=
   line-height: 1.5;
 }
 @media (min-width: 1024px) {
-  .ac-core .ac-core-text .cmp-text {
+  .ac-core .ac-core-text .cmp-text, .ac-core.ac-core-text .cmp-text {
     font-size: 18px;
   }
 }
-.ac-core .ac-core-text .cmp-text *:not(h1, h2, h3, h4, h5, h6) {
+.ac-core .ac-core-text .cmp-text *:not(h1, h2, h3, h4, h5, h6), .ac-core.ac-core-text .cmp-text *:not(h1, h2, h3, h4, h5, h6) {
   font-size: inherit;
 }
-.ac-core .ac-core-text .cmp-text * {
+.ac-core .ac-core-text .cmp-text *, .ac-core.ac-core-text .cmp-text * {
   text-align: inherit;
 }
-.ac-core .ac-core-text .cmp-text p {
+.ac-core .ac-core-text .cmp-text p, .ac-core.ac-core-text .cmp-text p {
   font-size: inherit;
   font-weight: inherit;
 }
-.ac-core .ac-core-text .cmp-text ul {
+.ac-core .ac-core-text .cmp-text ul, .ac-core.ac-core-text .cmp-text ul {
   list-style-type: disc;
   padding-inline-start: 1.5em;
 }
-.ac-core .ac-core-text .cmp-text ul li {
+.ac-core .ac-core-text .cmp-text ul li, .ac-core.ac-core-text .cmp-text ul li {
   padding-left: 0;
 }
-.ac-core .ac-core-text .cmp-text ul li::before {
+.ac-core .ac-core-text .cmp-text ul li::before, .ac-core.ac-core-text .cmp-text ul li::before {
   display: none;
 }
-.ac-core .ac-core-text .cmp-text ol {
+.ac-core .ac-core-text .cmp-text ol, .ac-core.ac-core-text .cmp-text ol {
   list-style-type: numeric;
 }
-.ac-core .ac-core-text .cmp-text a {
+.ac-core .ac-core-text .cmp-text a, .ac-core.ac-core-text .cmp-text a {
   color: #0099cc;
   text-decoration: underline;
 }
-.ac-core .ac-core-text .cmp-text a:hover, .ac-core .ac-core-text .cmp-text a:active {
+.ac-core .ac-core-text .cmp-text a:hover, .ac-core .ac-core-text .cmp-text a:active, .ac-core.ac-core-text .cmp-text a:hover, .ac-core.ac-core-text .cmp-text a:active {
   text-decoration: none;
 }
-.ac-core.modifiator-theme-dark .ac-core-text .cmp-text {
+.ac-core.modifiator-theme-dark .ac-core-text .cmp-text, .ac-core.modifiator-theme-dark.ac-core-text .cmp-text {
   color: #ffffff;
 }
 .ac-core.modifiator-theme-dark .ac-core-text .cmp-text h1,
@@ -119,6 +119,12 @@ html[dir=rtl] .ac-core .ac-core-text.modifier-content-right .cmp-text, body[dir=
 .ac-core.modifiator-theme-dark .ac-core-text .cmp-text h3,
 .ac-core.modifiator-theme-dark .ac-core-text .cmp-text h4,
 .ac-core.modifiator-theme-dark .ac-core-text .cmp-text h5,
-.ac-core.modifiator-theme-dark .ac-core-text .cmp-text h6 {
+.ac-core.modifiator-theme-dark .ac-core-text .cmp-text h6,
+.ac-core.modifiator-theme-dark.ac-core-text .cmp-text h1,
+.ac-core.modifiator-theme-dark.ac-core-text .cmp-text h2,
+.ac-core.modifiator-theme-dark.ac-core-text .cmp-text h3,
+.ac-core.modifiator-theme-dark.ac-core-text .cmp-text h4,
+.ac-core.modifiator-theme-dark.ac-core-text .cmp-text h5,
+.ac-core.modifiator-theme-dark.ac-core-text .cmp-text h6 {
   color: #f8f9f9;
 }

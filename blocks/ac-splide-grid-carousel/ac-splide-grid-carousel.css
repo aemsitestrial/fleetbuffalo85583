@@ -32,7 +32,7 @@
   --ds-container-padding: 20px;
 }
 
-.ac-core .ds-splide-carousel .splide__arrow--prev::before, .ac-core .ds-splide-carousel .splide__arrow--next::before {
+.ac-core .ds-splide-carousel .splide__arrow--prev::before, .ac-core .ds-splide-carousel .splide__arrow--next::before, .ac-core.ds-splide-carousel .splide__arrow--prev::before, .ac-core.ds-splide-carousel .splide__arrow--next::before {
   content: "";
   display: inline-block;
   width: 24px;
@@ -60,10 +60,10 @@
   initial-value: #006f8f;
   inherits: false;
 }
-.ac-core .story-splide-wrapper-rtl .splide__arrows {
+.ac-core .story-splide-wrapper-rtl .splide__arrows, .ac-core.story-splide-wrapper-rtl .splide__arrows {
   flex-direction: row-reverse;
 }
-.ac-core .ds-splide-carousel:not(.ds-splide-carousel--initialized) > .cmp-container > .aem-Grid {
+.ac-core .ds-splide-carousel:not(.ds-splide-carousel--initialized) > .cmp-container > .aem-Grid, .ac-core.ds-splide-carousel:not(.ds-splide-carousel--initialized) > .cmp-container > .aem-Grid {
   display: grid;
   gap: 10px;
   grid-auto-flow: column;
@@ -71,16 +71,16 @@
   grid-auto-columns: 300px;
 }
 @media (min-width: 640px) {
-  .ac-core .ds-splide-carousel:not(.ds-splide-carousel--initialized) > .cmp-container > .aem-Grid {
+  .ac-core .ds-splide-carousel:not(.ds-splide-carousel--initialized) > .cmp-container > .aem-Grid, .ac-core.ds-splide-carousel:not(.ds-splide-carousel--initialized) > .cmp-container > .aem-Grid {
     grid-auto-columns: 50%;
   }
 }
 @media (min-width: 1024px) {
-  .ac-core .ds-splide-carousel:not(.ds-splide-carousel--initialized) > .cmp-container > .aem-Grid {
+  .ac-core .ds-splide-carousel:not(.ds-splide-carousel--initialized) > .cmp-container > .aem-Grid, .ac-core.ds-splide-carousel:not(.ds-splide-carousel--initialized) > .cmp-container > .aem-Grid {
     grid-auto-columns: 33.33%;
   }
 }
-.ac-core .ds-splide-carousel .splide {
+.ac-core .ds-splide-carousel .splide, .ac-core.ds-splide-carousel .splide {
   --splide-toggler-color: #2f363a;
   --splide-navigation-color: #5b6770;
   --splide-navigation-arrow-color: #5b6770;
@@ -91,23 +91,23 @@
   padding: 0;
   margin: 0;
 }
-.ac-core .ds-splide-carousel .splide__track {
+.ac-core .ds-splide-carousel .splide__track, .ac-core.ds-splide-carousel .splide__track {
   overflow: visible;
 }
-.ac-core .ds-splide-carousel .splide__arrows {
+.ac-core .ds-splide-carousel .splide__arrows, .ac-core.ds-splide-carousel .splide__arrows {
   display: flex;
   justify-content: space-between;
   gap: 26px;
 }
 @media (min-width: 1024px) {
-  .ac-core .ds-splide-carousel .splide__arrows {
+  .ac-core .ds-splide-carousel .splide__arrows, .ac-core.ds-splide-carousel .splide__arrows {
     justify-content: end;
   }
 }
 html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows {
   flex-direction: row-reverse;
 }
-.ac-core .ds-splide-carousel .splide__arrow {
+.ac-core .ds-splide-carousel .splide__arrow, .ac-core.ds-splide-carousel .splide__arrow {
   position: static;
   block-size: 48px;
   min-inline-size: 48px;
@@ -119,40 +119,40 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 @media (min-width: 1024px) {
-  .ac-core .ds-splide-carousel .splide__arrow {
+  .ac-core .ds-splide-carousel .splide__arrow, .ac-core.ds-splide-carousel .splide__arrow {
     block-size: 56px;
     inline-size: 56px;
   }
 }
-.ac-core .ds-splide-carousel .splide__arrow:hover {
+.ac-core .ds-splide-carousel .splide__arrow:hover, .ac-core.ds-splide-carousel .splide__arrow:hover {
   --splide-navigation-arrow-color: #ffffff;
 }
-.ac-core .ds-splide-carousel .splide__arrow svg {
+.ac-core .ds-splide-carousel .splide__arrow svg, .ac-core.ds-splide-carousel .splide__arrow svg {
   display: none;
 }
-.ac-core .ds-splide-carousel .splide__arrow[disabled] {
+.ac-core .ds-splide-carousel .splide__arrow[disabled], .ac-core.ds-splide-carousel .splide__arrow[disabled] {
   opacity: 0.7;
 }
-.ac-core .ds-splide-carousel .splide__arrow--prev {
+.ac-core .ds-splide-carousel .splide__arrow--prev, .ac-core.ds-splide-carousel .splide__arrow--prev {
   order: 0;
 }
-.ac-core .ds-splide-carousel .splide__arrow--prev::before {
+.ac-core .ds-splide-carousel .splide__arrow--prev::before, .ac-core.ds-splide-carousel .splide__arrow--prev::before {
   transform: scaleX(-1);
 }
-.ac-core .ds-splide-carousel .splide__arrow--next {
+.ac-core .ds-splide-carousel .splide__arrow--next, .ac-core.ds-splide-carousel .splide__arrow--next {
   order: 2;
 }
-.ac-core .ds-splide-carousel .splide__pagination {
+.ac-core .ds-splide-carousel .splide__pagination, .ac-core.ds-splide-carousel .splide__pagination {
   gap: 4px;
   position: static;
   order: 1;
 }
 @media (min-width: 1024px) {
-  .ac-core .ds-splide-carousel .splide__pagination {
+  .ac-core .ds-splide-carousel .splide__pagination, .ac-core.ds-splide-carousel .splide__pagination {
     display: none;
   }
 }
-.ac-core .ds-splide-carousel .splide__pagination__page {
+.ac-core .ds-splide-carousel .splide__pagination__page, .ac-core.ds-splide-carousel .splide__pagination__page {
   block-size: 18px;
   inline-size: 18px;
   background-color: transparent;
@@ -163,7 +163,7 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
   border: 1px solid var(--splide-navigation-border-color);
   margin: 3px;
 }
-.ac-core .ds-splide-carousel .splide__pagination__page.is-active::before {
+.ac-core .ds-splide-carousel .splide__pagination__page.is-active::before, .ac-core.ds-splide-carousel .splide__pagination__page.is-active::before {
   content: "";
   block-size: 7px;
   inline-size: 7px;
@@ -171,23 +171,23 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
   border-radius: 50%;
   background-color: var(--splide-navigation-color);
 }
-.ac-core .ds-splide-carousel .splide__slide {
+.ac-core .ds-splide-carousel .splide__slide, .ac-core.ds-splide-carousel .splide__slide {
   width: 100%;
 }
 @media (min-width: 390px) {
-  .ac-core .ds-splide-carousel .splide__slide {
+  .ac-core .ds-splide-carousel .splide__slide, .ac-core.ds-splide-carousel .splide__slide {
     width: 342px;
   }
 }
 @media (min-width: 1024px) {
-  .ac-core .ds-splide-carousel .splide__slide {
+  .ac-core .ds-splide-carousel .splide__slide, .ac-core.ds-splide-carousel .splide__slide {
     width: 100%;
   }
 }
-.ac-core .ds-splide-carousel .splide__slide > div {
+.ac-core .ds-splide-carousel .splide__slide > div, .ac-core.ds-splide-carousel .splide__slide > div {
   width: 100%;
 }
-.ac-core .ds-splide-carousel.modifiator-theme-dark {
+.ac-core .ds-splide-carousel.modifiator-theme-dark, .ac-core.ds-splide-carousel.modifiator-theme-dark {
   background-color: #191d1f;
   color: #ffffff;
 }
@@ -199,6 +199,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--chevron-up::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -235,6 +248,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--chevron-down::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button) .cmp-button .cmp-button__icon--chevron-down::before {
   content: "";
   display: inline-block;
@@ -249,6 +275,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--chevron-left::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -285,6 +324,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--close::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button) .cmp-button .cmp-button__icon--close::before {
   content: "";
   display: inline-block;
@@ -299,6 +351,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--play::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -335,6 +400,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--contact::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button) .cmp-button .cmp-button__icon--contact::before {
   content: "";
   display: inline-block;
@@ -349,6 +427,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--email::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -385,6 +476,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--phone::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button) .cmp-button .cmp-button__icon--phone::before {
   content: "";
   display: inline-block;
@@ -399,6 +503,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--launch::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -435,6 +552,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--download::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button) .cmp-button .cmp-button__icon--download::before {
   content: "";
   display: inline-block;
@@ -449,6 +579,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--arrow-right::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -485,6 +628,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button[target=_blank]::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button) .cmp-button[target=_blank]::before {
   content: "";
   display: inline-block;
@@ -499,6 +655,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--planet::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -550,7 +719,8 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
-.ds-aem_c-button).modifier-ghost.style-secondary-positive .cmp-button:hover, .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-button).modifier-ghost.style-secondary-positive .cmp-button:hover,
+.ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -562,7 +732,8 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
-.ds-aem_c-button).modifier-outline.style-secondary-negative .cmp-button:hover, .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-button).modifier-outline.style-secondary-negative .cmp-button:hover,
+.ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -574,7 +745,8 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
-.ds-aem_c-button).modifier-outline.style-secondary-positive .cmp-button:hover, .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-button).modifier-outline.style-secondary-positive .cmp-button:hover,
+.ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -586,7 +758,8 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
-.ds-aem_c-button).modifier-ghost.style-primary-negative .cmp-button:hover, .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-button).modifier-ghost.style-primary-negative .cmp-button:hover,
+.ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -598,7 +771,8 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
-.ds-aem_c-button).modifier-ghost.style-primary-positive .cmp-button:hover, .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-button).modifier-ghost.style-primary-positive .cmp-button:hover,
+.ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -610,7 +784,99 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
-.ds-aem_c-button).modifier-outline.style-primary-negative .cmp-button:hover, .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-button).modifier-outline.style-primary-negative .cmp-button:hover,
+.ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-outline.style-primary-positive .cmp-button:hover,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-ghost.style-secondary-positive .cmp-button:hover,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-outline.style-secondary-negative .cmp-button:hover,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-outline.style-secondary-positive .cmp-button:hover,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-ghost.style-primary-negative .cmp-button:hover,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-ghost.style-primary-positive .cmp-button:hover,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-outline.style-primary-negative .cmp-button:hover,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -627,6 +893,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-solid.style-primary-negative .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -667,12 +946,38 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-solid.style-primary-negative .cmp-button:hover,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button).modifier-solid.style-primary-negative .cmp-button:hover {
   --button-bg-gradient-color-1: var(--button-bg-color-hover);
   --button-bg-gradient-color-2: var(--button-bg-color-hover);
   --button-bg-gradient-color-3: var(--button-bg-color-hover);
 }
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-solid.style-primary-negative .cmp-button:active,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -701,6 +1006,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-solid.style-primary-negative .cmp-button:focus-visible,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button).modifier-solid.style-primary-negative .cmp-button:focus-visible {
   outline-color: #ffffff;
   outline-offset: -4px;
@@ -708,6 +1026,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-outline.style-primary-positive .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -744,6 +1075,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-outline.style-primary-negative .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button).modifier-outline.style-primary-negative .cmp-button {
   --button-bg-color: transparent;
   --button-bg-color-hover: #191d1f52;
@@ -758,6 +1102,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-ghost.style-primary-positive .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -794,6 +1151,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-ghost.style-primary-negative .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button).modifier-ghost.style-primary-negative .cmp-button {
   --button-bg-color: transparent;
   --button-bg-color-hover: #191d1f52;
@@ -808,6 +1178,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-solid.style-secondary-positive .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -848,12 +1231,38 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-solid.style-secondary-positive .cmp-button:hover,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button).modifier-solid.style-secondary-positive .cmp-button:hover {
   --button-bg-gradient-color-1: var(--button-bg-color-hover);
   --button-bg-gradient-color-2: var(--button-bg-color-hover);
   --button-bg-gradient-color-3: var(--button-bg-color-hover);
 }
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-solid.style-secondary-positive .cmp-button:active,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -872,6 +1281,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-solid.style-secondary-negative .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -912,12 +1334,38 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-solid.style-secondary-negative .cmp-button:hover,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button).modifier-solid.style-secondary-negative .cmp-button:hover {
   --button-bg-gradient-color-1: var(--button-bg-color-hover);
   --button-bg-gradient-color-2: var(--button-bg-color-hover);
   --button-bg-gradient-color-3: var(--button-bg-color-hover);
 }
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-solid.style-secondary-negative .cmp-button:active,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -936,6 +1384,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-outline.style-secondary-positive .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -972,6 +1433,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-outline.style-secondary-negative .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button).modifier-outline.style-secondary-negative .cmp-button {
   --button-bg-color: transparent;
   --button-bg-color-hover: #191d1f3d;
@@ -997,6 +1471,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-ghost.style-secondary-positive .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button).modifier-ghost.style-secondary-positive .cmp-button {
   --button-bg-color: transparent;
   --button-bg-color-hover: #d1d4d752;
@@ -1008,6 +1495,19 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1046,11 +1546,37 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
   .ds-aem_c-mega-menu__close,
   .ds-brand-footer-link,
   .ds-brand-main-navigation__cta-btn,
+  .ds-aem_c-button) .cmp-button,
+  .ac-core.button:not(.ds-aem_c-top-bar-global-link,
+  .ds-aem_c-top-bar-global-link,
+  .ds-aem_c-top-bar-global-button,
+  .ds-aem_c-burger,
+  .ds-aem_c-stock,
+  .ds-aem_c-search,
+  .ds-aem_c-profile,
+  .ds-aem_c-statistic,
+  .ds-aem_c-cart,
+  .ds-aem_c-mega-menu__close,
+  .ds-brand-footer-link,
+  .ds-brand-main-navigation__cta-btn,
   .ds-aem_c-button) .cmp-button {
     padding: 20px 24px;
   }
 }
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button:hover,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1080,7 +1606,8 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
-.ds-aem_c-button) .cmp-button:focus-visible, .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-button) .cmp-button:focus-visible,
+.ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1092,7 +1619,47 @@ html[dir=rtl] .ac-core .ds-splide-carousel .splide__arrows, body[dir=rtl] .ac-co
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
-.ds-aem_c-button) .cmp-button:focus, .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-button) .cmp-button:focus,
+.ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button:active,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button:focus-visible,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button:focus,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1121,7 +1688,8 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
-.ds-aem_c-button) .cmp-button, .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-button) .cmp-button,
+.ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1133,7 +1701,8 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
-.ds-aem_c-button) html[dir=rtl] .cmp-button, body[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-button) html[dir=rtl] .cmp-button,
+body[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1145,7 +1714,34 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
-.ds-aem_c-button) .cmp-button, .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-button) .cmp-button,
+.ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) body[dir=rtl] .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) html[dir=rtl] .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1162,6 +1758,19 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 }
 
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__text,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1195,7 +1804,34 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
-.ds-aem_c-button) .cmp-button[target=_blank]::before, .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-button) .cmp-button[target=_blank]::before,
+.ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button[target=_blank]::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1224,10 +1860,36 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button),
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button) {
   display: inline-flex;
 }
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-trailing .cmp-button[target=_blank]::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1255,10 +1917,36 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-trailing .cmp-button[target=_blank] .cmp-button__text,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button).modifier-trailing .cmp-button[target=_blank] .cmp-button__text {
   padding-inline-start: 0;
 }
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-trailing .cmp-button .cmp-button__icon,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1286,11 +1974,37 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button).modifier-trailing .cmp-button .cmp-button__text,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button).modifier-trailing .cmp-button .cmp-button__text {
   padding-inline-end: 30px;
   padding-inline-start: 0;
 }
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1317,10 +2031,36 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button[target=_blank]:has(.cmp-button__icon)::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button) .cmp-button[target=_blank]:has(.cmp-button__icon)::before {
   display: none;
 }
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button[target=_blank]::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1352,10 +2092,36 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button[target=_blank] .cmp-button__text,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button) .cmp-button[target=_blank] .cmp-button__text {
   padding-inline-start: 30px;
 }
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1386,10 +2152,36 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon + span,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button) .cmp-button .cmp-button__icon + span {
   padding-inline-start: 30px;
 }
 .ac-core .button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--chevron-right::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-link,
 .ds-aem_c-top-bar-global-button,
 .ds-aem_c-burger,
@@ -1425,14 +2217,27 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 .ds-aem_c-mega-menu__close,
 .ds-brand-footer-link,
 .ds-brand-main-navigation__cta-btn,
+.ds-aem_c-button) .cmp-button .cmp-button__icon--arrow-right::before,
+.ac-core.button:not(.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-link,
+.ds-aem_c-top-bar-global-button,
+.ds-aem_c-burger,
+.ds-aem_c-stock,
+.ds-aem_c-search,
+.ds-aem_c-profile,
+.ds-aem_c-statistic,
+.ds-aem_c-cart,
+.ds-aem_c-mega-menu__close,
+.ds-brand-footer-link,
+.ds-brand-main-navigation__cta-btn,
 .ds-aem_c-button) .cmp-button .cmp-button__icon--arrow-right::before {
   mask-size: 18px;
 }
-.ac-core .ac-core-button.modifiator-theme-dark {
+.ac-core .ac-core-button.modifiator-theme-dark, .ac-core.ac-core-button.modifiator-theme-dark {
   background-color: #191d1f;
   color: #ffffff;
 }
-.ac-core .ac-core-button.modifiator-theme-dark .cmp-button__text {
+.ac-core .ac-core-button.modifiator-theme-dark .cmp-button__text, .ac-core.ac-core-button.modifiator-theme-dark .cmp-button__text {
   color: #ffffff;
 }
 /* libs/ac-core-lib/src/lib/blocks/block-splide-grid-carousel/block-splide-grid-carousel.scss */
@@ -1442,7 +2247,7 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
   --ds-container-padding: 20px;
 }
 
-.ac-core .ac-core-block-splide-grid-carousel .ac-core-grid-button .cmp-button::before {
+.ac-core .ac-core-block-splide-grid-carousel .ac-core-grid-button .cmp-button::before, .ac-core.ac-core-block-splide-grid-carousel .ac-core-grid-button .cmp-button::before {
   content: "";
   display: inline-block;
   width: 24px;
@@ -1455,7 +2260,7 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
   mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 0C0.671573 0 0 0.671573 0 1.5V6.75C0 7.57843 0.671573 8.25 1.5 8.25H6.75C7.57843 8.25 8.25 7.57843 8.25 6.75V1.5C8.25 0.671573 7.57843 0 6.75 0H1.5ZM6.75 1.5H1.5V6.75H6.75V1.5Z" fill="%235B6770"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9.75 1.5C9.75 0.671573 10.4216 0 11.25 0H16.5C17.3284 0 18 0.671573 18 1.5V6.75C18 7.57843 17.3284 8.25 16.5 8.25H11.25C10.4216 8.25 9.75 7.57843 9.75 6.75V1.5ZM11.25 1.5H16.5V6.75H11.25V1.5Z" fill="%235B6770"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9.75 11.25C9.75 10.4216 10.4216 9.75 11.25 9.75H16.5C17.3284 9.75 18 10.4216 18 11.25V16.5C18 17.3284 17.3284 18 16.5 18H11.25C10.4216 18 9.75 17.3284 9.75 16.5V11.25ZM11.25 11.25H16.5V16.5H11.25V11.25Z" fill="%235B6770"/><path fill-rule="evenodd" clip-rule="evenodd" d="M0 11.25C0 10.4216 0.671573 9.75 1.5 9.75H6.75C7.57843 9.75 8.25 10.4216 8.25 11.25V16.5C8.25 17.3284 7.57843 18 6.75 18H1.5C0.671573 18 0 17.3284 0 16.5V11.25ZM1.5 11.25H6.75V16.5H1.5V11.25Z" fill="%235B6770"/></svg>');
 }
 
-.ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button .cmp-button::before {
+.ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button .cmp-button::before, .ac-core.ac-core-block-splide-grid-carousel .ac-core-carousel-button .cmp-button::before {
   content: "";
   display: inline-block;
   width: 24px;
@@ -1483,56 +2288,64 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
   initial-value: #006f8f;
   inherits: false;
 }
-.ac-core .ac-core-block-splide-grid-carousel {
+.ac-core .ac-core-block-splide-grid-carousel, .ac-core.ac-core-block-splide-grid-carousel {
   position: relative;
 }
 @media (min-width: 768px) {
-  .ac-core .ac-core-block-splide-grid-carousel {
+  .ac-core .ac-core-block-splide-grid-carousel, .ac-core.ac-core-block-splide-grid-carousel {
     overflow: hidden;
   }
 }
-.ac-core .ac-core-block-splide-grid-carousel .cmp-list {
+.ac-core .ac-core-block-splide-grid-carousel .cmp-list, .ac-core.ac-core-block-splide-grid-carousel .cmp-list {
   margin: 0;
 }
-.ac-core .ac-core-block-splide-grid-carousel.style-primary {
+.ac-core .ac-core-block-splide-grid-carousel.style-primary, .ac-core.ac-core-block-splide-grid-carousel.style-primary {
   --splide-navigation-color: #5b6770;
   background-color: #ffffff;
 }
-.ac-core .ac-core-block-splide-grid-carousel.style-primary .splide {
+.ac-core .ac-core-block-splide-grid-carousel.style-primary .splide, .ac-core.ac-core-block-splide-grid-carousel.style-primary .splide {
   --splide-toggler-color: #2f363a;
   --splide-navigation-arrow-color: #5b6770;
   --splide-navigation-border-color: #5b6770;
 }
-.ac-core .ac-core-block-splide-grid-carousel.style-secondary {
+.ac-core .ac-core-block-splide-grid-carousel.style-secondary, .ac-core.ac-core-block-splide-grid-carousel.style-secondary {
   --splide-navigation-color: #ffffff;
   background: linear-gradient(104.98deg, #454e55 4%, #2f363a 48%, #191d1f 96%);
 }
-.ac-core .ac-core-block-splide-grid-carousel.style-secondary .splide {
+.ac-core .ac-core-block-splide-grid-carousel.style-secondary .splide, .ac-core.ac-core-block-splide-grid-carousel.style-secondary .splide {
   --splide-toggler-color: #ffffff;
   --splide-navigation-color: #ffffff;
   --splide-navigation-arrow-color: #ffffff;
   --splide-navigation-border-color: #ffffff;
 }
 .ac-core .ac-core-block-splide-grid-carousel .ac-core-grid-button,
-.ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button {
+.ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button,
+.ac-core.ac-core-block-splide-grid-carousel .ac-core-grid-button,
+.ac-core.ac-core-block-splide-grid-carousel .ac-core-carousel-button {
   margin-bottom: 32px;
   max-width: fit-content;
   display: block;
 }
 @media (min-width: 1280px) {
   .ac-core .ac-core-block-splide-grid-carousel .ac-core-grid-button,
-  .ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button {
+  .ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button,
+  .ac-core.ac-core-block-splide-grid-carousel .ac-core-grid-button,
+  .ac-core.ac-core-block-splide-grid-carousel .ac-core-carousel-button {
     position: absolute;
     inset-block-start: 0;
     inset-inline-end: 0;
   }
 }
 .ac-core .ac-core-block-splide-grid-carousel .ac-core-grid-button:not(.active),
-.ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button:not(.active) {
+.ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button:not(.active),
+.ac-core.ac-core-block-splide-grid-carousel .ac-core-grid-button:not(.active),
+.ac-core.ac-core-block-splide-grid-carousel .ac-core-carousel-button:not(.active) {
   display: none;
 }
 .ac-core .ac-core-block-splide-grid-carousel .ac-core-grid-button .cmp-button,
-.ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button .cmp-button {
+.ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button .cmp-button,
+.ac-core.ac-core-block-splide-grid-carousel .ac-core-grid-button .cmp-button,
+.ac-core.ac-core-block-splide-grid-carousel .ac-core-carousel-button .cmp-button {
   font-weight: 700;
   font-size: 18px;
   letter-spacing: 0.02em;
@@ -1547,28 +2360,32 @@ html[dir=rtl] .ac-core .button:not(.ds-aem_c-top-bar-global-link,
 }
 @media (min-width: 1024px) {
   .ac-core .ac-core-block-splide-grid-carousel .ac-core-grid-button .cmp-button,
-  .ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button .cmp-button {
+  .ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button .cmp-button,
+  .ac-core.ac-core-block-splide-grid-carousel .ac-core-grid-button .cmp-button,
+  .ac-core.ac-core-block-splide-grid-carousel .ac-core-carousel-button .cmp-button {
     padding: 16px;
   }
 }
 .ac-core .ac-core-block-splide-grid-carousel .ac-core-grid-button .cmp-button::before,
-.ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button .cmp-button::before {
+.ac-core .ac-core-block-splide-grid-carousel .ac-core-carousel-button .cmp-button::before,
+.ac-core.ac-core-block-splide-grid-carousel .ac-core-grid-button .cmp-button::before,
+.ac-core.ac-core-block-splide-grid-carousel .ac-core-carousel-button .cmp-button::before {
   content: "";
   mask-size: 18px;
 }
-.ac-core .ac-core-block-splide-grid-carousel > .cmp-container > .aem-Grid {
+.ac-core .ac-core-block-splide-grid-carousel > .cmp-container > .aem-Grid, .ac-core.ac-core-block-splide-grid-carousel > .cmp-container > .aem-Grid {
   position: relative;
   padding-block: 48px;
 }
 @media (min-width: 1024px) {
-  .ac-core .ac-core-block-splide-grid-carousel > .cmp-container > .aem-Grid {
+  .ac-core .ac-core-block-splide-grid-carousel > .cmp-container > .aem-Grid, .ac-core.ac-core-block-splide-grid-carousel > .cmp-container > .aem-Grid {
     padding-block: 100px 0;
   }
 }
-.ac-core .ac-core-block-splide-grid-carousel .aem-Grid::before, .ac-core .ac-core-block-splide-grid-carousel .aem-Grid::after {
+.ac-core .ac-core-block-splide-grid-carousel .aem-Grid::before, .ac-core .ac-core-block-splide-grid-carousel .aem-Grid::after, .ac-core.ac-core-block-splide-grid-carousel .aem-Grid::before, .ac-core.ac-core-block-splide-grid-carousel .aem-Grid::after {
   display: none;
 }
-.ac-core .ac-core-block-splide-grid-carousel.modifiator-theme-dark {
+.ac-core .ac-core-block-splide-grid-carousel.modifiator-theme-dark, .ac-core.ac-core-block-splide-grid-carousel.modifiator-theme-dark {
   background-color: #191d1f;
   color: #ffffff;
 }

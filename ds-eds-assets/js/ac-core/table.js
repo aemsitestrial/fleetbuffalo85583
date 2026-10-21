@@ -175,6 +175,25 @@ function adoptSections(block2, node, { panel }) {
   const panels = node.querySelectorAll(panel);
   sections.forEach((section, i) => panels[i] && panels[i].append(section));
 }
+function mergeRoot(block2) {
+  const root = block2.firstElementChild;
+  if (!root || block2.children.length !== 1 || [...block2.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()))
+    return;
+  root.classList.forEach((cls) => block2.classList.add(cls));
+  [...root.attributes].filter(({ name }) => name !== "class" && !block2.hasAttribute(name)).forEach(({ name, value }) => block2.setAttribute(name, value));
+  block2.replaceChildren(...root.childNodes);
+}
+function unwrapBlock(block2) {
+  const wrapper = block2.parentElement;
+  const name = block2.dataset.blockName ?? block2.classList[0];
+  if (!wrapper || wrapper.classList.contains("section") || !wrapper.classList.contains(`${name}-wrapper`))
+    return;
+  if (wrapper.children.length !== 1 || [...wrapper.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()))
+    return;
+  wrapper.classList.forEach((cls) => block2.classList.add(cls));
+  [...wrapper.attributes].filter(({ name: attr }) => attr !== "class" && !block2.hasAttribute(attr)).forEach(({ name: attr, value }) => block2.setAttribute(attr, value));
+  wrapper.replaceWith(block2);
+}
 var instrumentation = (el) => [...el.attributes].filter((a) => /^data-(aue|richtext)-/.test(a.name));
 function snapshotInstrumentation(block2) {
   return [...block2.children].map((row) => ({
@@ -210,19 +229,13 @@ function keyValueRows(block2) {
   instrumentation(wrapper).filter(({ name }) => !block2.hasAttribute(name)).forEach(({ name, value }) => block2.setAttribute(name, value));
   return [...wrapper.children];
 }
-var CLASS_KEY = /^classes([_-]|$)/i;
-function readFields(block2, fields2, { keyValue = true, classRows = true } = {}) {
+function readFields(block2, fields2, { keyValue = true } = {}) {
   const cells = {};
-  const blockClasses = [];
   for (const row of keyValue ? keyValueRows(block2) : [...block2.children]) {
     const [keyCell, valueCell] = [...row.children];
     const key = keyCell?.textContent.trim();
-    if (!key || !valueCell)
-      continue;
-    cells[key] = valueCell;
-    if (keyValue && classRows && CLASS_KEY.test(key) && !fields2.some((f) => f.name === key)) {
-      blockClasses.push(...valueCell.textContent.split(/[\s,]+/).filter(Boolean));
-    }
+    if (key && valueCell)
+      cells[key] = valueCell;
   }
   const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
   const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
@@ -243,7 +256,7 @@ function readFields(block2, fields2, { keyValue = true, classRows = true } = {})
     } else
       props[field.prop || field.name] = field.as === "link" ? { url: value, valid: true } : value;
   }
-  return { props, classes, blockClasses };
+  return { props, classes };
 }
 
 // libs/aem-core-lib/src/lib/table/table.tsx
@@ -293,7 +306,7 @@ var ac_table_eds_default = block({
 });
 
 // ac-table.decorate.tsx
-var fields = [{ "name": "themeColor", "value": "", "valueType": "string", "component": "select" }];
+var fields = [{ "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
 var items = null;
 var adopt = null;
@@ -301,9 +314,7 @@ var extraNames = [];
 var isColumns = false;
 var composite = false;
 function decorate(block2, options = {}) {
-  const { props: authored, classes, blockClasses = [] } = isColumns ? { props: {}, classes: [] } : readFields(block2, fields, { keyValue: !items, classRows: !composite });
-  if (blockClasses.length)
-    block2.classList.add(...blockClasses);
+  const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block2, fields, { keyValue: !items });
   if (composite) {
     String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block2.classList.add(o));
     delete authored.options;
@@ -336,6 +347,9 @@ function decorate(block2, options = {}) {
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
   if (adopt)
     adoptSections(block2, node, adopt);
+  mergeRoot(block2);
+  block2.classList.remove("block");
+  unwrapBlock(block2);
 }
 export {
   decorate as default

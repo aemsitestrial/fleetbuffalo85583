@@ -175,6 +175,25 @@ function adoptSections(block, node, { panel }) {
   const panels = node.querySelectorAll(panel);
   sections2.forEach((section, i) => panels[i] && panels[i].append(section));
 }
+function mergeRoot(block) {
+  const root = block.firstElementChild;
+  if (!root || block.children.length !== 1 || [...block.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()))
+    return;
+  root.classList.forEach((cls) => block.classList.add(cls));
+  [...root.attributes].filter(({ name }) => name !== "class" && !block.hasAttribute(name)).forEach(({ name, value }) => block.setAttribute(name, value));
+  block.replaceChildren(...root.childNodes);
+}
+function unwrapBlock(block) {
+  const wrapper = block.parentElement;
+  const name = block.dataset.blockName ?? block.classList[0];
+  if (!wrapper || wrapper.classList.contains("section") || !wrapper.classList.contains(`${name}-wrapper`))
+    return;
+  if (wrapper.children.length !== 1 || [...wrapper.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()))
+    return;
+  wrapper.classList.forEach((cls) => block.classList.add(cls));
+  [...wrapper.attributes].filter(({ name: attr }) => attr !== "class" && !block.hasAttribute(attr)).forEach(({ name: attr, value }) => block.setAttribute(attr, value));
+  wrapper.replaceWith(block);
+}
 var instrumentation = (el) => [...el.attributes].filter((a) => /^data-(aue|richtext)-/.test(a.name));
 function snapshotInstrumentation(block) {
   return [...block.children].map((row) => ({
@@ -210,19 +229,13 @@ function keyValueRows(block) {
   instrumentation(wrapper).filter(({ name }) => !block.hasAttribute(name)).forEach(({ name, value }) => block.setAttribute(name, value));
   return [...wrapper.children];
 }
-var CLASS_KEY = /^classes([_-]|$)/i;
-function readFields(block, fields2, { keyValue = true, classRows = true } = {}) {
+function readFields(block, fields2, { keyValue = true } = {}) {
   const cells = {};
-  const blockClasses = [];
   for (const row of keyValue ? keyValueRows(block) : [...block.children]) {
     const [keyCell, valueCell] = [...row.children];
     const key = keyCell?.textContent.trim();
-    if (!key || !valueCell)
-      continue;
-    cells[key] = valueCell;
-    if (keyValue && classRows && CLASS_KEY.test(key) && !fields2.some((f) => f.name === key)) {
-      blockClasses.push(...valueCell.textContent.split(/[\s,]+/).filter(Boolean));
-    }
+    if (key && valueCell)
+      cells[key] = valueCell;
   }
   const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
   const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
@@ -243,14 +256,14 @@ function readFields(block, fields2, { keyValue = true, classRows = true } = {}) 
     } else
       props[field.prop || field.name] = field.as === "link" ? { url: value, valid: true } : value;
   }
-  return { props, classes, blockClasses };
+  return { props, classes };
 }
 function runControllers(block, controllers, props = {}) {
   const started = window.__edsControllers = window.__edsControllers || /* @__PURE__ */ new Set();
   const init = ({ Controller, options, storybookMode }, scopeEl) => {
     const { querySelector, querySelectorAll } = document;
-    document.querySelector = (selector) => storybookMode && selector === "#storybook-root" ? scopeEl : scopeEl.querySelector(selector);
-    document.querySelectorAll = (selector) => scopeEl.querySelectorAll(selector);
+    document.querySelector = (selector) => storybookMode && selector === "#storybook-root" ? scopeEl : scopeEl.matches(selector) ? scopeEl : scopeEl.querySelector(selector);
+    document.querySelectorAll = (selector) => [...scopeEl.matches(selector) ? [scopeEl] : [], ...scopeEl.querySelectorAll(selector)];
     try {
       new Controller(options).init();
     } finally {
@@ -1072,9 +1085,7 @@ var extraNames = [];
 var isColumns = false;
 var composite = false;
 function decorate(block, options = {}) {
-  const { props: authored, classes, blockClasses = [] } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items, classRows: !composite });
-  if (blockClasses.length)
-    block.classList.add(...blockClasses);
+  const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items });
   if (composite) {
     String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block.classList.add(o));
     delete authored.options;
@@ -1107,7 +1118,10 @@ function decorate(block, options = {}) {
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
   if (adopt)
     adoptSections(block, node, adopt);
+  mergeRoot(block);
   runControllers(block, [{ Controller: TabsController, key: "TabsController", scope: "block", storybookMode: true, optionsFromProps: [], options: void 0 }], props);
+  block.classList.remove("block");
+  unwrapBlock(block);
 }
 export {
   decorate as default

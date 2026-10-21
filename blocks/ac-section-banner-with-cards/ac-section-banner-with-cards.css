@@ -47,11 +47,11 @@
   initial-value: #006f8f;
   inherits: false;
 }
-.ac-core .ac-core-block-section-banner-with-cards > .cmp-container > .aem-Grid > .container {
+.ac-core .ac-core-block-section-banner-with-cards > .cmp-container > .aem-Grid > .container, .ac-core.ac-core-block-section-banner-with-cards > .cmp-container > .aem-Grid > .container {
   position: relative;
   z-index: 1;
 }
-.ac-core .ac-core-block-section-banner-with-cards > .cmp-container > .aem-Grid .cmp-container {
+.ac-core .ac-core-block-section-banner-with-cards > .cmp-container > .aem-Grid .cmp-container, .ac-core.ac-core-block-section-banner-with-cards > .cmp-container > .aem-Grid .cmp-container {
   max-width: 1478px;
   padding-inline: 16px;
   margin-left: auto;
@@ -61,22 +61,22 @@
   container-type: inline-size;
 }
 @media (min-width: 1280px) {
-  .ac-core .ac-core-block-section-banner-with-cards > .cmp-container > .aem-Grid .cmp-container {
+  .ac-core .ac-core-block-section-banner-with-cards > .cmp-container > .aem-Grid .cmp-container, .ac-core.ac-core-block-section-banner-with-cards > .cmp-container > .aem-Grid .cmp-container {
     max-width: 1280px;
     padding-inline: 20px;
   }
 }
 @media (min-width: 1680px) {
-  .ac-core .ac-core-block-section-banner-with-cards > .cmp-container > .aem-Grid .cmp-container {
+  .ac-core .ac-core-block-section-banner-with-cards > .cmp-container > .aem-Grid .cmp-container, .ac-core.ac-core-block-section-banner-with-cards > .cmp-container > .aem-Grid .cmp-container {
     max-width: 1478px;
     padding-inline: 32px;
   }
 }
-.ac-core .ac-core-block-section-banner-with-cards .ac-core-section-banner {
+.ac-core .ac-core-block-section-banner-with-cards .ac-core-section-banner, .ac-core.ac-core-block-section-banner-with-cards .ac-core-section-banner {
   margin-bottom: -70px;
 }
 @media (min-width: 1440px) {
-  .ac-core .ac-core-block-section-banner-with-cards .ac-core-section-banner {
+  .ac-core .ac-core-block-section-banner-with-cards .ac-core-section-banner, .ac-core.ac-core-block-section-banner-with-cards .ac-core-section-banner {
     margin-bottom: -108px;
   }
 }

@@ -47,22 +47,22 @@
   initial-value: #006f8f;
   inherits: false;
 }
-.ac-core .ac-core-table.style-primary {
+.ac-core .ac-core-table.style-primary, .ac-core.ac-core-table.style-primary {
   --table-head-cell-color: #2f363a;
   --table-cell-color: #5b6770;
   --table-cell-bg-color: #f8f9f9;
   --table-cell-border-color: #d1d4d7;
 }
-.ac-core .ac-core-table.style-secondary {
+.ac-core .ac-core-table.style-secondary, .ac-core.ac-core-table.style-secondary {
   --table-head-cell-color: #f8f9f9;
   --table-cell-color: #ffffff;
   --table-cell-bg-color: #2f363a;
   --table-cell-border-color: #5b6770;
 }
-.ac-core .ac-core-table .cmp-text {
+.ac-core .ac-core-table .cmp-text, .ac-core.ac-core-table .cmp-text {
   overflow-x: auto;
 }
-.ac-core .ac-core-table table {
+.ac-core .ac-core-table table, .ac-core.ac-core-table table {
   max-width: 100%;
   width: 100%;
   width: 100%;
@@ -70,17 +70,17 @@
   text-align: left;
 }
 @media (max-width: 767px) {
-  .ac-core .ac-core-table table {
+  .ac-core .ac-core-table table, .ac-core.ac-core-table table {
     min-width: 700px;
   }
 }
 html[dir=rtl] .ac-core .ac-core-table table, body[dir=rtl] .ac-core .ac-core-table table {
   text-align: right;
 }
-.ac-core .ac-core-table tbody tr:nth-child(even) td {
+.ac-core .ac-core-table tbody tr:nth-child(even) td, .ac-core.ac-core-table tbody tr:nth-child(even) td {
   background-color: var(--table-cell-bg-color);
 }
-.ac-core .ac-core-table tbody th {
+.ac-core .ac-core-table tbody th, .ac-core.ac-core-table tbody th {
   font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
   border-bottom: 2px solid #0092bc;
   padding-block: 14px;
@@ -91,7 +91,7 @@ html[dir=rtl] .ac-core .ac-core-table table, body[dir=rtl] .ac-core .ac-core-tab
   font-style: normal;
   font-weight: 600;
 }
-.ac-core .ac-core-table tbody td {
+.ac-core .ac-core-table tbody td, .ac-core.ac-core-table tbody td {
   color: var(--table-cell-color);
   font-size: 16px;
   line-height: 1.2;
@@ -99,7 +99,7 @@ html[dir=rtl] .ac-core .ac-core-table table, body[dir=rtl] .ac-core .ac-core-tab
   padding-inline: 10px;
   border-block-end: 2px solid var(--table-cell-border-color);
 }
-.ac-core.modifiator-theme-dark .ac-core-table {
+.ac-core.modifiator-theme-dark .ac-core-table, .ac-core.modifiator-theme-dark.ac-core-table {
   --table-head-cell-color: #ffffff;
   --table-cell-color: #ffffff;
   --table-cell-bg-color: #2f363a;
