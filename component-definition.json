@@ -599,6 +599,23 @@
               }
             }
           }
+        },
+        {
+          "title": "AC Teasers with filter",
+          "id": "ac-teasers-with-filter",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "AC Teasers with filter",
+                  "model": "ac-teasers-with-filter",
+                  "filter": "ac-teasers-with-filter",
+                  "section-block": "ac-teasers-with-filter"
+                }
+              }
+            }
+          }
         }
       ]
     },

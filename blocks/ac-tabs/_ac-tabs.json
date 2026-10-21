@@ -60,13 +60,5 @@
       ]
     }
   ],
-  "filters": [
-    {
-      "id": "main",
-      "components": [
-        "section",
-        "ac-tab"
-      ]
-    }
-  ]
+  "filters": []
 }

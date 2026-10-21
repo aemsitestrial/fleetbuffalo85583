@@ -5881,6 +5881,69 @@
     ]
   },
   {
+    "id": "ac-teasers-with-filter",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "section-block",
+        "label": "Section type",
+        "value": "ac-teasers-with-filter",
+        "options": [
+          {
+            "name": "AC Teasers with filter",
+            "value": "ac-teasers-with-filter"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "grid",
+        "label": "Grid",
+        "value": "3",
+        "options": [
+          {
+            "name": "2 columns",
+            "value": "2"
+          },
+          {
+            "name": "3 columns",
+            "value": "3"
+          },
+          {
+            "name": "4 columns",
+            "value": "4"
+          },
+          {
+            "name": "5 columns",
+            "value": "5"
+          },
+          {
+            "name": "2 columns 1:2",
+            "value": "1-2"
+          },
+          {
+            "name": "2 columns 2:1",
+            "value": "2-1"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "ac-text",
     "fields": [
       {

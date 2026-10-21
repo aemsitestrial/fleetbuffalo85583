@@ -243,16 +243,41 @@ function buildTabsBlocks(main) {
   flush();
 }
 
+// Section metadata key naming the composite block a section is built into (see buildSectionBlocks).
+const SECTION_BLOCK = 'section-block';
+
+/**
+ * Composite sections (e.g. "AC Teasers with filter"): a section whose metadata has a
+ * `section-block` row becomes that block. The metadata rows (title, rich text, grid...) are
+ * copied into a new block placed first in the section, so its fields keep their markup; the
+ * block then moves the other blocks of the section into its own layout.
+ * Must run before decorateSections, which consumes the metadata.
+ * @param {Element} main The main element (or any parent of undecorated sections)
+ */
+export function buildSectionBlocks(main) {
+  const metas = main.querySelectorAll(':scope > div:not([data-section-status]) > div.section-metadata');
+  metas.forEach((meta) => {
+    const marker = [...meta.children]
+      .find((row) => toClassName(row.firstElementChild?.textContent) === SECTION_BLOCK);
+    const name = toClassName(marker?.children[1]?.textContent);
+    if (!name) return;
+    const block = document.createElement('div');
+    block.className = name;
+    [...meta.children].forEach((row) => block.append(row.cloneNode(true)));
+    meta.parentElement.prepend(block);
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
  */
-// eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
   decorateLinks(main);
   decorateButtons(main);
   decorateIcons(main);
   buildAutoBlocks(main);
+  buildSectionBlocks(main);
   decorateSections(main);
   buildTabsBlocks(main);
   decorateBlocks(main);

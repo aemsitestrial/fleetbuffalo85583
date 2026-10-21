@@ -126,6 +126,9 @@
         },
         {
           "...": "../blocks/ac-tabs/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ac-teasers-with-filter/_*.json#/definitions"
         }
       ]
     },

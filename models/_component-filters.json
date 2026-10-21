@@ -3,7 +3,8 @@
     "id": "main",
     "components": [
       "section",
-      "ac-tab"
+      "ac-tab",
+      "ac-teasers-with-filter"
     ]
   },
   {

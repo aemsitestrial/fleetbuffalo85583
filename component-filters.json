@@ -3,7 +3,8 @@
     "id": "main",
     "components": [
       "section",
-      "ac-tab"
+      "ac-tab",
+      "ac-teasers-with-filter"
     ]
   },
   {
@@ -86,10 +87,16 @@
     ]
   },
   {
-    "id": "main",
+    "id": "ac-teasers-with-filter",
     "components": [
-      "section",
-      "ac-tab"
+      "ac-teaser",
+      "ac-card-aem",
+      "ac-card-content",
+      "ac-card-feature",
+      "ac-card-icon",
+      "ac-card-product",
+      "ac-download",
+      "ac-list"
     ]
   },
   {
