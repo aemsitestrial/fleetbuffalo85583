@@ -2489,6 +2489,7 @@ var emptyCarousel = () => ({
 });
 var block_splide_grid_carousel_eds_default = composite({
   title: "AC Splide grid carousel",
+  contentWidth: true,
   fields: {
     themeColor: { ...themeField, value: "primary" },
     carouselVariant: carouselVariantField,
@@ -2621,7 +2622,7 @@ var BlockSplideGridCarouselController = class {
 };
 
 // ac-splide-grid-carousel.decorate.tsx
-var fields = [{ "name": "section-block", "value": "ac-splide-grid-carousel", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "primary", "valueType": "string", "component": "select" }, { "name": "carouselVariant", "value": "ac-core-splide-grid-carousel", "valueType": "string", "component": "select" }, { "name": "structureType", "value": "default", "valueType": "string", "component": "select" }, { "name": "useGridToggler", "value": true, "valueType": "boolean", "component": "boolean" }];
+var fields = [{ "name": "section-block", "value": "ac-splide-grid-carousel", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "primary", "valueType": "string", "component": "select" }, { "name": "carouselVariant", "value": "ac-core-splide-grid-carousel", "valueType": "string", "component": "select" }, { "name": "structureType", "value": "default", "valueType": "string", "component": "select" }, { "name": "useGridToggler", "value": true, "valueType": "boolean", "component": "boolean" }, { "name": "content-width", "asClass": "ds-content-width-{value}", "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
 var items = null;
 var adopt = null;

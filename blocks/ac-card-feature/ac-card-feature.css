@@ -22,8 +22,9 @@
 /* stylelint-disable selector-attribute-quotes */
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable shorthand-property-no-redundant-values */
-/* stylelint-disable length-zero-no-unit */
 /* stylelint-disable number-max-precision */
+/* stylelint-disable custom-property-pattern, declaration-block-no-duplicate-custom-properties */
+
 /* libs/ac-core-lib/src/lib/cards/card-feature/card-feature.scss */
 /* Grays */
 :root {
@@ -193,7 +194,7 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before,
   --link-circle-icon-bg-size: 24px;
   --link-circle-icon-opacity: 1;
   border-color: #5b6770;
-  box-shadow: 0px 40px 64px -56px rgba(47, 54, 58, 0.6392156863), 0px 0px 12px 0px rgba(47, 54, 58, 0.1215686275);
+  box-shadow: 0 40px 64px -56px rgba(47, 54, 58, 0.6392156863), 0 0 12px 0 rgba(47, 54, 58, 0.1215686275);
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser__link,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser__link,
@@ -210,7 +211,7 @@ body[dir=rtl] .ac-core .teaser.ac-core-card-feature .cmp-teaser__link::before,
 .ac-core .teaser.ac-core-card-feature .cmp-teaser__link:active {
   outline: none !important;
   border-color: #5b6770;
-  box-shadow: 0px 40px 64px -56px rgba(47, 54, 58, 0.6392156863), 0px 0px 12px 0px rgba(47, 54, 58, 0.1215686275);
+  box-shadow: 0 40px 64px -56px rgba(47, 54, 58, 0.6392156863), 0 0 12px 0 rgba(47, 54, 58, 0.1215686275);
 }
 .ac-core .list.ac-core-card-feature .cmp-teaser .cmp-image__image,
 .ac-core .ac-core-list.ac-core-card-feature .cmp-teaser .cmp-image__image,

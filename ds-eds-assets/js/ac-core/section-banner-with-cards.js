@@ -1152,6 +1152,7 @@ var cardComponents = [
 // libs/ac-core-lib/src/lib/blocks/block-section-banner-with-cards/block-section-banner-with-cards.eds.ts
 var block_section_banner_with_cards_eds_default = composite({
   title: "AC Section banner with cards",
+  contentWidth: true,
   fields: {},
   components: ["ac-section-banner", ...cardComponents],
   // the component renders a demo banner and demo cards: the authored blocks replace them
@@ -1163,7 +1164,7 @@ var block_section_banner_with_cards_eds_default = composite({
 });
 
 // ac-section-banner-with-cards.decorate.tsx
-var fields = [{ "name": "section-block", "value": "ac-section-banner-with-cards", "valueType": "string", "component": "select" }];
+var fields = [{ "name": "section-block", "value": "ac-section-banner-with-cards", "valueType": "string", "component": "select" }, { "name": "content-width", "asClass": "ds-content-width-{value}", "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
 var items = null;
 var adopt = null;

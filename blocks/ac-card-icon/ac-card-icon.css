@@ -22,7 +22,9 @@
 /* stylelint-disable selector-attribute-quotes */
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable shorthand-property-no-redundant-values */
-/* stylelint-disable custom-property-empty-line-before */
+/* stylelint-disable number-max-precision */
+/* stylelint-disable custom-property-pattern, declaration-block-no-duplicate-custom-properties */
+
 /* libs/ac-core-lib/src/lib/cards/card-icon/card-icon.scss */
 /* Grays */
 :root {
@@ -111,6 +113,7 @@
 .ac-core .teaser.ac-core-card-icon.modifier-vertical.style-primary.modifier-transparent-filled .cmp-teaser {
   --card-icon-bg-color: transparent;
   backdrop-filter: blur(12px);
+
   --card-icon-border-color: #d1d4d7;
 }
 .ac-core .list.ac-core-card-icon.modifier-vertical.style-secondary.modifier-solid .cmp-teaser,
@@ -168,6 +171,7 @@
 .ac-core .teaser.ac-core-card-icon.modifier-horizontal.style-primary.modifier-transparent-filled .cmp-teaser {
   --card-icon-bg-color: transparent;
   backdrop-filter: blur(12px);
+
   --card-icon-border-color: #d1d4d7;
 }
 .ac-core .list.ac-core-card-icon.modifier-horizontal.style-secondary.modifier-solid .cmp-teaser,
@@ -274,6 +278,7 @@
 .ac-core .ac-core-list.ac-core-card-icon.modifier-transparent-filled .cmp-teaser,
 .ac-core .teaser.ac-core-card-icon.modifier-transparent-filled .cmp-teaser {
   backdrop-filter: blur(4px);
+
   --teaser-pretitle-color: #f8f9f9;
   --teaser-title-color: #f8f9f9;
   --teaser-content-color: #f8f9f9;
@@ -378,6 +383,7 @@
 .ac-core.modifiator-theme-dark .teaser.ac-core-card-icon.modifier-horizontal.style-primary.modifier-solid .cmp-teaser {
   --card-icon-bg-color: transparent;
   backdrop-filter: blur(12px);
+
   --card-icon-border-color: #d1d4d7;
 }
 .ac-core.modifiator-theme-dark .list.ac-core-card-icon.modifier-vertical.style-primary.modifier-solid .cmp-teaser,

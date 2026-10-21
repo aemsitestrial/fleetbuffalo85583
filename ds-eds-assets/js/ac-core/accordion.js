@@ -270,10 +270,12 @@ function readFields(block, fields2, { keyValue = true } = {}) {
     if (key && valueCell)
       cells[key] = valueCell;
   }
+  const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
   const props = {};
   const classes = [];
   for (const field2 of fields2) {
-    const cell = cells[field2.name];
+    const cell = cells[field2.name] ?? looseCells[loose(field2.name)];
     let value = cell ? cellValue(cell, field2) : field2.value;
     if (value === void 0 || value === "")
       continue;
@@ -617,14 +619,20 @@ var ac_accordion_eds_default = container({
 });
 
 // ac-accordion.decorate.tsx
-var fields = [{ "name": "classes", "value": "", "valueType": "string", "component": "select" }];
+var fields = [{ "name": "classes", "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = { "type-sample": { "typeAccordion": "sample" }, "single-expansion": { "singleExpansion": true } };
 var items = { "fields": [{ "name": "title", "valueType": "string", "component": "text" }, { "name": "content", "valueType": "string", "component": "richtext" }, { "name": "expanded", "value": false, "valueType": "boolean", "component": "boolean" }], "instrument": { "item": ".cmp-accordion__item", "fields": { "title": ".cmp-accordion__title", "content": ".cmp-text" } } };
 var adopt = null;
 var extraNames = [];
 var isColumns = false;
-function decorate(block) {
+var composite = false;
+function decorate(block, options = {}) {
   const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items });
+  if (composite) {
+    String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block.classList.add(o));
+    delete authored.options;
+    delete authored["section-block"];
+  }
   const extra = {};
   extraNames.forEach((name) => {
     extra[name] = authored[name];

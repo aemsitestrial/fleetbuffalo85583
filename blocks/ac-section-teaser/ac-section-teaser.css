@@ -22,8 +22,9 @@
 /* stylelint-disable selector-attribute-quotes */
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable shorthand-property-no-redundant-values */
-/* stylelint-disable custom-property-empty-line-before */
-/* stylelint-disable declaration-block-no-duplicate-custom-properties */
+/* stylelint-disable number-max-precision */
+/* stylelint-disable custom-property-pattern, declaration-block-no-duplicate-custom-properties */
+
 /* libs/ac-core-lib/src/lib/banners/section-teaser/section-teaser.scss */
 /* Grays */
 :root {
@@ -391,6 +392,7 @@
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+
   --teaser-title-clamp: 3;
 }
 [lang^=th i] .ac-core .ac-core-teaser.ac-core-section-teaser .cmp-teaser__title {
@@ -413,6 +415,7 @@
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+
     --teaser-description-clamp: 5;
   }
 }

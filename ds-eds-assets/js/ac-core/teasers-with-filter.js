@@ -812,6 +812,7 @@ var grids = Object.values(GridTypeClassnames).map((className) => className.repla
 var gridLabel = (grid) => /^\d+$/.test(grid) ? `${grid} columns` : `2 columns ${grid.replace("-", ":")}`;
 var block_teasers_with_filter_eds_default = composite({
   title: "AC Teasers with filter",
+  contentWidth: true,
   fields: {
     title: field.text("Title"),
     text: field.richtext("Text"),
@@ -931,7 +932,7 @@ var BlockTeasersWithFilterController = class {
 };
 
 // ac-teasers-with-filter.decorate.tsx
-var fields = [{ "name": "section-block", "value": "ac-teasers-with-filter", "valueType": "string", "component": "select" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "text", "valueType": "string", "component": "richtext" }, { "name": "grid", "value": "3", "valueType": "string", "component": "select" }];
+var fields = [{ "name": "section-block", "value": "ac-teasers-with-filter", "valueType": "string", "component": "select" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "text", "valueType": "string", "component": "richtext" }, { "name": "grid", "value": "3", "valueType": "string", "component": "select" }, { "name": "content-width", "asClass": "ds-content-width-{value}", "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
 var items = null;
 var adopt = null;

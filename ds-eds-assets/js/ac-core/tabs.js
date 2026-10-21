@@ -218,10 +218,12 @@ function readFields(block, fields2, { keyValue = true } = {}) {
     if (key && valueCell)
       cells[key] = valueCell;
   }
+  const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
   const props = {};
   const classes = [];
   for (const field of fields2) {
-    const cell = cells[field.name];
+    const cell = cells[field.name] ?? looseCells[loose(field.name)];
     let value = cell ? cellValue(cell, field) : field.value;
     if (value === void 0 || value === "")
       continue;
@@ -1062,8 +1064,14 @@ var items = { "fields": [{ "name": "title", "component": "text", "valueType": "s
 var adopt = { "panel": ".cmp-tabs__tabpanel" };
 var extraNames = [];
 var isColumns = false;
-function decorate(block) {
+var composite = false;
+function decorate(block, options = {}) {
   const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items });
+  if (composite) {
+    String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block.classList.add(o));
+    delete authored.options;
+    delete authored["section-block"];
+  }
   const extra = {};
   extraNames.forEach((name) => {
     extra[name] = authored[name];

@@ -214,10 +214,12 @@ function readFields(block, fields2, { keyValue = true } = {}) {
     if (key && valueCell)
       cells[key] = valueCell;
   }
+  const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
   const props = {};
   const classes = [];
   for (const field of fields2) {
-    const cell = cells[field.name];
+    const cell = cells[field.name] ?? looseCells[loose(field.name)];
     let value = cell ? cellValue(cell, field) : field.value;
     if (value === void 0 || value === "")
       continue;
@@ -353,6 +355,7 @@ var counts = grids.filter((grid) => /^\d+$/.test(grid)).map(Number);
 var ratios = grids.filter((grid) => !/^\d+$/.test(grid));
 var container_eds_default = columns({
   title: "AC Container",
+  contentWidth: true,
   columnCounts: counts.map((count) => [`${count} columns`, count]),
   // own select next to "Columns": equal widths, or a ratio for two columns
   layoutsLabel: "Column widths",
@@ -385,14 +388,20 @@ var container_eds_default = columns({
 });
 
 // ac-container.decorate.tsx
-var fields = [{ "name": "columns", "value": "2", "valueType": "string", "component": "select" }, { "name": "rows", "value": "1", "valueType": "number", "component": "text" }, { "name": "classes_layout", "value": "", "valueType": "string", "component": "select" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }];
-var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true }, "grid-1-2": { "grid": "1-2" }, "grid-2-1": { "grid": "2-1" } };
+var fields = [{ "name": "columns", "value": "2", "valueType": "string", "component": "select" }, { "name": "rows", "value": "1", "valueType": "number", "component": "text" }, { "name": "classes_layout", "value": "", "valueType": "string", "component": "select" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }, { "name": "classes_content-width", "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true }, "grid-1-2": { "grid": "1-2" }, "grid-2-1": { "grid": "2-1" }, "content-width-12": { "contentWidth": 12 }, "content-width-11": { "contentWidth": 11 }, "content-width-10": { "contentWidth": 10 }, "content-width-9": { "contentWidth": 9 }, "content-width-8": { "contentWidth": 8 }, "content-width-7": { "contentWidth": 7 }, "content-width-6": { "contentWidth": 6 }, "content-width-5": { "contentWidth": 5 }, "content-width-4": { "contentWidth": 4 }, "content-width-3": { "contentWidth": 3 }, "content-width-2": { "contentWidth": 2 }, "content-width-1": { "contentWidth": 1 } };
 var items = null;
 var adopt = null;
 var extraNames = [];
 var isColumns = true;
-function decorate(block) {
+var composite = false;
+function decorate(block, options = {}) {
   const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items });
+  if (composite) {
+    String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block.classList.add(o));
+    delete authored.options;
+    delete authored["section-block"];
+  }
   const extra = {};
   extraNames.forEach((name) => {
     extra[name] = authored[name];

@@ -506,6 +506,7 @@ var composite = (def) => ({ kind: "composite", ...def });
 // libs/ac-core-lib/src/lib/blocks/block-segments-buttons/block-segments-buttons.eds.ts
 var block_segments_buttons_eds_default = composite({
   title: "AC Segments buttons",
+  contentWidth: true,
   fields: {},
   components: ["ac-button"],
   slot: {
@@ -524,7 +525,7 @@ var block_segments_buttons_eds_default = composite({
 });
 
 // ac-segments-buttons.decorate.tsx
-var fields = [{ "name": "section-block", "value": "ac-segments-buttons", "valueType": "string", "component": "select" }];
+var fields = [{ "name": "section-block", "value": "ac-segments-buttons", "valueType": "string", "component": "select" }, { "name": "content-width", "asClass": "ds-content-width-{value}", "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
 var items = null;
 var adopt = null;

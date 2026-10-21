@@ -22,6 +22,9 @@
 /* stylelint-disable selector-attribute-quotes */
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable shorthand-property-no-redundant-values */
+/* stylelint-disable number-max-precision */
+/* stylelint-disable custom-property-pattern, declaration-block-no-duplicate-custom-properties */
+
 /* libs/ac-core-lib/src/lib/tabs/tabs.scss */
 /* Grays */
 :root {
@@ -482,7 +485,7 @@ html[dir=rtl] .ac-core .ac-core-horizontal-tabs .cmp-tabs .cmp-teaser__action-li
 }
 @media (min-width: 1024px) {
   .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab:first-child {
-    border-radius: 48px 0 0 0;
+    border-radius: 48px 0 0;
     font-size: 30px;
     line-height: 1.2em;
   }
@@ -500,7 +503,7 @@ html[dir=rtl] .ac-core .ac-core-horizontal-tabs .cmp-tabs .cmp-teaser__action-li
 }
 @media (min-width: 1024px) {
   html[dir=rtl] .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab:last-child, body[dir=rtl] .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab:last-child {
-    border-radius: 0 0 48px 0;
+    border-radius: 0 0 48px;
   }
 }
 .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab:not(:last-child) {
@@ -546,7 +549,7 @@ html[dir=rtl] .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab::after, body[dir=
 }
 @media (min-width: 1024px) {
   .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab--previous:not(:last-child) {
-    border-radius: 0 0 32px 0;
+    border-radius: 0 0 32px;
   }
 }
 @media (min-width: 1024px) {
@@ -556,7 +559,7 @@ html[dir=rtl] .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab::after, body[dir=
 }
 @media (min-width: 1024px) {
   .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab--previous:first-child {
-    border-radius: 50px 0 32px 0;
+    border-radius: 50px 0 32px;
   }
 }
 @media (min-width: 1024px) {
@@ -601,7 +604,7 @@ html[dir=rtl] .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab::after, body[dir=
 }
 @media (min-width: 1024px) {
   html[dir=rtl] .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab--active + .cmp-tabs__tab, body[dir=rtl] .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab--active + .cmp-tabs__tab {
-    border-radius: 32px 0 0 0;
+    border-radius: 32px 0 0;
   }
 }
 @media (min-width: 1024px) {
@@ -644,7 +647,7 @@ html[dir=rtl] .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab::after, body[dir=
 }
 @media (min-width: 1024px) {
   .ac-core .ac-core-horizontal-tabs .cmp-tabs .cmp-teaser {
-    padding-block: 40px 40px;
+    padding-block: 40px;
     padding-inline: 40px;
   }
 }
@@ -757,19 +760,19 @@ html[dir=rtl] .ac-core .ac-core-horizontal-tabs .cmp-tabs__tab::after, body[dir=
 }
 
 @keyframes tab-content-down {
-  0% {
+  from {
     max-height: 0;
   }
-  100% {
+  to {
     max-height: 1000px;
   }
 }
 @keyframes tab-content-up {
-  0% {
+  from {
     max-height: 1000px;
     display: block;
   }
-  100% {
+  to {
     max-height: 0;
     display: block;
   }

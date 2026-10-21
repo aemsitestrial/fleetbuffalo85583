@@ -22,8 +22,9 @@
 /* stylelint-disable selector-attribute-quotes */
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable shorthand-property-no-redundant-values */
-/* stylelint-disable custom-property-empty-line-before */
 /* stylelint-disable number-max-precision */
+/* stylelint-disable custom-property-pattern, declaration-block-no-duplicate-custom-properties */
+
 /* libs/ac-core-lib/src/lib/banners/promo-banner/promo-banner.scss */
 /* Grays */
 :root {
@@ -173,6 +174,7 @@
 @container promo-banner (width > 768px) {
   .ac-core .ac-core-teaser.ac-core-promo-banner .cmp-teaser {
     flex-direction: row-reverse;
+
     --teaser-title-space-bottom: 22px;
   }
 }

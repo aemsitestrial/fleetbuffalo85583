@@ -294,6 +294,400 @@
           "valueType": "string",
           "name": "actionUrl3",
           "label": "Action 3 link"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_mt",
+          "label": "Margin top",
+          "value": "",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "0 (0px)",
+              "value": "mt-0"
+            },
+            {
+              "name": "1 (4px)",
+              "value": "mt-1"
+            },
+            {
+              "name": "2 (8px)",
+              "value": "mt-2"
+            },
+            {
+              "name": "3 (12px)",
+              "value": "mt-3"
+            },
+            {
+              "name": "4 (16px)",
+              "value": "mt-4"
+            },
+            {
+              "name": "5 (20px)",
+              "value": "mt-5"
+            },
+            {
+              "name": "6 (24px)",
+              "value": "mt-6"
+            },
+            {
+              "name": "8 (32px)",
+              "value": "mt-8"
+            },
+            {
+              "name": "10 (40px)",
+              "value": "mt-10"
+            },
+            {
+              "name": "12 (48px)",
+              "value": "mt-12"
+            },
+            {
+              "name": "16 (64px)",
+              "value": "mt-16"
+            },
+            {
+              "name": "20 (80px)",
+              "value": "mt-20"
+            },
+            {
+              "name": "24 (96px)",
+              "value": "mt-24"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_mb",
+          "label": "Margin bottom",
+          "value": "",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "0 (0px)",
+              "value": "mb-0"
+            },
+            {
+              "name": "1 (4px)",
+              "value": "mb-1"
+            },
+            {
+              "name": "2 (8px)",
+              "value": "mb-2"
+            },
+            {
+              "name": "3 (12px)",
+              "value": "mb-3"
+            },
+            {
+              "name": "4 (16px)",
+              "value": "mb-4"
+            },
+            {
+              "name": "5 (20px)",
+              "value": "mb-5"
+            },
+            {
+              "name": "6 (24px)",
+              "value": "mb-6"
+            },
+            {
+              "name": "8 (32px)",
+              "value": "mb-8"
+            },
+            {
+              "name": "10 (40px)",
+              "value": "mb-10"
+            },
+            {
+              "name": "12 (48px)",
+              "value": "mb-12"
+            },
+            {
+              "name": "16 (64px)",
+              "value": "mb-16"
+            },
+            {
+              "name": "20 (80px)",
+              "value": "mb-20"
+            },
+            {
+              "name": "24 (96px)",
+              "value": "mb-24"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_pt",
+          "label": "Padding top",
+          "value": "",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "0 (0px)",
+              "value": "pt-0"
+            },
+            {
+              "name": "1 (4px)",
+              "value": "pt-1"
+            },
+            {
+              "name": "2 (8px)",
+              "value": "pt-2"
+            },
+            {
+              "name": "3 (12px)",
+              "value": "pt-3"
+            },
+            {
+              "name": "4 (16px)",
+              "value": "pt-4"
+            },
+            {
+              "name": "5 (20px)",
+              "value": "pt-5"
+            },
+            {
+              "name": "6 (24px)",
+              "value": "pt-6"
+            },
+            {
+              "name": "8 (32px)",
+              "value": "pt-8"
+            },
+            {
+              "name": "10 (40px)",
+              "value": "pt-10"
+            },
+            {
+              "name": "12 (48px)",
+              "value": "pt-12"
+            },
+            {
+              "name": "16 (64px)",
+              "value": "pt-16"
+            },
+            {
+              "name": "20 (80px)",
+              "value": "pt-20"
+            },
+            {
+              "name": "24 (96px)",
+              "value": "pt-24"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_pb",
+          "label": "Padding bottom",
+          "value": "",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "0 (0px)",
+              "value": "pb-0"
+            },
+            {
+              "name": "1 (4px)",
+              "value": "pb-1"
+            },
+            {
+              "name": "2 (8px)",
+              "value": "pb-2"
+            },
+            {
+              "name": "3 (12px)",
+              "value": "pb-3"
+            },
+            {
+              "name": "4 (16px)",
+              "value": "pb-4"
+            },
+            {
+              "name": "5 (20px)",
+              "value": "pb-5"
+            },
+            {
+              "name": "6 (24px)",
+              "value": "pb-6"
+            },
+            {
+              "name": "8 (32px)",
+              "value": "pb-8"
+            },
+            {
+              "name": "10 (40px)",
+              "value": "pb-10"
+            },
+            {
+              "name": "12 (48px)",
+              "value": "pb-12"
+            },
+            {
+              "name": "16 (64px)",
+              "value": "pb-16"
+            },
+            {
+              "name": "20 (80px)",
+              "value": "pb-20"
+            },
+            {
+              "name": "24 (96px)",
+              "value": "pb-24"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_px",
+          "label": "Padding left / right",
+          "value": "",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "0 (0px)",
+              "value": "px-0"
+            },
+            {
+              "name": "1 (4px)",
+              "value": "px-1"
+            },
+            {
+              "name": "2 (8px)",
+              "value": "px-2"
+            },
+            {
+              "name": "3 (12px)",
+              "value": "px-3"
+            },
+            {
+              "name": "4 (16px)",
+              "value": "px-4"
+            },
+            {
+              "name": "5 (20px)",
+              "value": "px-5"
+            },
+            {
+              "name": "6 (24px)",
+              "value": "px-6"
+            },
+            {
+              "name": "8 (32px)",
+              "value": "px-8"
+            },
+            {
+              "name": "10 (40px)",
+              "value": "px-10"
+            },
+            {
+              "name": "12 (48px)",
+              "value": "px-12"
+            },
+            {
+              "name": "16 (64px)",
+              "value": "px-16"
+            },
+            {
+              "name": "20 (80px)",
+              "value": "px-20"
+            },
+            {
+              "name": "24 (96px)",
+              "value": "px-24"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_mx",
+          "label": "Margin left / right",
+          "value": "",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "0 (0px)",
+              "value": "mx-0"
+            },
+            {
+              "name": "1 (4px)",
+              "value": "mx-1"
+            },
+            {
+              "name": "2 (8px)",
+              "value": "mx-2"
+            },
+            {
+              "name": "3 (12px)",
+              "value": "mx-3"
+            },
+            {
+              "name": "4 (16px)",
+              "value": "mx-4"
+            },
+            {
+              "name": "5 (20px)",
+              "value": "mx-5"
+            },
+            {
+              "name": "6 (24px)",
+              "value": "mx-6"
+            },
+            {
+              "name": "8 (32px)",
+              "value": "mx-8"
+            },
+            {
+              "name": "10 (40px)",
+              "value": "mx-10"
+            },
+            {
+              "name": "12 (48px)",
+              "value": "mx-12"
+            },
+            {
+              "name": "16 (64px)",
+              "value": "mx-16"
+            },
+            {
+              "name": "20 (80px)",
+              "value": "mx-20"
+            },
+            {
+              "name": "24 (96px)",
+              "value": "mx-24"
+            },
+            {
+              "name": "Auto",
+              "value": "mx-auto"
+            }
+          ]
         }
       ]
     }

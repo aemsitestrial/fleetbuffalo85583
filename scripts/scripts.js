@@ -251,12 +251,20 @@ const SECTION_BLOCK = 'section-block';
  * `section-block` row becomes that block. The metadata rows (title, rich text, grid...) are
  * copied into a new block placed first in the section, so its fields keep their markup; the
  * block then moves the other blocks of the section into its own layout.
+ * Also, for every section: the values of its `classes_*` properties (spacing: `mt-8`, `px-4`...)
+ * become classes of the section.
  * Must run before decorateSections, which consumes the metadata.
  * @param {Element} main The main element (or any parent of undecorated sections)
  */
 export function buildSectionBlocks(main) {
   const metas = main.querySelectorAll(':scope > div:not([data-section-status]) > div.section-metadata');
   metas.forEach((meta) => {
+    [...meta.children]
+      .filter((row) => /^classes(-|$)/.test(toClassName(row.firstElementChild?.textContent)))
+      .flatMap((row) => (row.children[1]?.textContent || '').split(/[\s,]+/))
+      .filter(Boolean)
+      .forEach((cls) => meta.parentElement.classList.add(cls));
+
     const marker = [...meta.children]
       .find((row) => toClassName(row.firstElementChild?.textContent) === SECTION_BLOCK);
     const name = toClassName(marker?.children[1]?.textContent);

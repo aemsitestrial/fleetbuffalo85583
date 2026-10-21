@@ -217,10 +217,12 @@ function readFields(block2, fields2, { keyValue = true } = {}) {
     if (key && valueCell)
       cells[key] = valueCell;
   }
+  const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
   const props = {};
   const classes = [];
   for (const field of fields2) {
-    const cell = cells[field.name];
+    const cell = cells[field.name] ?? looseCells[loose(field.name)];
     let value = cell ? cellValue(cell, field) : field.value;
     if (value === void 0 || value === "")
       continue;
@@ -283,14 +285,20 @@ var ac_title_eds_default = block({
 });
 
 // ac-title.decorate.tsx
-var fields = [{ "name": "text", "valueType": "string", "component": "text" }, { "name": "type", "value": "h1", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "linkDisabled", "valueType": "boolean", "component": "boolean" }, { "name": "linkUrl", "prop": "link", "as": "link", "valueType": "string", "component": "aem-content" }];
+var fields = [{ "name": "text", "valueType": "string", "component": "text" }, { "name": "type", "value": "h1", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "linkDisabled", "valueType": "boolean", "component": "boolean" }, { "name": "linkUrl", "prop": "link", "as": "link", "valueType": "string", "component": "aem-content" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
 var items = null;
 var adopt = null;
 var extraNames = [];
 var isColumns = false;
-function decorate(block2) {
+var composite = false;
+function decorate(block2, options = {}) {
   const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block2, fields, { keyValue: !items });
+  if (composite) {
+    String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block2.classList.add(o));
+    delete authored.options;
+    delete authored["section-block"];
+  }
   const extra = {};
   extraNames.forEach((name) => {
     extra[name] = authored[name];

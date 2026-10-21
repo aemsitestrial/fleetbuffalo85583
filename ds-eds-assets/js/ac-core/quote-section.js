@@ -994,6 +994,7 @@ var themeField = field.select("Theme", [
 // libs/ac-core-lib/src/lib/blocks/block-quote-section/block-quote-section.eds.ts
 var block_quote_section_eds_default = composite({
   title: "AC Quote section",
+  contentWidth: true,
   fields: {
     themeColor: { ...themeField, value: "primary" },
     modifierBgTransparent: field.boolean("Transparent background")
@@ -1008,7 +1009,7 @@ var block_quote_section_eds_default = composite({
 });
 
 // ac-quote-section.decorate.tsx
-var fields = [{ "name": "section-block", "value": "ac-quote-section", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "primary", "valueType": "string", "component": "select" }, { "name": "modifierBgTransparent", "valueType": "boolean", "component": "boolean" }];
+var fields = [{ "name": "section-block", "value": "ac-quote-section", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "primary", "valueType": "string", "component": "select" }, { "name": "modifierBgTransparent", "valueType": "boolean", "component": "boolean" }, { "name": "content-width", "asClass": "ds-content-width-{value}", "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
 var items = null;
 var adopt = null;

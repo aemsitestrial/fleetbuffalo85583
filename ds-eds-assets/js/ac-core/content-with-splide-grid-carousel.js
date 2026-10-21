@@ -2966,6 +2966,7 @@ var emptyCarousel = () => ({
 });
 var block_splide_grid_carousel_eds_default = composite({
   title: "AC Splide grid carousel",
+  contentWidth: true,
   fields: {
     themeColor: { ...themeField, value: "primary" },
     carouselVariant: carouselVariantField,
@@ -2986,6 +2987,7 @@ var block_splide_grid_carousel_eds_default = composite({
 // libs/ac-core-lib/src/lib/blocks/block-content-with-splide-grid-carousel/block-content-with-splide-grid-carousel.eds.ts
 var block_content_with_splide_grid_carousel_eds_default = composite({
   title: "AC Content with splide grid carousel",
+  contentWidth: true,
   fields: {
     ...sectionIntroFields,
     themeColor: { ...themeField, value: "secondary" },
@@ -3121,7 +3123,7 @@ var BlockSplideGridCarouselController = class {
 };
 
 // ac-content-with-splide-grid-carousel.decorate.tsx
-var fields = [{ "name": "section-block", "value": "ac-content-with-splide-grid-carousel", "valueType": "string", "component": "select" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "text", "valueType": "string", "component": "richtext" }, { "name": "themeColor", "value": "secondary", "valueType": "string", "component": "select" }, { "name": "carouselVariant", "value": "ac-core-splide-grid-carousel", "valueType": "string", "component": "select" }, { "name": "structureType", "value": "default", "valueType": "string", "component": "select" }, { "name": "modifierHorizontal", "valueType": "boolean", "component": "boolean" }, { "name": "modifierHorizontalImage", "valueType": "boolean", "component": "boolean" }];
+var fields = [{ "name": "section-block", "value": "ac-content-with-splide-grid-carousel", "valueType": "string", "component": "select" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "text", "valueType": "string", "component": "richtext" }, { "name": "themeColor", "value": "secondary", "valueType": "string", "component": "select" }, { "name": "carouselVariant", "value": "ac-core-splide-grid-carousel", "valueType": "string", "component": "select" }, { "name": "structureType", "value": "default", "valueType": "string", "component": "select" }, { "name": "modifierHorizontal", "valueType": "boolean", "component": "boolean" }, { "name": "modifierHorizontalImage", "valueType": "boolean", "component": "boolean" }, { "name": "content-width", "asClass": "ds-content-width-{value}", "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
 var items = null;
 var adopt = null;

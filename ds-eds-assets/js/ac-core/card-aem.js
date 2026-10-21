@@ -221,10 +221,12 @@ function readFields(block2, fields2, { keyValue = true } = {}) {
     if (key && valueCell)
       cells[key] = valueCell;
   }
+  const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
   const props = {};
   const classes = [];
   for (const field2 of fields2) {
-    const cell = cells[field2.name];
+    const cell = cells[field2.name] ?? looseCells[loose(field2.name)];
     let value = cell ? cellValue(cell, field2) : field2.value;
     if (value === void 0 || value === "")
       continue;
@@ -512,6 +514,16 @@ var teaserDefaults = () => ({
   titleLinkHidden: true,
   actionsEnabled: false
 });
+var sectionIntroFields = {
+  title: field.text("Title"),
+  text: field.richtext("Text")
+};
+var themeField = field.select("Theme", [
+  ["Primary", "primary"],
+  ["Secondary", "secondary"],
+  ["Tertiary", "tertiary"],
+  ["Quaternary", "quaternary"]
+]);
 
 // libs/ac-core-lib/src/lib/cards/card-aem/card-aem.eds.ts
 var card_aem_eds_default = block({
@@ -526,14 +538,20 @@ var card_aem_eds_default = block({
 });
 
 // ac-card-aem.decorate.tsx
-var fields = [{ "name": "pretitle", "valueType": "string", "component": "text" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "titleTag", "value": "", "valueType": "string", "component": "select" }, { "name": "description", "valueType": "string", "component": "richtext" }, { "name": "imagePath", "valueType": "string", "component": "reference" }, { "name": "date", "valueType": "string", "component": "text" }, { "name": "linkUrl", "prop": "link", "as": "link", "valueType": "string", "component": "aem-content" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierContentAlignment", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierPretitle", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierBgTransparent", "valueType": "boolean", "component": "boolean" }, { "name": "headlineLineClamp", "value": "", "valueType": "string", "component": "select" }, { "name": "descriptionLineClamp", "value": "", "valueType": "string", "component": "select" }, { "name": "useIconPhoneOnLinks", "valueType": "boolean", "component": "boolean" }, { "name": "useIconEmailOnLinks", "valueType": "boolean", "component": "boolean" }, { "name": "useIconsOrderPhoneEmailOnLinks", "valueType": "boolean", "component": "boolean" }, { "name": "modifierLinkedVideo", "valueType": "boolean", "component": "boolean" }, { "name": "actionText", "valueType": "string", "component": "text" }, { "name": "actionUrl", "valueType": "string", "component": "aem-content" }, { "name": "actionText2", "valueType": "string", "component": "text" }, { "name": "actionUrl2", "valueType": "string", "component": "aem-content" }, { "name": "actionText3", "valueType": "string", "component": "text" }, { "name": "actionUrl3", "valueType": "string", "component": "aem-content" }];
+var fields = [{ "name": "pretitle", "valueType": "string", "component": "text" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "titleTag", "value": "", "valueType": "string", "component": "select" }, { "name": "description", "valueType": "string", "component": "richtext" }, { "name": "imagePath", "valueType": "string", "component": "reference" }, { "name": "date", "valueType": "string", "component": "text" }, { "name": "linkUrl", "prop": "link", "as": "link", "valueType": "string", "component": "aem-content" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierContentAlignment", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierPretitle", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierBgTransparent", "valueType": "boolean", "component": "boolean" }, { "name": "headlineLineClamp", "value": "", "valueType": "string", "component": "select" }, { "name": "descriptionLineClamp", "value": "", "valueType": "string", "component": "select" }, { "name": "useIconPhoneOnLinks", "valueType": "boolean", "component": "boolean" }, { "name": "useIconEmailOnLinks", "valueType": "boolean", "component": "boolean" }, { "name": "useIconsOrderPhoneEmailOnLinks", "valueType": "boolean", "component": "boolean" }, { "name": "modifierLinkedVideo", "valueType": "boolean", "component": "boolean" }, { "name": "actionText", "valueType": "string", "component": "text" }, { "name": "actionUrl", "valueType": "string", "component": "aem-content" }, { "name": "actionText2", "valueType": "string", "component": "text" }, { "name": "actionUrl2", "valueType": "string", "component": "aem-content" }, { "name": "actionText3", "valueType": "string", "component": "text" }, { "name": "actionUrl3", "valueType": "string", "component": "aem-content" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
 var items = null;
 var adopt = null;
 var extraNames = ["actionText", "actionUrl", "actionText2", "actionUrl2", "actionText3", "actionUrl3"];
 var isColumns = false;
-function decorate(block2) {
+var composite = false;
+function decorate(block2, options = {}) {
   const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block2, fields, { keyValue: !items });
+  if (composite) {
+    String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block2.classList.add(o));
+    delete authored.options;
+    delete authored["section-block"];
+  }
   const extra = {};
   extraNames.forEach((name) => {
     extra[name] = authored[name];
