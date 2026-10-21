@@ -98,6 +98,8 @@
         "ac-teaser",
         "ac-text",
         "ac-title",
+        "ac-container",
+        "ac-separator",
         "text",
         "image",
         "button",

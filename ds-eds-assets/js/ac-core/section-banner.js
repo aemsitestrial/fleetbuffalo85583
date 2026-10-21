@@ -108,6 +108,8 @@ function h(type, props, ...children) {
     return frag;
   }
   if (typeof type === "function") {
+    if (!children.length)
+      return type(props);
     return type({ ...props, children: children.length > 1 ? children : children[0] });
   }
   const el = document.createElement(type);
@@ -526,18 +528,25 @@ var fromClasses = {};
 var items = null;
 var adopt = null;
 var extraNames = ["actionText", "actionUrl", "actionText2", "actionUrl2", "actionText3", "actionUrl3"];
+var isColumns = false;
 function decorate(block2) {
-  const { props: authored, classes } = readFields(block2, fields, { keyValue: !items });
+  const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block2, fields, { keyValue: !items });
   const extra = {};
   extraNames.forEach((name) => {
     extra[name] = authored[name];
     delete authored[name];
   });
-  const fieldProps = section_banner_eds_default.toProps && !items ? { ...authored, ...section_banner_eds_default.toProps(extra, authored) } : authored;
+  const fieldProps = section_banner_eds_default.toProps && !items && !isColumns ? { ...authored, ...section_banner_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof section_banner_eds_default.defaults === "function" ? section_banner_eds_default.defaults() : section_banner_eds_default.defaults || {};
   const classProps = readClasses(block2, fromClasses);
   const instrumentation2 = items ? snapshotInstrumentation(block2) : null;
-  const itemProps = items ? section_banner_eds_default.toProps(readItemValues(block2, items)) : {};
+  let itemProps = items ? section_banner_eds_default.toProps(readItemValues(block2, items)) : {};
+  if (isColumns) {
+    const rows = [...block2.children];
+    const cells = rows.flatMap((row) => [...row.children]);
+    const count = rows[0] ? rows[0].children.length : 0;
+    itemProps = section_banner_eds_default.toProps(cells, { count, rows: rows.length, props: { ...defaults, ...classProps } });
+  }
   const props = { ...defaults, ...classProps, ...fieldProps, ...itemProps };
   const node = h(SectionBanner, props);
   const root = node.nodeType === 11 ? node.firstElementChild : node;

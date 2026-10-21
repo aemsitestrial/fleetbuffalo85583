@@ -105,6 +105,8 @@ function h(type, props, ...children) {
     return frag;
   }
   if (typeof type === "function") {
+    if (!children.length)
+      return type(props);
     return type({ ...props, children: children.length > 1 ? children : children[0] });
   }
   const el = document.createElement(type);
@@ -1059,18 +1061,25 @@ var fromClasses = { "theme-secondary": { "themeColor": "secondary" }, "responsiv
 var items = { "fields": [{ "name": "title", "component": "text", "valueType": "string" }] };
 var adopt = { "panel": ".cmp-tabs__tabpanel" };
 var extraNames = [];
+var isColumns = false;
 function decorate(block) {
-  const { props: authored, classes } = readFields(block, fields, { keyValue: !items });
+  const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items });
   const extra = {};
   extraNames.forEach((name) => {
     extra[name] = authored[name];
     delete authored[name];
   });
-  const fieldProps = ac_tabs_eds_default.toProps && !items ? { ...authored, ...ac_tabs_eds_default.toProps(extra, authored) } : authored;
+  const fieldProps = ac_tabs_eds_default.toProps && !items && !isColumns ? { ...authored, ...ac_tabs_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof ac_tabs_eds_default.defaults === "function" ? ac_tabs_eds_default.defaults() : ac_tabs_eds_default.defaults || {};
   const classProps = readClasses(block, fromClasses);
   const instrumentation2 = items ? snapshotInstrumentation(block) : null;
-  const itemProps = items ? ac_tabs_eds_default.toProps(readItemValues(block, items)) : {};
+  let itemProps = items ? ac_tabs_eds_default.toProps(readItemValues(block, items)) : {};
+  if (isColumns) {
+    const rows = [...block.children];
+    const cells = rows.flatMap((row) => [...row.children]);
+    const count = rows[0] ? rows[0].children.length : 0;
+    itemProps = ac_tabs_eds_default.toProps(cells, { count, rows: rows.length, props: { ...defaults, ...classProps } });
+  }
   const props = { ...defaults, ...classProps, ...fieldProps, ...itemProps };
   const node = h(Tabs2, props);
   const root = node.nodeType === 11 ? node.firstElementChild : node;

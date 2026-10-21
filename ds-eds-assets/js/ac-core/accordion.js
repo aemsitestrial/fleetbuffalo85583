@@ -110,6 +110,8 @@ function h(type, props, ...children) {
     return frag;
   }
   if (typeof type === "function") {
+    if (!children.length)
+      return type(props);
     return type({ ...props, children: children.length > 1 ? children : children[0] });
   }
   const el = document.createElement(type);
@@ -620,18 +622,25 @@ var fromClasses = { "type-sample": { "typeAccordion": "sample" }, "single-expans
 var items = { "fields": [{ "name": "title", "valueType": "string", "component": "text" }, { "name": "content", "valueType": "string", "component": "richtext" }, { "name": "expanded", "value": false, "valueType": "boolean", "component": "boolean" }], "instrument": { "item": ".cmp-accordion__item", "fields": { "title": ".cmp-accordion__title", "content": ".cmp-text" } } };
 var adopt = null;
 var extraNames = [];
+var isColumns = false;
 function decorate(block) {
-  const { props: authored, classes } = readFields(block, fields, { keyValue: !items });
+  const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items });
   const extra = {};
   extraNames.forEach((name) => {
     extra[name] = authored[name];
     delete authored[name];
   });
-  const fieldProps = ac_accordion_eds_default.toProps && !items ? { ...authored, ...ac_accordion_eds_default.toProps(extra, authored) } : authored;
+  const fieldProps = ac_accordion_eds_default.toProps && !items && !isColumns ? { ...authored, ...ac_accordion_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof ac_accordion_eds_default.defaults === "function" ? ac_accordion_eds_default.defaults() : ac_accordion_eds_default.defaults || {};
   const classProps = readClasses(block, fromClasses);
   const instrumentation2 = items ? snapshotInstrumentation(block) : null;
-  const itemProps = items ? ac_accordion_eds_default.toProps(readItemValues(block, items)) : {};
+  let itemProps = items ? ac_accordion_eds_default.toProps(readItemValues(block, items)) : {};
+  if (isColumns) {
+    const rows = [...block.children];
+    const cells = rows.flatMap((row) => [...row.children]);
+    const count = rows[0] ? rows[0].children.length : 0;
+    itemProps = ac_accordion_eds_default.toProps(cells, { count, rows: rows.length, props: { ...defaults, ...classProps } });
+  }
   const props = { ...defaults, ...classProps, ...fieldProps, ...itemProps };
   const node = h(ACAccordion, props);
   const root = node.nodeType === 11 ? node.firstElementChild : node;

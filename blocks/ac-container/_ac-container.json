@@ -1,0 +1,92 @@
+{
+  "definitions": [
+    {
+      "title": "AC Container",
+      "id": "ac-container",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/columns/v1/columns",
+            "template": {
+              "name": "ac-container",
+              "model": "ac-container",
+              "filter": "ac-container",
+              "columns": "2",
+              "rows": "1"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-container",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "number",
+          "name": "columns",
+          "label": "Columns",
+          "value": "2"
+        },
+        {
+          "component": "text",
+          "valueType": "number",
+          "name": "rows",
+          "label": "Rows",
+          "value": "1"
+        },
+        {
+          "component": "multiselect",
+          "valueType": "string",
+          "name": "classes",
+          "label": "Options",
+          "value": "",
+          "options": [
+            {
+              "name": "Background: primary",
+              "value": "theme-primary"
+            },
+            {
+              "name": "Background: secondary",
+              "value": "theme-secondary"
+            },
+            {
+              "name": "Background: tertiary",
+              "value": "theme-tertiary"
+            },
+            {
+              "name": "Background: quaternary",
+              "value": "theme-quaternary"
+            },
+            {
+              "name": "Two columns 1:2",
+              "value": "grid-1-2"
+            },
+            {
+              "name": "Two columns 2:1",
+              "value": "grid-2-1"
+            },
+            {
+              "name": "Centered",
+              "value": "centered"
+            },
+            {
+              "name": "Full width",
+              "value": "full-width"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "ac-container",
+      "components": [
+        "column"
+      ]
+    }
+  ]
+}

@@ -77,7 +77,8 @@
         "ac-table",
         "ac-teaser",
         "ac-text",
-        "ac-title"
+        "ac-title",
+        "ac-separator"
       ]
     }
   ]

@@ -269,6 +269,195 @@ body #main::selection {
 .border-0 > div {
   border-width: 0 !important;
 }
+/* libs/aem-core-lib/src/assets/styles/02-generic/_generic.grids.scss */
+.grid-col-2,
+.grid-col-3,
+.grid-col-4,
+.grid-col-5,
+.grid-col-1-2,
+.grid-col-2-1 {
+  overflow: hidden;
+}
+.grid-col-2 > .cmp-container > .list > .cmp-list,
+.grid-col-3 > .cmp-container > .list > .cmp-list,
+.grid-col-4 > .cmp-container > .list > .cmp-list,
+.grid-col-5 > .cmp-container > .list > .cmp-list,
+.grid-col-1-2 > .cmp-container > .list > .cmp-list,
+.grid-col-2-1 > .cmp-container > .list > .cmp-list {
+  width: 100%;
+}
+.grid-col-2 > .cmp-container > .list > .cmp-list > .cmp-list__item,
+.grid-col-3 > .cmp-container > .list > .cmp-list > .cmp-list__item,
+.grid-col-4 > .cmp-container > .list > .cmp-list > .cmp-list__item,
+.grid-col-5 > .cmp-container > .list > .cmp-list > .cmp-list__item,
+.grid-col-1-2 > .cmp-container > .list > .cmp-list > .cmp-list__item,
+.grid-col-2-1 > .cmp-container > .list > .cmp-list > .cmp-list__item {
+  display: flex;
+}
+.grid-col-2 > .cmp-container > .list > .cmp-list > .cmp-list__item .cmp-teaser,
+.grid-col-3 > .cmp-container > .list > .cmp-list > .cmp-list__item .cmp-teaser,
+.grid-col-4 > .cmp-container > .list > .cmp-list > .cmp-list__item .cmp-teaser,
+.grid-col-5 > .cmp-container > .list > .cmp-list > .cmp-list__item .cmp-teaser,
+.grid-col-1-2 > .cmp-container > .list > .cmp-list > .cmp-list__item .cmp-teaser,
+.grid-col-2-1 > .cmp-container > .list > .cmp-list > .cmp-list__item .cmp-teaser {
+  height: 100%;
+}
+.grid-col-2 > .cmp-container > .list > .cmp-list > .cmp-list__item > div,
+.grid-col-3 > .cmp-container > .list > .cmp-list > .cmp-list__item > div,
+.grid-col-4 > .cmp-container > .list > .cmp-list > .cmp-list__item > div,
+.grid-col-5 > .cmp-container > .list > .cmp-list > .cmp-list__item > div,
+.grid-col-1-2 > .cmp-container > .list > .cmp-list > .cmp-list__item > div,
+.grid-col-2-1 > .cmp-container > .list > .cmp-list > .cmp-list__item > div {
+  width: 100%;
+}
+.grid-col-2 > .cmp-container > .list > .cmp-list,
+.grid-col-2 > .cmp-container > .aem-Grid,
+.grid-col-3 > .cmp-container > .list > .cmp-list,
+.grid-col-3 > .cmp-container > .aem-Grid,
+.grid-col-4 > .cmp-container > .list > .cmp-list,
+.grid-col-4 > .cmp-container > .aem-Grid,
+.grid-col-5 > .cmp-container > .list > .cmp-list,
+.grid-col-5 > .cmp-container > .aem-Grid,
+.grid-col-1-2 > .cmp-container > .list > .cmp-list,
+.grid-col-1-2 > .cmp-container > .aem-Grid,
+.grid-col-2-1 > .cmp-container > .list > .cmp-list,
+.grid-col-2-1 > .cmp-container > .aem-Grid {
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .grid-col-2 > .cmp-container > .list > .cmp-list,
+  .grid-col-2 > .cmp-container > .aem-Grid,
+  .grid-col-3 > .cmp-container > .list > .cmp-list,
+  .grid-col-3 > .cmp-container > .aem-Grid,
+  .grid-col-4 > .cmp-container > .list > .cmp-list,
+  .grid-col-4 > .cmp-container > .aem-Grid,
+  .grid-col-5 > .cmp-container > .list > .cmp-list,
+  .grid-col-5 > .cmp-container > .aem-Grid,
+  .grid-col-1-2 > .cmp-container > .list > .cmp-list,
+  .grid-col-1-2 > .cmp-container > .aem-Grid,
+  .grid-col-2-1 > .cmp-container > .list > .cmp-list,
+  .grid-col-2-1 > .cmp-container > .aem-Grid {
+    grid-template-rows: auto;
+  }
+}
+.grid-col-2 > .cmp-container > .list > .cmp-list::after, .grid-col-2 > .cmp-container > .list > .cmp-list:before,
+.grid-col-2 > .cmp-container > .aem-Grid::after,
+.grid-col-2 > .cmp-container > .aem-Grid:before,
+.grid-col-3 > .cmp-container > .list > .cmp-list::after,
+.grid-col-3 > .cmp-container > .list > .cmp-list:before,
+.grid-col-3 > .cmp-container > .aem-Grid::after,
+.grid-col-3 > .cmp-container > .aem-Grid:before,
+.grid-col-4 > .cmp-container > .list > .cmp-list::after,
+.grid-col-4 > .cmp-container > .list > .cmp-list:before,
+.grid-col-4 > .cmp-container > .aem-Grid::after,
+.grid-col-4 > .cmp-container > .aem-Grid:before,
+.grid-col-5 > .cmp-container > .list > .cmp-list::after,
+.grid-col-5 > .cmp-container > .list > .cmp-list:before,
+.grid-col-5 > .cmp-container > .aem-Grid::after,
+.grid-col-5 > .cmp-container > .aem-Grid:before,
+.grid-col-1-2 > .cmp-container > .list > .cmp-list::after,
+.grid-col-1-2 > .cmp-container > .list > .cmp-list:before,
+.grid-col-1-2 > .cmp-container > .aem-Grid::after,
+.grid-col-1-2 > .cmp-container > .aem-Grid:before,
+.grid-col-2-1 > .cmp-container > .list > .cmp-list::after,
+.grid-col-2-1 > .cmp-container > .list > .cmp-list:before,
+.grid-col-2-1 > .cmp-container > .aem-Grid::after,
+.grid-col-2-1 > .cmp-container > .aem-Grid:before {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .grid-col-2 > .cmp-container > .list > .cmp-list,
+  .grid-col-2 > .cmp-container > .aem-Grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-col-3 > .cmp-container > .list > .cmp-list,
+  .grid-col-3 > .cmp-container > .aem-Grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid-col-3 > .cmp-container > .list > .cmp-list,
+  .grid-col-3 > .cmp-container > .aem-Grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-col-4 > .cmp-container > .list > .cmp-list,
+  .grid-col-4 > .cmp-container > .aem-Grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid-col-4 > .cmp-container > .list > .cmp-list,
+  .grid-col-4 > .cmp-container > .aem-Grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .grid-col-4 > .cmp-container > .list > .cmp-list,
+  .grid-col-4 > .cmp-container > .aem-Grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-col-5 > .cmp-container > .list > .cmp-list,
+  .grid-col-5 > .cmp-container > .aem-Grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid-col-5 > .cmp-container > .list > .cmp-list,
+  .grid-col-5 > .cmp-container > .aem-Grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .grid-col-5 > .cmp-container > .list > .cmp-list,
+  .grid-col-5 > .cmp-container > .aem-Grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-col-1-2 > .cmp-container > .list > .cmp-list,
+  .grid-col-1-2 > .cmp-container > .aem-Grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid-col-1-2 > .cmp-container > .list > .cmp-list,
+  .grid-col-1-2 > .cmp-container > .aem-Grid {
+    grid-template-columns: calc(33.33% - 12px) calc(66.66% - 12px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-col-2-1 > .cmp-container > .list > .cmp-list,
+  .grid-col-2-1 > .cmp-container > .aem-Grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid-col-2-1 > .cmp-container > .list > .cmp-list,
+  .grid-col-2-1 > .cmp-container > .aem-Grid {
+    grid-template-columns: calc(66.66% - 12px) calc(33.33% - 12px);
+  }
+}
+
+.ghost {
+  display: none;
+}
+
+.aem-AuthorLayer-Edit .ghost {
+  display: revert;
+}
 /* libs/aem-core-lib/src/lib/accordion/accordion.scss */
 @keyframes fadeIn {
   0% {
@@ -1038,6 +1227,74 @@ body.anonymous .cmp-teaser--secure .cmp-teaser__action-container {
 .cmp-carousel__indicator--active {
   background-color: rgba(0, 0, 0, 0.8);
 }
+/* libs/aem-core-lib/src/lib/container-layout/container-layout.scss */
+/* ==========================================================================
+   #SPACING
+   ========================================================================== */
+[class^=ds-content-width-] > .cmp-container,
+[class*=" ds-content-width-"] > .cmp-container {
+  padding-inline: var(--ds-container-padding);
+}
+
+.ds-content-width-1 .cmp-container {
+  margin: 0 auto;
+  max-width: calc(1 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.ds-content-width-2 .cmp-container {
+  margin: 0 auto;
+  max-width: calc(2 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.ds-content-width-3 .cmp-container {
+  margin: 0 auto;
+  max-width: calc(3 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.ds-content-width-4 .cmp-container {
+  margin: 0 auto;
+  max-width: calc(4 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.ds-content-width-5 .cmp-container {
+  margin: 0 auto;
+  max-width: calc(5 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.ds-content-width-6 .cmp-container {
+  margin: 0 auto;
+  max-width: calc(6 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.ds-content-width-7 .cmp-container {
+  margin: 0 auto;
+  max-width: calc(7 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.ds-content-width-8 .cmp-container {
+  margin: 0 auto;
+  max-width: calc(8 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.ds-content-width-9 .cmp-container {
+  margin: 0 auto;
+  max-width: calc(9 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.ds-content-width-10 .cmp-container {
+  margin: 0 auto;
+  max-width: calc(10 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.ds-content-width-11 .cmp-container {
+  margin: 0 auto;
+  max-width: calc(11 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.ds-content-width-12 .cmp-container {
+  margin: 0 auto;
+  max-width: var(--ds-container-width);
+}
 /* libs/aem-core-lib/src/lib/download/download.scss */
 .download {
   float: left;
@@ -1367,6 +1624,24 @@ body.anonymous .cmp-teaser--secure .cmp-teaser__action-container {
 }
 .list.ds-brand-list__line-clamp-5 .cmp-list .cmp-list__item .cmp-teaser .cmp-teaser__description {
   -webkit-line-clamp: 5;
+}
+/* libs/aem-core-lib/src/lib/separator/separator.scss */
+/*
+These are all AEM Core Components Colors
+*/
+/* ==========================================================================
+   #SPACING
+   ========================================================================== */
+.cmp-separator {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+  padding: 12px 0;
+}
+.cmp-separator hr {
+  border-top: 1px solid #e1e1e1;
+  margin: 8px 0;
 }
 /* libs/aem-core-lib/src/lib/text/text.scss */
 .cmp-contentfragment ul,

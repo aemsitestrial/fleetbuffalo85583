@@ -1959,6 +1959,66 @@
     ]
   },
   {
+    "id": "ac-container",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "label": "Columns",
+        "value": "2"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "label": "Rows",
+        "value": "1"
+      },
+      {
+        "component": "multiselect",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Options",
+        "value": "",
+        "options": [
+          {
+            "name": "Background: primary",
+            "value": "theme-primary"
+          },
+          {
+            "name": "Background: secondary",
+            "value": "theme-secondary"
+          },
+          {
+            "name": "Background: tertiary",
+            "value": "theme-tertiary"
+          },
+          {
+            "name": "Background: quaternary",
+            "value": "theme-quaternary"
+          },
+          {
+            "name": "Two columns 1:2",
+            "value": "grid-1-2"
+          },
+          {
+            "name": "Two columns 2:1",
+            "value": "grid-2-1"
+          },
+          {
+            "name": "Centered",
+            "value": "centered"
+          },
+          {
+            "name": "Full width",
+            "value": "full-width"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "ac-content-banner",
     "fields": [
       {
@@ -4832,6 +4892,35 @@
         "valueType": "string",
         "name": "actionUrl3",
         "label": "Action 3 link"
+      }
+    ]
+  },
+  {
+    "id": "ac-separator",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "style",
+        "label": "Style",
+        "value": "ds-brand-separator__primary",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "ds-brand-separator__primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "ds-brand-separator__secondary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "isDecorative",
+        "label": "Decorative (hidden from screen readers)",
+        "value": true
       }
     ]
   },
