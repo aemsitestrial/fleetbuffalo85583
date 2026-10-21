@@ -259,6 +259,10 @@ const SECTION_BLOCK = 'section-block';
 export function buildSectionBlocks(main) {
   const metas = main.querySelectorAll(':scope > div:not([data-section-status]) > div.section-metadata');
   metas.forEach((meta) => {
+    // block options of the metadata (grouped `classes_*`) can also come as its classes
+    [...meta.classList]
+      .filter((cls) => cls !== 'section-metadata')
+      .forEach((cls) => meta.parentElement.classList.add(cls));
     [...meta.children]
       .filter((row) => /^classes(-|$)/.test(toClassName(row.firstElementChild?.textContent)))
       .flatMap((row) => (row.children[1]?.textContent || '').split(/[\s,]+/))

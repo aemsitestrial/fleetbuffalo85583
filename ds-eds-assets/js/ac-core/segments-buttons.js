@@ -237,13 +237,19 @@ function keyValueRows(block) {
   instrumentation(wrapper).filter(({ name }) => !block.hasAttribute(name)).forEach(({ name, value }) => block.setAttribute(name, value));
   return [...wrapper.children];
 }
-function readFields(block, fields2, { keyValue = true } = {}) {
+var CLASS_KEY = /^classes([_-]|$)/i;
+function readFields(block, fields2, { keyValue = true, classRows = true } = {}) {
   const cells = {};
+  const blockClasses = [];
   for (const row of keyValue ? keyValueRows(block) : [...block.children]) {
     const [keyCell, valueCell] = [...row.children];
     const key = keyCell?.textContent.trim();
-    if (key && valueCell)
-      cells[key] = valueCell;
+    if (!key || !valueCell)
+      continue;
+    cells[key] = valueCell;
+    if (keyValue && classRows && CLASS_KEY.test(key) && !fields2.some((f) => f.name === key)) {
+      blockClasses.push(...valueCell.textContent.split(/[\s,]+/).filter(Boolean));
+    }
   }
   const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
   const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
@@ -264,7 +270,7 @@ function readFields(block, fields2, { keyValue = true } = {}) {
     } else
       props[field.prop || field.name] = field.as === "link" ? { url: value, valid: true } : value;
   }
-  return { props, classes };
+  return { props, classes, blockClasses };
 }
 
 // libs/aem-core-lib/src/lib/button/button.tsx
@@ -533,7 +539,9 @@ var extraNames = [];
 var isColumns = false;
 var composite2 = true;
 async function decorate(block, options = {}) {
-  const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items });
+  const { props: authored, classes, blockClasses = [] } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items, classRows: !composite2 });
+  if (blockClasses.length)
+    block.classList.add(...blockClasses);
   if (composite2) {
     String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block.classList.add(o));
     delete authored.options;

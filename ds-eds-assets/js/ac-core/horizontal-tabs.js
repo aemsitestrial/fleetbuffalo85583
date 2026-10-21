@@ -213,13 +213,19 @@ function keyValueRows(block) {
   instrumentation(wrapper).filter(({ name }) => !block.hasAttribute(name)).forEach(({ name, value }) => block.setAttribute(name, value));
   return [...wrapper.children];
 }
-function readFields(block, fields2, { keyValue = true } = {}) {
+var CLASS_KEY = /^classes([_-]|$)/i;
+function readFields(block, fields2, { keyValue = true, classRows = true } = {}) {
   const cells = {};
+  const blockClasses = [];
   for (const row of keyValue ? keyValueRows(block) : [...block.children]) {
     const [keyCell, valueCell] = [...row.children];
     const key = keyCell?.textContent.trim();
-    if (key && valueCell)
-      cells[key] = valueCell;
+    if (!key || !valueCell)
+      continue;
+    cells[key] = valueCell;
+    if (keyValue && classRows && CLASS_KEY.test(key) && !fields2.some((f) => f.name === key)) {
+      blockClasses.push(...valueCell.textContent.split(/[\s,]+/).filter(Boolean));
+    }
   }
   const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
   const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
@@ -240,7 +246,7 @@ function readFields(block, fields2, { keyValue = true } = {}) {
     } else
       props[field2.prop || field2.name] = field2.as === "link" ? { url: value, valid: true } : value;
   }
-  return { props, classes };
+  return { props, classes, blockClasses };
 }
 function runControllers(block, controllers, props = {}) {
   const started = window.__edsControllers = window.__edsControllers || /* @__PURE__ */ new Set();
@@ -1085,7 +1091,7 @@ var ac_horizontal_tabs_eds_default = container({
 });
 
 // ac-horizontal-tabs.decorate.tsx
-var fields = [{ "name": "classes", "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fields = [{ "name": "classes", "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = { "responsive-select": { "useResponsiveSelect": true }, "container-query": { "useResponsiveType": "container" }, "segmented-buttons": { "useSegmentedButtons": true } };
 var items = { "fields": [{ "name": "title", "valueType": "string", "component": "text" }, { "name": "content", "valueType": "string", "component": "richtext" }], "instrument": { "item": ".cmp-tabs__tabpanel", "fields": { "title": { "all": ".cmp-tabs__tab" }, "content": ".cmp-text" } } };
 var adopt = null;
@@ -1093,7 +1099,9 @@ var extraNames = [];
 var isColumns = false;
 var composite = false;
 function decorate(block, options = {}) {
-  const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items });
+  const { props: authored, classes, blockClasses = [] } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items, classRows: !composite });
+  if (blockClasses.length)
+    block.classList.add(...blockClasses);
   if (composite) {
     String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block.classList.add(o));
     delete authored.options;

@@ -210,13 +210,19 @@ function keyValueRows(block2) {
   instrumentation(wrapper).filter(({ name }) => !block2.hasAttribute(name)).forEach(({ name, value }) => block2.setAttribute(name, value));
   return [...wrapper.children];
 }
-function readFields(block2, fields2, { keyValue = true } = {}) {
+var CLASS_KEY = /^classes([_-]|$)/i;
+function readFields(block2, fields2, { keyValue = true, classRows = true } = {}) {
   const cells = {};
+  const blockClasses = [];
   for (const row of keyValue ? keyValueRows(block2) : [...block2.children]) {
     const [keyCell, valueCell] = [...row.children];
     const key = keyCell?.textContent.trim();
-    if (key && valueCell)
-      cells[key] = valueCell;
+    if (!key || !valueCell)
+      continue;
+    cells[key] = valueCell;
+    if (keyValue && classRows && CLASS_KEY.test(key) && !fields2.some((f) => f.name === key)) {
+      blockClasses.push(...valueCell.textContent.split(/[\s,]+/).filter(Boolean));
+    }
   }
   const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
   const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
@@ -237,7 +243,7 @@ function readFields(block2, fields2, { keyValue = true } = {}) {
     } else
       props[field.prop || field.name] = field.as === "link" ? { url: value, valid: true } : value;
   }
-  return { props, classes };
+  return { props, classes, blockClasses };
 }
 
 // libs/aem-core-lib/src/lib/teaser/teaser.tsx
@@ -428,7 +434,7 @@ var ac_list_eds_default = block({
 });
 
 // ac-list.decorate.tsx
-var fields = [{ "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "headlineLineClamp", "value": "", "valueType": "string", "component": "select" }, { "name": "descriptionLineClamp", "value": "", "valueType": "string", "component": "select" }, { "name": "showDescription", "valueType": "boolean", "component": "boolean" }, { "name": "showModificationDate", "valueType": "boolean", "component": "boolean" }, { "name": "linkItems", "valueType": "boolean", "component": "boolean" }, { "name": "displayItemAsTeaser", "valueType": "boolean", "component": "boolean" }, { "name": "dateFormatString", "valueType": "string", "component": "text" }, { "name": "grid", "valueType": "number", "component": "number" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fields = [{ "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "headlineLineClamp", "value": "", "valueType": "string", "component": "select" }, { "name": "descriptionLineClamp", "value": "", "valueType": "string", "component": "select" }, { "name": "showDescription", "valueType": "boolean", "component": "boolean" }, { "name": "showModificationDate", "valueType": "boolean", "component": "boolean" }, { "name": "linkItems", "valueType": "boolean", "component": "boolean" }, { "name": "displayItemAsTeaser", "valueType": "boolean", "component": "boolean" }, { "name": "dateFormatString", "valueType": "string", "component": "text" }, { "name": "grid", "valueType": "number", "component": "number" }];
 var fromClasses = {};
 var items = null;
 var adopt = null;
@@ -436,7 +442,9 @@ var extraNames = [];
 var isColumns = false;
 var composite = false;
 function decorate(block2, options = {}) {
-  const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block2, fields, { keyValue: !items });
+  const { props: authored, classes, blockClasses = [] } = isColumns ? { props: {}, classes: [] } : readFields(block2, fields, { keyValue: !items, classRows: !composite });
+  if (blockClasses.length)
+    block2.classList.add(...blockClasses);
   if (composite) {
     String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block2.classList.add(o));
     delete authored.options;
