@@ -1,4 +1,5 @@
 import { decorateBlock, loadBlock } from './aem.js';
+import { moveAttributes } from './scripts.js';
 
 let modelsPromise;
 
@@ -62,11 +63,28 @@ async function ensureKeyValueRows(nested) {
 }
 
 /**
+ * A block authored in a column can arrive wrapped in a <p> (a block inside a paragraph is
+ * invalid HTML and breaks the layout). Replace each such <p> with a <div>, keeping its content
+ * and attributes (Universal Editor instrumentation included).
+ */
+function unwrapParagraphs(nested) {
+  nested.forEach((el) => {
+    const p = el.parentElement;
+    if (p?.tagName !== 'P') return;
+    const div = document.createElement('div');
+    moveAttributes(p, div);
+    div.append(...p.childNodes);
+    p.replaceWith(div);
+  });
+}
+
+/**
  * Prepares the blocks nested in the column cells of `block` (key-value rows, block classes) without
  * loading them. Returns them, to be passed to `loadNestedBlocks` once the parent has its final DOM.
  */
 export async function prepareNestedBlocks(block) {
   const nested = findNestedBlocks(block);
+  unwrapParagraphs(nested);
   await Promise.all(nested.map(ensureKeyValueRows));
   nested.forEach(decorateBlock);
   return nested;

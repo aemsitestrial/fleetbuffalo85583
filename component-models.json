@@ -1962,11 +1962,29 @@
     "id": "ac-container",
     "fields": [
       {
-        "component": "text",
-        "valueType": "number",
+        "component": "select",
+        "valueType": "string",
         "name": "columns",
         "label": "Columns",
-        "value": "2"
+        "value": "2",
+        "options": [
+          {
+            "name": "2 columns",
+            "value": "2"
+          },
+          {
+            "name": "3 columns",
+            "value": "3"
+          },
+          {
+            "name": "4 columns",
+            "value": "4"
+          },
+          {
+            "name": "5 columns",
+            "value": "5"
+          }
+        ]
       },
       {
         "component": "text",
@@ -1999,11 +2017,11 @@
             "value": "theme-quaternary"
           },
           {
-            "name": "Two columns 1:2",
+            "name": "Column widths 1:2 (2 columns)",
             "value": "grid-1-2"
           },
           {
-            "name": "Two columns 2:1",
+            "name": "Column widths 2:1 (2 columns)",
             "value": "grid-2-1"
           },
           {

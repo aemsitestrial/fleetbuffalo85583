@@ -237,6 +237,17 @@ function readFields(block, fields2, { keyValue = true } = {}) {
 // libs/aem-core-lib/src/lib/container-layout/container-layout.tsx
 var import_classnames = __toESM(require_classnames());
 
+// libs/aem-core-lib/src/types/common.ts
+var GridTypeClassnames = /* @__PURE__ */ ((GridTypeClassnames2) => {
+  GridTypeClassnames2["grid2"] = "grid-col-2";
+  GridTypeClassnames2["grid3"] = "grid-col-3";
+  GridTypeClassnames2["grid4"] = "grid-col-4";
+  GridTypeClassnames2["grid5"] = "grid-col-5";
+  GridTypeClassnames2["grid1_2"] = "grid-col-1-2";
+  GridTypeClassnames2["grid2_1"] = "grid-col-2-1";
+  return GridTypeClassnames2;
+})(GridTypeClassnames || {});
+
 // libs/aem-core-lib/src/assets/utils/common.ts
 function getGridClassName(grid) {
   switch (grid) {
@@ -337,26 +348,33 @@ var columns = (def) => ({ kind: "columns", ...def });
 var uniqueId = (prefix) => `${prefix}-${Math.random().toString(36).slice(2, 8)}`;
 
 // libs/ac-core-lib/src/lib/container/container.eds.ts
+var grids = Object.values(GridTypeClassnames).map((className) => className.replace("grid-col-", ""));
+var counts = grids.filter((grid) => /^\d+$/.test(grid)).map(Number);
+var ratios = grids.filter((grid) => !/^\d+$/.test(grid));
 var container_eds_default = columns({
   title: "AC Container",
+  columnCounts: counts.map((count) => [`${count} columns`, count]),
   multipleOptions: true,
   options: [
     option("theme-primary", "Background: primary", { useBrandTheme: true, themeColor: "primary" }),
     option("theme-secondary", "Background: secondary", { useBrandTheme: true, themeColor: "secondary" }),
     option("theme-tertiary", "Background: tertiary", { useBrandTheme: true, themeColor: "tertiary" }),
     option("theme-quaternary", "Background: quaternary", { useBrandTheme: true, themeColor: "quaternary" }),
-    option("grid-1-2", "Two columns 1:2", { grid: "1-2" }),
-    option("grid-2-1", "Two columns 2:1", { grid: "2-1" }),
+    ...ratios.map(
+      (ratio) => option(`grid-${ratio}`, `Column widths ${ratio.replace("-", ":")} (2 columns)`, {
+        grid: ratio
+      })
+    ),
     option("centered", "Centered", { centered: true }),
     option("full-width", "Full width", { fullWidth: true })
   ],
   defaults: () => ({ id: uniqueId("container"), useAemGridTemplate: true }),
   toProps: (cells, { count, props }) => {
     cells.forEach((cell) => cell.classList.add("aem-GridColumn"));
-    const grid = count >= 2 && count <= 5 ? count : void 0;
+    const ratio = count === 2 && props.grid && ratios.includes(String(props.grid)) ? props.grid : void 0;
+    const grid = ratio ?? (counts.includes(count) ? count : void 0);
     return {
-      // a 1:2 / 2:1 option wins over the column count
-      grid: props.grid ?? grid,
+      grid,
       // the column elements themselves become the content (moved, so blocks inside keep working)
       children: cells
     };
@@ -364,7 +382,7 @@ var container_eds_default = columns({
 });
 
 // ac-container.decorate.tsx
-var fields = [{ "name": "columns", "value": "2", "valueType": "number", "component": "text" }, { "name": "rows", "value": "1", "valueType": "number", "component": "text" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }];
+var fields = [{ "name": "columns", "value": "2", "valueType": "string", "component": "select" }, { "name": "rows", "value": "1", "valueType": "number", "component": "text" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }];
 var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "grid-1-2": { "grid": "1-2" }, "grid-2-1": { "grid": "2-1" }, "centered": { "centered": true }, "full-width": { "fullWidth": true } };
 var items = null;
 var adopt = null;
