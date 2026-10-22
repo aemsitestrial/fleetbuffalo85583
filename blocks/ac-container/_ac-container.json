@@ -12,7 +12,8 @@
               "model": "ac-container",
               "filter": "ac-container",
               "columns": "2",
-              "rows": "1"
+              "rows": "1",
+              "classes_content-width": "content-width-12"
             }
           }
         }
@@ -27,7 +28,7 @@
           "component": "select",
           "valueType": "string",
           "name": "columns",
-          "label": "Columns",
+          "label": "AC Container",
           "value": "2",
           "options": [
             {
@@ -47,13 +48,6 @@
               "value": "5"
             }
           ]
-        },
-        {
-          "component": "text",
-          "valueType": "number",
-          "name": "rows",
-          "label": "Rows",
-          "value": "1"
         },
         {
           "component": "select",
@@ -114,12 +108,8 @@
           "valueType": "string",
           "name": "classes_content-width",
           "label": "Content width",
-          "value": "",
+          "value": "content-width-12",
           "options": [
-            {
-              "name": "Default",
-              "value": ""
-            },
             {
               "name": "12 of 12 columns (container width)",
               "value": "content-width-12"
