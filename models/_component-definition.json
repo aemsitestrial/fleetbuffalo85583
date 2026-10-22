@@ -158,9 +158,6 @@
           "...": "../blocks/cards/_*.json#/definitions"
         },
         {
-          "...": "../blocks/columns/_*.json#/definitions"
-        },
-        {
           "...": "../blocks/fragment/_*.json#/definitions"
         },
         {
