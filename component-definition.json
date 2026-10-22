@@ -295,26 +295,6 @@
           }
         },
         {
-          "title": "AC Container",
-          "id": "ac-container",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/columns/v1/columns",
-                "template": {
-                  "name": "ac-container",
-                  "model": "ac-container",
-                  "filter": "ac-container",
-                  "columns": "2",
-                  "rows": "1",
-                  "classes_grid": "grid-col-2",
-                  "classes_content-width": "content-width-12"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "AC Separator",
           "id": "ac-separator",
           "plugins": {
@@ -597,6 +577,23 @@
                   "name": "Tab",
                   "model": "ac-tab",
                   "filter": "section"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "AC Container",
+          "id": "ac-container",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "AC Container",
+                  "model": "ac-container",
+                  "filter": "ac-container",
+                  "section-block": "ac-container"
                 }
               }
             }

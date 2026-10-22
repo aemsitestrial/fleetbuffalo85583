@@ -5508,70 +5508,133 @@
     "id": "ac-container",
     "fields": [
       {
-        "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "label": "Number of columns",
-        "value": "2"
-      },
-      {
         "component": "select",
         "valueType": "string",
-        "name": "classes_grid",
-        "label": "Columns",
-        "value": "grid-col-2",
+        "name": "section-block",
+        "label": "Section type",
+        "value": "ac-container",
         "options": [
           {
-            "name": "1 column",
-            "value": "grid-col-1"
-          },
-          {
-            "name": "2 columns",
-            "value": "grid-col-2"
-          },
-          {
-            "name": "3 columns",
-            "value": "grid-col-3"
-          },
-          {
-            "name": "4 columns",
-            "value": "grid-col-4"
-          },
-          {
-            "name": "5 columns",
-            "value": "grid-col-5"
-          },
-          {
-            "name": "2 columns 1:2",
-            "value": "grid-col-1-2"
-          },
-          {
-            "name": "2 columns 2:1",
-            "value": "grid-col-2-1"
+            "name": "AC Container",
+            "value": "ac-container"
           }
         ]
       },
       {
         "component": "select",
         "valueType": "string",
-        "name": "classes_grid-template",
+        "name": "grid",
+        "label": "Columns",
+        "value": "2",
+        "options": [
+          {
+            "name": "1 column",
+            "value": "1"
+          },
+          {
+            "name": "2 columns",
+            "value": "2"
+          },
+          {
+            "name": "3 columns",
+            "value": "3"
+          },
+          {
+            "name": "4 columns",
+            "value": "4"
+          },
+          {
+            "name": "5 columns",
+            "value": "5"
+          },
+          {
+            "name": "2 columns 1:2",
+            "value": "1-2"
+          },
+          {
+            "name": "2 columns 2:1",
+            "value": "2-1"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "gridTemplate",
         "label": "Grid",
-        "value": "",
+        "value": "aem-grid",
         "options": [
           {
             "name": "AEM grid (aem-Grid)",
-            "value": ""
+            "value": "aem-grid"
           },
           {
             "name": "No grid",
-            "value": "no-aem-grid"
+            "value": "none"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "width",
+        "label": "Content width",
+        "value": "12",
+        "options": [
+          {
+            "name": "12 of 12 columns (container width)",
+            "value": "12"
+          },
+          {
+            "name": "11 of 12 columns",
+            "value": "11"
+          },
+          {
+            "name": "10 of 12 columns",
+            "value": "10"
+          },
+          {
+            "name": "9 of 12 columns",
+            "value": "9"
+          },
+          {
+            "name": "8 of 12 columns",
+            "value": "8"
+          },
+          {
+            "name": "7 of 12 columns",
+            "value": "7"
+          },
+          {
+            "name": "6 of 12 columns",
+            "value": "6"
+          },
+          {
+            "name": "5 of 12 columns",
+            "value": "5"
+          },
+          {
+            "name": "4 of 12 columns",
+            "value": "4"
+          },
+          {
+            "name": "3 of 12 columns",
+            "value": "3"
+          },
+          {
+            "name": "2 of 12 columns",
+            "value": "2"
+          },
+          {
+            "name": "1 of 12 columns",
+            "value": "1"
           }
         ]
       },
       {
         "component": "multiselect",
         "valueType": "string",
-        "name": "classes",
+        "name": "options",
         "label": "Options",
         "value": "",
         "options": [
@@ -5598,63 +5661,6 @@
           {
             "name": "Full width",
             "value": "full-width"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_content-width",
-        "label": "Content width",
-        "value": "content-width-12",
-        "options": [
-          {
-            "name": "12 of 12 columns (container width)",
-            "value": "content-width-12"
-          },
-          {
-            "name": "11 of 12 columns",
-            "value": "content-width-11"
-          },
-          {
-            "name": "10 of 12 columns",
-            "value": "content-width-10"
-          },
-          {
-            "name": "9 of 12 columns",
-            "value": "content-width-9"
-          },
-          {
-            "name": "8 of 12 columns",
-            "value": "content-width-8"
-          },
-          {
-            "name": "7 of 12 columns",
-            "value": "content-width-7"
-          },
-          {
-            "name": "6 of 12 columns",
-            "value": "content-width-6"
-          },
-          {
-            "name": "5 of 12 columns",
-            "value": "content-width-5"
-          },
-          {
-            "name": "4 of 12 columns",
-            "value": "content-width-4"
-          },
-          {
-            "name": "3 of 12 columns",
-            "value": "content-width-3"
-          },
-          {
-            "name": "2 of 12 columns",
-            "value": "content-width-2"
-          },
-          {
-            "name": "1 of 12 columns",
-            "value": "content-width-1"
           }
         ]
       },

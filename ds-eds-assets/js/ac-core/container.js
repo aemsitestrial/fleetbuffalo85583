@@ -127,11 +127,11 @@ function h(type, props, ...children) {
   return el;
 }
 var jsx = (type, { children, ...props }) => h(type, props, children);
-function cellValue(cell, field) {
+function cellValue(cell, field2) {
   const a = cell.querySelector("a");
-  if (field.component === "richtext")
+  if (field2.component === "richtext")
     return cell.innerHTML.trim();
-  if (field.component === "reference") {
+  if (field2.component === "reference") {
     const img = cell.querySelector("img");
     return (img ? img.getAttribute("src") : a?.getAttribute("href")) ?? cell.textContent.trim();
   }
@@ -156,9 +156,9 @@ function readItemValues(block, items2) {
   return [...block.children].map((row) => {
     const cells = [...row.children];
     const values = {};
-    items2.fields.forEach((field, i) => {
-      const value = cells[i] ? cellValue(cells[i], field) : "";
-      values[field.name] = field.valueType === "boolean" ? value === "true" || value === true : value;
+    items2.fields.forEach((field2, i) => {
+      const value = cells[i] ? cellValue(cells[i], field2) : "";
+      values[field2.name] = field2.valueType === "boolean" ? value === "true" || value === true : value;
     });
     return values;
   });
@@ -170,6 +170,34 @@ function adoptSections(block, node, { panel }) {
   const sections = [...document.querySelectorAll(`[data-eds-group="${id}"]`)].filter((el) => el !== block);
   const panels = node.querySelectorAll(panel);
   sections.forEach((section, i) => panels[i] && panels[i].append(section));
+}
+function adoptSectionBlocks(block, spec) {
+  const section = block.closest(".section");
+  if (!section)
+    return [];
+  const slots = (Array.isArray(spec) ? spec : [spec]).map((slot) => typeof slot === "string" ? { selector: slot } : slot).map((slot) => ({ ...slot, target: block.querySelector(slot.selector), nodes: [] }));
+  slots.forEach((slot) => slot.mode === "fill" && slot.target?.replaceChildren());
+  const isBlock = (el) => el.matches("div.block, [data-block-name]");
+  const blockOf = (el) => isBlock(el) ? el : [...el.children].find(isBlock);
+  const nameOf = (el) => {
+    const b = blockOf(el);
+    return b ? b.dataset.blockName ?? b.classList[0] : null;
+  };
+  const moved = [];
+  [...section.children].filter((el) => !el.contains(block)).forEach((el) => {
+    const name = nameOf(el);
+    const slot = slots.find((s) => s.target && (!s.components || s.components.includes(name)));
+    if (!slot)
+      return;
+    const node = slot.item ? slot.item(el) : el;
+    if (slot.mode === "replace")
+      slot.nodes.push(node);
+    else
+      slot.target.append(node);
+    moved.push(...isBlock(el) ? [el] : el.querySelectorAll("div.block, [data-block-name]"));
+  });
+  slots.forEach((slot) => slot.mode === "replace" && slot.target?.replaceWith(...slot.nodes));
+  return moved;
 }
 function mergeRoot(block) {
   const root = block.firstElementChild;
@@ -237,20 +265,20 @@ function readFields(block, fields2, { keyValue = true } = {}) {
   const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
   const props = {};
   const classes = [];
-  for (const field of fields2) {
-    const cell = cells[field.name] ?? looseCells[loose(field.name)];
-    let value = cell ? cellValue(cell, field) : field.value;
+  for (const field2 of fields2) {
+    const cell = cells[field2.name] ?? looseCells[loose(field2.name)];
+    let value = cell ? cellValue(cell, field2) : field2.value;
     if (value === void 0 || value === "")
       continue;
-    if (field.valueType === "boolean")
+    if (field2.valueType === "boolean")
       value = value === true || value === "true";
-    else if (field.valueType === "number")
+    else if (field2.valueType === "number")
       value = Number(value);
-    if (field.asClass) {
-      const template = typeof field.asClass === "string" ? field.asClass : "{value}";
+    if (field2.asClass) {
+      const template = typeof field2.asClass === "string" ? field2.asClass : "{value}";
       classes.push(...template.replace("{value}", value).split(/\s+/));
     } else
-      props[field.prop || field.name] = field.as === "link" ? { url: value, valid: true } : value;
+      props[field2.prop || field2.name] = field2.as === "link" ? { url: value, valid: true } : value;
   }
   return { props, classes };
 }
@@ -364,46 +392,48 @@ function Container({ className, themeColor, children, grid, useBrandTheme = fals
 }
 
 // tools/eds/define.ts
+var field = {
+  text: (label, opts = {}) => ({ component: "text", label, ...opts }),
+  richtext: (label, opts = {}) => ({ component: "richtext", label, ...opts }),
+  /** An image (asset reference); the value is the image URL. */
+  image: (label, opts = {}) => ({ component: "reference", label, ...opts }),
+  /** A link; the value is the URL. */
+  link: (label, opts = {}) => ({ component: "aem-content", label, ...opts }),
+  boolean: (label, opts = {}) => ({ component: "boolean", label, ...opts }),
+  select: (label, options, opts = {}) => ({
+    component: "select",
+    label,
+    options,
+    value: options[0]?.[1],
+    ...opts
+  })
+};
 var option = (value, label, props) => ({ value, label, props });
-var columns = (def) => ({ kind: "columns", ...def });
+var composite = (def) => ({ kind: "composite", ...def });
 var uniqueId = (prefix) => `${prefix}-${Math.random().toString(36).slice(2, 8)}`;
 
 // libs/ac-core-lib/src/lib/container/container.eds.ts
 var grids = Object.values(GridTypeClassnames).map((className) => className.replace("grid-col-", ""));
-var counts = grids.filter((grid) => /^\d+$/.test(grid)).map(Number);
-var ratios = grids.filter((grid) => !/^\d+$/.test(grid));
-var container_eds_default = columns({
+var gridLabel = (grid) => /^\d+$/.test(grid) ? `${grid} columns` : `2 columns ${grid.replace("-", ":")}`;
+var GRID_ITEM = ["aem-GridColumn", "aem-GridColumn--default--12"];
+var container_eds_default = composite({
   title: "AC Container",
-  // full container width (12 of 12) unless the author picks another
-  contentWidth: 12,
-  // how many columns (cells) the container has: any number, independent of the grid below
-  columnsLabel: "Number of columns",
-  defaultColumns: 2,
-  // always one row of cells (the grid wraps them)
-  rows: false,
-  classSelects: [
-    // the grid: a class on the root (grid-col-2 ... grid-col-5, grid-col-1-2, grid-col-2-1) laying the columns out,
-    // whatever their number (6 columns in grid-col-3 make two rows); "1 column" adds no grid class
-    {
-      name: "grid",
-      label: "Columns",
-      value: "grid-col-2",
-      options: [
-        option("grid-col-1", "1 column", { grid: 1 }),
-        ...counts.map((count) => option(`grid-col-${count}`, `${count} columns`, { grid: count })),
-        ...ratios.map(
-          (ratio) => option(`grid-col-${ratio}`, `2 columns ${ratio.replace("-", ":")}`, { grid: ratio })
-        )
-      ]
-    },
-    // the columns in an aem-Grid (container > cmp-container > aem-Grid > columns), or right in cmp-container
-    {
-      name: "grid-template",
-      label: "Grid",
-      options: [option("", "AEM grid (aem-Grid)"), option("no-aem-grid", "No grid", { useAemGridTemplate: false })]
-    }
-  ],
-  multipleOptions: true,
+  fields: {
+    grid: field.select("Columns", [["1 column", "1"], ...grids.map((grid) => [gridLabel(grid), grid])], {
+      value: "2"
+    }),
+    gridTemplate: field.select("Grid", [
+      ["AEM grid (aem-Grid)", "aem-grid"],
+      ["No grid", "none"]
+    ]),
+    width: field.select(
+      "Content width",
+      ["12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1"].map(
+        (n) => [n === "12" ? "12 of 12 columns (container width)" : `${n} of 12 columns`, n]
+      ),
+      { value: "12" }
+    )
+  },
   options: [
     option("theme-primary", "Background: primary", { useBrandTheme: true, themeColor: "primary" }),
     option("theme-secondary", "Background: secondary", { useBrandTheme: true, themeColor: "secondary" }),
@@ -412,46 +442,73 @@ var container_eds_default = columns({
     option("centered", "Centered", { centered: true }),
     option("full-width", "Full width", { fullWidth: true })
   ],
-  // contentWidth 12 also for blocks authored before the field had a default (a picked width overrides it)
+  // what the add button offers in the container: default content and the lib's blocks
+  components: [
+    "text",
+    "image",
+    "button",
+    "title",
+    "ac-button",
+    "ac-download",
+    "ac-accordion",
+    "ac-card-aem",
+    "ac-card-content",
+    "ac-card-feature",
+    "ac-card-icon",
+    "ac-card-product",
+    "ac-carousel",
+    "ac-content-banner",
+    "ac-highlight",
+    "ac-horizontal-tabs",
+    "ac-innovation-banner",
+    "ac-innovation-hero-banner",
+    "ac-key-figure",
+    "ac-list",
+    "ac-product-banner",
+    "ac-promo-banner",
+    "ac-quote",
+    "ac-section-banner",
+    "ac-section-teaser",
+    "ac-startpage-banner",
+    "ac-sticky-banner",
+    "ac-table",
+    "ac-teaser",
+    "ac-text",
+    "ac-title",
+    "ac-separator"
+  ],
+  // every block (and default content) of the section becomes a grid item; without the AEM grid it goes right
+  // into cmp-container as it is
+  slot: [
+    {
+      selector: ":scope > .cmp-container > .aem-Grid",
+      item: (el) => {
+        el.classList.add(...GRID_ITEM);
+        return el;
+      }
+    },
+    { selector: ":scope > .cmp-container" }
+  ],
   defaults: () => ({ id: uniqueId("container"), useAemGridTemplate: true, contentWidth: 12 }),
-  toProps: (cells, { count, props }) => {
-    if (props.useAemGridTemplate !== false)
-      cells.forEach((cell) => cell.classList.add("aem-GridColumn"));
-    const picked = props.grid;
-    const grid = picked === 1 ? void 0 : picked ?? (counts.includes(count) ? count : void 0);
-    return {
-      grid,
-      // the column elements themselves become the content (moved, so blocks inside keep working)
-      children: cells
-    };
-  },
-  // one column without the grid: the column is cmp-container itself (container > cmp-container > content); it
-  // takes the column's attributes (Universal Editor: the column that blocks are added to)
-  afterRender: (block, props) => {
-    const cells = props.children ?? [];
-    if (props.useAemGridTemplate !== false || cells.length !== 1)
-      return;
-    const [cell] = cells;
-    const cmp = cell.parentElement;
-    if (!cmp?.classList.contains("cmp-container"))
-      return;
-    Array.from(cell.attributes).filter(({ name }) => !cmp.hasAttribute(name) && name !== "class").forEach(({ name, value }) => cmp.setAttribute(name, value));
-    cell.classList.forEach((cls) => cmp.classList.add(cls));
-    cell.replaceWith(...Array.from(cell.childNodes));
-  }
+  toProps: ({ grid, gridTemplate, width }) => ({
+    // "1 column": no grid class
+    grid: grid && grid !== "1" ? /^\d+$/.test(grid) ? Number(grid) : grid : void 0,
+    useAemGridTemplate: gridTemplate !== "none",
+    contentWidth: Number(width || 12)
+  })
 });
 
 // ac-container.decorate.tsx
-var fields = [{ "name": "columns", "value": "2", "valueType": "number", "component": "text" }, { "name": "classes_grid", "value": "grid-col-2", "valueType": "string", "component": "select" }, { "name": "classes_grid-template", "value": "", "valueType": "string", "component": "select" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }, { "name": "classes_content-width", "value": "content-width-12", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
-var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true }, "grid-col-1": { "grid": 1 }, "grid-col-2": { "grid": 2 }, "grid-col-3": { "grid": 3 }, "grid-col-4": { "grid": 4 }, "grid-col-5": { "grid": 5 }, "grid-col-1-2": { "grid": "1-2" }, "grid-col-2-1": { "grid": "2-1" }, "no-aem-grid": { "useAemGridTemplate": false }, "content-width-12": { "contentWidth": 12 }, "content-width-11": { "contentWidth": 11 }, "content-width-10": { "contentWidth": 10 }, "content-width-9": { "contentWidth": 9 }, "content-width-8": { "contentWidth": 8 }, "content-width-7": { "contentWidth": 7 }, "content-width-6": { "contentWidth": 6 }, "content-width-5": { "contentWidth": 5 }, "content-width-4": { "contentWidth": 4 }, "content-width-3": { "contentWidth": 3 }, "content-width-2": { "contentWidth": 2 }, "content-width-1": { "contentWidth": 1 } };
+var fields = [{ "name": "section-block", "value": "ac-container", "valueType": "string", "component": "select" }, { "name": "grid", "value": "2", "valueType": "string", "component": "select" }, { "name": "gridTemplate", "value": "aem-grid", "valueType": "string", "component": "select" }, { "name": "width", "value": "12", "valueType": "string", "component": "select" }, { "name": "options", "value": "", "valueType": "string", "component": "multiselect" }];
+var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true } };
 var items = null;
 var adopt = null;
-var extraNames = [];
-var isColumns = true;
-var composite = false;
-function decorate(block, options = {}) {
+var extraNames = ["grid", "gridTemplate", "width"];
+var isColumns = false;
+var composite2 = true;
+async function decorate(block, options = {}) {
   const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items });
-  if (composite) {
+  if (composite2) {
     String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block.classList.add(o));
     delete authored.options;
     delete authored["section-block"];
@@ -486,6 +543,9 @@ function decorate(block, options = {}) {
   if (container_eds_default.afterRender)
     container_eds_default.afterRender(block, props);
   mergeRoot(block);
+  const moved = adoptSectionBlocks(block, container_eds_default.slot);
+  if (options.loadBlocks)
+    await options.loadBlocks(moved);
   block.classList.remove("block");
   unwrapBlock(block);
 }

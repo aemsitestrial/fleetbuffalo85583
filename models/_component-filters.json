@@ -4,6 +4,7 @@
     "components": [
       "section",
       "ac-tab",
+      "ac-container",
       "ac-teasers-with-filter",
       "ac-splide-grid-carousel",
       "ac-content-with-splide-grid-carousel",
