@@ -1519,6 +1519,66 @@
         "label": "Title"
       },
       {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
+      },
+      {
         "component": "select",
         "valueType": "string",
         "name": "titleTag",
@@ -1554,30 +1614,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -1663,12 +1699,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -1725,66 +1755,6 @@
             "value": "12"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconPhoneOnLinks",
-        "label": "Phone icon on phone links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconEmailOnLinks",
-        "label": "Email icon on email links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Phone and email links: icons first"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierLinkedVideo",
-        "label": "Linked video"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -2179,6 +2149,36 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconPhoneOnLinks",
+        "label": "Phone icon on phone links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconEmailOnLinks",
+        "label": "Email icon on email links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconsOrderPhoneEmailOnLinks",
+        "label": "Phone and email links: icons first"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierLinkedVideo",
+        "label": "Linked video"
       }
     ]
   },
@@ -2196,6 +2196,66 @@
         "valueType": "string",
         "name": "title",
         "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -2233,30 +2293,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -2342,12 +2378,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -2404,6 +2434,447 @@
             "value": "12"
           }
         ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageCroppingType",
+        "label": "Image cropping type",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Fit contain",
+            "value": "fit-contain"
+          },
+          {
+            "name": "Aspect ratio",
+            "value": "aspect-ratio"
+          },
+          {
+            "name": "Intrinsic",
+            "value": "intrinsic"
+          },
+          {
+            "name": "Flex content",
+            "value": "flex-content"
+          },
+          {
+            "name": "Minimal crop",
+            "value": "minimal-crop"
+          },
+          {
+            "name": "Contain capped",
+            "value": "contain-capped"
+          },
+          {
+            "name": "No crop",
+            "value": "no-crop"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_mt",
+        "label": "Margin top",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "mt-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "mt-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "mt-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "mt-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "mt-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "mt-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "mt-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "mt-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "mt-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "mt-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "mt-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "mt-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "mt-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_mb",
+        "label": "Margin bottom",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "mb-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "mb-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "mb-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "mb-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "mb-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "mb-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "mb-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "mb-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "mb-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "mb-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "mb-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "mb-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "mb-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_pt",
+        "label": "Padding top",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "pt-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "pt-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "pt-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "pt-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "pt-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "pt-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "pt-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "pt-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "pt-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "pt-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "pt-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "pt-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "pt-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_pb",
+        "label": "Padding bottom",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "pb-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "pb-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "pb-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "pb-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "pb-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "pb-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "pb-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "pb-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "pb-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "pb-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "pb-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "pb-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "pb-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_px",
+        "label": "Padding left / right",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "px-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "px-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "px-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "px-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "px-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "px-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "px-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "px-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "px-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "px-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "px-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "px-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "px-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_mx",
+        "label": "Margin left / right",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "mx-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "mx-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "mx-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "mx-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "mx-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "mx-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "mx-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "mx-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "mx-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "mx-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "mx-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "mx-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "mx-24"
+          },
+          {
+            "name": "Auto",
+            "value": "mx-auto"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
       },
       {
         "component": "boolean",
@@ -2452,47 +2923,47 @@
         "valueType": "boolean",
         "name": "useButtons",
         "label": "Use buttons"
+      }
+    ]
+  },
+  {
+    "id": "ac-card-feature",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
       },
       {
-        "component": "select",
+        "component": "text",
         "valueType": "string",
-        "name": "imageCroppingType",
-        "label": "Image cropping type",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Fit contain",
-            "value": "fit-contain"
-          },
-          {
-            "name": "Aspect ratio",
-            "value": "aspect-ratio"
-          },
-          {
-            "name": "Intrinsic",
-            "value": "intrinsic"
-          },
-          {
-            "name": "Flex content",
-            "value": "flex-content"
-          },
-          {
-            "name": "Minimal crop",
-            "value": "minimal-crop"
-          },
-          {
-            "name": "Contain capped",
-            "value": "contain-capped"
-          },
-          {
-            "name": "No crop",
-            "value": "no-crop"
-          }
-        ]
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "text",
@@ -2533,417 +3004,6 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "classes_mt",
-        "label": "Margin top",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mt-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mt-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mt-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mt-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mt-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mt-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mt-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mt-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mt-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mt-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mt-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mt-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mt-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_mb",
-        "label": "Margin bottom",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mb-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mb-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mb-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mb-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mb-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mb-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mb-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mb-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mb-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mb-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mb-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mb-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mb-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_pt",
-        "label": "Padding top",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "pt-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "pt-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "pt-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "pt-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "pt-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "pt-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "pt-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "pt-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "pt-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "pt-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "pt-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "pt-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "pt-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_pb",
-        "label": "Padding bottom",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "pb-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "pb-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "pb-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "pb-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "pb-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "pb-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "pb-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "pb-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "pb-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "pb-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "pb-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "pb-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "pb-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_px",
-        "label": "Padding left / right",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "px-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "px-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "px-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "px-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "px-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "px-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "px-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "px-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "px-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "px-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "px-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "px-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "px-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_mx",
-        "label": "Margin left / right",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mx-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mx-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mx-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mx-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mx-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mx-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mx-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mx-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mx-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mx-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mx-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mx-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mx-24"
-          },
-          {
-            "name": "Auto",
-            "value": "mx-auto"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "ac-card-feature",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
         "name": "titleTag",
         "label": "Title heading level",
         "value": "",
@@ -2977,30 +3037,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -3086,12 +3122,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -3148,24 +3178,6 @@
             "value": "12"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconPhoneOnLinks",
-        "label": "Phone icon on phone links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconEmailOnLinks",
-        "label": "Email icon on email links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Phone and email links: icons first"
       },
       {
         "component": "select",
@@ -3189,42 +3201,6 @@
         ]
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "classes_mt",
@@ -3617,6 +3593,30 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconPhoneOnLinks",
+        "label": "Phone icon on phone links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconEmailOnLinks",
+        "label": "Email icon on email links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconsOrderPhoneEmailOnLinks",
+        "label": "Phone and email links: icons first"
       }
     ]
   },
@@ -3634,6 +3634,66 @@
         "valueType": "string",
         "name": "title",
         "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -3671,30 +3731,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -3772,12 +3808,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -3834,24 +3864,6 @@
             "value": "12"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconPhoneOnLinks",
-        "label": "Phone icon on phone links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconEmailOnLinks",
-        "label": "Email icon on email links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Phone and email links: icons first"
       },
       {
         "component": "select",
@@ -3900,42 +3912,6 @@
         ]
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "classes_mt",
@@ -4328,6 +4304,30 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconPhoneOnLinks",
+        "label": "Phone icon on phone links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconEmailOnLinks",
+        "label": "Email icon on email links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconsOrderPhoneEmailOnLinks",
+        "label": "Phone and email links: icons first"
       }
     ]
   },
@@ -4345,6 +4345,66 @@
         "valueType": "string",
         "name": "title",
         "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -4382,30 +4442,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -4483,12 +4519,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -4547,24 +4577,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconPhoneOnLinks",
-        "label": "Phone icon on phone links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconEmailOnLinks",
-        "label": "Email icon on email links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Phone and email links: icons first"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "modifierVariant",
@@ -4588,42 +4600,6 @@
             "value": "ghost"
           }
         ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -5018,12 +4994,42 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconPhoneOnLinks",
+        "label": "Phone icon on phone links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconEmailOnLinks",
+        "label": "Email icon on email links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconsOrderPhoneEmailOnLinks",
+        "label": "Phone and email links: icons first"
       }
     ]
   },
   {
     "id": "ac-carousel",
     "fields": [
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "delay",
+        "label": "Delay"
+      },
       {
         "component": "select",
         "valueType": "string",
@@ -5079,36 +5085,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "autoplay",
-        "label": "Autoplay"
-      },
-      {
-        "component": "number",
-        "valueType": "number",
-        "name": "delay",
-        "label": "Delay"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "autopauseDisabled",
-        "label": "Autopause disabled"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "controlsPrepended",
-        "label": "Controls prepended"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useExpand",
-        "label": "Use expand"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "classes_mt",
@@ -5501,6 +5477,30 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "autoplay",
+        "label": "Autoplay"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "autopauseDisabled",
+        "label": "Autopause disabled"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "controlsPrepended",
+        "label": "Controls prepended"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useExpand",
+        "label": "Use expand"
       }
     ]
   },
@@ -6055,6 +6055,66 @@
         "label": "Title"
       },
       {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
+      },
+      {
         "component": "select",
         "valueType": "string",
         "name": "titleTag",
@@ -6090,30 +6150,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -6199,12 +6235,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -6263,6 +6293,406 @@
         ]
       },
       {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_mt",
+        "label": "Margin top",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "mt-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "mt-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "mt-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "mt-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "mt-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "mt-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "mt-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "mt-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "mt-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "mt-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "mt-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "mt-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "mt-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_mb",
+        "label": "Margin bottom",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "mb-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "mb-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "mb-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "mb-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "mb-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "mb-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "mb-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "mb-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "mb-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "mb-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "mb-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "mb-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "mb-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_pt",
+        "label": "Padding top",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "pt-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "pt-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "pt-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "pt-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "pt-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "pt-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "pt-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "pt-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "pt-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "pt-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "pt-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "pt-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "pt-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_pb",
+        "label": "Padding bottom",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "pb-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "pb-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "pb-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "pb-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "pb-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "pb-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "pb-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "pb-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "pb-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "pb-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "pb-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "pb-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "pb-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_px",
+        "label": "Padding left / right",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "px-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "px-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "px-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "px-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "px-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "px-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "px-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "px-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "px-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "px-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "px-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "px-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "px-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_mx",
+        "label": "Margin left / right",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "mx-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "mx-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "mx-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "mx-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "mx-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "mx-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "mx-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "mx-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "mx-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "mx-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "mx-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "mx-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "mx-24"
+          },
+          {
+            "name": "Auto",
+            "value": "mx-auto"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
         "component": "boolean",
         "valueType": "boolean",
         "name": "useIconPhoneOnLinks",
@@ -6279,987 +6709,6 @@
         "valueType": "boolean",
         "name": "useIconsOrderPhoneEmailOnLinks",
         "label": "Phone and email links: icons first"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_mt",
-        "label": "Margin top",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mt-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mt-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mt-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mt-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mt-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mt-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mt-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mt-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mt-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mt-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mt-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mt-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mt-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_mb",
-        "label": "Margin bottom",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mb-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mb-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mb-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mb-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mb-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mb-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mb-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mb-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mb-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mb-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mb-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mb-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mb-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_pt",
-        "label": "Padding top",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "pt-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "pt-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "pt-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "pt-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "pt-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "pt-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "pt-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "pt-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "pt-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "pt-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "pt-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "pt-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "pt-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_pb",
-        "label": "Padding bottom",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "pb-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "pb-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "pb-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "pb-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "pb-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "pb-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "pb-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "pb-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "pb-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "pb-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "pb-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "pb-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "pb-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_px",
-        "label": "Padding left / right",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "px-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "px-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "px-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "px-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "px-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "px-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "px-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "px-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "px-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "px-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "px-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "px-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "px-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_mx",
-        "label": "Margin left / right",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mx-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mx-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mx-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mx-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mx-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mx-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mx-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mx-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mx-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mx-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mx-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mx-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mx-24"
-          },
-          {
-            "name": "Auto",
-            "value": "mx-auto"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "ac-content-with-splide-carousel-expand",
-    "fields": [
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "section-block",
-        "label": "Section type",
-        "value": "ac-content-with-splide-carousel-expand",
-        "options": [
-          {
-            "name": "AC Content with splide carousel (expand)",
-            "value": "ac-content-with-splide-carousel-expand"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "text",
-        "label": "Text"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image alt text"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "themeColor",
-        "label": "Theme",
-        "value": "primary",
-        "options": [
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "Tertiary",
-            "value": "tertiary"
-          },
-          {
-            "name": "Quaternary",
-            "value": "quaternary"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "carouselVariant",
-        "label": "Carousel variant",
-        "value": "ac-core-splide-grid-carousel",
-        "options": [
-          {
-            "name": "Primary",
-            "value": "ac-core-splide-grid-carousel"
-          },
-          {
-            "name": "Secondary",
-            "value": "ac-core-splide-grid-carousel-secondary"
-          }
-        ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierHorizontal",
-        "label": "Horizontal (text next to the carousel)"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierHorizontalImage",
-        "label": "Horizontal image"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "content-width",
-        "label": "Content width",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "12 of 12 columns (container width)",
-            "value": "12"
-          },
-          {
-            "name": "11 of 12 columns",
-            "value": "11"
-          },
-          {
-            "name": "10 of 12 columns",
-            "value": "10"
-          },
-          {
-            "name": "9 of 12 columns",
-            "value": "9"
-          },
-          {
-            "name": "8 of 12 columns",
-            "value": "8"
-          },
-          {
-            "name": "7 of 12 columns",
-            "value": "7"
-          },
-          {
-            "name": "6 of 12 columns",
-            "value": "6"
-          },
-          {
-            "name": "5 of 12 columns",
-            "value": "5"
-          },
-          {
-            "name": "4 of 12 columns",
-            "value": "4"
-          },
-          {
-            "name": "3 of 12 columns",
-            "value": "3"
-          },
-          {
-            "name": "2 of 12 columns",
-            "value": "2"
-          },
-          {
-            "name": "1 of 12 columns",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_mt",
-        "label": "Margin top",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mt-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mt-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mt-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mt-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mt-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mt-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mt-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mt-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mt-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mt-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mt-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mt-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mt-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_mb",
-        "label": "Margin bottom",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mb-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mb-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mb-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mb-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mb-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mb-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mb-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mb-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mb-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mb-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mb-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mb-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mb-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_pt",
-        "label": "Padding top",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "pt-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "pt-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "pt-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "pt-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "pt-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "pt-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "pt-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "pt-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "pt-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "pt-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "pt-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "pt-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "pt-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_pb",
-        "label": "Padding bottom",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "pb-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "pb-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "pb-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "pb-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "pb-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "pb-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "pb-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "pb-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "pb-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "pb-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "pb-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "pb-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "pb-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_px",
-        "label": "Padding left / right",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "px-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "px-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "px-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "px-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "px-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "px-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "px-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "px-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "px-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "px-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "px-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "px-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "px-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_mx",
-        "label": "Margin left / right",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mx-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mx-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mx-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mx-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mx-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mx-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mx-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mx-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mx-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mx-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mx-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mx-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mx-24"
-          },
-          {
-            "name": "Auto",
-            "value": "mx-auto"
-          }
-        ]
       }
     ]
   },
@@ -7351,18 +6800,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierHorizontal",
-        "label": "Horizontal (text next to the carousel)"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierHorizontalImage",
-        "label": "Horizontal image"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "content-width",
@@ -7816,6 +7253,18 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierHorizontal",
+        "label": "Horizontal (text next to the carousel)"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierHorizontalImage",
+        "label": "Horizontal image"
       }
     ]
   },
@@ -7926,18 +7375,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Bg transparent"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "isCompact",
-        "label": "Is compact"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "classes_mt",
@@ -8330,6 +7767,18 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Bg transparent"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "isCompact",
+        "label": "Is compact"
       }
     ]
   },
@@ -8347,6 +7796,66 @@
         "valueType": "string",
         "name": "title",
         "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -8384,30 +7893,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -8485,12 +7970,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -8547,60 +8026,6 @@
             "value": "12"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconPhoneOnLinks",
-        "label": "Phone icon on phone links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconEmailOnLinks",
-        "label": "Email icon on email links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Phone and email links: icons first"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -8995,6 +8420,30 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconPhoneOnLinks",
+        "label": "Phone icon on phone links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconEmailOnLinks",
+        "label": "Email icon on email links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconsOrderPhoneEmailOnLinks",
+        "label": "Phone and email links: icons first"
       }
     ]
   },
@@ -9452,6 +8901,66 @@
         "label": "Title"
       },
       {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
+      },
+      {
         "component": "select",
         "valueType": "string",
         "name": "titleTag",
@@ -9487,30 +8996,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -9588,12 +9073,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -9650,66 +9129,6 @@
             "value": "12"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconPhoneOnLinks",
-        "label": "Phone icon on phone links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconEmailOnLinks",
-        "label": "Email icon on email links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Phone and email links: icons first"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierReverseContent",
-        "label": "Reverse content"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -10104,6 +9523,36 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconPhoneOnLinks",
+        "label": "Phone icon on phone links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconEmailOnLinks",
+        "label": "Email icon on email links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconsOrderPhoneEmailOnLinks",
+        "label": "Phone and email links: icons first"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierReverseContent",
+        "label": "Reverse content"
       }
     ]
   },
@@ -10123,6 +9572,66 @@
         "label": "Title"
       },
       {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
+      },
+      {
         "component": "select",
         "valueType": "string",
         "name": "titleTag",
@@ -10158,30 +9667,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -10259,12 +9744,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -10321,66 +9800,6 @@
             "value": "12"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconPhoneOnLinks",
-        "label": "Phone icon on phone links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconEmailOnLinks",
-        "label": "Email icon on email links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Phone and email links: icons first"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierReverseContent",
-        "label": "Reverse content"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -10775,6 +10194,36 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconPhoneOnLinks",
+        "label": "Phone icon on phone links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconEmailOnLinks",
+        "label": "Email icon on email links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconsOrderPhoneEmailOnLinks",
+        "label": "Phone and email links: icons first"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierReverseContent",
+        "label": "Reverse content"
       }
     ]
   },
@@ -10792,6 +10241,66 @@
         "valueType": "string",
         "name": "title",
         "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -10829,30 +10338,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -10920,42 +10405,6 @@
             "value": "centered"
           }
         ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -11357,6 +10806,19 @@
     "id": "ac-list",
     "fields": [
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "dateFormatString",
+        "label": "Date format string",
+        "required": true
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "grid",
+        "label": "Grid"
+      },
+      {
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
@@ -11444,6 +10906,400 @@
         ]
       },
       {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_mt",
+        "label": "Margin top",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "mt-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "mt-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "mt-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "mt-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "mt-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "mt-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "mt-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "mt-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "mt-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "mt-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "mt-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "mt-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "mt-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_mb",
+        "label": "Margin bottom",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "mb-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "mb-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "mb-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "mb-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "mb-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "mb-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "mb-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "mb-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "mb-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "mb-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "mb-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "mb-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "mb-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_pt",
+        "label": "Padding top",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "pt-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "pt-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "pt-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "pt-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "pt-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "pt-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "pt-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "pt-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "pt-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "pt-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "pt-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "pt-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "pt-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_pb",
+        "label": "Padding bottom",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "pb-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "pb-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "pb-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "pb-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "pb-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "pb-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "pb-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "pb-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "pb-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "pb-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "pb-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "pb-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "pb-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_px",
+        "label": "Padding left / right",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "px-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "px-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "px-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "px-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "px-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "px-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "px-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "px-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "px-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "px-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "px-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "px-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "px-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_mx",
+        "label": "Margin left / right",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "mx-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "mx-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "mx-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "mx-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "mx-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "mx-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "mx-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "mx-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "mx-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "mx-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "mx-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "mx-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "mx-24"
+          },
+          {
+            "name": "Auto",
+            "value": "mx-auto"
+          }
+        ]
+      },
+      {
         "component": "boolean",
         "valueType": "boolean",
         "name": "showDescription",
@@ -11466,19 +11322,261 @@
         "valueType": "boolean",
         "name": "displayItemAsTeaser",
         "label": "Display item as teaser"
+      }
+    ]
+  },
+  {
+    "id": "ac-product-banner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "dateFormatString",
-        "label": "Date format string",
-        "required": true
+        "name": "title",
+        "label": "Title"
       },
       {
-        "component": "number",
-        "valueType": "number",
-        "name": "grid",
-        "label": "Grid"
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "titleTag",
+        "label": "Title heading level",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "themeColor",
+        "label": "Theme",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierContentAlignment",
+        "label": "Content alignment",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "modifierPretitle",
+        "label": "Pretitle colour",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "quaternary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "headlineLineClamp",
+        "label": "Title: max lines",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "1 line",
+            "value": "1"
+          },
+          {
+            "name": "2 lines",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "descriptionLineClamp",
+        "label": "Description: max lines",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "2 lines",
+            "value": "2"
+          },
+          {
+            "name": "4 lines",
+            "value": "4"
+          },
+          {
+            "name": "6 lines",
+            "value": "6"
+          },
+          {
+            "name": "8 lines",
+            "value": "8"
+          },
+          {
+            "name": "10 lines",
+            "value": "10"
+          },
+          {
+            "name": "12 lines",
+            "value": "12"
+          }
+        ]
       },
       {
         "component": "select",
@@ -11873,231 +11971,12 @@
             "value": "mx-auto"
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "ac-product-banner",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "titleTag",
-        "label": "Title heading level",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "H1",
-            "value": "h1"
-          },
-          {
-            "name": "H2",
-            "value": "h2"
-          },
-          {
-            "name": "H3",
-            "value": "h3"
-          },
-          {
-            "name": "H4",
-            "value": "h4"
-          },
-          {
-            "name": "H5",
-            "value": "h5"
-          },
-          {
-            "name": "H6",
-            "value": "h6"
-          }
-        ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "themeColor",
-        "label": "Theme",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "Tertiary",
-            "value": "tertiary"
-          },
-          {
-            "name": "Quaternary",
-            "value": "quaternary"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "modifierContentAlignment",
-        "label": "Content alignment",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Left",
-            "value": "left"
-          },
-          {
-            "name": "Center",
-            "value": "center"
-          },
-          {
-            "name": "Right",
-            "value": "right"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "modifierPretitle",
-        "label": "Pretitle colour",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "Tertiary",
-            "value": "tertiary"
-          },
-          {
-            "name": "Quaternary",
-            "value": "quaternary"
-          }
-        ]
       },
       {
         "component": "boolean",
         "valueType": "boolean",
         "name": "modifierBgTransparent",
         "label": "Transparent background"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "headlineLineClamp",
-        "label": "Title: max lines",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "1 line",
-            "value": "1"
-          },
-          {
-            "name": "2 lines",
-            "value": "2"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "descriptionLineClamp",
-        "label": "Description: max lines",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "2 lines",
-            "value": "2"
-          },
-          {
-            "name": "4 lines",
-            "value": "4"
-          },
-          {
-            "name": "6 lines",
-            "value": "6"
-          },
-          {
-            "name": "8 lines",
-            "value": "8"
-          },
-          {
-            "name": "10 lines",
-            "value": "10"
-          },
-          {
-            "name": "12 lines",
-            "value": "12"
-          }
-        ]
       },
       {
         "component": "boolean",
@@ -12122,6 +12001,47 @@
         "valueType": "boolean",
         "name": "modifierReverseContent",
         "label": "Reverse content"
+      }
+    ]
+  },
+  {
+    "id": "ac-promo-banner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "text",
@@ -12162,417 +12082,6 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "classes_mt",
-        "label": "Margin top",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mt-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mt-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mt-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mt-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mt-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mt-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mt-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mt-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mt-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mt-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mt-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mt-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mt-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_mb",
-        "label": "Margin bottom",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mb-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mb-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mb-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mb-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mb-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mb-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mb-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mb-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mb-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mb-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mb-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mb-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mb-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_pt",
-        "label": "Padding top",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "pt-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "pt-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "pt-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "pt-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "pt-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "pt-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "pt-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "pt-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "pt-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "pt-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "pt-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "pt-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "pt-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_pb",
-        "label": "Padding bottom",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "pb-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "pb-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "pb-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "pb-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "pb-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "pb-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "pb-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "pb-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "pb-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "pb-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "pb-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "pb-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "pb-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_px",
-        "label": "Padding left / right",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "px-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "px-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "px-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "px-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "px-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "px-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "px-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "px-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "px-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "px-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "px-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "px-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "px-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_mx",
-        "label": "Margin left / right",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mx-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mx-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mx-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mx-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mx-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mx-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mx-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mx-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mx-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mx-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mx-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mx-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mx-24"
-          },
-          {
-            "name": "Auto",
-            "value": "mx-auto"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "ac-promo-banner",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
         "name": "titleTag",
         "label": "Title heading level",
         "value": "",
@@ -12606,30 +12115,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -12707,12 +12192,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -12771,24 +12250,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconPhoneOnLinks",
-        "label": "Phone icon on phone links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconEmailOnLinks",
-        "label": "Email icon on email links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Phone and email links: icons first"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "modifierStyle",
@@ -12808,42 +12269,6 @@
             "value": "boxed"
           }
         ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -13238,6 +12663,30 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconPhoneOnLinks",
+        "label": "Phone icon on phone links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconEmailOnLinks",
+        "label": "Email icon on email links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconsOrderPhoneEmailOnLinks",
+        "label": "Phone and email links: icons first"
       }
     ]
   },
@@ -13281,12 +12730,6 @@
             "value": "quaternary"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
       },
       {
         "component": "select",
@@ -13742,6 +13185,12 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
       }
     ]
   },
@@ -13759,6 +13208,66 @@
         "valueType": "string",
         "name": "title",
         "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -13798,30 +13307,6 @@
         ]
       },
       {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
@@ -13841,42 +13326,6 @@
             "value": "secondary"
           }
         ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -14763,6 +14212,66 @@
         "label": "Title"
       },
       {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
+      },
+      {
         "component": "select",
         "valueType": "string",
         "name": "titleTag",
@@ -14798,30 +14307,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -14907,12 +14392,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -14969,60 +14448,6 @@
             "value": "12"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconPhoneOnLinks",
-        "label": "Phone icon on phone links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconEmailOnLinks",
-        "label": "Email icon on email links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Phone and email links: icons first"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -15417,6 +14842,30 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconPhoneOnLinks",
+        "label": "Phone icon on phone links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconEmailOnLinks",
+        "label": "Email icon on email links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconsOrderPhoneEmailOnLinks",
+        "label": "Phone and email links: icons first"
       }
     ]
   },
@@ -15434,6 +14883,66 @@
         "valueType": "string",
         "name": "title",
         "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -15471,30 +14980,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -15580,12 +15065,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -15642,24 +15121,6 @@
             "value": "12"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconPhoneOnLinks",
-        "label": "Phone icon on phone links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconEmailOnLinks",
-        "label": "Email icon on email links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Phone and email links: icons first"
       },
       {
         "component": "select",
@@ -15691,42 +15152,6 @@
         ]
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "classes_mt",
@@ -16119,6 +15544,30 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconPhoneOnLinks",
+        "label": "Phone icon on phone links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconEmailOnLinks",
+        "label": "Email icon on email links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconsOrderPhoneEmailOnLinks",
+        "label": "Phone and email links: icons first"
       }
     ]
   },
@@ -16616,13 +16065,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "isDecorative",
-        "label": "Decorative (hidden from screen readers)",
-        "value": true
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "classes_mt",
@@ -17015,6 +16457,13 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "isDecorative",
+        "label": "Decorative (hidden from screen readers)",
+        "value": true
       }
     ]
   },
@@ -17092,13 +16541,6 @@
             "value": "list"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useGridToggler",
-        "label": "Show \"View as grid / carousel\" buttons",
-        "value": true
       },
       {
         "component": "select",
@@ -17554,6 +16996,13 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useGridToggler",
+        "label": "Show \"View as grid / carousel\" buttons",
+        "value": true
       }
     ]
   },
@@ -17571,6 +17020,66 @@
         "valueType": "string",
         "name": "title",
         "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -17608,30 +17117,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -17709,12 +17194,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -17771,6 +17250,406 @@
             "value": "12"
           }
         ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_mt",
+        "label": "Margin top",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "mt-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "mt-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "mt-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "mt-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "mt-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "mt-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "mt-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "mt-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "mt-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "mt-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "mt-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "mt-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "mt-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_mb",
+        "label": "Margin bottom",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "mb-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "mb-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "mb-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "mb-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "mb-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "mb-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "mb-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "mb-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "mb-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "mb-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "mb-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "mb-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "mb-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_pt",
+        "label": "Padding top",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "pt-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "pt-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "pt-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "pt-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "pt-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "pt-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "pt-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "pt-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "pt-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "pt-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "pt-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "pt-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "pt-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_pb",
+        "label": "Padding bottom",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "pb-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "pb-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "pb-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "pb-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "pb-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "pb-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "pb-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "pb-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "pb-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "pb-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "pb-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "pb-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "pb-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_px",
+        "label": "Padding left / right",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "px-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "px-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "px-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "px-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "px-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "px-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "px-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "px-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "px-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "px-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "px-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "px-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "px-24"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_mx",
+        "label": "Margin left / right",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "0 (0px)",
+            "value": "mx-0"
+          },
+          {
+            "name": "1 (4px)",
+            "value": "mx-1"
+          },
+          {
+            "name": "2 (8px)",
+            "value": "mx-2"
+          },
+          {
+            "name": "3 (12px)",
+            "value": "mx-3"
+          },
+          {
+            "name": "4 (16px)",
+            "value": "mx-4"
+          },
+          {
+            "name": "5 (20px)",
+            "value": "mx-5"
+          },
+          {
+            "name": "6 (24px)",
+            "value": "mx-6"
+          },
+          {
+            "name": "8 (32px)",
+            "value": "mx-8"
+          },
+          {
+            "name": "10 (40px)",
+            "value": "mx-10"
+          },
+          {
+            "name": "12 (48px)",
+            "value": "mx-12"
+          },
+          {
+            "name": "16 (64px)",
+            "value": "mx-16"
+          },
+          {
+            "name": "20 (80px)",
+            "value": "mx-20"
+          },
+          {
+            "name": "24 (96px)",
+            "value": "mx-24"
+          },
+          {
+            "name": "Auto",
+            "value": "mx-auto"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
       },
       {
         "component": "boolean",
@@ -17801,6 +17680,47 @@
         "valueType": "boolean",
         "name": "modifierNoIcons",
         "label": "No icons"
+      }
+    ]
+  },
+  {
+    "id": "ac-sticky-banner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pretitle",
+        "label": "Pretitle"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "text",
@@ -17841,417 +17761,6 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "classes_mt",
-        "label": "Margin top",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mt-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mt-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mt-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mt-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mt-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mt-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mt-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mt-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mt-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mt-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mt-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mt-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mt-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_mb",
-        "label": "Margin bottom",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mb-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mb-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mb-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mb-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mb-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mb-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mb-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mb-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mb-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mb-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mb-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mb-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mb-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_pt",
-        "label": "Padding top",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "pt-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "pt-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "pt-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "pt-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "pt-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "pt-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "pt-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "pt-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "pt-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "pt-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "pt-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "pt-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "pt-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_pb",
-        "label": "Padding bottom",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "pb-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "pb-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "pb-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "pb-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "pb-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "pb-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "pb-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "pb-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "pb-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "pb-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "pb-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "pb-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "pb-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_px",
-        "label": "Padding left / right",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "px-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "px-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "px-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "px-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "px-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "px-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "px-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "px-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "px-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "px-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "px-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "px-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "px-24"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes_mx",
-        "label": "Margin left / right",
-        "value": "",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "0 (0px)",
-            "value": "mx-0"
-          },
-          {
-            "name": "1 (4px)",
-            "value": "mx-1"
-          },
-          {
-            "name": "2 (8px)",
-            "value": "mx-2"
-          },
-          {
-            "name": "3 (12px)",
-            "value": "mx-3"
-          },
-          {
-            "name": "4 (16px)",
-            "value": "mx-4"
-          },
-          {
-            "name": "5 (20px)",
-            "value": "mx-5"
-          },
-          {
-            "name": "6 (24px)",
-            "value": "mx-6"
-          },
-          {
-            "name": "8 (32px)",
-            "value": "mx-8"
-          },
-          {
-            "name": "10 (40px)",
-            "value": "mx-10"
-          },
-          {
-            "name": "12 (48px)",
-            "value": "mx-12"
-          },
-          {
-            "name": "16 (64px)",
-            "value": "mx-16"
-          },
-          {
-            "name": "20 (80px)",
-            "value": "mx-20"
-          },
-          {
-            "name": "24 (96px)",
-            "value": "mx-24"
-          },
-          {
-            "name": "Auto",
-            "value": "mx-auto"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "ac-sticky-banner",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pretitle",
-        "label": "Pretitle"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
         "name": "titleTag",
         "label": "Title heading level",
         "value": "",
@@ -18285,30 +17794,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -18390,12 +17875,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -18454,24 +17933,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconPhoneOnLinks",
-        "label": "Phone icon on phone links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconEmailOnLinks",
-        "label": "Email icon on email links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Phone and email links: icons first"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "modifierContentType",
@@ -18495,42 +17956,6 @@
             "value": "download"
           }
         ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -18925,6 +18350,30 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconPhoneOnLinks",
+        "label": "Phone icon on phone links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconEmailOnLinks",
+        "label": "Email icon on email links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconsOrderPhoneEmailOnLinks",
+        "label": "Phone and email links: icons first"
       }
     ]
   },
@@ -19807,6 +19256,66 @@
         "label": "Title"
       },
       {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagePath",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Teaser link (whole teaser, when no action is set)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText",
+        "label": "Action 1 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText2",
+        "label": "Action 2 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl2",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "actionText3",
+        "label": "Action 3 text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "actionUrl3",
+        "label": "Action 3 link"
+      },
+      {
         "component": "select",
         "valueType": "string",
         "name": "titleTag",
@@ -19842,30 +19351,6 @@
             "value": "h6"
           }
         ]
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagePath",
-        "label": "Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "date",
-        "label": "Date"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Teaser link (whole teaser, when no action is set)"
       },
       {
         "component": "select",
@@ -19939,12 +19424,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modifierBgTransparent",
-        "label": "Transparent background"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "headlineLineClamp",
@@ -20001,60 +19480,6 @@
             "value": "12"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconPhoneOnLinks",
-        "label": "Phone icon on phone links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconEmailOnLinks",
-        "label": "Email icon on email links"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "useIconsOrderPhoneEmailOnLinks",
-        "label": "Phone and email links: icons first"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText",
-        "label": "Action 1 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl",
-        "label": "Action 1 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText2",
-        "label": "Action 2 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl2",
-        "label": "Action 2 link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "actionText3",
-        "label": "Action 3 text"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "actionUrl3",
-        "label": "Action 3 link"
       },
       {
         "component": "select",
@@ -20449,6 +19874,30 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modifierBgTransparent",
+        "label": "Transparent background"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconPhoneOnLinks",
+        "label": "Phone icon on phone links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconEmailOnLinks",
+        "label": "Email icon on email links"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useIconsOrderPhoneEmailOnLinks",
+        "label": "Phone and email links: icons first"
       }
     ]
   },
@@ -21015,12 +20464,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "modificationLargeSize",
-        "label": "Modification large size"
-      },
-      {
         "component": "select",
         "valueType": "string",
         "name": "modifierContentAlignment",
@@ -21438,6 +20881,12 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "modificationLargeSize",
+        "label": "Modification large size"
       }
     ]
   },
@@ -21450,6 +20899,12 @@
         "name": "text",
         "label": "Text",
         "required": true
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "linkUrl",
+        "label": "Link"
       },
       {
         "component": "select",
@@ -21512,18 +20967,6 @@
             "value": "quaternary"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "linkDisabled",
-        "label": "Link disabled"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "linkUrl",
-        "label": "Link"
       },
       {
         "component": "select",
@@ -21918,6 +21361,12 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "linkDisabled",
+        "label": "Link disabled"
       }
     ]
   },

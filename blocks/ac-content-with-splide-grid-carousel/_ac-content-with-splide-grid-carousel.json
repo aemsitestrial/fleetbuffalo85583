@@ -107,18 +107,6 @@
           ]
         },
         {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "modifierHorizontal",
-          "label": "Horizontal (text next to the carousel)"
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "modifierHorizontalImage",
-          "label": "Horizontal image"
-        },
-        {
           "component": "select",
           "valueType": "string",
           "name": "content-width",
@@ -572,6 +560,18 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "modifierHorizontal",
+          "label": "Horizontal (text next to the carousel)"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "modifierHorizontalImage",
+          "label": "Horizontal image"
         }
       ]
     }

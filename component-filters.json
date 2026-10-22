@@ -7,7 +7,6 @@
       "ac-teasers-with-filter",
       "ac-splide-grid-carousel",
       "ac-content-with-splide-grid-carousel",
-      "ac-content-with-splide-carousel-expand",
       "ac-quote-section",
       "ac-section-banner-with-cards",
       "ac-segments-buttons"
@@ -120,18 +119,6 @@
       "ac-text",
       "ac-title",
       "ac-separator"
-    ]
-  },
-  {
-    "id": "ac-content-with-splide-carousel-expand",
-    "components": [
-      "ac-teaser",
-      "ac-card-aem",
-      "ac-card-content",
-      "ac-card-feature",
-      "ac-card-icon",
-      "ac-card-product",
-      "ac-download"
     ]
   },
   {

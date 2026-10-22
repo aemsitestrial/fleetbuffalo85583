@@ -61,12 +61,6 @@
           ]
         },
         {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "modifierBgTransparent",
-          "label": "Transparent background"
-        },
-        {
           "component": "select",
           "valueType": "string",
           "name": "content-width",
@@ -520,6 +514,12 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "modifierBgTransparent",
+          "label": "Transparent background"
         }
       ]
     }

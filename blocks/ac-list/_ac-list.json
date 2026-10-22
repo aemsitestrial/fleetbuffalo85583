@@ -22,6 +22,19 @@
       "id": "ac-list",
       "fields": [
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "dateFormatString",
+          "label": "Date format string",
+          "required": true
+        },
+        {
+          "component": "number",
+          "valueType": "number",
+          "name": "grid",
+          "label": "Grid"
+        },
+        {
           "component": "select",
           "valueType": "string",
           "name": "themeColor",
@@ -107,43 +120,6 @@
               "value": "12"
             }
           ]
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "showDescription",
-          "label": "Show description"
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "showModificationDate",
-          "label": "Show modification date"
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "linkItems",
-          "label": "Link items"
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "displayItemAsTeaser",
-          "label": "Display item as teaser"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "dateFormatString",
-          "label": "Date format string",
-          "required": true
-        },
-        {
-          "component": "number",
-          "valueType": "number",
-          "name": "grid",
-          "label": "Grid"
         },
         {
           "component": "select",
@@ -538,6 +514,30 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "showDescription",
+          "label": "Show description"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "showModificationDate",
+          "label": "Show modification date"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "linkItems",
+          "label": "Link items"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "displayItemAsTeaser",
+          "label": "Display item as teaser"
         }
       ]
     }

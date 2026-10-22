@@ -29,6 +29,12 @@
           "required": true
         },
         {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "linkUrl",
+          "label": "Link"
+        },
+        {
           "component": "select",
           "valueType": "string",
           "name": "type",
@@ -89,18 +95,6 @@
               "value": "quaternary"
             }
           ]
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "linkDisabled",
-          "label": "Link disabled"
-        },
-        {
-          "component": "aem-content",
-          "valueType": "string",
-          "name": "linkUrl",
-          "label": "Link"
         },
         {
           "component": "select",
@@ -495,6 +489,12 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "linkDisabled",
+          "label": "Link disabled"
         }
       ]
     }

@@ -63,12 +63,6 @@
           ]
         },
         {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "modificationLargeSize",
-          "label": "Modification large size"
-        },
-        {
           "component": "select",
           "valueType": "string",
           "name": "modifierContentAlignment",
@@ -486,6 +480,12 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "modificationLargeSize",
+          "label": "Modification large size"
         }
       ]
     }

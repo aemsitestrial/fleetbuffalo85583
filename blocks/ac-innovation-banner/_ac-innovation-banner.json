@@ -34,6 +34,66 @@
           "label": "Title"
         },
         {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "imagePath",
+          "label": "Image"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "date",
+          "label": "Date"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "linkUrl",
+          "label": "Teaser link (whole teaser, when no action is set)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText",
+          "label": "Action 1 text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl",
+          "label": "Action 1 link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText2",
+          "label": "Action 2 text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl2",
+          "label": "Action 2 link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "actionText3",
+          "label": "Action 3 text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "actionUrl3",
+          "label": "Action 3 link"
+        },
+        {
           "component": "select",
           "valueType": "string",
           "name": "titleTag",
@@ -69,30 +129,6 @@
               "value": "h6"
             }
           ]
-        },
-        {
-          "component": "richtext",
-          "valueType": "string",
-          "name": "description",
-          "label": "Description"
-        },
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "imagePath",
-          "label": "Image"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "date",
-          "label": "Date"
-        },
-        {
-          "component": "aem-content",
-          "valueType": "string",
-          "name": "linkUrl",
-          "label": "Teaser link (whole teaser, when no action is set)"
         },
         {
           "component": "select",
@@ -170,12 +206,6 @@
           ]
         },
         {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "modifierBgTransparent",
-          "label": "Transparent background"
-        },
-        {
           "component": "select",
           "valueType": "string",
           "name": "headlineLineClamp",
@@ -232,66 +262,6 @@
               "value": "12"
             }
           ]
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "useIconPhoneOnLinks",
-          "label": "Phone icon on phone links"
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "useIconEmailOnLinks",
-          "label": "Email icon on email links"
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "useIconsOrderPhoneEmailOnLinks",
-          "label": "Phone and email links: icons first"
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "modifierReverseContent",
-          "label": "Reverse content"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "actionText",
-          "label": "Action 1 text"
-        },
-        {
-          "component": "aem-content",
-          "valueType": "string",
-          "name": "actionUrl",
-          "label": "Action 1 link"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "actionText2",
-          "label": "Action 2 text"
-        },
-        {
-          "component": "aem-content",
-          "valueType": "string",
-          "name": "actionUrl2",
-          "label": "Action 2 link"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "actionText3",
-          "label": "Action 3 text"
-        },
-        {
-          "component": "aem-content",
-          "valueType": "string",
-          "name": "actionUrl3",
-          "label": "Action 3 link"
         },
         {
           "component": "select",
@@ -686,6 +656,36 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "modifierBgTransparent",
+          "label": "Transparent background"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "useIconPhoneOnLinks",
+          "label": "Phone icon on phone links"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "useIconEmailOnLinks",
+          "label": "Email icon on email links"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "useIconsOrderPhoneEmailOnLinks",
+          "label": "Phone and email links: icons first"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "modifierReverseContent",
+          "label": "Reverse content"
         }
       ]
     }

@@ -125,18 +125,6 @@
           ]
         },
         {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "modifierBgTransparent",
-          "label": "Bg transparent"
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "isCompact",
-          "label": "Is compact"
-        },
-        {
           "component": "select",
           "valueType": "string",
           "name": "classes_mt",
@@ -529,6 +517,18 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "modifierBgTransparent",
+          "label": "Bg transparent"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "isCompact",
+          "label": "Is compact"
         }
       ]
     }

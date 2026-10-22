@@ -95,13 +95,6 @@
           ]
         },
         {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "useGridToggler",
-          "label": "Show \"View as grid / carousel\" buttons",
-          "value": true
-        },
-        {
           "component": "select",
           "valueType": "string",
           "name": "content-width",
@@ -555,6 +548,13 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "useGridToggler",
+          "label": "Show \"View as grid / carousel\" buttons",
+          "value": true
         }
       ]
     }

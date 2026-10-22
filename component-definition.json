@@ -653,23 +653,6 @@
           }
         },
         {
-          "title": "AC Content with splide carousel (expand)",
-          "id": "ac-content-with-splide-carousel-expand",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
-                "template": {
-                  "name": "AC Content with splide carousel (expand)",
-                  "model": "ac-content-with-splide-carousel-expand",
-                  "filter": "ac-content-with-splide-carousel-expand",
-                  "section-block": "ac-content-with-splide-carousel-expand"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "AC Quote section",
           "id": "ac-quote-section",
           "plugins": {

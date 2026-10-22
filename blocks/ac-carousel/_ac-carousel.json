@@ -22,6 +22,12 @@
       "id": "ac-carousel",
       "fields": [
         {
+          "component": "number",
+          "valueType": "number",
+          "name": "delay",
+          "label": "Delay"
+        },
+        {
           "component": "select",
           "valueType": "string",
           "name": "themeColor",
@@ -74,36 +80,6 @@
               "value": "hero-teaser"
             }
           ]
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "autoplay",
-          "label": "Autoplay"
-        },
-        {
-          "component": "number",
-          "valueType": "number",
-          "name": "delay",
-          "label": "Delay"
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "autopauseDisabled",
-          "label": "Autopause disabled"
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "controlsPrepended",
-          "label": "Controls prepended"
-        },
-        {
-          "component": "boolean",
-          "valueType": "boolean",
-          "name": "useExpand",
-          "label": "Use expand"
         },
         {
           "component": "select",
@@ -498,6 +474,30 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "autoplay",
+          "label": "Autoplay"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "autopauseDisabled",
+          "label": "Autopause disabled"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "controlsPrepended",
+          "label": "Controls prepended"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "useExpand",
+          "label": "Use expand"
         }
       ]
     }

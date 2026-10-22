@@ -137,9 +137,6 @@
           "...": "../blocks/ac-content-with-splide-grid-carousel/_*.json#/definitions"
         },
         {
-          "...": "../blocks/ac-content-with-splide-carousel-expand/_*.json#/definitions"
-        },
-        {
           "...": "../blocks/ac-quote-section/_*.json#/definitions"
         },
         {
