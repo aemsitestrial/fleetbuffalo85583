@@ -56,6 +56,9 @@
           "...": "../blocks/ac-title/_*.json#/definitions"
         },
         {
+          "...": "../blocks/ac-container/_*.json#/definitions"
+        },
+        {
           "...": "../blocks/ac-separator/_*.json#/definitions"
         }
       ]
@@ -123,9 +126,6 @@
         },
         {
           "...": "../blocks/ac-tabs/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/ac-container/_*.json#/definitions"
         },
         {
           "...": "../blocks/ac-teasers-with-filter/_*.json#/definitions"

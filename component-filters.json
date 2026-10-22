@@ -4,7 +4,6 @@
     "components": [
       "section",
       "ac-tab",
-      "ac-container",
       "ac-teasers-with-filter",
       "ac-splide-grid-carousel",
       "ac-content-with-splide-grid-carousel",
@@ -43,6 +42,7 @@
       "ac-teaser",
       "ac-text",
       "ac-title",
+      "ac-container",
       "ac-separator",
       "text",
       "image",
@@ -80,6 +80,12 @@
   },
   {
     "id": "ac-container",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
     "components": [
       "text",
       "image",

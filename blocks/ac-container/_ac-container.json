@@ -6,12 +6,15 @@
       "plugins": {
         "xwalk": {
           "page": {
-            "resourceType": "core/franklin/components/section/v1/section",
+            "resourceType": "core/franklin/components/columns/v1/columns",
             "template": {
-              "name": "AC Container",
+              "name": "ac-container",
               "model": "ac-container",
               "filter": "ac-container",
-              "section-block": "ac-container"
+              "columns": "1",
+              "rows": "1",
+              "classes_grid": "grid-col-2",
+              "classes_content-width": "content-width-12"
             }
           }
         }
@@ -25,138 +28,61 @@
         {
           "component": "select",
           "valueType": "string",
-          "name": "section-block",
-          "label": "Section type",
-          "value": "ac-container",
-          "options": [
-            {
-              "name": "AC Container",
-              "value": "ac-container"
-            }
-          ]
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "name",
-          "label": "Section Name",
-          "description": "The label shown for this section in the Content Tree"
-        },
-        {
-          "component": "select",
-          "valueType": "string",
-          "name": "grid",
+          "name": "classes_grid",
           "label": "Columns",
-          "value": "2",
+          "value": "grid-col-2",
           "options": [
             {
               "name": "1 column",
-              "value": "1"
+              "value": "grid-col-1"
             },
             {
               "name": "2 columns",
-              "value": "2"
+              "value": "grid-col-2"
             },
             {
               "name": "3 columns",
-              "value": "3"
+              "value": "grid-col-3"
             },
             {
               "name": "4 columns",
-              "value": "4"
+              "value": "grid-col-4"
             },
             {
               "name": "5 columns",
-              "value": "5"
+              "value": "grid-col-5"
             },
             {
               "name": "2 columns 1:2",
-              "value": "1-2"
+              "value": "grid-col-1-2"
             },
             {
               "name": "2 columns 2:1",
-              "value": "2-1"
+              "value": "grid-col-2-1"
             }
           ]
         },
         {
           "component": "select",
           "valueType": "string",
-          "name": "gridTemplate",
+          "name": "classes_grid-template",
           "label": "Grid",
-          "value": "aem-grid",
+          "value": "",
           "options": [
             {
               "name": "AEM grid (aem-Grid)",
-              "value": "aem-grid"
+              "value": ""
             },
             {
               "name": "No grid",
-              "value": "none"
-            }
-          ]
-        },
-        {
-          "component": "select",
-          "valueType": "string",
-          "name": "width",
-          "label": "Content width",
-          "value": "12",
-          "options": [
-            {
-              "name": "12 of 12 columns (container width)",
-              "value": "12"
-            },
-            {
-              "name": "11 of 12 columns",
-              "value": "11"
-            },
-            {
-              "name": "10 of 12 columns",
-              "value": "10"
-            },
-            {
-              "name": "9 of 12 columns",
-              "value": "9"
-            },
-            {
-              "name": "8 of 12 columns",
-              "value": "8"
-            },
-            {
-              "name": "7 of 12 columns",
-              "value": "7"
-            },
-            {
-              "name": "6 of 12 columns",
-              "value": "6"
-            },
-            {
-              "name": "5 of 12 columns",
-              "value": "5"
-            },
-            {
-              "name": "4 of 12 columns",
-              "value": "4"
-            },
-            {
-              "name": "3 of 12 columns",
-              "value": "3"
-            },
-            {
-              "name": "2 of 12 columns",
-              "value": "2"
-            },
-            {
-              "name": "1 of 12 columns",
-              "value": "1"
+              "value": "no-aem-grid"
             }
           ]
         },
         {
           "component": "multiselect",
           "valueType": "string",
-          "name": "options",
+          "name": "classes",
           "label": "Options",
           "value": "",
           "options": [
@@ -183,6 +109,63 @@
             {
               "name": "Full width",
               "value": "full-width"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_content-width",
+          "label": "Content width",
+          "value": "content-width-12",
+          "options": [
+            {
+              "name": "12 of 12 columns (container width)",
+              "value": "content-width-12"
+            },
+            {
+              "name": "11 of 12 columns",
+              "value": "content-width-11"
+            },
+            {
+              "name": "10 of 12 columns",
+              "value": "content-width-10"
+            },
+            {
+              "name": "9 of 12 columns",
+              "value": "content-width-9"
+            },
+            {
+              "name": "8 of 12 columns",
+              "value": "content-width-8"
+            },
+            {
+              "name": "7 of 12 columns",
+              "value": "content-width-7"
+            },
+            {
+              "name": "6 of 12 columns",
+              "value": "content-width-6"
+            },
+            {
+              "name": "5 of 12 columns",
+              "value": "content-width-5"
+            },
+            {
+              "name": "4 of 12 columns",
+              "value": "content-width-4"
+            },
+            {
+              "name": "3 of 12 columns",
+              "value": "content-width-3"
+            },
+            {
+              "name": "2 of 12 columns",
+              "value": "content-width-2"
+            },
+            {
+              "name": "1 of 12 columns",
+              "value": "content-width-1"
             }
           ]
         },
@@ -586,6 +569,12 @@
   "filters": [
     {
       "id": "ac-container",
+      "components": [
+        "column"
+      ]
+    },
+    {
+      "id": "column",
       "components": [
         "text",
         "image",

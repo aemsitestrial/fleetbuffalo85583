@@ -127,15 +127,15 @@ function h(type, props, ...children) {
   return el;
 }
 var jsx = (type, { children, ...props }) => h(type, props, children);
-function cellValue(cell, field2) {
-  const a = cell.querySelector("a");
-  if (field2.component === "richtext")
-    return cell.innerHTML.trim();
-  if (field2.component === "reference") {
-    const img = cell.querySelector("img");
-    return (img ? img.getAttribute("src") : a?.getAttribute("href")) ?? cell.textContent.trim();
+function cellValue(cell2, field) {
+  const a = cell2.querySelector("a");
+  if (field.component === "richtext")
+    return cell2.innerHTML.trim();
+  if (field.component === "reference") {
+    const img = cell2.querySelector("img");
+    return (img ? img.getAttribute("src") : a?.getAttribute("href")) ?? cell2.textContent.trim();
   }
-  return a ? a.getAttribute("href") : cell.textContent.trim();
+  return a ? a.getAttribute("href") : cell2.textContent.trim();
 }
 function readClasses(block, fromClasses2 = {}) {
   const props = {};
@@ -156,9 +156,9 @@ function readItemValues(block, items2) {
   return [...block.children].map((row) => {
     const cells = [...row.children];
     const values = {};
-    items2.fields.forEach((field2, i) => {
-      const value = cells[i] ? cellValue(cells[i], field2) : "";
-      values[field2.name] = field2.valueType === "boolean" ? value === "true" || value === true : value;
+    items2.fields.forEach((field, i) => {
+      const value = cells[i] ? cellValue(cells[i], field) : "";
+      values[field.name] = field.valueType === "boolean" ? value === "true" || value === true : value;
     });
     return values;
   });
@@ -170,34 +170,6 @@ function adoptSections(block, node, { panel }) {
   const sections = [...document.querySelectorAll(`[data-eds-group="${id}"]`)].filter((el) => el !== block);
   const panels = node.querySelectorAll(panel);
   sections.forEach((section, i) => panels[i] && panels[i].append(section));
-}
-function adoptSectionBlocks(block, spec) {
-  const section = block.closest(".section");
-  if (!section)
-    return [];
-  const slots = (Array.isArray(spec) ? spec : [spec]).map((slot) => typeof slot === "string" ? { selector: slot } : slot).map((slot) => ({ ...slot, target: block.querySelector(slot.selector), nodes: [] }));
-  slots.forEach((slot) => slot.mode === "fill" && slot.target?.replaceChildren());
-  const isBlock = (el) => el.matches("div.block, [data-block-name]");
-  const blockOf = (el) => isBlock(el) ? el : [...el.children].find(isBlock);
-  const nameOf = (el) => {
-    const b = blockOf(el);
-    return b ? b.dataset.blockName ?? b.classList[0] : null;
-  };
-  const moved = [];
-  [...section.children].filter((el) => !el.contains(block)).forEach((el) => {
-    const name = nameOf(el);
-    const slot = slots.find((s) => s.target && (!s.components || s.components.includes(name)));
-    if (!slot)
-      return;
-    const node = slot.item ? slot.item(el) : el;
-    if (slot.mode === "replace")
-      slot.nodes.push(node);
-    else
-      slot.target.append(node);
-    moved.push(...isBlock(el) ? [el] : el.querySelectorAll("div.block, [data-block-name]"));
-  });
-  slots.forEach((slot) => slot.mode === "replace" && slot.target?.replaceWith(...slot.nodes));
-  return moved;
 }
 function mergeRoot(block) {
   const root = block.firstElementChild;
@@ -217,16 +189,6 @@ function unwrapBlock(block) {
   wrapper.classList.forEach((cls) => block.classList.add(cls));
   [...wrapper.attributes].filter(({ name: attr }) => attr !== "class" && !block.hasAttribute(attr)).forEach(({ name: attr, value }) => block.setAttribute(attr, value));
   wrapper.replaceWith(block);
-}
-function takeSectionInstrumentation(block) {
-  const section = block.parentElement;
-  if (!section?.classList.contains("section"))
-    return;
-  [...section.attributes].filter(({ name }) => /^data-(aue|richtext)-/.test(name) && !block.hasAttribute(name)).forEach(({ name, value }) => {
-    block.setAttribute(name, value);
-    section.removeAttribute(name);
-  });
-  block.setAttribute("data-section-root", "");
 }
 var instrumentation = (el) => [...el.attributes].filter((a) => /^data-(aue|richtext)-/.test(a.name));
 function snapshotInstrumentation(block) {
@@ -272,23 +234,23 @@ function readFields(block, fields2, { keyValue = true } = {}) {
       cells[key] = valueCell;
   }
   const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
-  const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
+  const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell2]) => [loose(key), cell2]));
   const props = {};
   const classes = [];
-  for (const field2 of fields2) {
-    const cell = cells[field2.name] ?? looseCells[loose(field2.name)];
-    let value = cell ? cellValue(cell, field2) : field2.value;
+  for (const field of fields2) {
+    const cell2 = cells[field.name] ?? looseCells[loose(field.name)];
+    let value = cell2 ? cellValue(cell2, field) : field.value;
     if (value === void 0 || value === "")
       continue;
-    if (field2.valueType === "boolean")
+    if (field.valueType === "boolean")
       value = value === true || value === "true";
-    else if (field2.valueType === "number")
+    else if (field.valueType === "number")
       value = Number(value);
-    if (field2.asClass) {
-      const template = typeof field2.asClass === "string" ? field2.asClass : "{value}";
+    if (field.asClass) {
+      const template = typeof field.asClass === "string" ? field.asClass : "{value}";
       classes.push(...template.replace("{value}", value).split(/\s+/));
     } else
-      props[field2.prop || field2.name] = field2.as === "link" ? { url: value, valid: true } : value;
+      props[field.prop || field.name] = field.as === "link" ? { url: value, valid: true } : value;
   }
   return { props, classes };
 }
@@ -402,58 +364,23 @@ function Container({ className, themeColor, children, grid, useBrandTheme = fals
 }
 
 // tools/eds/define.ts
-var field = {
-  text: (label, opts = {}) => ({ component: "text", label, ...opts }),
-  richtext: (label, opts = {}) => ({ component: "richtext", label, ...opts }),
-  /** An image (asset reference); the value is the image URL. */
-  image: (label, opts = {}) => ({ component: "reference", label, ...opts }),
-  /** A link; the value is the URL. */
-  link: (label, opts = {}) => ({ component: "aem-content", label, ...opts }),
-  boolean: (label, opts = {}) => ({ component: "boolean", label, ...opts }),
-  select: (label, options, opts = {}) => ({
-    component: "select",
-    label,
-    options,
-    value: options[0]?.[1],
-    ...opts
-  })
-};
 var option = (value, label, props) => ({ value, label, props });
-var composite = (def) => ({ kind: "composite", ...def });
+var columns = (def) => ({ kind: "columns", ...def });
 var uniqueId = (prefix) => `${prefix}-${Math.random().toString(36).slice(2, 8)}`;
 
 // libs/ac-core-lib/src/lib/container/container.eds.ts
 var grids = Object.values(GridTypeClassnames).map((className) => className.replace("grid-col-", ""));
 var gridLabel = (grid) => /^\d+$/.test(grid) ? `${grid} columns` : `2 columns ${grid.replace("-", ":")}`;
 var GRID_ITEM = ["aem-GridColumn", "aem-GridColumn--default--12"];
-var container_eds_default = composite({
+var cell;
+var container_eds_default = columns({
   title: "AC Container",
-  fields: {
-    grid: field.select("Columns", [["1 column", "1"], ...grids.map((grid) => [gridLabel(grid), grid])], {
-      value: "2"
-    }),
-    gridTemplate: field.select("Grid", [
-      ["AEM grid (aem-Grid)", "aem-grid"],
-      ["No grid", "none"]
-    ]),
-    width: field.select(
-      "Content width",
-      ["12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1"].map(
-        (n) => [n === "12" ? "12 of 12 columns (container width)" : `${n} of 12 columns`, n]
-      ),
-      { value: "12" }
-    )
-  },
-  options: [
-    option("theme-primary", "Background: primary", { useBrandTheme: true, themeColor: "primary" }),
-    option("theme-secondary", "Background: secondary", { useBrandTheme: true, themeColor: "secondary" }),
-    option("theme-tertiary", "Background: tertiary", { useBrandTheme: true, themeColor: "tertiary" }),
-    option("theme-quaternary", "Background: quaternary", { useBrandTheme: true, themeColor: "quaternary" }),
-    option("centered", "Centered", { centered: true }),
-    option("full-width", "Full width", { fullWidth: true })
-  ],
+  // one cell, no "Columns" / "Rows" fields: the blocks are added to it
+  columnsField: false,
+  defaultColumns: 1,
+  rows: false,
   // what the add button offers in the container: default content and the lib's blocks
-  components: [
+  columnComponents: [
     "text",
     "image",
     "button",
@@ -487,38 +414,75 @@ var container_eds_default = composite({
     "ac-title",
     "ac-separator"
   ],
-  // every block (and default content) of the section becomes a grid item; without the AEM grid it goes right
-  // into cmp-container as it is
-  slot: [
+  // full container width (12 of 12) unless the author picks another
+  contentWidth: 12,
+  classSelects: [
+    // the grid: a class on the root (grid-col-2 ... grid-col-5, grid-col-1-2, grid-col-2-1) laying the blocks out,
+    // whatever their number; "1 column" adds no grid class
     {
-      selector: ":scope > .cmp-container > .aem-Grid",
-      item: (el) => {
-        el.classList.add(...GRID_ITEM);
-        return el;
-      }
+      name: "grid",
+      label: "Columns",
+      value: "grid-col-2",
+      options: [
+        option("grid-col-1", "1 column", { grid: 1 }),
+        ...grids.map(
+          (grid) => option(`grid-col-${grid}`, gridLabel(grid), {
+            grid: /^\d+$/.test(grid) ? Number(grid) : grid
+          })
+        )
+      ]
     },
-    { selector: ":scope > .cmp-container" }
+    // the blocks in an aem-Grid (container > cmp-container > aem-Grid > blocks), or right in cmp-container
+    {
+      name: "grid-template",
+      label: "Grid",
+      options: [option("", "AEM grid (aem-Grid)"), option("no-aem-grid", "No grid", { useAemGridTemplate: false })]
+    }
+  ],
+  multipleOptions: true,
+  options: [
+    option("theme-primary", "Background: primary", { useBrandTheme: true, themeColor: "primary" }),
+    option("theme-secondary", "Background: secondary", { useBrandTheme: true, themeColor: "secondary" }),
+    option("theme-tertiary", "Background: tertiary", { useBrandTheme: true, themeColor: "tertiary" }),
+    option("theme-quaternary", "Background: quaternary", { useBrandTheme: true, themeColor: "quaternary" }),
+    option("centered", "Centered", { centered: true }),
+    option("full-width", "Full width", { fullWidth: true })
   ],
   defaults: () => ({ id: uniqueId("container"), useAemGridTemplate: true, contentWidth: 12 }),
-  toProps: ({ grid, gridTemplate, width }) => ({
-    // "1 column": no grid class
-    grid: grid && grid !== "1" ? /^\d+$/.test(grid) ? Number(grid) : grid : void 0,
-    useAemGridTemplate: gridTemplate !== "none",
-    contentWidth: Number(width || 12)
-  })
+  toProps: (cells, { props }) => {
+    [cell] = cells;
+    const items2 = cell ? Array.from(cell.children) : [];
+    if (props.useAemGridTemplate !== false)
+      items2.forEach((item) => item.classList.add(...GRID_ITEM));
+    const picked = props.grid;
+    return {
+      // "1 column": no grid class
+      grid: picked === 1 ? void 0 : picked,
+      children: items2
+    };
+  },
+  // the element holding the blocks (aem-Grid, or cmp-container without the grid) takes the cell's attributes:
+  // in the Universal Editor it is where blocks are added
+  afterRender: (block) => {
+    const holder = block.querySelector(":scope > * > .cmp-container > .aem-Grid") ?? block.querySelector(":scope > * > .cmp-container");
+    if (cell && holder) {
+      Array.from(cell.attributes).filter(({ name }) => name !== "class" && !holder.hasAttribute(name)).forEach(({ name, value }) => holder.setAttribute(name, value));
+    }
+    cell = void 0;
+  }
 });
 
 // ac-container.decorate.tsx
-var fields = [{ "name": "section-block", "value": "ac-container", "valueType": "string", "component": "select" }, { "name": "grid", "value": "2", "valueType": "string", "component": "select" }, { "name": "gridTemplate", "value": "aem-grid", "valueType": "string", "component": "select" }, { "name": "width", "value": "12", "valueType": "string", "component": "select" }, { "name": "options", "value": "", "valueType": "string", "component": "multiselect" }];
-var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true } };
+var fields = [{ "name": "classes_grid", "value": "grid-col-2", "valueType": "string", "component": "select" }, { "name": "classes_grid-template", "value": "", "valueType": "string", "component": "select" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }, { "name": "classes_content-width", "value": "content-width-12", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true }, "grid-col-1": { "grid": 1 }, "grid-col-2": { "grid": 2 }, "grid-col-3": { "grid": 3 }, "grid-col-4": { "grid": 4 }, "grid-col-5": { "grid": 5 }, "grid-col-1-2": { "grid": "1-2" }, "grid-col-2-1": { "grid": "2-1" }, "no-aem-grid": { "useAemGridTemplate": false }, "content-width-12": { "contentWidth": 12 }, "content-width-11": { "contentWidth": 11 }, "content-width-10": { "contentWidth": 10 }, "content-width-9": { "contentWidth": 9 }, "content-width-8": { "contentWidth": 8 }, "content-width-7": { "contentWidth": 7 }, "content-width-6": { "contentWidth": 6 }, "content-width-5": { "contentWidth": 5 }, "content-width-4": { "contentWidth": 4 }, "content-width-3": { "contentWidth": 3 }, "content-width-2": { "contentWidth": 2 }, "content-width-1": { "contentWidth": 1 } };
 var items = null;
 var adopt = null;
-var extraNames = ["grid", "gridTemplate", "width"];
-var isColumns = false;
-var composite2 = true;
-async function decorate(block, options = {}) {
+var extraNames = [];
+var isColumns = true;
+var composite = false;
+function decorate(block, options = {}) {
   const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items });
-  if (composite2) {
+  if (composite) {
     String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block.classList.add(o));
     delete authored.options;
     delete authored["section-block"];
@@ -553,12 +517,8 @@ async function decorate(block, options = {}) {
   if (container_eds_default.afterRender)
     container_eds_default.afterRender(block, props);
   mergeRoot(block);
-  const moved = adoptSectionBlocks(block, container_eds_default.slot);
-  if (options.loadBlocks)
-    await options.loadBlocks(moved);
   block.classList.remove("block");
   unwrapBlock(block);
-  takeSectionInstrumentation(block);
 }
 export {
   decorate as default
