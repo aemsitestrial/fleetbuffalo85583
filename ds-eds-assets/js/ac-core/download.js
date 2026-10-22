@@ -131,11 +131,11 @@ function h(type, props, ...children) {
 }
 var jsx = (type, { children, ...props }) => h(type, props, children);
 var jsxs = jsx;
-function cellValue(cell, field) {
+function cellValue(cell, field2) {
   const a = cell.querySelector("a");
-  if (field.component === "richtext")
+  if (field2.component === "richtext")
     return cell.innerHTML.trim();
-  if (field.component === "reference") {
+  if (field2.component === "reference") {
     const img = cell.querySelector("img");
     return (img ? img.getAttribute("src") : a?.getAttribute("href")) ?? cell.textContent.trim();
   }
@@ -160,9 +160,9 @@ function readItemValues(block2, items2) {
   return [...block2.children].map((row) => {
     const cells = [...row.children];
     const values = {};
-    items2.fields.forEach((field, i) => {
-      const value = cells[i] ? cellValue(cells[i], field) : "";
-      values[field.name] = field.valueType === "boolean" ? value === "true" || value === true : value;
+    items2.fields.forEach((field2, i) => {
+      const value = cells[i] ? cellValue(cells[i], field2) : "";
+      values[field2.name] = field2.valueType === "boolean" ? value === "true" || value === true : value;
     });
     return values;
   });
@@ -241,20 +241,20 @@ function readFields(block2, fields2, { keyValue = true } = {}) {
   const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
   const props = {};
   const classes = [];
-  for (const field of fields2) {
-    const cell = cells[field.name] ?? looseCells[loose(field.name)];
-    let value = cell ? cellValue(cell, field) : field.value;
+  for (const field2 of fields2) {
+    const cell = cells[field2.name] ?? looseCells[loose(field2.name)];
+    let value = cell ? cellValue(cell, field2) : field2.value;
     if (value === void 0 || value === "")
       continue;
-    if (field.valueType === "boolean")
+    if (field2.valueType === "boolean")
       value = value === true || value === "true";
-    else if (field.valueType === "number")
+    else if (field2.valueType === "number")
       value = Number(value);
-    if (field.asClass) {
-      const template = typeof field.asClass === "string" ? field.asClass : "{value}";
+    if (field2.asClass) {
+      const template = typeof field2.asClass === "string" ? field2.asClass : "{value}";
       classes.push(...template.replace("{value}", value).split(/\s+/));
     } else
-      props[field.prop || field.name] = field.as === "link" ? { url: value, valid: true } : value;
+      props[field2.prop || field2.name] = field2.as === "link" ? { url: value, valid: true } : value;
   }
   return { props, classes };
 }
@@ -345,7 +345,24 @@ function ACDownload({ themeColor, className, isCompact, modifierBgTransparent, .
 }
 
 // tools/eds/define.ts
+var field = {
+  text: (label, opts = {}) => ({ component: "text", label, ...opts }),
+  richtext: (label, opts = {}) => ({ component: "richtext", label, ...opts }),
+  /** An image (asset reference); the value is the image URL. */
+  image: (label, opts = {}) => ({ component: "reference", label, ...opts }),
+  /** A link; the value is the URL. */
+  link: (label, opts = {}) => ({ component: "aem-content", label, ...opts }),
+  boolean: (label, opts = {}) => ({ component: "boolean", label, ...opts }),
+  select: (label, options, opts = {}) => ({
+    component: "select",
+    label,
+    options,
+    value: options[0]?.[1],
+    ...opts
+  })
+};
 var block = (def) => ({ kind: "block", ...def });
+var uniqueId = (prefix) => `${prefix}-${Math.random().toString(36).slice(2, 8)}`;
 
 // libs/ac-core-lib/src/lib/download/ac-download.eds.ts
 var ac_download_eds_default = block({
@@ -363,15 +380,33 @@ var ac_download_eds_default = block({
     themeColor: true,
     modifierBgTransparent: true,
     isCompact: true
-  }
+  },
+  // the Download image is an object prop (`image: { src, alt, ... }`): authored as an image and its alt text
+  extraFields: {
+    image: field.image("Image"),
+    imageAlt: field.text("Image alt text")
+  },
+  toProps: ({ image, imageAlt }, { title }) => image ? {
+    image: {
+      id: uniqueId("download-image"),
+      uuid: uniqueId("asset"),
+      src: image,
+      srcset: "",
+      alt: imageAlt ?? "",
+      title: title ?? "",
+      lazyEnabled: true,
+      ":type": "",
+      dataLayer: {}
+    }
+  } : {}
 });
 
 // ac-download.decorate.tsx
-var fields = [{ "name": "title", "valueType": "string", "component": "text" }, { "name": "description", "valueType": "string", "component": "richtext" }, { "name": "actionText", "valueType": "string", "component": "text" }, { "name": "url", "valueType": "string", "component": "aem-content" }, { "name": "filename", "valueType": "string", "component": "text" }, { "name": "format", "valueType": "string", "component": "text" }, { "name": "size", "valueType": "string", "component": "text" }, { "name": "extension", "valueType": "string", "component": "text" }, { "name": "layoutAlignContent", "value": "", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierBgTransparent", "valueType": "boolean", "component": "boolean" }, { "name": "isCompact", "valueType": "boolean", "component": "boolean" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fields = [{ "name": "title", "valueType": "string", "component": "text" }, { "name": "description", "valueType": "string", "component": "richtext" }, { "name": "actionText", "valueType": "string", "component": "text" }, { "name": "url", "valueType": "string", "component": "aem-content" }, { "name": "filename", "valueType": "string", "component": "text" }, { "name": "format", "valueType": "string", "component": "text" }, { "name": "size", "valueType": "string", "component": "text" }, { "name": "extension", "valueType": "string", "component": "text" }, { "name": "layoutAlignContent", "value": "", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierBgTransparent", "valueType": "boolean", "component": "boolean" }, { "name": "isCompact", "valueType": "boolean", "component": "boolean" }, { "name": "image", "valueType": "string", "component": "reference" }, { "name": "imageAlt", "valueType": "string", "component": "text" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
 var items = null;
 var adopt = null;
-var extraNames = [];
+var extraNames = ["image", "imageAlt"];
 var isColumns = false;
 var composite = false;
 function decorate(block2, options = {}) {

@@ -63,18 +63,50 @@ async function ensureKeyValueRows(nested) {
 }
 
 /**
- * A block authored in a column can arrive wrapped in a <p> (a block inside a paragraph is
+ * A block authored in a column can end up inside a <p> (a block inside a paragraph is
  * invalid HTML and breaks the layout). Replace each such <p> with a <div>, keeping its content
  * and attributes (Universal Editor instrumentation included).
  */
-function unwrapParagraphs(nested) {
+function unwrapParagraphs(block, nested) {
+  const cells = [...block.children].flatMap((row) => [...row.children]);
   nested.forEach((el) => {
-    const p = el.parentElement;
-    if (p?.tagName !== 'P') return;
+    const p = el.parentElement?.closest('p');
+    const cell = p && cells.find((c) => c.contains(p));
+    if (!cell) return;
+    if (p.parentElement === cell && p.getAttribute('data-aue-type') !== 'component') {
+      // aem.js wrapTextNodes wrapped the cell's content in a <p> and moved the cell's own
+      // attributes (the column's data-aue-* and classes) onto it: give them back to the cell
+      const attributes = [...p.attributes]
+        .map(({ name }) => name)
+        .filter((n) => !cell.hasAttribute(n));
+      moveAttributes(p, cell, attributes);
+      p.replaceWith(...p.childNodes);
+      return;
+    }
     const div = document.createElement('div');
     moveAttributes(p, div);
     div.append(...p.childNodes);
     p.replaceWith(div);
+  });
+}
+
+/**
+ * decorateBlock marks a block's parent as its `<name>-wrapper`, and an ac-* block replaces that
+ * wrapper with itself once decorated (taking its classes and attributes). In a column the parent
+ * must therefore be the block's own: the element Universal Editor wraps the block in (with the
+ * block's `data-aue-*`), or a new <div> when the block sits right in the column cell, which must
+ * never be marked or replaced.
+ */
+function ensureOwnWrappers(block, nested) {
+  const cells = new Set([...block.children].flatMap((row) => [...row.children]));
+  nested.forEach((el) => {
+    const parent = el.parentElement;
+    const own = parent && !cells.has(parent) && parent.tagName === 'DIV' && !parent.className
+      && parent.children.length === 1;
+    if (own) return;
+    const wrapper = document.createElement('div');
+    el.before(wrapper);
+    wrapper.append(el);
   });
 }
 
@@ -84,7 +116,8 @@ function unwrapParagraphs(nested) {
  */
 export async function prepareNestedBlocks(block) {
   const nested = findNestedBlocks(block);
-  unwrapParagraphs(nested);
+  unwrapParagraphs(block, nested);
+  ensureOwnWrappers(block, nested);
   await Promise.all(nested.map(ensureKeyValueRows));
   nested.forEach(decorateBlock);
   return nested;

@@ -75,6 +75,18 @@
           "required": true
         },
         {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image alt text"
+        },
+        {
           "component": "select",
           "valueType": "string",
           "name": "layoutAlignContent",
@@ -113,14 +125,6 @@
             {
               "name": "Secondary",
               "value": "secondary"
-            },
-            {
-              "name": "Tertiary",
-              "value": "tertiary"
-            },
-            {
-              "name": "Quaternary",
-              "value": "quaternary"
             }
           ]
         },
