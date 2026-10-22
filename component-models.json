@@ -5515,6 +5515,10 @@
         "value": "2",
         "options": [
           {
+            "name": "1 column",
+            "value": "1"
+          },
+          {
             "name": "2 columns",
             "value": "2"
           },
@@ -5550,6 +5554,23 @@
           {
             "name": "2:1 (2 columns)",
             "value": "grid-2-1"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes_grid-template",
+        "label": "Grid",
+        "value": "",
+        "options": [
+          {
+            "name": "AEM grid (aem-Grid)",
+            "value": ""
+          },
+          {
+            "name": "No grid",
+            "value": "no-aem-grid"
           }
         ]
       },

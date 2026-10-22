@@ -379,7 +379,17 @@ var container_eds_default = columns({
   columnsLabel: "AC Container",
   // always one row of columns
   rows: false,
-  columnCounts: counts.map((count) => [`${count} columns`, count]),
+  // 1 column (no grid class) or the grids getGridClassName knows; new containers start with 2
+  columnCounts: [["1 column", 1], ...counts.map((count) => [`${count} columns`, count])],
+  defaultColumns: 2,
+  // the columns in an aem-Grid (container > cmp-container > aem-Grid > columns), or right in cmp-container
+  classSelects: [
+    {
+      name: "grid-template",
+      label: "Grid",
+      options: [option("", "AEM grid (aem-Grid)"), option("no-aem-grid", "No grid", { useAemGridTemplate: false })]
+    }
+  ],
   // own select next to "Columns": equal widths, or a ratio for two columns
   layoutsLabel: "Column widths",
   layouts: [
@@ -400,7 +410,8 @@ var container_eds_default = columns({
   // contentWidth 12 also for blocks authored before the field had a default (a picked width overrides it)
   defaults: () => ({ id: uniqueId("container"), useAemGridTemplate: true, contentWidth: 12 }),
   toProps: (cells, { count, props }) => {
-    cells.forEach((cell) => cell.classList.add("aem-GridColumn"));
+    if (props.useAemGridTemplate !== false)
+      cells.forEach((cell) => cell.classList.add("aem-GridColumn"));
     const ratio = count === 2 && props.grid && ratios.includes(String(props.grid)) ? props.grid : void 0;
     const grid = ratio ?? (counts.includes(count) ? count : void 0);
     return {
@@ -408,12 +419,26 @@ var container_eds_default = columns({
       // the column elements themselves become the content (moved, so blocks inside keep working)
       children: cells
     };
+  },
+  // one column without the grid: the column is cmp-container itself (container > cmp-container > content); it
+  // takes the column's attributes (Universal Editor: the column that blocks are added to)
+  afterRender: (block, props) => {
+    const cells = props.children ?? [];
+    if (props.useAemGridTemplate !== false || cells.length !== 1)
+      return;
+    const [cell] = cells;
+    const cmp = cell.parentElement;
+    if (!cmp?.classList.contains("cmp-container"))
+      return;
+    Array.from(cell.attributes).filter(({ name }) => !cmp.hasAttribute(name) && name !== "class").forEach(({ name, value }) => cmp.setAttribute(name, value));
+    cell.classList.forEach((cls) => cmp.classList.add(cls));
+    cell.replaceWith(...Array.from(cell.childNodes));
   }
 });
 
 // ac-container.decorate.tsx
-var fields = [{ "name": "columns", "value": "2", "valueType": "string", "component": "select" }, { "name": "classes_layout", "value": "", "valueType": "string", "component": "select" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }, { "name": "classes_content-width", "value": "content-width-12", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
-var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true }, "grid-1-2": { "grid": "1-2" }, "grid-2-1": { "grid": "2-1" }, "content-width-12": { "contentWidth": 12 }, "content-width-11": { "contentWidth": 11 }, "content-width-10": { "contentWidth": 10 }, "content-width-9": { "contentWidth": 9 }, "content-width-8": { "contentWidth": 8 }, "content-width-7": { "contentWidth": 7 }, "content-width-6": { "contentWidth": 6 }, "content-width-5": { "contentWidth": 5 }, "content-width-4": { "contentWidth": 4 }, "content-width-3": { "contentWidth": 3 }, "content-width-2": { "contentWidth": 2 }, "content-width-1": { "contentWidth": 1 } };
+var fields = [{ "name": "columns", "value": "2", "valueType": "string", "component": "select" }, { "name": "classes_layout", "value": "", "valueType": "string", "component": "select" }, { "name": "classes_grid-template", "value": "", "valueType": "string", "component": "select" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }, { "name": "classes_content-width", "value": "content-width-12", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true }, "grid-1-2": { "grid": "1-2" }, "grid-2-1": { "grid": "2-1" }, "no-aem-grid": { "useAemGridTemplate": false }, "content-width-12": { "contentWidth": 12 }, "content-width-11": { "contentWidth": 11 }, "content-width-10": { "contentWidth": 10 }, "content-width-9": { "contentWidth": 9 }, "content-width-8": { "contentWidth": 8 }, "content-width-7": { "contentWidth": 7 }, "content-width-6": { "contentWidth": 6 }, "content-width-5": { "contentWidth": 5 }, "content-width-4": { "contentWidth": 4 }, "content-width-3": { "contentWidth": 3 }, "content-width-2": { "contentWidth": 2 }, "content-width-1": { "contentWidth": 1 } };
 var items = null;
 var adopt = null;
 var extraNames = [];
@@ -453,6 +478,8 @@ function decorate(block, options = {}) {
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
   if (adopt)
     adoptSections(block, node, adopt);
+  if (container_eds_default.afterRender)
+    container_eds_default.afterRender(block, props);
   mergeRoot(block);
   block.classList.remove("block");
   unwrapBlock(block);
