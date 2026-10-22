@@ -225,6 +225,16 @@ function unwrapBlock(block) {
   [...wrapper.attributes].filter(({ name: attr }) => attr !== "class" && !block.hasAttribute(attr)).forEach(({ name: attr, value }) => block.setAttribute(attr, value));
   wrapper.replaceWith(block);
 }
+function takeSectionInstrumentation(block) {
+  const section = block.parentElement;
+  if (!section?.classList.contains("section"))
+    return;
+  [...section.attributes].filter(({ name }) => /^data-(aue|richtext)-/.test(name) && !block.hasAttribute(name)).forEach(({ name, value }) => {
+    block.setAttribute(name, value);
+    section.removeAttribute(name);
+  });
+  block.setAttribute("data-section-root", "");
+}
 var instrumentation = (el) => [...el.attributes].filter((a) => /^data-(aue|richtext)-/.test(a.name));
 function snapshotInstrumentation(block) {
   return [...block.children].map((row) => ({
@@ -1229,12 +1239,15 @@ async function decorate(block, options = {}) {
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
   if (adopt)
     adoptSections(block, node, adopt);
+  if (block_section_banner_with_cards_eds_default.afterRender)
+    block_section_banner_with_cards_eds_default.afterRender(block, props);
   mergeRoot(block);
   const moved = adoptSectionBlocks(block, block_section_banner_with_cards_eds_default.slot);
   if (options.loadBlocks)
     await options.loadBlocks(moved);
   block.classList.remove("block");
   unwrapBlock(block);
+  takeSectionInstrumentation(block);
 }
 export {
   decorate as default

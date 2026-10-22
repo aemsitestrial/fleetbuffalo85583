@@ -5521,6 +5521,13 @@
         ]
       },
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
+      },
+      {
         "component": "select",
         "valueType": "string",
         "name": "grid",
@@ -6760,6 +6767,13 @@
         "valueType": "string",
         "name": "text",
         "label": "Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
       },
       {
         "component": "select",
@@ -12732,6 +12746,13 @@
         ]
       },
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
+      },
+      {
         "component": "select",
         "valueType": "string",
         "name": "themeColor",
@@ -13763,6 +13784,13 @@
             "value": "ac-section-banner-with-cards"
           }
         ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
       },
       {
         "component": "select",
@@ -15613,6 +15641,13 @@
         ]
       },
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
+      },
+      {
         "component": "select",
         "valueType": "string",
         "name": "content-width",
@@ -16507,6 +16542,13 @@
             "value": "ac-splide-grid-carousel"
           }
         ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
       },
       {
         "component": "select",
@@ -19953,6 +19995,13 @@
         "valueType": "string",
         "name": "text",
         "label": "Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
       },
       {
         "component": "select",

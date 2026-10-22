@@ -922,6 +922,8 @@ function decorate(block2, options = {}) {
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
   if (adopt)
     adoptSections(block2, node, adopt);
+  if (ac_carousel_eds_default.afterRender)
+    ac_carousel_eds_default.afterRender(block2, props);
   mergeRoot(block2);
   runControllers(block2, [{ Controller: CarouselController, key: "CarouselController", scope: "block", storybookMode: false, optionsFromProps: [], options: { "bullets": true, "controls": true, "adaptiveControles": true } }], props);
   block2.classList.remove("block");

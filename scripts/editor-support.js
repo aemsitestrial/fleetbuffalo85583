@@ -46,9 +46,32 @@ async function applyChanges(event) {
       return true;
     }
 
+    // a composite section block (AC Container, AC Teasers with filter...) carries its section's
+    // instrumentation on its root (data-section-root): a change to it re-renders the whole section
+    if (element.hasAttribute('data-section-root')) {
+      const section = element.closest('.section');
+      const newSection = parsedUpdate.querySelector(`[data-aue-resource="${resource}"]`);
+      if (section && newSection) {
+        const { parentElement } = section;
+        newSection.style.display = 'none';
+        section.insertAdjacentElement('afterend', newSection);
+        decorateButtons(newSection);
+        decorateIcons(newSection);
+        decorateRichtext(newSection);
+        buildSectionBlocks(parentElement);
+        decorateSections(parentElement);
+        decorateBlocks(parentElement);
+        await loadSections(parentElement);
+        section.remove();
+        newSection.style.display = null;
+        return true;
+      }
+    }
+
     // blocks are found by data-block-name: ac-* blocks drop the `block` class once decorated
-    // (it clashes with the Tailwind utility)
-    const blockSelector = '[data-block-name][data-aue-resource]';
+    // (it clashes with the Tailwind utility); a block inside a composite section is re-rendered
+    // on its own, not as part of the section root
+    const blockSelector = '[data-block-name][data-aue-resource]:not([data-section-root])';
     const block = element.parentElement?.closest(blockSelector) || element?.closest(blockSelector);
     if (block) {
       const blockResource = block.getAttribute('data-aue-resource');
@@ -57,9 +80,11 @@ async function applyChanges(event) {
         return true;
       } if (newBlock) {
         newBlock.style.display = 'none';
-        if (block.parentElement?.classList.contains('section')) {
-          // ac-* blocks replace their wrapper once decorated: give the new block a wrapper of its
-          // own, so decorateBlock marks that one (not the section) and the block takes its place
+        const name = block.dataset.blockName;
+        if (!block.parentElement?.classList.contains(`${name}-wrapper`)) {
+          // ac-* blocks replace their wrapper once decorated, so the block sits in a section, a
+          // grid or a column: give the new block a wrapper of its own, so decorateBlock marks that
+          // one (not the parent) and the block takes its place
           const wrapper = document.createElement('div');
           block.insertAdjacentElement('afterend', wrapper);
           wrapper.append(newBlock);
@@ -71,6 +96,10 @@ async function applyChanges(event) {
         decorateBlock(newBlock);
         decorateRichtext(newBlock);
         await loadBlock(newBlock);
+        // a grid item of a container (aem-GridColumn...) stays one
+        [...block.classList]
+          .filter((cls) => cls.startsWith('aem-GridColumn'))
+          .forEach((cls) => newBlock.classList.add(cls));
         block.remove();
         newBlock.style.display = null;
         return true;

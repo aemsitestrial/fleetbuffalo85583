@@ -585,6 +585,8 @@ function decorate(block2, options = {}) {
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
   if (adopt)
     adoptSections(block2, node, adopt);
+  if (teaser_eds_default.afterRender)
+    teaser_eds_default.afterRender(block2, props);
   mergeRoot(block2);
   block2.classList.remove("block");
   unwrapBlock(block2);

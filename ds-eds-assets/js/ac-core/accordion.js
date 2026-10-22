@@ -679,6 +679,8 @@ function decorate(block, options = {}) {
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
   if (adopt)
     adoptSections(block, node, adopt);
+  if (ac_accordion_eds_default.afterRender)
+    ac_accordion_eds_default.afterRender(block, props);
   mergeRoot(block);
   runControllers(block, [{ Controller: AccordionController, key: "AccordionController", scope: "block", storybookMode: true, optionsFromProps: ["singleExpansion"], options: void 0 }], props);
   block.classList.remove("block");

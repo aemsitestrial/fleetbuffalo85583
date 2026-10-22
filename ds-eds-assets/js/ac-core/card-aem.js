@@ -598,6 +598,8 @@ function decorate(block2, options = {}) {
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
   if (adopt)
     adoptSections(block2, node, adopt);
+  if (card_aem_eds_default.afterRender)
+    card_aem_eds_default.afterRender(block2, props);
   mergeRoot(block2);
   block2.classList.remove("block");
   unwrapBlock(block2);
