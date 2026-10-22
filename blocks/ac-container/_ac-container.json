@@ -13,6 +13,7 @@
               "filter": "ac-container",
               "columns": "2",
               "rows": "1",
+              "classes_grid": "grid-col-2",
               "classes_content-width": "content-width-12"
             }
           }
@@ -25,52 +26,46 @@
       "id": "ac-container",
       "fields": [
         {
-          "component": "select",
-          "valueType": "string",
+          "component": "text",
+          "valueType": "number",
           "name": "columns",
-          "label": "AC Container",
-          "value": "2",
-          "options": [
-            {
-              "name": "1 column",
-              "value": "1"
-            },
-            {
-              "name": "2 columns",
-              "value": "2"
-            },
-            {
-              "name": "3 columns",
-              "value": "3"
-            },
-            {
-              "name": "4 columns",
-              "value": "4"
-            },
-            {
-              "name": "5 columns",
-              "value": "5"
-            }
-          ]
+          "label": "Number of columns",
+          "value": "2"
         },
         {
           "component": "select",
           "valueType": "string",
-          "name": "classes_layout",
-          "label": "Column widths",
-          "value": "",
+          "name": "classes_grid",
+          "label": "Columns",
+          "value": "grid-col-2",
           "options": [
             {
-              "name": "Equal",
-              "value": ""
+              "name": "1 column",
+              "value": "grid-col-1"
             },
             {
-              "name": "1:2 (2 columns)",
-              "value": "grid-1-2"
+              "name": "2 columns",
+              "value": "grid-col-2"
             },
             {
-              "name": "2:1 (2 columns)",
-              "value": "grid-2-1"
+              "name": "3 columns",
+              "value": "grid-col-3"
+            },
+            {
+              "name": "4 columns",
+              "value": "grid-col-4"
+            },
+            {
+              "name": "5 columns",
+              "value": "grid-col-5"
+            },
+            {
+              "name": "2 columns 1:2",
+              "value": "grid-col-1-2"
+            },
+            {
+              "name": "2 columns 2:1",
+              "value": "grid-col-2-1"
             }
           ]
         },

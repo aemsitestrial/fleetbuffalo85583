@@ -307,6 +307,7 @@
                   "filter": "ac-container",
                   "columns": "2",
                   "rows": "1",
+                  "classes_grid": "grid-col-2",
                   "classes_content-width": "content-width-12"
                 }
               }

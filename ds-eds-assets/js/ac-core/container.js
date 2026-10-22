@@ -376,27 +376,32 @@ var container_eds_default = columns({
   title: "AC Container",
   // full container width (12 of 12) unless the author picks another
   contentWidth: 12,
-  columnsLabel: "AC Container",
-  // always one row of columns
-  rows: false,
-  // 1 column (no grid class) or the grids getGridClassName knows; new containers start with 2
-  columnCounts: [["1 column", 1], ...counts.map((count) => [`${count} columns`, count])],
+  // how many columns (cells) the container has: any number, independent of the grid below
+  columnsLabel: "Number of columns",
   defaultColumns: 2,
-  // the columns in an aem-Grid (container > cmp-container > aem-Grid > columns), or right in cmp-container
+  // always one row of cells (the grid wraps them)
+  rows: false,
   classSelects: [
+    // the grid: a class on the root (grid-col-2 ... grid-col-5, grid-col-1-2, grid-col-2-1) laying the columns out,
+    // whatever their number (6 columns in grid-col-3 make two rows); "1 column" adds no grid class
+    {
+      name: "grid",
+      label: "Columns",
+      value: "grid-col-2",
+      options: [
+        option("grid-col-1", "1 column", { grid: 1 }),
+        ...counts.map((count) => option(`grid-col-${count}`, `${count} columns`, { grid: count })),
+        ...ratios.map(
+          (ratio) => option(`grid-col-${ratio}`, `2 columns ${ratio.replace("-", ":")}`, { grid: ratio })
+        )
+      ]
+    },
+    // the columns in an aem-Grid (container > cmp-container > aem-Grid > columns), or right in cmp-container
     {
       name: "grid-template",
       label: "Grid",
       options: [option("", "AEM grid (aem-Grid)"), option("no-aem-grid", "No grid", { useAemGridTemplate: false })]
     }
-  ],
-  // own select next to "Columns": equal widths, or a ratio for two columns
-  layoutsLabel: "Column widths",
-  layouts: [
-    option("", "Equal"),
-    ...ratios.map(
-      (ratio) => option(`grid-${ratio}`, `${ratio.replace("-", ":")} (2 columns)`, { grid: ratio })
-    )
   ],
   multipleOptions: true,
   options: [
@@ -412,8 +417,8 @@ var container_eds_default = columns({
   toProps: (cells, { count, props }) => {
     if (props.useAemGridTemplate !== false)
       cells.forEach((cell) => cell.classList.add("aem-GridColumn"));
-    const ratio = count === 2 && props.grid && ratios.includes(String(props.grid)) ? props.grid : void 0;
-    const grid = ratio ?? (counts.includes(count) ? count : void 0);
+    const picked = props.grid;
+    const grid = picked === 1 ? void 0 : picked ?? (counts.includes(count) ? count : void 0);
     return {
       grid,
       // the column elements themselves become the content (moved, so blocks inside keep working)
@@ -437,8 +442,8 @@ var container_eds_default = columns({
 });
 
 // ac-container.decorate.tsx
-var fields = [{ "name": "columns", "value": "2", "valueType": "string", "component": "select" }, { "name": "classes_layout", "value": "", "valueType": "string", "component": "select" }, { "name": "classes_grid-template", "value": "", "valueType": "string", "component": "select" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }, { "name": "classes_content-width", "value": "content-width-12", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
-var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true }, "grid-1-2": { "grid": "1-2" }, "grid-2-1": { "grid": "2-1" }, "no-aem-grid": { "useAemGridTemplate": false }, "content-width-12": { "contentWidth": 12 }, "content-width-11": { "contentWidth": 11 }, "content-width-10": { "contentWidth": 10 }, "content-width-9": { "contentWidth": 9 }, "content-width-8": { "contentWidth": 8 }, "content-width-7": { "contentWidth": 7 }, "content-width-6": { "contentWidth": 6 }, "content-width-5": { "contentWidth": 5 }, "content-width-4": { "contentWidth": 4 }, "content-width-3": { "contentWidth": 3 }, "content-width-2": { "contentWidth": 2 }, "content-width-1": { "contentWidth": 1 } };
+var fields = [{ "name": "columns", "value": "2", "valueType": "number", "component": "text" }, { "name": "classes_grid", "value": "grid-col-2", "valueType": "string", "component": "select" }, { "name": "classes_grid-template", "value": "", "valueType": "string", "component": "select" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }, { "name": "classes_content-width", "value": "content-width-12", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true }, "grid-col-1": { "grid": 1 }, "grid-col-2": { "grid": 2 }, "grid-col-3": { "grid": 3 }, "grid-col-4": { "grid": 4 }, "grid-col-5": { "grid": 5 }, "grid-col-1-2": { "grid": "1-2" }, "grid-col-2-1": { "grid": "2-1" }, "no-aem-grid": { "useAemGridTemplate": false }, "content-width-12": { "contentWidth": 12 }, "content-width-11": { "contentWidth": 11 }, "content-width-10": { "contentWidth": 10 }, "content-width-9": { "contentWidth": 9 }, "content-width-8": { "contentWidth": 8 }, "content-width-7": { "contentWidth": 7 }, "content-width-6": { "contentWidth": 6 }, "content-width-5": { "contentWidth": 5 }, "content-width-4": { "contentWidth": 4 }, "content-width-3": { "contentWidth": 3 }, "content-width-2": { "contentWidth": 2 }, "content-width-1": { "contentWidth": 1 } };
 var items = null;
 var adopt = null;
 var extraNames = [];
