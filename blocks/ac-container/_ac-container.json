@@ -6,11 +6,16 @@
       "plugins": {
         "xwalk": {
           "page": {
-            "resourceType": "core/franklin/components/block/v1/block",
+            "resourceType": "core/franklin/components/columns/v1/columns",
             "template": {
               "name": "ac-container",
               "model": "ac-container",
-              "key-value": true
+              "filter": "ac-container",
+              "columns": "1",
+              "rows": "1",
+              "classes_grid": "grid-col-2",
+              "classes_use-aem-grid-template": true,
+              "classes_content-width": "content-width-12"
             }
           }
         }
@@ -22,111 +27,45 @@
       "id": "ac-container",
       "fields": [
         {
-          "component": "aem-content",
-          "valueType": "string",
-          "name": "fragment",
-          "label": "Content (fragment page)",
-          "required": true,
-          "description": "The page whose blocks are shown in the container, e.g. /fragments/my-container"
-        },
-        {
           "component": "select",
           "valueType": "string",
-          "name": "grid",
+          "name": "classes_grid",
           "label": "Columns",
-          "value": "",
+          "value": "grid-col-2",
           "options": [
             {
-              "name": "None",
-              "value": ""
+              "name": "1 column",
+              "value": "grid-col-1"
             },
             {
               "name": "2 columns",
-              "value": "2"
+              "value": "grid-col-2"
             },
             {
               "name": "3 columns",
-              "value": "3"
+              "value": "grid-col-3"
             },
             {
               "name": "4 columns",
-              "value": "4"
+              "value": "grid-col-4"
             },
             {
               "name": "5 columns",
-              "value": "5"
+              "value": "grid-col-5"
             },
             {
               "name": "2 columns 1:2",
-              "value": "1-2"
+              "value": "grid-col-1-2"
             },
             {
               "name": "2 columns 2:1",
-              "value": "2-1"
+              "value": "grid-col-2-1"
             }
           ]
         },
         {
           "component": "select",
           "valueType": "string",
-          "name": "contentWidth",
-          "label": "Content width",
-          "value": "12",
-          "options": [
-            {
-              "name": "12 of 12 columns (container width)",
-              "value": "12"
-            },
-            {
-              "name": "11 of 12 columns",
-              "value": "11"
-            },
-            {
-              "name": "10 of 12 columns",
-              "value": "10"
-            },
-            {
-              "name": "9 of 12 columns",
-              "value": "9"
-            },
-            {
-              "name": "8 of 12 columns",
-              "value": "8"
-            },
-            {
-              "name": "7 of 12 columns",
-              "value": "7"
-            },
-            {
-              "name": "6 of 12 columns",
-              "value": "6"
-            },
-            {
-              "name": "5 of 12 columns",
-              "value": "5"
-            },
-            {
-              "name": "4 of 12 columns",
-              "value": "4"
-            },
-            {
-              "name": "3 of 12 columns",
-              "value": "3"
-            },
-            {
-              "name": "2 of 12 columns",
-              "value": "2"
-            },
-            {
-              "name": "1 of 12 columns",
-              "value": "1"
-            }
-          ]
-        },
-        {
-          "component": "select",
-          "valueType": "string",
-          "name": "themeColor",
           "label": "Theme",
           "value": "",
           "options": [
@@ -136,19 +75,77 @@
             },
             {
               "name": "Primary",
-              "value": "primary"
+              "value": "theme-color-primary"
             },
             {
               "name": "Secondary",
-              "value": "secondary"
+              "value": "theme-color-secondary"
             },
             {
               "name": "Tertiary",
-              "value": "tertiary"
+              "value": "theme-color-tertiary"
             },
             {
               "name": "Quaternary",
-              "value": "quaternary"
+              "value": "theme-color-quaternary"
+            }
+          ],
+          "name": "classes_theme-color"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_content-width",
+          "label": "Content width",
+          "value": "content-width-12",
+          "options": [
+            {
+              "name": "12 of 12 columns (container width)",
+              "value": "content-width-12"
+            },
+            {
+              "name": "11 of 12 columns",
+              "value": "content-width-11"
+            },
+            {
+              "name": "10 of 12 columns",
+              "value": "content-width-10"
+            },
+            {
+              "name": "9 of 12 columns",
+              "value": "content-width-9"
+            },
+            {
+              "name": "8 of 12 columns",
+              "value": "content-width-8"
+            },
+            {
+              "name": "7 of 12 columns",
+              "value": "content-width-7"
+            },
+            {
+              "name": "6 of 12 columns",
+              "value": "content-width-6"
+            },
+            {
+              "name": "5 of 12 columns",
+              "value": "content-width-5"
+            },
+            {
+              "name": "4 of 12 columns",
+              "value": "content-width-4"
+            },
+            {
+              "name": "3 of 12 columns",
+              "value": "content-width-3"
+            },
+            {
+              "name": "2 of 12 columns",
+              "value": "content-width-2"
+            },
+            {
+              "name": "1 of 12 columns",
+              "value": "content-width-1"
             }
           ]
         },
@@ -549,36 +546,84 @@
         {
           "component": "boolean",
           "valueType": "boolean",
-          "name": "useAemGridTemplate",
           "label": "AEM grid (aem-Grid around the blocks)",
-          "value": true
+          "value": true,
+          "name": "classes_use-aem-grid-template"
         },
         {
           "component": "boolean",
           "valueType": "boolean",
-          "name": "useBrandTheme",
-          "label": "Brand theme (background from Theme)"
+          "label": "Brand theme (background from Theme)",
+          "name": "classes_use-brand-theme",
+          "value": false
         },
         {
           "component": "boolean",
           "valueType": "boolean",
-          "name": "centered",
-          "label": "Centered"
+          "label": "Centered",
+          "name": "classes_centered",
+          "value": false
         },
         {
           "component": "boolean",
           "valueType": "boolean",
-          "name": "fullWidth",
-          "label": "Full width"
+          "label": "Full width",
+          "name": "classes_full-width",
+          "value": false
         },
         {
           "component": "boolean",
           "valueType": "boolean",
-          "name": "useLibClass",
-          "label": "Lib container class (ds-brand-container)"
+          "label": "Lib container class (ds-brand-container)",
+          "name": "classes_use-lib-class",
+          "value": false
         }
       ]
     }
   ],
-  "filters": []
+  "filters": [
+    {
+      "id": "ac-container",
+      "components": [
+        "column"
+      ]
+    },
+    {
+      "id": "column",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title",
+        "ac-button",
+        "ac-download",
+        "ac-accordion",
+        "ac-card-aem",
+        "ac-card-content",
+        "ac-card-feature",
+        "ac-card-icon",
+        "ac-card-product",
+        "ac-carousel",
+        "ac-content-banner",
+        "ac-highlight",
+        "ac-horizontal-tabs",
+        "ac-innovation-banner",
+        "ac-innovation-hero-banner",
+        "ac-key-figure",
+        "ac-list",
+        "ac-product-banner",
+        "ac-promo-banner",
+        "ac-quote",
+        "ac-section-banner",
+        "ac-section-teaser",
+        "ac-startpage-banner",
+        "ac-sticky-banner",
+        "ac-table",
+        "ac-teaser",
+        "ac-text",
+        "ac-title",
+        "ac-separator"
+      ]
+    }
+  ]
 }

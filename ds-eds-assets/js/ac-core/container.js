@@ -127,21 +127,21 @@ function h(type, props, ...children) {
   return el;
 }
 var jsx = (type, { children, ...props }) => h(type, props, children);
-function cellValue(cell, field2) {
-  const a = cell.querySelector("a");
-  if (field2.component === "richtext")
-    return cell.innerHTML.trim();
-  if (field2.component === "reference") {
-    const img = cell.querySelector("img");
-    return (img ? img.getAttribute("src") : a?.getAttribute("href")) ?? cell.textContent.trim();
+function cellValue(cell2, field) {
+  const a = cell2.querySelector("a");
+  if (field.component === "richtext")
+    return cell2.innerHTML.trim();
+  if (field.component === "reference") {
+    const img = cell2.querySelector("img");
+    return (img ? img.getAttribute("src") : a?.getAttribute("href")) ?? cell2.textContent.trim();
   }
-  return a ? a.getAttribute("href") : cell.textContent.trim();
+  return a ? a.getAttribute("href") : cell2.textContent.trim();
 }
-function readClasses(block2, fromClasses2 = {}) {
+function readClasses(block, fromClasses2 = {}) {
   const props = {};
   const apply = (cls) => cls in fromClasses2 && Object.assign(props, fromClasses2[cls]);
-  Object.keys(fromClasses2).filter((cls) => block2.classList.contains(cls)).forEach(apply);
-  for (const row of [...block2.children]) {
+  Object.keys(fromClasses2).filter((cls) => block.classList.contains(cls)).forEach(apply);
+  for (const row of [...block.children]) {
     if (row.children.length !== 1)
       continue;
     const tokens = row.children[0].textContent.split(/[\s,]+/).filter(Boolean);
@@ -152,47 +152,47 @@ function readClasses(block2, fromClasses2 = {}) {
   }
   return props;
 }
-function readItemValues(block2, items2) {
-  return [...block2.children].map((row) => {
+function readItemValues(block, items2) {
+  return [...block.children].map((row) => {
     const cells = [...row.children];
     const values = {};
-    items2.fields.forEach((field2, i) => {
-      const value = cells[i] ? cellValue(cells[i], field2) : "";
-      values[field2.name] = field2.valueType === "boolean" ? value === "true" || value === true : value;
+    items2.fields.forEach((field, i) => {
+      const value = cells[i] ? cellValue(cells[i], field) : "";
+      values[field.name] = field.valueType === "boolean" ? value === "true" || value === true : value;
     });
     return values;
   });
 }
-function adoptSections(block2, node, { panel }) {
-  const id = block2.getAttribute("data-eds-group");
+function adoptSections(block, node, { panel }) {
+  const id = block.getAttribute("data-eds-group");
   if (!id)
     return;
-  const sections = [...document.querySelectorAll(`[data-eds-group="${id}"]`)].filter((el) => el !== block2);
+  const sections = [...document.querySelectorAll(`[data-eds-group="${id}"]`)].filter((el) => el !== block);
   const panels = node.querySelectorAll(panel);
   sections.forEach((section, i) => panels[i] && panels[i].append(section));
 }
-function mergeRoot(block2) {
-  const root = block2.firstElementChild;
-  if (!root || block2.children.length !== 1 || [...block2.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()))
+function mergeRoot(block) {
+  const root = block.firstElementChild;
+  if (!root || block.children.length !== 1 || [...block.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()))
     return;
-  root.classList.forEach((cls) => block2.classList.add(cls));
-  [...root.attributes].filter(({ name }) => name !== "class" && !block2.hasAttribute(name)).forEach(({ name, value }) => block2.setAttribute(name, value));
-  block2.replaceChildren(...root.childNodes);
+  root.classList.forEach((cls) => block.classList.add(cls));
+  [...root.attributes].filter(({ name }) => name !== "class" && !block.hasAttribute(name)).forEach(({ name, value }) => block.setAttribute(name, value));
+  block.replaceChildren(...root.childNodes);
 }
-function unwrapBlock(block2) {
-  const wrapper = block2.parentElement;
-  const name = block2.dataset.blockName ?? block2.classList[0];
+function unwrapBlock(block) {
+  const wrapper = block.parentElement;
+  const name = block.dataset.blockName ?? block.classList[0];
   if (!wrapper || wrapper.classList.contains("section") || !wrapper.classList.contains(`${name}-wrapper`))
     return;
   if (wrapper.children.length !== 1 || [...wrapper.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()))
     return;
-  wrapper.classList.forEach((cls) => block2.classList.add(cls));
-  [...wrapper.attributes].filter(({ name: attr }) => attr !== "class" && !block2.hasAttribute(attr)).forEach(({ name: attr, value }) => block2.setAttribute(attr, value));
-  wrapper.replaceWith(block2);
+  wrapper.classList.forEach((cls) => block.classList.add(cls));
+  [...wrapper.attributes].filter(({ name: attr }) => attr !== "class" && !block.hasAttribute(attr)).forEach(({ name: attr, value }) => block.setAttribute(attr, value));
+  wrapper.replaceWith(block);
 }
 var instrumentation = (el) => [...el.attributes].filter((a) => /^data-(aue|richtext)-/.test(a.name));
-function snapshotInstrumentation(block2) {
-  return [...block2.children].map((row) => ({
+function snapshotInstrumentation(block) {
+  return [...block.children].map((row) => ({
     row: instrumentation(row),
     cells: [...row.children].map(instrumentation)
   }));
@@ -216,47 +216,58 @@ function applyInstrumentation(root, snapshot, instrument, fields2 = []) {
     }
   });
 }
-function keyValueRows(block2) {
-  const children = [...block2.children];
+function keyValueRows(block) {
+  const children = [...block.children];
   const [wrapper] = children;
   const isWrapper = children.length === 1 && wrapper.hasAttribute("data-aue-resource") && wrapper.children.length > 0 && [...wrapper.children].every((row) => row.children.length === 2);
   if (!isWrapper)
     return children;
-  instrumentation(wrapper).filter(({ name }) => !block2.hasAttribute(name)).forEach(({ name, value }) => block2.setAttribute(name, value));
+  instrumentation(wrapper).filter(({ name }) => !block.hasAttribute(name)).forEach(({ name, value }) => block.setAttribute(name, value));
   return [...wrapper.children];
 }
-function readFields(block2, fields2, { keyValue = true } = {}) {
+function readFields(block, fields2, { keyValue = true } = {}) {
   const cells = {};
-  for (const row of keyValue ? keyValueRows(block2) : [...block2.children]) {
+  for (const row of keyValue ? keyValueRows(block) : [...block.children]) {
     const [keyCell, valueCell] = [...row.children];
     const key = keyCell?.textContent.trim();
     if (key && valueCell)
       cells[key] = valueCell;
   }
   const loose = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, "");
-  const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell]) => [loose(key), cell]));
+  const looseCells = Object.fromEntries(Object.entries(cells).map(([key, cell2]) => [loose(key), cell2]));
   const props = {};
   const classes = [];
-  for (const field2 of fields2) {
-    const cell = cells[field2.name] ?? looseCells[loose(field2.name)];
-    let value = cell ? cellValue(cell, field2) : field2.value;
+  for (const field of fields2) {
+    const cell2 = cells[field.name] ?? looseCells[loose(field.name)];
+    let value = cell2 ? cellValue(cell2, field) : field.value;
     if (value === void 0 || value === "")
       continue;
-    if (field2.valueType === "boolean")
+    if (field.valueType === "boolean")
       value = value === true || value === "true";
-    else if (field2.valueType === "number")
+    else if (field.valueType === "number")
       value = Number(value);
-    if (field2.asClass) {
-      const template = typeof field2.asClass === "string" ? field2.asClass : "{value}";
+    if (field.asClass) {
+      const template = typeof field.asClass === "string" ? field.asClass : "{value}";
       classes.push(...template.replace("{value}", value).split(/\s+/));
     } else
-      props[field2.prop || field2.name] = field2.as === "link" ? { url: value, valid: true } : value;
+      props[field.prop || field.name] = field.as === "link" ? { url: value, valid: true } : value;
   }
   return { props, classes };
 }
 
 // libs/aem-core-lib/src/lib/container-layout/container-layout.tsx
 var import_classnames = __toESM(require_classnames());
+
+// libs/aem-core-lib/src/types/common.ts
+var GridTypeClassnames = /* @__PURE__ */ ((GridTypeClassnames2) => {
+  GridTypeClassnames2["grid2"] = "grid-col-2";
+  GridTypeClassnames2["grid3"] = "grid-col-3";
+  GridTypeClassnames2["grid4"] = "grid-col-4";
+  GridTypeClassnames2["grid5"] = "grid-col-5";
+  GridTypeClassnames2["grid1_2"] = "grid-col-1-2";
+  GridTypeClassnames2["grid2_1"] = "grid-col-2-1";
+  return GridTypeClassnames2;
+})(GridTypeClassnames || {});
 
 // libs/aem-core-lib/src/assets/utils/common.ts
 function getGridClassName(grid) {
@@ -353,76 +364,122 @@ function Container({ className, themeColor, children, grid, useBrandTheme = fals
 }
 
 // tools/eds/define.ts
-var field = {
-  text: (label, opts = {}) => ({ component: "text", label, ...opts }),
-  richtext: (label, opts = {}) => ({ component: "richtext", label, ...opts }),
-  /** An image (asset reference); the value is the image URL. */
-  image: (label, opts = {}) => ({ component: "reference", label, ...opts }),
-  /** A link; the value is the URL. */
-  link: (label, opts = {}) => ({ component: "aem-content", label, ...opts }),
-  boolean: (label, opts = {}) => ({ component: "boolean", label, ...opts }),
-  select: (label, options, opts = {}) => ({
-    component: "select",
-    label,
-    options,
-    value: options[0]?.[1],
-    ...opts
-  })
-};
-var block = (def) => ({ kind: "block", ...def });
+var option = (value, label, props) => ({ value, label, props });
+var columns = (def) => ({ kind: "columns", ...def });
 var uniqueId = (prefix) => `${prefix}-${Math.random().toString(36).slice(2, 8)}`;
 
 // libs/ac-core-lib/src/lib/container/container.eds.ts
-var container_eds_default = block({
+var grids = Object.values(GridTypeClassnames).map((className) => className.replace("grid-col-", ""));
+var gridLabel = (grid) => /^\d+$/.test(grid) ? `${grid} columns` : `2 columns ${grid.replace("-", ":")}`;
+var GRID_ITEM = ["aem-GridColumn", "aem-GridColumn--default--12"];
+var cell;
+var container_eds_default = columns({
   title: "AC Container",
-  // the component's options, from its props types (ac-core-lib Container, aem-core-lib ContainerLayout)
-  fields: {
-    grid: {
+  // one cell, no "Columns" / "Rows" fields: the blocks are added to it
+  columnsField: false,
+  defaultColumns: 1,
+  rows: false,
+  // what the add button offers in the container: default content and the lib's blocks
+  columnComponents: [
+    "text",
+    "image",
+    "button",
+    "title",
+    "ac-button",
+    "ac-download",
+    "ac-accordion",
+    "ac-card-aem",
+    "ac-card-content",
+    "ac-card-feature",
+    "ac-card-icon",
+    "ac-card-product",
+    "ac-carousel",
+    "ac-content-banner",
+    "ac-highlight",
+    "ac-horizontal-tabs",
+    "ac-innovation-banner",
+    "ac-innovation-hero-banner",
+    "ac-key-figure",
+    "ac-list",
+    "ac-product-banner",
+    "ac-promo-banner",
+    "ac-quote",
+    "ac-section-banner",
+    "ac-section-teaser",
+    "ac-startpage-banner",
+    "ac-sticky-banner",
+    "ac-table",
+    "ac-teaser",
+    "ac-text",
+    "ac-title",
+    "ac-separator"
+  ],
+  // full container width (12 of 12) unless the author picks another
+  contentWidth: 12,
+  classSelects: [
+    // the grid: a class on the root (grid-col-2 ... grid-col-5, grid-col-1-2, grid-col-2-1) laying the blocks out,
+    // whatever their number; "1 column" adds no grid class
+    {
+      name: "grid",
       label: "Columns",
-      labels: { "2": "2 columns", "3": "3 columns", "4": "4 columns", "5": "5 columns", "1-2": "2 columns 1:2", "2-1": "2 columns 2:1" }
-    },
+      value: "grid-col-2",
+      options: [
+        option("grid-col-1", "1 column", { grid: 1 }),
+        ...grids.map(
+          (grid) => option(`grid-col-${grid}`, gridLabel(grid), {
+            grid: /^\d+$/.test(grid) ? Number(grid) : grid
+          })
+        )
+      ]
+    }
+  ],
+  // the component's own options, from its props types (ac-core-lib Container, aem-core-lib ContainerLayout):
+  // booleans are checkboxes, the theme a select
+  fields: {
     useAemGridTemplate: { label: "AEM grid (aem-Grid around the blocks)", value: true },
-    contentWidth: {
-      label: "Content width",
-      value: "12",
-      options: ["12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1"].map(
-        (n) => [n === "12" ? "12 of 12 columns (container width)" : `${n} of 12 columns`, n]
-      )
-    },
     useBrandTheme: { label: "Brand theme (background from Theme)" },
     themeColor: { label: "Theme" },
     centered: true,
     fullWidth: true,
     useLibClass: { label: "Lib container class (ds-brand-container)" }
   },
-  // the content: a fragment page, loaded by the site (not a prop of the component)
-  extraFields: {
-    fragment: field.link("Content (fragment page)", {
-      required: true,
-      description: "The page whose blocks are shown in the container, e.g. /fragments/my-container"
-    })
+  defaults: () => ({ id: uniqueId("container"), contentWidth: 12 }),
+  toProps: (cells, { props }) => {
+    [cell] = cells;
+    const items2 = cell ? Array.from(cell.children) : [];
+    if (props.useAemGridTemplate !== false)
+      items2.forEach((item) => item.classList.add(...GRID_ITEM));
+    const picked = props.grid;
+    return {
+      // "1 column": no grid class
+      grid: picked === 1 ? void 0 : picked,
+      children: items2
+    };
   },
-  // select values are strings: the numeric grids and widths back to numbers (getGridClassName matches 2, not '2')
-  toProps: (_, { grid, contentWidth }) => ({
-    grid: grid !== void 0 && /^\d+$/.test(String(grid)) ? Number(grid) : grid,
-    contentWidth: contentWidth !== void 0 ? Number(contentWidth) : void 0
-  }),
-  defaults: () => ({ id: uniqueId("container") })
+  // the element holding the blocks (aem-Grid, or cmp-container without the grid) takes the cell's attributes:
+  // in the Universal Editor it is where blocks are added
+  afterRender: (block) => {
+    const holder = block.querySelector(":scope > * > .cmp-container > .aem-Grid") ?? block.querySelector(":scope > * > .cmp-container");
+    if (cell && holder) {
+      Array.from(cell.attributes).filter(({ name }) => name !== "class" && !holder.hasAttribute(name)).forEach(({ name, value }) => holder.setAttribute(name, value));
+    }
+    cell = void 0;
+  }
 });
 
 // ac-container.decorate.tsx
-var fields = [{ "name": "grid", "value": "", "valueType": "string", "component": "select" }, { "name": "useAemGridTemplate", "value": true, "valueType": "boolean", "component": "boolean" }, { "name": "contentWidth", "value": "12", "valueType": "string", "component": "select" }, { "name": "useBrandTheme", "valueType": "boolean", "component": "boolean" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "centered", "valueType": "boolean", "component": "boolean" }, { "name": "fullWidth", "valueType": "boolean", "component": "boolean" }, { "name": "useLibClass", "valueType": "boolean", "component": "boolean" }, { "name": "fragment", "valueType": "string", "component": "aem-content" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
-var fromClasses = {};
-var classFlags = [];
+var fields = [{ "name": "classes_grid", "value": "grid-col-2", "valueType": "string", "component": "select" }, { "name": "classes_content-width", "value": "content-width-12", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fromClasses = { "grid-col-1": { "grid": 1 }, "grid-col-2": { "grid": 2 }, "grid-col-3": { "grid": 3 }, "grid-col-4": { "grid": 4 }, "grid-col-5": { "grid": 5 }, "grid-col-1-2": { "grid": "1-2" }, "grid-col-2-1": { "grid": "2-1" }, "use-aem-grid-template": { "useAemGridTemplate": true }, "use-brand-theme": { "useBrandTheme": true }, "theme-color-primary": { "themeColor": "primary" }, "theme-color-secondary": { "themeColor": "secondary" }, "theme-color-tertiary": { "themeColor": "tertiary" }, "theme-color-quaternary": { "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true }, "use-lib-class": { "useLibClass": true }, "content-width-12": { "contentWidth": 12 }, "content-width-11": { "contentWidth": 11 }, "content-width-10": { "contentWidth": 10 }, "content-width-9": { "contentWidth": 9 }, "content-width-8": { "contentWidth": 8 }, "content-width-7": { "contentWidth": 7 }, "content-width-6": { "contentWidth": 6 }, "content-width-5": { "contentWidth": 5 }, "content-width-4": { "contentWidth": 4 }, "content-width-3": { "contentWidth": 3 }, "content-width-2": { "contentWidth": 2 }, "content-width-1": { "contentWidth": 1 } };
+var classFlags = ["useAemGridTemplate", "useBrandTheme", "centered", "fullWidth", "useLibClass"];
 var items = null;
 var adopt = null;
-var extraNames = ["fragment"];
-var isColumns = false;
+var extraNames = [];
+var isColumns = true;
 var composite = false;
-function decorate(block2, options = {}) {
-  const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block2, fields, { keyValue: !items });
+function decorate(block, options = {}) {
+  const { props: authored, classes } = isColumns ? { props: {}, classes: [] } : readFields(block, fields, { keyValue: !items });
   if (composite) {
-    String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block2.classList.add(o));
+    String(authored.options ?? "").split(",").map((o) => o.trim()).filter(Boolean).forEach((o) => block.classList.add(o));
     delete authored.options;
     delete authored["section-block"];
   }
@@ -433,11 +490,11 @@ function decorate(block2, options = {}) {
   });
   const fieldProps = container_eds_default.toProps && !items && !isColumns ? { ...authored, ...container_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof container_eds_default.defaults === "function" ? container_eds_default.defaults() : container_eds_default.defaults || {};
-  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block2, fromClasses) };
-  const instrumentation2 = items ? snapshotInstrumentation(block2) : null;
-  let itemProps = items ? container_eds_default.toProps(readItemValues(block2, items)) : {};
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block, fromClasses) };
+  const instrumentation2 = items ? snapshotInstrumentation(block) : null;
+  let itemProps = items ? container_eds_default.toProps(readItemValues(block, items)) : {};
   if (isColumns) {
-    const rows = [...block2.children];
+    const rows = [...block.children];
     const cells = rows.flatMap((row) => [...row.children]);
     const count = rows[0] ? rows[0].children.length : 0;
     itemProps = container_eds_default.toProps(cells, { count, rows: rows.length, props: { ...defaults, ...classProps } });
@@ -447,17 +504,17 @@ function decorate(block2, options = {}) {
   const root = node.nodeType === 11 ? node.firstElementChild : node;
   if (root && classes.length)
     root.classList.add(...classes);
-  block2.classList.add(...["ac-core"]);
-  block2.replaceChildren(node);
+  block.classList.add(...["ac-core"]);
+  block.replaceChildren(node);
   if (items)
     applyInstrumentation(node, instrumentation2, items.instrument, items.fields);
   if (adopt)
-    adoptSections(block2, node, adopt);
+    adoptSections(block, node, adopt);
   if (container_eds_default.afterRender)
-    container_eds_default.afterRender(block2, props);
-  mergeRoot(block2);
-  block2.classList.remove("block");
-  unwrapBlock(block2);
+    container_eds_default.afterRender(block, props);
+  mergeRoot(block);
+  block.classList.remove("block");
+  unwrapBlock(block);
 }
 export {
   decorate as default
