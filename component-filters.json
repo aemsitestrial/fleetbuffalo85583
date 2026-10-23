@@ -69,7 +69,25 @@
       "reward-sticky",
       "sticky-cta",
       "quiz",
-      "custom-teaser"
+      "custom-teaser",
+      "ds-title",
+      "ds-text",
+      "ds-button",
+      "ds-image",
+      "ds-separator",
+      "ds-download",
+      "ds-table",
+      "ds-table-of-content",
+      "ds-embed-iframe",
+      "ds-embed-video",
+      "ds-card",
+      "ds-banner",
+      "ds-text-content",
+      "ds-accordion",
+      "ds-tabs",
+      "ds-list",
+      "ds-carousel",
+      "ds-slider"
     ]
   },
   {
@@ -199,6 +217,36 @@
     "id": "custom-teaser",
     "components": [
       "custom-teaser-item"
+    ]
+  },
+  {
+    "id": "ds-accordion",
+    "components": [
+      "ds-accordion-item"
+    ]
+  },
+  {
+    "id": "ds-carousel",
+    "components": [
+      "ds-carousel-item"
+    ]
+  },
+  {
+    "id": "ds-list",
+    "components": [
+      "ds-list-item"
+    ]
+  },
+  {
+    "id": "ds-slider",
+    "components": [
+      "ds-slider-item"
+    ]
+  },
+  {
+    "id": "ds-tabs",
+    "components": [
+      "ds-tabs-item"
     ]
   },
   {

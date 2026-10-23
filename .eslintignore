@@ -5,6 +5,7 @@ tools/segments
 tools/pdp-metadata
 scripts/__dropins__
 ds-eds-assets
+ds-eds-assets-ac
 scripts/commerce-events-collector.js
 scripts/commerce-events-sdk.js
 scripts/widgets

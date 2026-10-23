@@ -1,0 +1,2 @@
+function n(){return n=Object.assign?Object.assign.bind():function(n){for(var r=1;r<arguments.length;r++){var a=arguments[r];for(var t in a)({}).hasOwnProperty.call(a,t)&&(n[t]=a[t])}return n},n.apply(null,arguments)}function r(n,r){if(null==n)return{};var a={};for(var t in n)if({}.hasOwnProperty.call(n,t)){if(-1!==r.indexOf(t))continue;a[t]=n[t]}return a}export{n as _,r as a};
+//# sourceMappingURL=chunk-fca49247.js.map

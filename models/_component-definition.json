@@ -199,6 +199,66 @@
       ]
     },
     {
+      "title": "DS Components",
+      "id": "ds-components",
+      "components": [
+        {
+          "...": "../blocks/ds-title/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-text/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-button/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-image/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-separator/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-download/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-table/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-table-of-content/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-embed-iframe/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-embed-video/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-card/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-banner/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-text-content/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-accordion/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-tabs/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-list/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-carousel/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/ds-slider/_*.json#/definitions"
+        }
+      ]
+    },
+    {
       "title": "Product",
       "id": "product",
       "components": [

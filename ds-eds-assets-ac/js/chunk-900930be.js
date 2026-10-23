@@ -1,0 +1,2 @@
+import{c as e}from"./chunk-718300a2.js";import{jsx as t,jsxs as r}from"./vendor/jsx-runtime.js";function i({id:i,":orderCol":d,":itemsRow":l,":itemsCol":s,className:a,useRootClassName:m=!0}){return t("div",{id:i,className:e(m?"text":"",a),children:t("div",{className:"cmp-text",children:t("table",{children:r("tbody",{children:[s&&t("tr",{children:d.map(e=>t("th",{children:s[e].title},s[e].id))}),l.map((e,r)=>t("tr",{children:d.map((r,i)=>t("td",{dangerouslySetInnerHTML:{__html:e[r]}},`${r}-${i}`))},r))]})})})})}export{i as T};
+//# sourceMappingURL=chunk-900930be.js.map

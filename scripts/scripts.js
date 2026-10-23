@@ -24,6 +24,10 @@ import {
   runExperimentation,
   showExperimentationRail,
 } from './experiment-loader.js';
+import {
+  applyBrandBodyClasses,
+  decorateContainerSections,
+} from '../ds-eds-assets-ac/js/vendor/page-glue.js';
 
 const experimentationConfig = {
   prodHost: 'frescopa.coffee', // TODO: change domains for different showcases.
@@ -293,6 +297,7 @@ export function decorateMain(main) {
   decorateSections(main);
   buildTabsBlocks(main);
   decorateBlocks(main);
+  decorateContainerSections(main);
 }
 
 /**
@@ -345,6 +350,7 @@ function preloadFile(href, as) {
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  applyBrandBodyClasses();
 
   await runExperimentation(doc, experimentationConfig);
 

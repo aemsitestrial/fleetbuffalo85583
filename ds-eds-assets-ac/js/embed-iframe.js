@@ -1,0 +1,2 @@
+import{c as e}from"./chunk-718300a2.js";export{G as GridTypeClassnames}from"./chunk-718300a2.js";import{jsx as r}from"./vendor/jsx-runtime.js";function a({id:a,className:i,height:l,width:m,src:s,allow:d="autoplay; fullscreen",title:o,ariaLabel:t,frameBorder:c}){return r("div",{className:e("embed embed-video-iframe",i),children:r("div",{id:a,className:"cmp-embed",children:r("iframe",{title:o,width:m,height:l,src:s,frameBorder:c,allowFullScreen:!0,allow:d,"aria-label":t})})})}export{a as EmbedVideoIframe};
+//# sourceMappingURL=embed-iframe.js.map

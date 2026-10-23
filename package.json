@@ -5,6 +5,7 @@
   "description": "Starter project for Adobe Commerce on Edge Delivery Services",
   "scripts": {
     "install:dropins": "node build.mjs && node postinstall.js",
+    "install:ds-assets": "eds-assets-install --to ds-eds-assets-ac",
     "postinstall": "npm run install:dropins",
     "postupdate": "npm run install:dropins",
     "lint:js": "eslint . --ext .json,.js,.mjs",
@@ -28,6 +29,7 @@
   },
   "homepage": "https://github.com/hlxsites/aem-boilerplate-commerce#readme",
   "devDependencies": {
+    "@ac-brandsframework/eds-assets": "file:ac-brandsframework-eds-assets-0.65.0.tgz",
     "@adobe/aem-cli": "^16.5.8",
     "@babel/eslint-parser": "7.27.0",
     "@dropins/build-tools": "0.2.0",

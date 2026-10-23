@@ -1,0 +1,156 @@
+{
+  "definitions": [
+    {
+      "title": "DS Embed Video",
+      "id": "ds-embed-video",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "DS Embed Video",
+              "model": "ds-embed-video",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ds-embed-video",
+      "fields": [
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "video",
+          "label": "Video"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "videoType",
+          "label": "Video type",
+          "value": "",
+          "options": [
+            {
+              "name": "MP4",
+              "value": ""
+            },
+            {
+              "name": "WebM",
+              "value": "video/webm"
+            },
+            {
+              "name": "Ogg",
+              "value": "video/ogg"
+            }
+          ]
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "poster",
+          "label": "Poster image",
+          "multi": false
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "autoPlay",
+          "label": "Autoplay",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "loop",
+          "label": "Loop",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "muted",
+          "label": "Muted",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "controls",
+          "label": "Controls",
+          "value": true
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "spacingMy",
+          "label": "Vertical margin",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "my-4 (1rem)",
+              "value": "my-4"
+            },
+            {
+              "name": "my-8 (2rem)",
+              "value": "my-8"
+            },
+            {
+              "name": "my-12 (3rem)",
+              "value": "my-12"
+            },
+            {
+              "name": "my-16 (4rem)",
+              "value": "my-16"
+            },
+            {
+              "name": "my-20 (5rem)",
+              "value": "my-20"
+            }
+          ],
+          "value": ""
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "spacingMb",
+          "label": "Bottom margin",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "mb-4 (1rem)",
+              "value": "mb-4"
+            },
+            {
+              "name": "mb-8 (2rem)",
+              "value": "mb-8"
+            },
+            {
+              "name": "mb-12 (3rem)",
+              "value": "mb-12"
+            },
+            {
+              "name": "mb-16 (4rem)",
+              "value": "mb-16"
+            },
+            {
+              "name": "mb-20 (5rem)",
+              "value": "mb-20"
+            }
+          ],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

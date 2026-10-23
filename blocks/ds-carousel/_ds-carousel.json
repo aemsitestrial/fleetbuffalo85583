@@ -1,0 +1,208 @@
+{
+  "definitions": [
+    {
+      "title": "DS Carousel",
+      "id": "ds-carousel",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "DS Carousel",
+              "model": "ds-carousel",
+              "filter": "ds-carousel"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Carousel Item",
+      "id": "ds-carousel-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Carousel Item",
+              "model": "ds-carousel-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ds-carousel",
+      "fields": [
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_carouselItemType",
+          "label": "Item type",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Image",
+              "value": "image"
+            },
+            {
+              "name": "Hero image",
+              "value": "hero"
+            },
+            {
+              "name": "Teaser",
+              "value": "teaser"
+            },
+            {
+              "name": "Hero teaser",
+              "value": "hero-teaser"
+            }
+          ],
+          "value": ""
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_carouselTheme",
+          "label": "Carousel theme",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Primary",
+              "value": "style-primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "style-secondary"
+            }
+          ],
+          "value": ""
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_spacingMy",
+          "label": "Vertical margin",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "my-4 (1rem)",
+              "value": "my-4"
+            },
+            {
+              "name": "my-8 (2rem)",
+              "value": "my-8"
+            },
+            {
+              "name": "my-12 (3rem)",
+              "value": "my-12"
+            },
+            {
+              "name": "my-16 (4rem)",
+              "value": "my-16"
+            },
+            {
+              "name": "my-20 (5rem)",
+              "value": "my-20"
+            }
+          ],
+          "value": ""
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes_spacingMb",
+          "label": "Bottom margin",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "mb-4 (1rem)",
+              "value": "mb-4"
+            },
+            {
+              "name": "mb-8 (2rem)",
+              "value": "mb-8"
+            },
+            {
+              "name": "mb-12 (3rem)",
+              "value": "mb-12"
+            },
+            {
+              "name": "mb-16 (4rem)",
+              "value": "mb-16"
+            },
+            {
+              "name": "mb-20 (5rem)",
+              "value": "mb-20"
+            }
+          ],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "ds-carousel-item",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image alt text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "pretitle",
+          "label": "Pretitle"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "ds-carousel",
+      "components": [
+        "ds-carousel-item"
+      ]
+    }
+  ]
+}

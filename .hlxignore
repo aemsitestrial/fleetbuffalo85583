@@ -6,6 +6,7 @@ karma.config.js
 LICENSE
 package.json
 package-lock.json
+*.tgz
 test/*
 postinstall.js
 build.mjs

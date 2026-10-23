@@ -1,0 +1,1 @@
+/* The design-system CSS of ds-accordion loads through loadBundle (scripts/ds-blocks.js). aem.js requests this file for every block, so it has to exist. */

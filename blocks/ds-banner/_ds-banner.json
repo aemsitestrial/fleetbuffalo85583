@@ -1,0 +1,537 @@
+{
+  "definitions": [
+    {
+      "title": "DS Banner",
+      "id": "ds-banner",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "DS Banner",
+              "model": "ds-banner",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ds-banner",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image alt text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "pretitle",
+          "label": "Pretitle"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "titleType",
+          "label": "Title level",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "H1",
+              "value": "h1"
+            },
+            {
+              "name": "H2",
+              "value": "h2"
+            },
+            {
+              "name": "H3",
+              "value": "h3"
+            },
+            {
+              "name": "H4",
+              "value": "h4"
+            },
+            {
+              "name": "H5",
+              "value": "h5"
+            }
+          ],
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "date",
+          "label": "Date"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "link",
+          "label": "Link"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "action1",
+          "label": "Action 1 link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "action1Text",
+          "label": "Action 1 text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "action2",
+          "label": "Action 2 link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "action2Text",
+          "label": "Action 2 text"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "bannerType",
+          "label": "Banner type",
+          "options": [
+            {
+              "name": "Content banner",
+              "value": "ac-core-content-banner"
+            },
+            {
+              "name": "Innovation banner",
+              "value": "ac-core-innovation-banner"
+            },
+            {
+              "name": "Innovation hero banner",
+              "value": "ac-core-innovation-hero-banner"
+            },
+            {
+              "name": "Product banner",
+              "value": "ac-core-product-banner"
+            },
+            {
+              "name": "Promo banner",
+              "value": "ac-core-promo-banner"
+            },
+            {
+              "name": "Section banner",
+              "value": "ac-core-section-banner"
+            },
+            {
+              "name": "Section teaser",
+              "value": "ac-core-section-teaser"
+            },
+            {
+              "name": "Startpage banner",
+              "value": "ac-core-startpage-banner"
+            },
+            {
+              "name": "Sticky banner",
+              "value": "ac-core-sticky-banner"
+            }
+          ],
+          "value": "ac-core-content-banner"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "bannerContentAlignment",
+          "label": "Content alignment",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Content center",
+              "value": "modifier-content-center"
+            },
+            {
+              "name": "Content right",
+              "value": "modifier-content-right"
+            }
+          ],
+          "value": "",
+          "condition": {
+            "===": [
+              {
+                "var": "bannerType"
+              },
+              "ac-core-content-banner"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "bannerReverseContent",
+          "label": "Reverse content",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Reverse",
+              "value": "modifier-reverse-content"
+            }
+          ],
+          "value": "",
+          "condition": {
+            "in": [
+              {
+                "var": "bannerType"
+              },
+              [
+                "ac-core-innovation-banner",
+                "ac-core-innovation-hero-banner",
+                "ac-core-product-banner"
+              ]
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "promoBannerStyle",
+          "label": "Promo banner style",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Boxed",
+              "value": "modifier-boxed"
+            },
+            {
+              "name": "Card",
+              "value": "modifier-card"
+            }
+          ],
+          "value": "",
+          "condition": {
+            "===": [
+              {
+                "var": "bannerType"
+              },
+              "ac-core-promo-banner"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "sectionTeaserImage",
+          "label": "Section teaser image",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Image primary",
+              "value": "modifier-image-primary"
+            },
+            {
+              "name": "Image secondary",
+              "value": "modifier-image-secondary"
+            },
+            {
+              "name": "Image tertiary",
+              "value": "modifier-image-tertiary"
+            },
+            {
+              "name": "Image quaternary",
+              "value": "modifier-image-quaternary"
+            }
+          ],
+          "value": "",
+          "condition": {
+            "===": [
+              {
+                "var": "bannerType"
+              },
+              "ac-core-section-teaser"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "startpageBannerModifier",
+          "label": "Startpage banner modifier",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Reverse",
+              "value": "modifier-reverse-content"
+            },
+            {
+              "name": "No icon",
+              "value": "modifier-no-icons"
+            }
+          ],
+          "value": "",
+          "condition": {
+            "===": [
+              {
+                "var": "bannerType"
+              },
+              "ac-core-startpage-banner"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "stickyBannerContentType",
+          "label": "Sticky banner content",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Contact",
+              "value": "modifier-contact"
+            },
+            {
+              "name": "E-learning",
+              "value": "modifier-e-learning"
+            },
+            {
+              "name": "Download",
+              "value": "modifier-download"
+            }
+          ],
+          "value": "",
+          "condition": {
+            "===": [
+              {
+                "var": "bannerType"
+              },
+              "ac-core-sticky-banner"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "themeType",
+          "label": "Theme",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Primary",
+              "value": "style-primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "style-secondary"
+            },
+            {
+              "name": "Tertiary",
+              "value": "style-tertiary"
+            },
+            {
+              "name": "Quaternary",
+              "value": "style-quaternary"
+            }
+          ],
+          "value": ""
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "cardAction",
+          "label": "Card action",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "None",
+              "value": "none"
+            },
+            {
+              "name": "Whole-card link",
+              "value": "link"
+            },
+            {
+              "name": "Buttons",
+              "value": "buttons"
+            }
+          ],
+          "value": ""
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "headlineLineClamp",
+          "label": "Title line clamp",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "1 line",
+              "value": "teaser-headline-line-clamp-1"
+            },
+            {
+              "name": "2 lines",
+              "value": "teaser-headline-line-clamp-2"
+            }
+          ],
+          "value": ""
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "descriptionLineClamp",
+          "label": "Description line clamp",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "2 lines",
+              "value": "teaser-description-line-clamp-2"
+            },
+            {
+              "name": "4 lines",
+              "value": "teaser-description-line-clamp-4"
+            },
+            {
+              "name": "6 lines",
+              "value": "teaser-description-line-clamp-6"
+            },
+            {
+              "name": "8 lines",
+              "value": "teaser-description-line-clamp-8"
+            },
+            {
+              "name": "10 lines",
+              "value": "teaser-description-line-clamp-10"
+            },
+            {
+              "name": "12 lines",
+              "value": "teaser-description-line-clamp-12"
+            }
+          ],
+          "value": ""
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "spacingMy",
+          "label": "Vertical margin",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "my-4 (1rem)",
+              "value": "my-4"
+            },
+            {
+              "name": "my-8 (2rem)",
+              "value": "my-8"
+            },
+            {
+              "name": "my-12 (3rem)",
+              "value": "my-12"
+            },
+            {
+              "name": "my-16 (4rem)",
+              "value": "my-16"
+            },
+            {
+              "name": "my-20 (5rem)",
+              "value": "my-20"
+            }
+          ],
+          "value": ""
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "spacingMb",
+          "label": "Bottom margin",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "mb-4 (1rem)",
+              "value": "mb-4"
+            },
+            {
+              "name": "mb-8 (2rem)",
+              "value": "mb-8"
+            },
+            {
+              "name": "mb-12 (3rem)",
+              "value": "mb-12"
+            },
+            {
+              "name": "mb-16 (4rem)",
+              "value": "mb-16"
+            },
+            {
+              "name": "mb-20 (5rem)",
+              "value": "mb-20"
+            }
+          ],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
