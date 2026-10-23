@@ -8,7 +8,7 @@
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "DS Accordion",
+              "name": "ds-accordion",
               "model": "ds-accordion",
               "filter": "ds-accordion"
             }
@@ -17,14 +17,14 @@
       }
     },
     {
-      "title": "Accordion Item",
+      "title": "DS Accordion Item",
       "id": "ds-accordion-item",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Accordion Item",
+              "name": "DS Accordion Item",
               "model": "ds-accordion-item"
             }
           }

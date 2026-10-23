@@ -2,7 +2,7 @@ import renderList from '../../ds-eds-assets-ac/js/vendor/render-list.js';
 import { spacingMy, spacingMb, themeType } from '../../ds-eds-assets-ac/options/common.js';
 import { listItemType, listGridRows } from '../../ds-eds-assets-ac/options/list.js';
 import {
-  loadBundle, readTeaserItems, takeClassOptions,
+  loadBundle, replaceContent, readTeaserItems, takeClassOptions,
 } from '../../scripts/ds-blocks.js';
 
 /** @param {HTMLElement} block */
@@ -14,10 +14,11 @@ export default function decorate(block) {
   });
   const { items, editable } = readTeaserItems(block, ['itemStyle']);
   // The wrapper loads the bundles of the chosen item styles itself.
-  block.replaceChildren(renderList({
+  const element = renderList({
     content: { items },
     options,
     editable,
     loadBundle,
-  }));
+  });
+  replaceContent(block, null, element);
 }

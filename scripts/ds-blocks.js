@@ -231,17 +231,33 @@ export function takeFlag(block, name) {
   return had;
 }
 
+/** True inside the Universal Editor, where the page carries its instrumentation. */
+const inEditor = () => !!document.querySelector('[data-aue-resource]');
+
+/** @param {Element | undefined} element */
+const isEmpty = (element) => !element
+  || (!element.textContent.trim() && !element.querySelector('img,picture,iframe,video,hr,svg'));
+
 /**
- * Puts the rendered element in the block, carrying the editor attributes of the wrapper.
+ * Puts the rendered element in the block, carrying the editor attributes of the wrapper. In the
+ * editor, a block with nothing to show gets a placeholder, so the author can see and select it.
  * @param {HTMLElement} block
  * @param {Element | null} wrapper
  * @param {HTMLElement | undefined} element
  */
 export function replaceContent(block, wrapper, element) {
   block.textContent = '';
-  if (!element) return;
-  if (wrapper) moveInstrumentation(wrapper, element);
-  block.append(element);
+  let target = element;
+  if (inEditor() && isEmpty(element)) {
+    const placeholder = document.createElement('p');
+    placeholder.className = 'ds-placeholder';
+    placeholder.textContent = `${block.dataset.blockName || block.classList[0]}: fill in the fields in the properties panel`;
+    if (element) element.append(placeholder);
+    else target = placeholder;
+  }
+  if (!target) return;
+  if (wrapper) moveInstrumentation(wrapper, target);
+  block.append(target);
 }
 
 /**

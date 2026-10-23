@@ -8,7 +8,7 @@
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "DS Slider (Splide)",
+              "name": "ds-slider",
               "model": "ds-slider",
               "filter": "ds-slider"
             }
@@ -17,14 +17,14 @@
       }
     },
     {
-      "title": "Slider Item",
+      "title": "DS Slider Item",
       "id": "ds-slider-item",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Slider Item",
+              "name": "DS Slider Item",
               "model": "ds-slider-item"
             }
           }

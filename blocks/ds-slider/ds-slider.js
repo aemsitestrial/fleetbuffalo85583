@@ -2,7 +2,7 @@ import renderSplideCarousel, { startSplideCarousel } from '../../ds-eds-assets-a
 import { spacingMy, spacingMb } from '../../ds-eds-assets-ac/options/common.js';
 import { splideCarouselItemType } from '../../ds-eds-assets-ac/options/splide-carousel.js';
 import {
-  loadBundle, readTeaserItems, takeClassOptions, whenShown,
+  loadBundle, replaceContent, readTeaserItems, takeClassOptions, whenShown,
 } from '../../scripts/ds-blocks.js';
 
 // Named ds-slider, not ds-splide-carousel: the package's CSS already styles .ds-splide-carousel.
@@ -18,7 +18,7 @@ export default function decorate(block) {
     editable,
     loadBundle,
   });
-  block.replaceChildren(element);
+  replaceContent(block, null, element);
   // Splide measures the slides, so it starts once the section is visible.
   whenShown(block, () => startSplideCarousel(element));
 }

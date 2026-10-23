@@ -8,7 +8,7 @@
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "DS Tabs",
+              "name": "ds-tabs",
               "model": "ds-tabs",
               "filter": "ds-tabs"
             }
@@ -17,14 +17,14 @@
       }
     },
     {
-      "title": "Tab",
+      "title": "DS Tab",
       "id": "ds-tabs-item",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Tab",
+              "name": "DS Tab",
               "model": "ds-tabs-item"
             }
           }

@@ -2,7 +2,7 @@ import renderTabs, { startResponsiveTabs } from '../../ds-eds-assets-ac/js/vendo
 import { spacingMy, spacingMb, themeType } from '../../ds-eds-assets-ac/options/common.js';
 import { tabsLayout } from '../../ds-eds-assets-ac/options/tabs.js';
 import {
-  loadBundle, readPanelItems, takeClassOptions, takeFlag, whenShown,
+  loadBundle, replaceContent, readPanelItems, takeClassOptions, takeFlag, whenShown,
 } from '../../scripts/ds-blocks.js';
 
 /** @param {HTMLElement} block */
@@ -19,7 +19,7 @@ export default function decorate(block) {
     options,
     editable,
   });
-  block.replaceChildren(element);
+  replaceContent(block, null, element);
   // The responsive dropdown measures the tabs, so it starts once the section is visible.
   if (useResponsiveSelect) whenShown(block, () => startResponsiveTabs(element));
 }
