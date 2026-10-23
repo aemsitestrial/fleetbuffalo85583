@@ -1052,6 +1052,7 @@ var ac_tabs_eds_default = sections({
     option("responsive-select", "Responsive select on mobile", { useResponsiveSelect: true }),
     option("container-query", "Container query (responsive by block width)", { useResponsiveType: "container" }),
     option("segmented-buttons", "Segmented buttons", { useSegmentedButtons: true }),
+    option("window-resize-type", "Window resize type (with the responsive select)", { useWindowResizeType: true }),
     option("new-group", "Start a new tabs block (this tab is the first of a new block)")
   ],
   defaults: () => ({
@@ -1059,7 +1060,9 @@ var ac_tabs_eds_default = sections({
     activeItem: "item_0",
     themeColor: "primary",
     useResponsiveSelect: false,
-    useResponsiveType: "window"
+    useResponsiveType: "window",
+    // off unless the option is picked (the base Tabs default is on)
+    useWindowResizeType: false
   }),
   panel: ".cmp-tabs__tabpanel",
   // one tab per section; the panels stay empty here and receive the sections after rendering
@@ -1078,7 +1081,8 @@ var ac_tabs_eds_default = sections({
 
 // ac-tabs.decorate.tsx
 var fields = [];
-var fromClasses = { "theme-secondary": { "themeColor": "secondary" }, "responsive-select": { "useResponsiveSelect": true }, "container-query": { "useResponsiveType": "container" }, "segmented-buttons": { "useSegmentedButtons": true } };
+var fromClasses = { "theme-secondary": { "themeColor": "secondary" }, "responsive-select": { "useResponsiveSelect": true }, "container-query": { "useResponsiveType": "container" }, "segmented-buttons": { "useSegmentedButtons": true }, "window-resize-type": { "useWindowResizeType": true } };
+var classFlags = [];
 var items = { "fields": [{ "name": "title", "component": "text", "valueType": "string" }] };
 var adopt = { "panel": ".cmp-tabs__tabpanel" };
 var extraNames = [];
@@ -1098,7 +1102,7 @@ function decorate(block, options = {}) {
   });
   const fieldProps = ac_tabs_eds_default.toProps && !items && !isColumns ? { ...authored, ...ac_tabs_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof ac_tabs_eds_default.defaults === "function" ? ac_tabs_eds_default.defaults() : ac_tabs_eds_default.defaults || {};
-  const classProps = readClasses(block, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block) : null;
   let itemProps = items ? ac_tabs_eds_default.toProps(readItemValues(block, items)) : {};
   if (isColumns) {

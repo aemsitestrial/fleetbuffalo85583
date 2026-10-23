@@ -1056,7 +1056,6 @@ var field = {
     ...opts
   })
 };
-var option = (value, label, props) => ({ value, label, props });
 var container = (def) => ({ kind: "container", ...def });
 var uniqueId = (prefix) => `${prefix}-${Math.random().toString(36).slice(2, 8)}`;
 function itemsMap(list, key = (_, index) => `item_${index}`) {
@@ -1067,15 +1066,16 @@ function itemsMap(list, key = (_, index) => `item_${index}`) {
 // libs/ac-core-lib/src/lib/tabs/ac-horizontal-tabs.eds.ts
 var ac_horizontal_tabs_eds_default = container({
   title: "AC Horizontal Tabs",
-  options: [
-    option("responsive-select", "Responsive select on mobile", { useResponsiveSelect: true }),
-    option("container-query", "Container query (responsive by block width)", { useResponsiveType: "container" }),
-    option("segmented-buttons", "Segmented buttons", { useSegmentedButtons: true })
-  ],
+  // the block's options, from the props types: checkboxes and selects
+  fields: {
+    useResponsiveSelect: { label: "Responsive select on mobile" },
+    useResponsiveType: { label: "Responsive by", value: "window", labels: { window: "Window width", container: "Block width (container query)" } },
+    useWindowResizeType: { label: "Window resize type (with the responsive select)" },
+    useSegmentedButtons: { label: "Segmented buttons" }
+  },
   defaults: () => ({
     id: uniqueId("tabs"),
     activeItem: "item_0",
-    useResponsiveSelect: false,
     useResponsiveType: "window"
   }),
   item: {
@@ -1104,8 +1104,9 @@ var ac_horizontal_tabs_eds_default = container({
 });
 
 // ac-horizontal-tabs.decorate.tsx
-var fields = [{ "name": "classes", "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
-var fromClasses = { "responsive-select": { "useResponsiveSelect": true }, "container-query": { "useResponsiveType": "container" }, "segmented-buttons": { "useSegmentedButtons": true } };
+var fields = [{ "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fromClasses = { "use-responsive-select": { "useResponsiveSelect": true }, "use-responsive-type-window": { "useResponsiveType": "window" }, "use-responsive-type-container": { "useResponsiveType": "container" }, "use-window-resize-type": { "useWindowResizeType": true }, "use-segmented-buttons": { "useSegmentedButtons": true } };
+var classFlags = ["useResponsiveSelect", "useWindowResizeType", "useSegmentedButtons"];
 var items = { "fields": [{ "name": "title", "valueType": "string", "component": "text" }, { "name": "content", "valueType": "string", "component": "richtext" }], "instrument": { "item": ".cmp-tabs__tabpanel", "fields": { "title": { "all": ".cmp-tabs__tab" }, "content": ".cmp-text" } } };
 var adopt = null;
 var extraNames = [];
@@ -1125,7 +1126,7 @@ function decorate(block, options = {}) {
   });
   const fieldProps = ac_horizontal_tabs_eds_default.toProps && !items && !isColumns ? { ...authored, ...ac_horizontal_tabs_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof ac_horizontal_tabs_eds_default.defaults === "function" ? ac_horizontal_tabs_eds_default.defaults() : ac_horizontal_tabs_eds_default.defaults || {};
-  const classProps = readClasses(block, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block) : null;
   let itemProps = items ? ac_horizontal_tabs_eds_default.toProps(readItemValues(block, items)) : {};
   if (isColumns) {

@@ -413,13 +413,18 @@ var ac_button_eds_default = block({
     },
     themeColor: true,
     modifierVariant: true,
-    modifierIconPosition: true
+    modifierIconPosition: true,
+    typeTransform: { label: "Text transform" },
+    type: { label: "AEM button type" },
+    colorType: { label: "AEM button colour" },
+    disabled: true
   }
 });
 
 // ac-button.decorate.tsx
-var fields = [{ "name": "text", "valueType": "string", "component": "text" }, { "name": "linkUrl", "prop": "buttonLink", "as": "link", "valueType": "string", "component": "aem-content" }, { "name": "target", "value": "_self", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierVariant", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierIconPosition", "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fields = [{ "name": "text", "valueType": "string", "component": "text" }, { "name": "linkUrl", "prop": "buttonLink", "as": "link", "valueType": "string", "component": "aem-content" }, { "name": "target", "value": "_self", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierVariant", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierIconPosition", "value": "", "valueType": "string", "component": "select" }, { "name": "typeTransform", "value": "", "valueType": "string", "component": "select" }, { "name": "type", "value": "", "valueType": "string", "component": "select" }, { "name": "colorType", "value": "", "valueType": "string", "component": "select" }, { "name": "disabled", "valueType": "boolean", "component": "boolean" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
+var classFlags = [];
 var items = null;
 var adopt = null;
 var extraNames = [];
@@ -439,7 +444,7 @@ function decorate(block2, options = {}) {
   });
   const fieldProps = ac_button_eds_default.toProps && !items && !isColumns ? { ...authored, ...ac_button_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof ac_button_eds_default.defaults === "function" ? ac_button_eds_default.defaults() : ac_button_eds_default.defaults || {};
-  const classProps = readClasses(block2, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block2, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block2) : null;
   let itemProps = items ? ac_button_eds_default.toProps(readItemValues(block2, items)) : {};
   if (isColumns) {

@@ -883,6 +883,7 @@ var ac_carousel_eds_default = block({
 // ac-carousel.decorate.tsx
 var fields = [{ "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "typeCarousel", "value": "teaser", "valueType": "string", "component": "select" }, { "name": "autoplay", "valueType": "boolean", "component": "boolean" }, { "name": "delay", "valueType": "number", "component": "number" }, { "name": "autopauseDisabled", "valueType": "boolean", "component": "boolean" }, { "name": "controlsPrepended", "valueType": "boolean", "component": "boolean" }, { "name": "useExpand", "valueType": "boolean", "component": "boolean" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
+var classFlags = [];
 var items = null;
 var adopt = null;
 var extraNames = [];
@@ -902,7 +903,7 @@ function decorate(block2, options = {}) {
   });
   const fieldProps = ac_carousel_eds_default.toProps && !items && !isColumns ? { ...authored, ...ac_carousel_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof ac_carousel_eds_default.defaults === "function" ? ac_carousel_eds_default.defaults() : ac_carousel_eds_default.defaults || {};
-  const classProps = readClasses(block2, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block2, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block2) : null;
   let itemProps = items ? ac_carousel_eds_default.toProps(readItemValues(block2, items)) : {};
   if (isColumns) {

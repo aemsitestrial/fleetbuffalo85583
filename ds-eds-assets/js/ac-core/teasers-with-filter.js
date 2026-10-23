@@ -968,6 +968,7 @@ var BlockTeasersWithFilterController = class {
 // ac-teasers-with-filter.decorate.tsx
 var fields = [{ "name": "section-block", "value": "ac-teasers-with-filter", "valueType": "string", "component": "select" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "text", "valueType": "string", "component": "richtext" }, { "name": "grid", "value": "3", "valueType": "string", "component": "select" }, { "name": "content-width", "asClass": "ds-content-width-{value}", "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
+var classFlags = [];
 var items = null;
 var adopt = null;
 var extraNames = ["title", "text", "grid"];
@@ -987,7 +988,7 @@ async function decorate(block, options = {}) {
   });
   const fieldProps = block_teasers_with_filter_eds_default.toProps && !items && !isColumns ? { ...authored, ...block_teasers_with_filter_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof block_teasers_with_filter_eds_default.defaults === "function" ? block_teasers_with_filter_eds_default.defaults() : block_teasers_with_filter_eds_default.defaults || {};
-  const classProps = readClasses(block, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block) : null;
   let itemProps = items ? block_teasers_with_filter_eds_default.toProps(readItemValues(block, items)) : {};
   if (isColumns) {

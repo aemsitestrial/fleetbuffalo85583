@@ -564,19 +564,19 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "classes",
-        "label": "Options",
-        "value": "",
+        "label": "Layout",
+        "value": "type-accordion-default",
         "options": [
           {
-            "name": "Sample layout (typeAccordion: sample)",
-            "value": "type-sample"
+            "name": "Default",
+            "value": "type-accordion-default"
           },
           {
-            "name": "Single expansion (one panel open at a time)",
-            "value": "single-expansion"
+            "name": "Sample (grid panel body)",
+            "value": "type-accordion-sample"
           }
-        ]
+        ],
+        "name": "classes_type-accordion"
       },
       {
         "component": "select",
@@ -971,6 +971,13 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "Single expansion (one panel open at a time)",
+        "name": "classes_single-expansion",
+        "value": false
       }
     ]
   },
@@ -1110,6 +1117,77 @@
       {
         "component": "select",
         "valueType": "string",
+        "name": "typeTransform",
+        "label": "Text transform",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Uppercase",
+            "value": "uppercase"
+          },
+          {
+            "name": "Lowercase",
+            "value": "lowercase"
+          },
+          {
+            "name": "Capitalize",
+            "value": "capitalize"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "type",
+        "label": "AEM button type",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Tetriary",
+            "value": "tetriary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "colorType",
+        "label": "AEM button colour",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
         "name": "classes_mt",
         "label": "Margin top",
         "value": "",
@@ -1500,6 +1578,12 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "disabled",
+        "label": "Disabled"
       }
     ]
   },
@@ -1612,6 +1696,56 @@
           {
             "name": "H6",
             "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
           }
         ]
       },
@@ -2153,6 +2287,19 @@
       {
         "component": "boolean",
         "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
         "name": "modifierBgTransparent",
         "label": "Transparent background"
       },
@@ -2291,6 +2438,56 @@
           {
             "name": "H6",
             "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
           }
         ]
       },
@@ -2873,6 +3070,19 @@
       {
         "component": "boolean",
         "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
         "name": "modifierBgTransparent",
         "label": "Transparent background"
       },
@@ -3035,6 +3245,56 @@
           {
             "name": "H6",
             "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
           }
         ]
       },
@@ -3597,6 +3857,19 @@
       {
         "component": "boolean",
         "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
         "name": "modifierBgTransparent",
         "label": "Transparent background"
       },
@@ -3729,6 +4002,56 @@
           {
             "name": "H6",
             "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
           }
         ]
       },
@@ -4308,6 +4631,19 @@
       {
         "component": "boolean",
         "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
         "name": "modifierBgTransparent",
         "label": "Transparent background"
       },
@@ -4440,6 +4776,56 @@
           {
             "name": "H6",
             "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
           }
         ]
       },
@@ -4998,6 +5384,19 @@
       {
         "component": "boolean",
         "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
         "name": "modifierBgTransparent",
         "label": "Transparent background"
       },
@@ -5547,52 +5946,31 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "classes_grid-template",
-        "label": "Grid",
+        "label": "Theme",
         "value": "",
         "options": [
           {
-            "name": "AEM grid (aem-Grid)",
+            "name": "None",
             "value": ""
           },
           {
-            "name": "No grid",
-            "value": "no-aem-grid"
+            "name": "Primary",
+            "value": "theme-color-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "theme-color-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "theme-color-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "theme-color-quaternary"
           }
-        ]
-      },
-      {
-        "component": "multiselect",
-        "valueType": "string",
-        "name": "classes",
-        "label": "Options",
-        "value": "",
-        "options": [
-          {
-            "name": "Background: primary",
-            "value": "theme-primary"
-          },
-          {
-            "name": "Background: secondary",
-            "value": "theme-secondary"
-          },
-          {
-            "name": "Background: tertiary",
-            "value": "theme-tertiary"
-          },
-          {
-            "name": "Background: quaternary",
-            "value": "theme-quaternary"
-          },
-          {
-            "name": "Centered",
-            "value": "centered"
-          },
-          {
-            "name": "Full width",
-            "value": "full-width"
-          }
-        ]
+        ],
+        "name": "classes_theme-color"
       },
       {
         "component": "select",
@@ -6044,6 +6422,41 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "AEM grid (aem-Grid around the blocks)",
+        "value": true,
+        "name": "classes_use-aem-grid-template"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "Brand theme (background from Theme)",
+        "name": "classes_use-brand-theme",
+        "value": false
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "Centered",
+        "name": "classes_centered",
+        "value": false
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "Full width",
+        "name": "classes_full-width",
+        "value": false
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "Lib container class (ds-brand-container)",
+        "name": "classes_use-lib-class",
+        "value": false
       }
     ]
   },
@@ -6156,6 +6569,56 @@
           {
             "name": "H6",
             "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
           }
         ]
       },
@@ -6693,6 +7156,19 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
       },
       {
         "component": "boolean",
@@ -7916,6 +8392,56 @@
       {
         "component": "select",
         "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
         "name": "themeColor",
         "label": "Theme",
         "value": "",
@@ -8443,6 +8969,19 @@
       {
         "component": "boolean",
         "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
         "name": "modifierBgTransparent",
         "label": "Transparent background"
       },
@@ -8472,23 +9011,19 @@
       {
         "component": "select",
         "valueType": "string",
-        "name": "classes",
-        "label": "Options",
-        "value": "",
+        "label": "Responsive by",
+        "value": "use-responsive-type-window",
         "options": [
           {
-            "name": "Responsive select on mobile",
-            "value": "responsive-select"
+            "name": "Window width",
+            "value": "use-responsive-type-window"
           },
           {
-            "name": "Container query (responsive by block width)",
-            "value": "container-query"
-          },
-          {
-            "name": "Segmented buttons",
-            "value": "segmented-buttons"
+            "name": "Block width (container query)",
+            "value": "use-responsive-type-container"
           }
-        ]
+        ],
+        "name": "classes_use-responsive-type"
       },
       {
         "component": "select",
@@ -8883,6 +9418,27 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "Responsive select on mobile",
+        "name": "classes_use-responsive-select",
+        "value": false
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "Window resize type (with the responsive select)",
+        "name": "classes_use-window-resize-type",
+        "value": false
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "label": "Segmented buttons",
+        "name": "classes_use-segmented-buttons",
+        "value": false
       }
     ]
   },
@@ -9019,6 +9575,56 @@
       {
         "component": "select",
         "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
         "name": "themeColor",
         "label": "Theme",
         "value": "",
@@ -9542,6 +10148,19 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
       },
       {
         "component": "boolean",
@@ -9690,6 +10309,56 @@
       {
         "component": "select",
         "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
         "name": "themeColor",
         "label": "Theme",
         "value": "",
@@ -10217,6 +10886,19 @@
       {
         "component": "boolean",
         "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
         "name": "modifierBgTransparent",
         "label": "Transparent background"
       },
@@ -10355,6 +11037,114 @@
           {
             "name": "H6",
             "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "alignContent",
+        "label": "Text alignment",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "lineClamp",
+        "label": "Max lines (whole teaser)",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "name": "2",
+            "value": "2"
+          },
+          {
+            "name": "3",
+            "value": "3"
+          },
+          {
+            "name": "4",
+            "value": "4"
+          },
+          {
+            "name": "5",
+            "value": "5"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
           }
         ]
       },
@@ -10818,6 +11608,19 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
       }
     ]
   },
@@ -11459,6 +12262,56 @@
       {
         "component": "select",
         "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
         "name": "themeColor",
         "label": "Theme",
         "value": "",
@@ -11994,6 +12847,19 @@
       {
         "component": "boolean",
         "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
         "name": "modifierBgTransparent",
         "label": "Transparent background"
       },
@@ -12132,6 +12998,56 @@
           {
             "name": "H6",
             "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
           }
         ]
       },
@@ -12682,6 +13598,19 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
       },
       {
         "component": "boolean",
@@ -13335,6 +14264,114 @@
       {
         "component": "select",
         "valueType": "string",
+        "name": "alignContent",
+        "label": "Text alignment",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "lineClamp",
+        "label": "Max lines (whole teaser)",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "name": "2",
+            "value": "2"
+          },
+          {
+            "name": "3",
+            "value": "3"
+          },
+          {
+            "name": "4",
+            "value": "4"
+          },
+          {
+            "name": "5",
+            "value": "5"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
         "name": "themeColor",
         "label": "Theme color",
         "value": "",
@@ -13746,6 +14783,19 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
       }
     ]
   },
@@ -14344,6 +15394,56 @@
       {
         "component": "select",
         "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
         "name": "themeColor",
         "label": "Theme",
         "value": "",
@@ -14879,6 +15979,19 @@
       {
         "component": "boolean",
         "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
         "name": "modifierBgTransparent",
         "label": "Transparent background"
       },
@@ -15011,6 +16124,56 @@
           {
             "name": "H6",
             "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
           }
         ]
       },
@@ -15577,6 +16740,19 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
       },
       {
         "component": "boolean",
@@ -17168,6 +18344,56 @@
       {
         "component": "select",
         "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
         "name": "themeColor",
         "label": "Theme",
         "value": "",
@@ -17695,6 +18921,19 @@
       {
         "component": "boolean",
         "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
         "name": "modifierBgTransparent",
         "label": "Transparent background"
       },
@@ -17839,6 +19078,56 @@
           {
             "name": "H6",
             "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
           }
         ]
       },
@@ -18401,6 +19690,19 @@
       {
         "component": "boolean",
         "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
         "name": "modifierBgTransparent",
         "label": "Transparent background"
       },
@@ -18884,6 +20186,10 @@
           {
             "name": "Segmented buttons",
             "value": "segmented-buttons"
+          },
+          {
+            "name": "Window resize type (with the responsive select)",
+            "value": "window-resize-type"
           },
           {
             "name": "Start a new tabs block (this tab is the first of a new block)",
@@ -19396,6 +20702,56 @@
           {
             "name": "H6",
             "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageFetchpriority",
+        "label": "Image fetch priority",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "High",
+            "value": "high"
+          },
+          {
+            "name": "Low",
+            "value": "low"
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "imageDecoding",
+        "label": "Image decoding",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Auto",
+            "value": "auto"
+          },
+          {
+            "name": "Async",
+            "value": "async"
+          },
+          {
+            "name": "Sync",
+            "value": "sync"
           }
         ]
       },
@@ -19921,6 +21277,19 @@
             "value": "mx-auto"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "useJsModal",
+        "label": "Open links in a modal"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "lazyEnabled",
+        "label": "Lazy-load the image",
+        "value": true
       },
       {
         "component": "boolean",

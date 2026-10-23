@@ -39,23 +39,19 @@
         {
           "component": "select",
           "valueType": "string",
-          "name": "classes",
-          "label": "Options",
-          "value": "",
+          "label": "Responsive by",
+          "value": "use-responsive-type-window",
           "options": [
             {
-              "name": "Responsive select on mobile",
-              "value": "responsive-select"
+              "name": "Window width",
+              "value": "use-responsive-type-window"
             },
             {
-              "name": "Container query (responsive by block width)",
-              "value": "container-query"
-            },
-            {
-              "name": "Segmented buttons",
-              "value": "segmented-buttons"
+              "name": "Block width (container query)",
+              "value": "use-responsive-type-container"
             }
-          ]
+          ],
+          "name": "classes_use-responsive-type"
         },
         {
           "component": "select",
@@ -450,6 +446,27 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "label": "Responsive select on mobile",
+          "name": "classes_use-responsive-select",
+          "value": false
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "label": "Window resize type (with the responsive select)",
+          "name": "classes_use-window-resize-type",
+          "value": false
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "label": "Segmented buttons",
+          "name": "classes_use-segmented-buttons",
+          "value": false
         }
       ]
     },

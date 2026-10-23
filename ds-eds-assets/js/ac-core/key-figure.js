@@ -519,11 +519,19 @@ var aemTeaserFields = {
   // Linked teaser: with a link and no call to action the whole teaser is one link (base Teaser `isLinked`).
   // `imageLinkHidden` / `titleLinkHidden` stay fixed by teaserDefaults: the base Teaser does not use the
   // first, and turning the second off would end linked mode and render a title link to "/".
-  link: { name: "linkUrl", label: "Teaser link (whole teaser, when no action is set)" }
+  link: { name: "linkUrl", label: "Teaser link (whole teaser, when no action is set)" },
+  // base Teaser options from its props types
+  alignContent: { label: "Text alignment" },
+  lineClamp: { label: "Max lines (whole teaser)" },
+  useJsModal: { label: "Open links in a modal" },
+  lazyEnabled: { label: "Lazy-load the image", value: true },
+  imageFetchpriority: { label: "Image fetch priority" },
+  imageDecoding: { label: "Image decoding" }
 };
 var lines = (values) => Object.fromEntries(values.map((v) => [v, v === "1" ? "1 line" : `${v} lines`]));
+var { alignContent: _alignContent, lineClamp: _lineClamp, ...aemTeaserFieldsForAc } = aemTeaserFields;
 var acTeaserFields = {
-  ...aemTeaserFields,
+  ...aemTeaserFieldsForAc,
   themeColor: { label: "Theme" },
   modifierContentAlignment: { label: "Content alignment" },
   modifierPretitle: { label: "Pretitle colour" },
@@ -584,8 +592,9 @@ var key_figure_eds_default = block({
 });
 
 // ac-key-figure.decorate.tsx
-var fields = [{ "name": "pretitle", "valueType": "string", "component": "text" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "titleTag", "value": "", "valueType": "string", "component": "select" }, { "name": "description", "valueType": "string", "component": "richtext" }, { "name": "imagePath", "valueType": "string", "component": "reference" }, { "name": "date", "valueType": "string", "component": "text" }, { "name": "linkUrl", "prop": "link", "as": "link", "valueType": "string", "component": "aem-content" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierVariant", "value": "solid", "valueType": "string", "component": "select" }, { "name": "modifierType", "value": "vertical", "valueType": "string", "component": "select" }, { "name": "actionText", "valueType": "string", "component": "text" }, { "name": "actionUrl", "valueType": "string", "component": "aem-content" }, { "name": "actionText2", "valueType": "string", "component": "text" }, { "name": "actionUrl2", "valueType": "string", "component": "aem-content" }, { "name": "actionText3", "valueType": "string", "component": "text" }, { "name": "actionUrl3", "valueType": "string", "component": "aem-content" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fields = [{ "name": "pretitle", "valueType": "string", "component": "text" }, { "name": "title", "valueType": "string", "component": "text" }, { "name": "titleTag", "value": "", "valueType": "string", "component": "select" }, { "name": "description", "valueType": "string", "component": "richtext" }, { "name": "imagePath", "valueType": "string", "component": "reference" }, { "name": "date", "valueType": "string", "component": "text" }, { "name": "linkUrl", "prop": "link", "as": "link", "valueType": "string", "component": "aem-content" }, { "name": "alignContent", "value": "", "valueType": "string", "component": "select" }, { "name": "lineClamp", "value": "", "valueType": "string", "component": "select" }, { "name": "useJsModal", "valueType": "boolean", "component": "boolean" }, { "name": "lazyEnabled", "value": true, "valueType": "boolean", "component": "boolean" }, { "name": "imageFetchpriority", "value": "", "valueType": "string", "component": "select" }, { "name": "imageDecoding", "value": "", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierVariant", "value": "solid", "valueType": "string", "component": "select" }, { "name": "modifierType", "value": "vertical", "valueType": "string", "component": "select" }, { "name": "actionText", "valueType": "string", "component": "text" }, { "name": "actionUrl", "valueType": "string", "component": "aem-content" }, { "name": "actionText2", "valueType": "string", "component": "text" }, { "name": "actionUrl2", "valueType": "string", "component": "aem-content" }, { "name": "actionText3", "valueType": "string", "component": "text" }, { "name": "actionUrl3", "valueType": "string", "component": "aem-content" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
+var classFlags = [];
 var items = null;
 var adopt = null;
 var extraNames = ["actionText", "actionUrl", "actionText2", "actionUrl2", "actionText3", "actionUrl3"];
@@ -605,7 +614,7 @@ function decorate(block2, options = {}) {
   });
   const fieldProps = key_figure_eds_default.toProps && !items && !isColumns ? { ...authored, ...key_figure_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof key_figure_eds_default.defaults === "function" ? key_figure_eds_default.defaults() : key_figure_eds_default.defaults || {};
-  const classProps = readClasses(block2, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block2, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block2) : null;
   let itemProps = items ? key_figure_eds_default.toProps(readItemValues(block2, items)) : {};
   if (isColumns) {

@@ -404,6 +404,7 @@ var ac_download_eds_default = block({
 // ac-download.decorate.tsx
 var fields = [{ "name": "title", "valueType": "string", "component": "text" }, { "name": "description", "valueType": "string", "component": "richtext" }, { "name": "actionText", "valueType": "string", "component": "text" }, { "name": "url", "valueType": "string", "component": "aem-content" }, { "name": "filename", "valueType": "string", "component": "text" }, { "name": "format", "valueType": "string", "component": "text" }, { "name": "size", "valueType": "string", "component": "text" }, { "name": "extension", "valueType": "string", "component": "text" }, { "name": "layoutAlignContent", "value": "", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modifierBgTransparent", "valueType": "boolean", "component": "boolean" }, { "name": "isCompact", "valueType": "boolean", "component": "boolean" }, { "name": "image", "valueType": "string", "component": "reference" }, { "name": "imageAlt", "valueType": "string", "component": "text" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
+var classFlags = [];
 var items = null;
 var adopt = null;
 var extraNames = ["image", "imageAlt"];
@@ -423,7 +424,7 @@ function decorate(block2, options = {}) {
   });
   const fieldProps = ac_download_eds_default.toProps && !items && !isColumns ? { ...authored, ...ac_download_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof ac_download_eds_default.defaults === "function" ? ac_download_eds_default.defaults() : ac_download_eds_default.defaults || {};
-  const classProps = readClasses(block2, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block2, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block2) : null;
   let itemProps = items ? ac_download_eds_default.toProps(readItemValues(block2, items)) : {};
   if (isColumns) {

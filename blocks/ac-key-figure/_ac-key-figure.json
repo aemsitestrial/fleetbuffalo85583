@@ -133,6 +133,114 @@
         {
           "component": "select",
           "valueType": "string",
+          "name": "alignContent",
+          "label": "Text alignment",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "name": "Center",
+              "value": "center"
+            },
+            {
+              "name": "Right",
+              "value": "right"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "lineClamp",
+          "label": "Max lines (whole teaser)",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "1",
+              "value": "1"
+            },
+            {
+              "name": "2",
+              "value": "2"
+            },
+            {
+              "name": "3",
+              "value": "3"
+            },
+            {
+              "name": "4",
+              "value": "4"
+            },
+            {
+              "name": "5",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "imageFetchpriority",
+          "label": "Image fetch priority",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "High",
+              "value": "high"
+            },
+            {
+              "name": "Low",
+              "value": "low"
+            },
+            {
+              "name": "Auto",
+              "value": "auto"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "imageDecoding",
+          "label": "Image decoding",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Auto",
+              "value": "auto"
+            },
+            {
+              "name": "Async",
+              "value": "async"
+            },
+            {
+              "name": "Sync",
+              "value": "sync"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
           "name": "themeColor",
           "label": "Theme color",
           "value": "",
@@ -590,6 +698,19 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "useJsModal",
+          "label": "Open links in a modal"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "lazyEnabled",
+          "label": "Lazy-load the image",
+          "value": true
         }
       ]
     }

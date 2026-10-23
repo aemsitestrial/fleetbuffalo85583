@@ -298,6 +298,7 @@ var separator_eds_default = block({
 // ac-separator.decorate.tsx
 var fields = [{ "name": "style", "prop": "className", "asClass": true, "value": "ds-brand-separator__primary", "valueType": "string", "component": "select" }, { "name": "isDecorative", "value": true, "valueType": "boolean", "component": "boolean" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
+var classFlags = [];
 var items = null;
 var adopt = null;
 var extraNames = [];
@@ -317,7 +318,7 @@ function decorate(block2, options = {}) {
   });
   const fieldProps = separator_eds_default.toProps && !items && !isColumns ? { ...authored, ...separator_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof separator_eds_default.defaults === "function" ? separator_eds_default.defaults() : separator_eds_default.defaults || {};
-  const classProps = readClasses(block2, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block2, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block2) : null;
   let itemProps = items ? separator_eds_default.toProps(readItemValues(block2, items)) : {};
   if (isColumns) {

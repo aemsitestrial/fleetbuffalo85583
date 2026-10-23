@@ -129,6 +129,77 @@
         {
           "component": "select",
           "valueType": "string",
+          "name": "typeTransform",
+          "label": "Text transform",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Uppercase",
+              "value": "uppercase"
+            },
+            {
+              "name": "Lowercase",
+              "value": "lowercase"
+            },
+            {
+              "name": "Capitalize",
+              "value": "capitalize"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "type",
+          "label": "AEM button type",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            },
+            {
+              "name": "Tetriary",
+              "value": "tetriary"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "colorType",
+          "label": "AEM button colour",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
           "name": "classes_mt",
           "label": "Margin top",
           "value": "",
@@ -519,6 +590,12 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "disabled",
+          "label": "Disabled"
         }
       ]
     }

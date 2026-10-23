@@ -2438,11 +2438,19 @@ var aemTeaserFields = {
   // Linked teaser: with a link and no call to action the whole teaser is one link (base Teaser `isLinked`).
   // `imageLinkHidden` / `titleLinkHidden` stay fixed by teaserDefaults: the base Teaser does not use the
   // first, and turning the second off would end linked mode and render a title link to "/".
-  link: { name: "linkUrl", label: "Teaser link (whole teaser, when no action is set)" }
+  link: { name: "linkUrl", label: "Teaser link (whole teaser, when no action is set)" },
+  // base Teaser options from its props types
+  alignContent: { label: "Text alignment" },
+  lineClamp: { label: "Max lines (whole teaser)" },
+  useJsModal: { label: "Open links in a modal" },
+  lazyEnabled: { label: "Lazy-load the image", value: true },
+  imageFetchpriority: { label: "Image fetch priority" },
+  imageDecoding: { label: "Image decoding" }
 };
 var lines = (values) => Object.fromEntries(values.map((v) => [v, v === "1" ? "1 line" : `${v} lines`]));
+var { alignContent: _alignContent, lineClamp: _lineClamp, ...aemTeaserFieldsForAc } = aemTeaserFields;
 var acTeaserFields = {
-  ...aemTeaserFields,
+  ...aemTeaserFieldsForAc,
   themeColor: { label: "Theme" },
   modifierContentAlignment: { label: "Content alignment" },
   modifierPretitle: { label: "Pretitle colour" },
@@ -2658,6 +2666,7 @@ var BlockSplideGridCarouselController = class {
 // ac-splide-grid-carousel.decorate.tsx
 var fields = [{ "name": "section-block", "value": "ac-splide-grid-carousel", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "primary", "valueType": "string", "component": "select" }, { "name": "carouselVariant", "value": "ac-core-splide-grid-carousel", "valueType": "string", "component": "select" }, { "name": "structureType", "value": "default", "valueType": "string", "component": "select" }, { "name": "useGridToggler", "value": true, "valueType": "boolean", "component": "boolean" }, { "name": "content-width", "asClass": "ds-content-width-{value}", "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
+var classFlags = [];
 var items = null;
 var adopt = null;
 var extraNames = ["themeColor", "carouselVariant", "structureType", "useGridToggler"];
@@ -2677,7 +2686,7 @@ async function decorate(block, options = {}) {
   });
   const fieldProps = block_splide_grid_carousel_eds_default.toProps && !items && !isColumns ? { ...authored, ...block_splide_grid_carousel_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof block_splide_grid_carousel_eds_default.defaults === "function" ? block_splide_grid_carousel_eds_default.defaults() : block_splide_grid_carousel_eds_default.defaults || {};
-  const classProps = readClasses(block, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block) : null;
   let itemProps = items ? block_splide_grid_carousel_eds_default.toProps(readItemValues(block, items)) : {};
   if (isColumns) {

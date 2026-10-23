@@ -52,6 +52,10 @@
               "value": "segmented-buttons"
             },
             {
+              "name": "Window resize type (with the responsive select)",
+              "value": "window-resize-type"
+            },
+            {
               "name": "Start a new tabs block (this tab is the first of a new block)",
               "value": "new-group"
             }

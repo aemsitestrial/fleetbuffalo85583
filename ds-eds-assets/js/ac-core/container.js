@@ -431,24 +431,19 @@ var container_eds_default = columns({
           })
         )
       ]
-    },
-    // the blocks in an aem-Grid (container > cmp-container > aem-Grid > blocks), or right in cmp-container
-    {
-      name: "grid-template",
-      label: "Grid",
-      options: [option("", "AEM grid (aem-Grid)"), option("no-aem-grid", "No grid", { useAemGridTemplate: false })]
     }
   ],
-  multipleOptions: true,
-  options: [
-    option("theme-primary", "Background: primary", { useBrandTheme: true, themeColor: "primary" }),
-    option("theme-secondary", "Background: secondary", { useBrandTheme: true, themeColor: "secondary" }),
-    option("theme-tertiary", "Background: tertiary", { useBrandTheme: true, themeColor: "tertiary" }),
-    option("theme-quaternary", "Background: quaternary", { useBrandTheme: true, themeColor: "quaternary" }),
-    option("centered", "Centered", { centered: true }),
-    option("full-width", "Full width", { fullWidth: true })
-  ],
-  defaults: () => ({ id: uniqueId("container"), useAemGridTemplate: true, contentWidth: 12 }),
+  // the component's own options, from its props types (ac-core-lib Container, aem-core-lib ContainerLayout):
+  // booleans are checkboxes, the theme a select
+  fields: {
+    useAemGridTemplate: { label: "AEM grid (aem-Grid around the blocks)", value: true },
+    useBrandTheme: { label: "Brand theme (background from Theme)" },
+    themeColor: { label: "Theme" },
+    centered: true,
+    fullWidth: true,
+    useLibClass: { label: "Lib container class (ds-brand-container)" }
+  },
+  defaults: () => ({ id: uniqueId("container"), contentWidth: 12 }),
   toProps: (cells, { props }) => {
     [cell] = cells;
     const items2 = cell ? Array.from(cell.children) : [];
@@ -473,8 +468,9 @@ var container_eds_default = columns({
 });
 
 // ac-container.decorate.tsx
-var fields = [{ "name": "classes_grid", "value": "grid-col-2", "valueType": "string", "component": "select" }, { "name": "classes_grid-template", "value": "", "valueType": "string", "component": "select" }, { "name": "classes", "value": "", "valueType": "string", "component": "multiselect" }, { "name": "classes_content-width", "value": "content-width-12", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
-var fromClasses = { "theme-primary": { "useBrandTheme": true, "themeColor": "primary" }, "theme-secondary": { "useBrandTheme": true, "themeColor": "secondary" }, "theme-tertiary": { "useBrandTheme": true, "themeColor": "tertiary" }, "theme-quaternary": { "useBrandTheme": true, "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true }, "grid-col-1": { "grid": 1 }, "grid-col-2": { "grid": 2 }, "grid-col-3": { "grid": 3 }, "grid-col-4": { "grid": 4 }, "grid-col-5": { "grid": 5 }, "grid-col-1-2": { "grid": "1-2" }, "grid-col-2-1": { "grid": "2-1" }, "no-aem-grid": { "useAemGridTemplate": false }, "content-width-12": { "contentWidth": 12 }, "content-width-11": { "contentWidth": 11 }, "content-width-10": { "contentWidth": 10 }, "content-width-9": { "contentWidth": 9 }, "content-width-8": { "contentWidth": 8 }, "content-width-7": { "contentWidth": 7 }, "content-width-6": { "contentWidth": 6 }, "content-width-5": { "contentWidth": 5 }, "content-width-4": { "contentWidth": 4 }, "content-width-3": { "contentWidth": 3 }, "content-width-2": { "contentWidth": 2 }, "content-width-1": { "contentWidth": 1 } };
+var fields = [{ "name": "classes_grid", "value": "grid-col-2", "valueType": "string", "component": "select" }, { "name": "classes_content-width", "value": "content-width-12", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fromClasses = { "grid-col-1": { "grid": 1 }, "grid-col-2": { "grid": 2 }, "grid-col-3": { "grid": 3 }, "grid-col-4": { "grid": 4 }, "grid-col-5": { "grid": 5 }, "grid-col-1-2": { "grid": "1-2" }, "grid-col-2-1": { "grid": "2-1" }, "use-aem-grid-template": { "useAemGridTemplate": true }, "use-brand-theme": { "useBrandTheme": true }, "theme-color-primary": { "themeColor": "primary" }, "theme-color-secondary": { "themeColor": "secondary" }, "theme-color-tertiary": { "themeColor": "tertiary" }, "theme-color-quaternary": { "themeColor": "quaternary" }, "centered": { "centered": true }, "full-width": { "fullWidth": true }, "use-lib-class": { "useLibClass": true }, "content-width-12": { "contentWidth": 12 }, "content-width-11": { "contentWidth": 11 }, "content-width-10": { "contentWidth": 10 }, "content-width-9": { "contentWidth": 9 }, "content-width-8": { "contentWidth": 8 }, "content-width-7": { "contentWidth": 7 }, "content-width-6": { "contentWidth": 6 }, "content-width-5": { "contentWidth": 5 }, "content-width-4": { "contentWidth": 4 }, "content-width-3": { "contentWidth": 3 }, "content-width-2": { "contentWidth": 2 }, "content-width-1": { "contentWidth": 1 } };
+var classFlags = ["useAemGridTemplate", "useBrandTheme", "centered", "fullWidth", "useLibClass"];
 var items = null;
 var adopt = null;
 var extraNames = [];
@@ -494,7 +490,7 @@ function decorate(block, options = {}) {
   });
   const fieldProps = container_eds_default.toProps && !items && !isColumns ? { ...authored, ...container_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof container_eds_default.defaults === "function" ? container_eds_default.defaults() : container_eds_default.defaults || {};
-  const classProps = readClasses(block, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block) : null;
   let itemProps = items ? container_eds_default.toProps(readItemValues(block, items)) : {};
   if (isColumns) {

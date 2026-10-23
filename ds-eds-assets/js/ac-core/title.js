@@ -306,6 +306,7 @@ var ac_title_eds_default = block({
 // ac-title.decorate.tsx
 var fields = [{ "name": "text", "valueType": "string", "component": "text" }, { "name": "type", "value": "h1", "valueType": "string", "component": "select" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "linkDisabled", "valueType": "boolean", "component": "boolean" }, { "name": "linkUrl", "prop": "link", "as": "link", "valueType": "string", "component": "aem-content" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
+var classFlags = [];
 var items = null;
 var adopt = null;
 var extraNames = [];
@@ -325,7 +326,7 @@ function decorate(block2, options = {}) {
   });
   const fieldProps = ac_title_eds_default.toProps && !items && !isColumns ? { ...authored, ...ac_title_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof ac_title_eds_default.defaults === "function" ? ac_title_eds_default.defaults() : ac_title_eds_default.defaults || {};
-  const classProps = readClasses(block2, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block2, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block2) : null;
   let itemProps = items ? ac_title_eds_default.toProps(readItemValues(block2, items)) : {};
   if (isColumns) {

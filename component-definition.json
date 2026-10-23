@@ -308,6 +308,7 @@
                   "columns": "1",
                   "rows": "1",
                   "classes_grid": "grid-col-2",
+                  "classes_use-aem-grid-template": true,
                   "classes_content-width": "content-width-12"
                 }
               }

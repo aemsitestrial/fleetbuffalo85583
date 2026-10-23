@@ -133,6 +133,56 @@
         {
           "component": "select",
           "valueType": "string",
+          "name": "imageFetchpriority",
+          "label": "Image fetch priority",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "High",
+              "value": "high"
+            },
+            {
+              "name": "Low",
+              "value": "low"
+            },
+            {
+              "name": "Auto",
+              "value": "auto"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "imageDecoding",
+          "label": "Image decoding",
+          "value": "",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Auto",
+              "value": "auto"
+            },
+            {
+              "name": "Async",
+              "value": "async"
+            },
+            {
+              "name": "Sync",
+              "value": "sync"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
           "name": "themeColor",
           "label": "Theme",
           "value": "",
@@ -656,6 +706,19 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "useJsModal",
+          "label": "Open links in a modal"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "lazyEnabled",
+          "label": "Lazy-load the image",
+          "value": true
         },
         {
           "component": "boolean",

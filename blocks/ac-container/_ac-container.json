@@ -14,6 +14,7 @@
               "columns": "1",
               "rows": "1",
               "classes_grid": "grid-col-2",
+              "classes_use-aem-grid-template": true,
               "classes_content-width": "content-width-12"
             }
           }
@@ -65,52 +66,31 @@
         {
           "component": "select",
           "valueType": "string",
-          "name": "classes_grid-template",
-          "label": "Grid",
+          "label": "Theme",
           "value": "",
           "options": [
             {
-              "name": "AEM grid (aem-Grid)",
+              "name": "None",
               "value": ""
             },
             {
-              "name": "No grid",
-              "value": "no-aem-grid"
+              "name": "Primary",
+              "value": "theme-color-primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "theme-color-secondary"
+            },
+            {
+              "name": "Tertiary",
+              "value": "theme-color-tertiary"
+            },
+            {
+              "name": "Quaternary",
+              "value": "theme-color-quaternary"
             }
-          ]
-        },
-        {
-          "component": "multiselect",
-          "valueType": "string",
-          "name": "classes",
-          "label": "Options",
-          "value": "",
-          "options": [
-            {
-              "name": "Background: primary",
-              "value": "theme-primary"
-            },
-            {
-              "name": "Background: secondary",
-              "value": "theme-secondary"
-            },
-            {
-              "name": "Background: tertiary",
-              "value": "theme-tertiary"
-            },
-            {
-              "name": "Background: quaternary",
-              "value": "theme-quaternary"
-            },
-            {
-              "name": "Centered",
-              "value": "centered"
-            },
-            {
-              "name": "Full width",
-              "value": "full-width"
-            }
-          ]
+          ],
+          "name": "classes_theme-color"
         },
         {
           "component": "select",
@@ -562,6 +542,41 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "label": "AEM grid (aem-Grid around the blocks)",
+          "value": true,
+          "name": "classes_use-aem-grid-template"
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "label": "Brand theme (background from Theme)",
+          "name": "classes_use-brand-theme",
+          "value": false
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "label": "Centered",
+          "name": "classes_centered",
+          "value": false
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "label": "Full width",
+          "name": "classes_full-width",
+          "value": false
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "label": "Lib container class (ds-brand-container)",
+          "name": "classes_use-lib-class",
+          "value": false
         }
       ]
     }

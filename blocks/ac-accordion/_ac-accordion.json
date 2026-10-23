@@ -39,19 +39,19 @@
         {
           "component": "select",
           "valueType": "string",
-          "name": "classes",
-          "label": "Options",
-          "value": "",
+          "label": "Layout",
+          "value": "type-accordion-default",
           "options": [
             {
-              "name": "Sample layout (typeAccordion: sample)",
-              "value": "type-sample"
+              "name": "Default",
+              "value": "type-accordion-default"
             },
             {
-              "name": "Single expansion (one panel open at a time)",
-              "value": "single-expansion"
+              "name": "Sample (grid panel body)",
+              "value": "type-accordion-sample"
             }
-          ]
+          ],
+          "name": "classes_type-accordion"
         },
         {
           "component": "select",
@@ -446,6 +446,13 @@
               "value": "mx-auto"
             }
           ]
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "label": "Single expansion (one panel open at a time)",
+          "name": "classes_single-expansion",
+          "value": false
         }
       ]
     },

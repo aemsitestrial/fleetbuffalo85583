@@ -337,6 +337,7 @@ var ac_text_eds_default = block({
 // ac-text.decorate.tsx
 var fields = [{ "name": "text", "valueType": "string", "component": "richtext" }, { "name": "icon", "valueType": "string", "component": "text" }, { "name": "themeColor", "value": "", "valueType": "string", "component": "select" }, { "name": "modificationLargeSize", "valueType": "boolean", "component": "boolean" }, { "name": "modifierContentAlignment", "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
 var fromClasses = {};
+var classFlags = [];
 var items = null;
 var adopt = null;
 var extraNames = [];
@@ -356,7 +357,7 @@ function decorate(block2, options = {}) {
   });
   const fieldProps = ac_text_eds_default.toProps && !items && !isColumns ? { ...authored, ...ac_text_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof ac_text_eds_default.defaults === "function" ? ac_text_eds_default.defaults() : ac_text_eds_default.defaults || {};
-  const classProps = readClasses(block2, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block2, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block2) : null;
   let itemProps = items ? ac_text_eds_default.toProps(readItemValues(block2, items)) : {};
   if (isColumns) {

@@ -584,7 +584,6 @@ var field = {
     ...opts
   })
 };
-var option = (value, label, props) => ({ value, label, props });
 var container = (def) => ({ kind: "container", ...def });
 var uniqueId = (prefix) => `${prefix}-${Math.random().toString(36).slice(2, 8)}`;
 function itemsMap(list, key = (_, index) => `item_${index}`) {
@@ -595,10 +594,11 @@ function itemsMap(list, key = (_, index) => `item_${index}`) {
 // libs/ac-core-lib/src/lib/accordion/ac-accordion.eds.ts
 var ac_accordion_eds_default = container({
   title: "AC Accordion",
-  options: [
-    option("type-sample", "Sample layout (typeAccordion: sample)", { typeAccordion: "sample" }),
-    option("single-expansion", "Single expansion (one panel open at a time)", { singleExpansion: true })
-  ],
+  // the block's options, from the props types: a select and a checkbox
+  fields: {
+    typeAccordion: { label: "Layout", value: "default", labels: { default: "Default", sample: "Sample (grid panel body)" } },
+    singleExpansion: { label: "Single expansion (one panel open at a time)" }
+  },
   defaults: () => ({
     id: uniqueId("accordion"),
     typeAccordion: "default",
@@ -638,8 +638,9 @@ var ac_accordion_eds_default = container({
 });
 
 // ac-accordion.decorate.tsx
-var fields = [{ "name": "classes", "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
-var fromClasses = { "type-sample": { "typeAccordion": "sample" }, "single-expansion": { "singleExpansion": true } };
+var fields = [{ "name": "classes_mt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pt", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_pb", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_px", "asClass": true, "value": "", "valueType": "string", "component": "select" }, { "name": "classes_mx", "asClass": true, "value": "", "valueType": "string", "component": "select" }];
+var fromClasses = { "type-accordion-default": { "typeAccordion": "default" }, "type-accordion-sample": { "typeAccordion": "sample" }, "single-expansion": { "singleExpansion": true } };
+var classFlags = ["singleExpansion"];
 var items = { "fields": [{ "name": "title", "valueType": "string", "component": "text" }, { "name": "content", "valueType": "string", "component": "richtext" }, { "name": "expanded", "value": false, "valueType": "boolean", "component": "boolean" }], "instrument": { "item": ".cmp-accordion__item", "fields": { "title": ".cmp-accordion__title", "content": ".cmp-text" } } };
 var adopt = null;
 var extraNames = [];
@@ -659,7 +660,7 @@ function decorate(block, options = {}) {
   });
   const fieldProps = ac_accordion_eds_default.toProps && !items && !isColumns ? { ...authored, ...ac_accordion_eds_default.toProps(extra, authored) } : authored;
   const defaults = typeof ac_accordion_eds_default.defaults === "function" ? ac_accordion_eds_default.defaults() : ac_accordion_eds_default.defaults || {};
-  const classProps = readClasses(block, fromClasses);
+  const classProps = { ...Object.fromEntries(classFlags.map((prop) => [prop, false])), ...readClasses(block, fromClasses) };
   const instrumentation2 = items ? snapshotInstrumentation(block) : null;
   let itemProps = items ? ac_accordion_eds_default.toProps(readItemValues(block, items)) : {};
   if (isColumns) {
